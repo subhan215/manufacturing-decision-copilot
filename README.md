@@ -34,6 +34,10 @@ The second idea is smaller but does a lot of work: **citations are verified mech
 4. **Tells you how much to trust it** — how far a priority can move before the winner changes, and which supplier can be set aside no matter what you weight.
 5. **Plans for things going wrong** — what a requirement is actually costing you, what happens if the top supplier can't take the order, and whether you can split it across two.
 
+**All of it is live.** Drag the buyer's MOQ ceiling, fail-rate limit or lead-time limit and every one of the 161 verdicts re-decides in your browser — no model call, nothing re-read, because the comparison was always arithmetic. Same for the scenarios: change the order quantity, drop a supplier, slip every lead time by 25%, and the constraints re-check instantly.
+
+That is not a UI trick. It is only possible *because* the model was never asked to do the comparison, which makes it the most direct demonstration of the idea above. One example the interactivity found: raising the MOQ limit alone changes nothing, and raising the lead-time limit alone changes nothing — but move both and a supplier becomes eligible. No single constraint was the obstacle, and you would not discover that by asking one question at a time.
+
 ### The three cases the brief asks for
 
 | Case | Supplier | What it shows |
@@ -107,6 +111,8 @@ npm run build:snapshot   # freeze a run for the interface
 
 **Every one of these runs from the committed response cache without a CLI at all.** 44 model calls, all cached, 355 KB, committed to the repo. `npm run cache:audit` replays every call path and fails if a single entry is missing. The only script that genuinely needs a live login is `npm run probe:llm`, which exists to check the connection.
 
+The interface has a **Run the pipeline** section with the same split, labelled so the two are never confused: *Replay from cache* serves every call from the committed cache in about a second, and *Fresh run* bypasses it and calls the model for real at roughly 25 seconds per supplier. Which one happened is read from the SDK's own telemetry, never inferred from how long it took — an earlier version guessed from elapsed time, which would have reported replay speed as model speed the moment the cache went partially cold.
+
 That was a deliberate constraint: I have a Claude subscription and no API budget, so I built the whole thing to be reproducible by someone who has neither.
 
 There's still no API key. The only optional setting is `CLAUDE_CODE_EXECUTABLE_PATH`, if `claude` isn't on your PATH — see `.env.local.example`.
@@ -116,13 +122,13 @@ There's still no API key. The only optional setting is `CLAUDE_CODE_EXECUTABLE_P
 ```bash
 npm run inspect:ingestion   # chunking, offsets, leakage audit   (42 checks)
 npm run probe:llm           # SDK isolation — needs a live CLI   (14 checks)
-npm run check:ui            # snapshot integrity, client/server   (22 checks)
+npm run check:ui            # snapshot integrity, client/server   (25 checks)
 npm run check:submission    # submission artifacts                (36 checks)
 npm run cache:audit         # cache completeness                   (2 checks)
 npm run checksums:check     # corpus integrity, 32 files
 ```
 
-**251 assertions across ten suites.** They're not decoration — several of the design decisions below exist because an assertion failed and I couldn't argue with it.
+**254 assertions across ten suites.** They're not decoration — several of the design decisions below exist because an assertion failed and I couldn't argue with it.
 
 ---
 
@@ -153,9 +159,12 @@ src/lib/scenarios/         requirement relaxation, supplier loss, lead-time
   │                        slip, split allocation with HHI concentration
   ▼
 data/derived/ui-snapshot.json  ──▶  src/app + src/components  (Next.js 16)
+                                     └─ src/app/api/run  (SSE, live run only)
 ```
 
-Two modules deliberately never touch the network or the filesystem — `ranking/score.ts` and `ranking/sensitivity.ts` — so the weight sliders recompute in your browser using **the same code the evaluation ran against**. The interactive result and the reported result can't drift apart, because they're the same function.
+Several modules deliberately never touch the network or the filesystem — `ranking/score.ts`, `ranking/sensitivity.ts`, `eligibility/evaluate.ts`, `eligibility/rescreen.ts` and all of `scenarios/` — so every slider recomputes in your browser using **the same code the evaluation ran against**. The interactive result and the reported result can't drift apart, because they're the same function.
+
+The one exception is `src/app/api/run`, a Route Handler that streams a live run as Server-Sent Events. It is a route handler rather than a Server Action on purpose: Next.js waits for an action to return before sending anything, so progress over a two-minute run would arrive in one lump at the end. Returning a `ReadableStream` immediately and writing to it from a background task is what actually streams.
 
 ### Data flow, end to end
 
@@ -191,7 +200,7 @@ Known limitations are in [`docs/INTENDED_USE.md`](docs/INTENDED_USE.md) and at t
 
 ## Track 3: what happens when the plan stops working
 
-Once Track 1 was complete and measured, I built a second track. It's all arithmetic over verdicts already extracted, so replaying a scenario is instant.
+Once Track 1 was complete and measured, I built a second track. It's all arithmetic over verdicts already extracted, so every control below recomputes instantly in the browser rather than describing a canned result.
 
 - **What each requirement costs you.** Seven suppliers fail on exactly one requirement, so "what would we gain by dropping the India-only rule?" has a real answer — with the caveat that the cheaper overseas options exclude freight and customs from their quotes, which is stated right next to the saving.
 - **If the top supplier can't take the order.** Re-ranks without them, and discloses that the remaining scores shift too, because min-max normalisation is relative to the pool.
