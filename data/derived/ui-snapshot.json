@@ -1,0 +1,3139 @@
+{
+  "generatedAt": "2026-08-09T12:26:40.575Z",
+  "model": "claude-sonnet-5",
+  "asOfDate": "2026-08-09",
+  "requirementsVersion": "2f6f7d26f631941b",
+  "screen": {
+    "asOfDate": "2026-08-09",
+    "model": "claude-sonnet-5",
+    "generatedAt": "2026-08-09T12:26:40.399Z",
+    "requirementsVersion": "2f6f7d26f631941b",
+    "suppliers": [
+      {
+        "supplierId": "supplier-01",
+        "supplierName": "Supplier 1",
+        "verdicts": [
+          {
+            "requirementId": "MR-1",
+            "requirementTitle": "Liquid/serum skincare manufacturing experience",
+            "kind": "qualitative",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": null,
+            "reasoning": "The document explicitly states the supplier has liquid and serum formulation lines and confirmed experience producing skincare serums for prior retail brands, in addition to cream and powder lines. This is direct documented evidence of liquid/serum skincare manufacturing experience, not solid/powder only, so the requirement is satisfied.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-01#s02-manufacturing-capability",
+            "citationQuote": "Liquid and serum formulation lines (dropper-fill and pump-fill), cream/lotion lines, and pressed-powder lines. Confirmed experience producing skincare serums for two prior regional retail brands (names withheld under NDA per supplier disclosure).",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-01 › Manufacturing capability › line 13",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-2",
+            "requirementTitle": "ISO 22716 (Cosmetics GMP) certification",
+            "kind": "certification",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": "expires valid until 2027-03-11 ≥ as-of 2026-08-09",
+            "reasoning": "The document provides an actual certificate record with a certificate number, issuance date, and validity date for ISO 22716:2007 (Cosmetics GMP), so this is not merely a marketing claim.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-01#s01-certifications",
+            "citationQuote": "ISO 22716:2007 (Cosmetics GMP) — Certificate No. IN-COS-22716-0341, issued 2024-03-12, valid until 2027-03-11.",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-01 › Certifications › line 9",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-3",
+            "requirementTitle": "Maximum first-order MOQ",
+            "kind": "numeric-threshold",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": "3000 units ≤ 5000 units",
+            "reasoning": "The document states the first-order MOQ explicitly as 3,000 units per SKU.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-01#s03-order-terms",
+            "citationQuote": "Minimum order quantity: 3,000 units per SKU for first orders.",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-01 › Order terms › line 16",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-4",
+            "requirementTitle": "Maximum historical quality inspection fail rate",
+            "kind": "numeric-threshold",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": "22 percent ≤ 30 percent",
+            "reasoning": "Out of 27 audited production batches, 6 (22%) are reported as 'Fail'. This is the clearest stated historical quality inspection fail rate figure. Note the document also lists 8 batches (30%) as 'Pending re-inspection', which is a separate, not-yet-determined category rather than a confirmed fail outcome.",
+            "conflictNote": null,
+            "modelConfidence": "medium",
+            "citationChunkId": "supplier-01#s04-quality-history",
+            "citationQuote": "Fail: 6 batches (22%)",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-01 › Quality history (audited production batches, n=27) › line 21",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-5",
+            "requirementTitle": "Maximum manufacturing lead time",
+            "kind": "numeric-threshold",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": "14 calendar days ≤ 20 calendar days",
+            "reasoning": "The document states a standard manufacturing lead time range of 12–14 calendar days, with an audited average of 12.6 days. The upper bound of the stated range (14 days) is reported here as the numeric value; the audited average of 12.6 days is also present in the source text and quoted for completeness.",
+            "conflictNote": null,
+            "modelConfidence": "medium",
+            "citationChunkId": "supplier-01#s03-order-terms",
+            "citationQuote": "Standard manufacturing lead time: 12–14 calendar days from confirmed formulation and packaging spec (audited average: 12.6 days across 27 recent production batches).",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-01 › Order terms › line 17",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-6",
+            "requirementTitle": "Facility location in India",
+            "kind": "categorical-match",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": "\"Mumbai, Maharashtra, India\" matches \"India\"",
+            "reasoning": "The facility location is stated explicitly in the title block as Mumbai, Maharashtra, India.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-01#s00-_titleblock",
+            "citationQuote": "**Location:** Mumbai, Maharashtra, India",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-01 › Supplier Profile: Supplier 1 › line 4",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-7",
+            "requirementTitle": "Documented cruelty-free manufacturing declaration",
+            "kind": "qualitative",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": null,
+            "reasoning": "The document confirms a signed, documented cruelty-free manufacturing declaration is on file with a reference number and date, satisfying the requirement for a documented declaration, even though no third-party certifying body is listed.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-01#s05-sustainability",
+            "citationQuote": "Signed cruelty-free manufacturing declaration on file (Declaration Ref: CF-2025-0091, dated 2025-01-18). No third-party cruelty-free certification body listed.",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-01 › Sustainability › line 26",
+            "citationUnverified": false
+          }
+        ],
+        "eligible": true,
+        "blockingRequirements": [],
+        "error": null,
+        "telemetry": {
+          "model": "claude-sonnet-5",
+          "cacheHit": true,
+          "durationMs": 6,
+          "apiDurationMs": 27320,
+          "costUsd": 0.071162,
+          "inputTokens": 2,
+          "outputTokens": 3226,
+          "numTurns": 2
+        }
+      },
+      {
+        "supplierId": "supplier-02",
+        "supplierName": "Supplier 2",
+        "verdicts": [
+          {
+            "requirementId": "MR-1",
+            "requirementTitle": "Liquid/serum skincare manufacturing experience",
+            "kind": "qualitative",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": null,
+            "reasoning": "The document explicitly states the supplier operates 'Liquid serum lines' and includes 'skincare formats' within its general cosmetics manufacturing, indicating documented experience producing liquid/serum skincare formulations, not solely solid or powder cosmetics.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-02#s02-manufacturing-capability",
+            "citationQuote": "Liquid serum lines and cream lines. General cosmetics manufacturing including haircare and skincare formats.",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-02 › Manufacturing capability › line 12",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-2",
+            "requirementTitle": "ISO 22716 (Cosmetics GMP) certification",
+            "kind": "certification",
+            "status": "fail",
+            "modelClaimedStatus": "fail",
+            "comparison": "expires 2026-06-30 < as-of 2026-08-09",
+            "reasoning": "A specific certificate record is provided including a certificate number, issue date, and validity date, satisfying the requirement for an actual certificate record rather than a marketing claim only.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-02#s01-certifications",
+            "citationQuote": "ISO 22716:2007 (Cosmetics GMP) — Certificate No. IN-COS-22716-0512, issued 2023-07-01, valid until 2026-06-30.",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-02 › Certifications › line 9",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-3",
+            "requirementTitle": "Maximum first-order MOQ",
+            "kind": "numeric-threshold",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": "4500 units ≤ 5000 units",
+            "reasoning": "The document states the MOQ as 4,500 units per SKU, which is reported here as the numeric value without judging pass/fail.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-02#s03-order-terms",
+            "citationQuote": "Minimum order quantity: 4,500 units per SKU.",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-02 › Order terms › line 15",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-4",
+            "requirementTitle": "Maximum historical quality inspection fail rate",
+            "kind": "numeric-threshold",
+            "status": "conflicting",
+            "modelClaimedStatus": "conflicting",
+            "comparison": null,
+            "reasoning": "The document explicitly reports a fail rate of 36% among audited production batches, though a large portion (41%) of batches are listed as pending re-inspection, which is noted as a conflict/ambiguity rather than resolved here.",
+            "conflictNote": "The quality history breaks down 22 audited batches into Pass (5, 23%), Fail (8, 36%), and Pending re-inspection (9, 41%). The 36% figure is the explicitly labeled 'Fail' rate, but 41% of batches are listed as 'Pending re-inspection' rather than a clear pass/fail outcome, which could affect interpretation of the overall fail rate.",
+            "modelConfidence": "medium",
+            "citationChunkId": "supplier-02#s04-quality-history",
+            "citationQuote": "Fail: 8 batches (36%)",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-02 › Quality history (audited production batches, n=22) › line 20",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-5",
+            "requirementTitle": "Maximum manufacturing lead time",
+            "kind": "numeric-threshold",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": "15.6 calendar days ≤ 20 calendar days",
+            "reasoning": "The document reports an audited average manufacturing lead time of 15.6 days. The unit is stated simply as 'days'; the requirement expects 'calendar days' but the document does not specify whether these are calendar or business days.",
+            "conflictNote": null,
+            "modelConfidence": "medium",
+            "citationChunkId": "supplier-02#s03-order-terms",
+            "citationQuote": "Standard manufacturing lead time: audited average 15.6 days across 22 recent production batches.",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-02 › Order terms › line 16",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-6",
+            "requirementTitle": "Facility location in India",
+            "kind": "categorical-match",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": "\"Chennai, Tamil Nadu, India\" matches \"India\"",
+            "reasoning": "The title block states the facility location as Chennai, Tamil Nadu, India, reported here verbatim without judging match to the requirement.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-02#s00-_titleblock",
+            "citationQuote": "**Location:** Chennai, Tamil Nadu, India",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-02 › Supplier Profile: Supplier 2 › line 4",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-7",
+            "requirementTitle": "Documented cruelty-free manufacturing declaration",
+            "kind": "qualitative",
+            "status": "fail",
+            "modelClaimedStatus": "fail",
+            "comparison": null,
+            "reasoning": "The document explicitly states there is no cruelty-free declaration on file, directly indicating the supplier does not provide a documented cruelty-free manufacturing declaration.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-02#s05-sustainability",
+            "citationQuote": "No cruelty-free declaration on file.",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-02 › Sustainability › line 25",
+            "citationUnverified": false
+          }
+        ],
+        "eligible": false,
+        "blockingRequirements": [
+          "MR-2",
+          "MR-4",
+          "MR-7"
+        ],
+        "error": null,
+        "telemetry": {
+          "model": "claude-sonnet-5",
+          "cacheHit": true,
+          "durationMs": 9,
+          "apiDurationMs": 22561,
+          "costUsd": 0.06138099999999999,
+          "inputTokens": 2,
+          "outputTokens": 2660,
+          "numTurns": 2
+        }
+      },
+      {
+        "supplierId": "supplier-03",
+        "supplierName": "Supplier 3",
+        "verdicts": [
+          {
+            "requirementId": "MR-1",
+            "requirementTitle": "Liquid/serum skincare manufacturing experience",
+            "kind": "qualitative",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": null,
+            "reasoning": "The manufacturing capability section explicitly lists 'Liquid serum lines' alongside cream and powder lines, indicating documented experience producing liquid/serum formulations, not solid or powder cosmetics only.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-03#s02-manufacturing-capability",
+            "citationQuote": "Liquid serum lines, cream lines, powder lines.",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-03 › Manufacturing capability › line 15",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-2",
+            "requirementTitle": "ISO 22716 (Cosmetics GMP) certification",
+            "kind": "certification",
+            "status": "conflicting",
+            "modelClaimedStatus": "conflicting",
+            "comparison": null,
+            "reasoning": "An actual certificate record exists (identifier IN-COS-22716-0288 and an issuing/validity reference), so it is not a marketing-claim-only statement. However, the document contains conflicting statements about whether the certificate is current, as noted.",
+            "conflictNote": "Section A (Compliance Summary) states: 'Supplier 3 holds current ISO 22716 Cosmetics GMP certification, Certificate No. IN-COS-22716-0288.' Section D (Facility Audit Appendix) states: 'ISO 22716 certificate IN-COS-22716-0288 expired 2025-11-01. Renewal audit scheduled, no confirmed renewal date on file.' These two statements conflict regarding whether the certification is current.",
+            "modelConfidence": "medium",
+            "citationChunkId": "supplier-03#s01-certifications",
+            "citationQuote": "Supplier 3 holds current ISO 22716 Cosmetics GMP certification, Certificate No. IN-COS-22716-0288.",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-03 › Certifications › line 10",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-3",
+            "requirementTitle": "Maximum first-order MOQ",
+            "kind": "numeric-threshold",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": "3500 units ≤ 5000 units",
+            "reasoning": "The order terms section explicitly states the MOQ as 3,500 units per SKU.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-03#s03-order-terms",
+            "citationQuote": "Minimum order quantity: 3,500 units per SKU.",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-03 › Order terms › line 18",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-4",
+            "requirementTitle": "Maximum historical quality inspection fail rate",
+            "kind": "numeric-threshold",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": "20 percent ≤ 30 percent",
+            "reasoning": "The quality history section reports a fail rate of 20% (3 of 15 audited batches) among audited production batches.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-03#s04-quality-history",
+            "citationQuote": "Fail: 3 batches (20%)",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-03 › Quality history (audited production batches, n=15) › line 23",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-5",
+            "requirementTitle": "Maximum manufacturing lead time",
+            "kind": "numeric-threshold",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": "14.9 calendar days ≤ 20 calendar days",
+            "reasoning": "The order terms section states the audited average manufacturing lead time as 14.9 days.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-03#s03-order-terms",
+            "citationQuote": "Standard manufacturing lead time: audited average 14.9 days across 15 recent production batches.",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-03 › Order terms › line 19",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-6",
+            "requirementTitle": "Facility location in India",
+            "kind": "categorical-match",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": "\"Mumbai, Maharashtra, India\" matches \"India\"",
+            "reasoning": "The title block states the facility location as Mumbai, Maharashtra, India.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-03#s00-_titleblock",
+            "citationQuote": "**Location:** Mumbai, Maharashtra, India",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-03 › Supplier Profile: Supplier 3 › line 4",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-7",
+            "requirementTitle": "Documented cruelty-free manufacturing declaration",
+            "kind": "qualitative",
+            "status": "fail",
+            "modelClaimedStatus": "fail",
+            "comparison": null,
+            "reasoning": "The sustainability section explicitly states there is no formal cruelty-free declaration document on file; the only reference is an undated, unsigned marketing brochure mention, which does not constitute a documented declaration.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-03#s05-sustainability",
+            "citationQuote": "Cruelty-free declaration referenced in marketing brochure (undated, unsigned) — no formal declaration document on file.",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-03 › Sustainability › line 28",
+            "citationUnverified": false
+          }
+        ],
+        "eligible": false,
+        "blockingRequirements": [
+          "MR-2",
+          "MR-7"
+        ],
+        "error": null,
+        "telemetry": {
+          "model": "claude-sonnet-5",
+          "cacheHit": true,
+          "durationMs": 6,
+          "apiDurationMs": 24389,
+          "costUsd": 0.0534977,
+          "inputTokens": 2,
+          "outputTokens": 2595,
+          "numTurns": 2
+        }
+      },
+      {
+        "supplierId": "supplier-04",
+        "supplierName": "Supplier 4",
+        "verdicts": [
+          {
+            "requirementId": "MR-1",
+            "requirementTitle": "Liquid/serum skincare manufacturing experience",
+            "kind": "qualitative",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": null,
+            "reasoning": "The manufacturing capability section explicitly lists 'Liquid serum lines' alongside 'cream lines', indicating documented experience producing liquid/serum skincare formulations, not solely solid or powder cosmetics.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-04#s02-manufacturing-capability",
+            "citationQuote": "Liquid serum lines, cream lines.",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-04 › Manufacturing capability › line 12",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-2",
+            "requirementTitle": "ISO 22716 (Cosmetics GMP) certification",
+            "kind": "certification",
+            "status": "fail",
+            "modelClaimedStatus": "fail",
+            "comparison": "expires 2025-05-19 < as-of 2026-08-09",
+            "reasoning": "An actual certificate record is present with an identifier (IN-COS-22716-0733) and validity date (valid until 2025-05-19), so certificatePresent is true and it is not a marketing-only claim. The document itself notes the certificate as 'expired, no renewal on file', but per instructions only the stated date is reported without judging currency.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-04#s01-certifications",
+            "citationQuote": "ISO 22716:2007 (Cosmetics GMP) — Certificate No. IN-COS-22716-0733, issued 2022-05-20, valid until 2025-05-19 (expired, no renewal on file).",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-04 › Certifications › line 9",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-3",
+            "requirementTitle": "Maximum first-order MOQ",
+            "kind": "numeric-threshold",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": "4000 units ≤ 5000 units",
+            "reasoning": "The order terms section states the MOQ as 4,000 units per SKU, which is reported verbatim without judging whether it meets the requirement.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-04#s03-order-terms",
+            "citationQuote": "Minimum order quantity: 4,000 units per SKU.",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-04 › Order terms › line 15",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-4",
+            "requirementTitle": "Maximum historical quality inspection fail rate",
+            "kind": "numeric-threshold",
+            "status": "fail",
+            "modelClaimedStatus": "fail",
+            "comparison": "67 percent ≤ 30 percent",
+            "reasoning": "The quality history section reports a fail rate of 67% (12 of 18 audited batches) among audited production batches; this is the stated historical fail rate.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-04#s04-quality-history",
+            "citationQuote": "Fail: 12 batches (67%)",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-04 › Quality history (audited production batches, n=18) › line 20",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-5",
+            "requirementTitle": "Maximum manufacturing lead time",
+            "kind": "numeric-threshold",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": "15.3 calendar days ≤ 20 calendar days",
+            "reasoning": "The document states an audited average manufacturing lead time of 15.3 days; the unit is given simply as 'days', so it is reported as calendar days per the expected unit though the document does not explicitly specify 'calendar' days.",
+            "conflictNote": null,
+            "modelConfidence": "medium",
+            "citationChunkId": "supplier-04#s03-order-terms",
+            "citationQuote": "Standard manufacturing lead time: audited average 15.3 days across 18 recent production batches.",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-04 › Order terms › line 16",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-6",
+            "requirementTitle": "Facility location in India",
+            "kind": "categorical-match",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": "\"Bangalore, Karnataka, India\" matches \"India\"",
+            "reasoning": "The supplier profile title block states the facility location as Bangalore, Karnataka, India, reported exactly as stated.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-04#s00-_titleblock",
+            "citationQuote": "**Location:** Bangalore, Karnataka, India",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-04 › Supplier Profile: Supplier 4 › line 4",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-7",
+            "requirementTitle": "Documented cruelty-free manufacturing declaration",
+            "kind": "qualitative",
+            "status": "fail",
+            "modelClaimedStatus": "fail",
+            "comparison": null,
+            "reasoning": "The sustainability section explicitly states there is no cruelty-free declaration on file, indicating the requirement for a documented cruelty-free manufacturing declaration is not satisfied.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-04#s05-sustainability",
+            "citationQuote": "No cruelty-free declaration on file.",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-04 › Sustainability › line 25",
+            "citationUnverified": false
+          }
+        ],
+        "eligible": false,
+        "blockingRequirements": [
+          "MR-2",
+          "MR-4",
+          "MR-7"
+        ],
+        "error": null,
+        "telemetry": {
+          "model": "claude-sonnet-5",
+          "cacheHit": true,
+          "durationMs": 6,
+          "apiDurationMs": 30662,
+          "costUsd": 0.06816869999999998,
+          "inputTokens": 2,
+          "outputTokens": 3623,
+          "numTurns": 2
+        }
+      },
+      {
+        "supplierId": "supplier-05",
+        "supplierName": "Supplier 5",
+        "verdicts": [
+          {
+            "requirementId": "MR-1",
+            "requirementTitle": "Liquid/serum skincare manufacturing experience",
+            "kind": "qualitative",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": null,
+            "reasoning": "The manufacturing capability section explicitly lists 'Liquid serum lines' alongside cream and powder lines, indicating documented experience producing liquid/serum skincare formulations in addition to other formats, not solid/powder cosmetics only.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-05#s02-manufacturing-capability",
+            "citationQuote": "Liquid serum lines, cream lines, powder lines.",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-05 › Manufacturing capability › line 12",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-2",
+            "requirementTitle": "ISO 22716 (Cosmetics GMP) certification",
+            "kind": "certification",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": "expires valid until 2027-01-14 ≥ as-of 2026-08-09",
+            "reasoning": "The document provides a concrete certificate record including a certificate number, issuing detail, issue date, and validity date, so this is not merely a marketing claim.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-05#s01-certifications",
+            "citationQuote": "ISO 22716:2007 (Cosmetics GMP) — Certificate No. IN-COS-22716-0904, issued 2024-01-15, valid until 2027-01-14.",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-05 › Certifications › line 9",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-3",
+            "requirementTitle": "Maximum first-order MOQ",
+            "kind": "numeric-threshold",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": "4000 units ≤ 5000 units",
+            "reasoning": "The order terms section states the MOQ as 4,000 units per SKU.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-05#s03-order-terms",
+            "citationQuote": "Minimum order quantity: 4,000 units per SKU.",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-05 › Order terms › line 15",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-4",
+            "requirementTitle": "Maximum historical quality inspection fail rate",
+            "kind": "numeric-threshold",
+            "status": "fail",
+            "modelClaimedStatus": "fail",
+            "comparison": "39 percent ≤ 30 percent",
+            "reasoning": "The quality history section reports 7 of 18 audited batches failing, stated as 39%, which is the historical quality inspection fail rate.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-05#s04-quality-history",
+            "citationQuote": "Fail: 7 batches (39%)",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-05 › Quality history (audited production batches, n=18) › line 20",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-5",
+            "requirementTitle": "Maximum manufacturing lead time",
+            "kind": "numeric-threshold",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": "16.3 calendar days ≤ 20 calendar days",
+            "reasoning": "The order terms section states the audited average manufacturing lead time as 16.3 days; the document does not specify whether these are calendar or business days, so the unit is reported exactly as written ('days').",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-05#s03-order-terms",
+            "citationQuote": "Standard manufacturing lead time: audited average 16.3 days across 18 recent production batches.",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-05 › Order terms › line 16",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-6",
+            "requirementTitle": "Facility location in India",
+            "kind": "categorical-match",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": "\"Kolkata, West Bengal, India\" matches \"India\"",
+            "reasoning": "The title block states the facility's location as Kolkata, West Bengal, India.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-05#s00-_titleblock",
+            "citationQuote": "**Location:** Kolkata, West Bengal, India",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-05 › Supplier Profile: Supplier 5 › line 4",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-7",
+            "requirementTitle": "Documented cruelty-free manufacturing declaration",
+            "kind": "qualitative",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": null,
+            "reasoning": "The sustainability section documents a cruelty-free declaration on file, complete with a reference number and date, constituting a documented cruelty-free manufacturing declaration.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-05#s05-sustainability",
+            "citationQuote": "Cruelty-free declaration on file (Declaration Ref: CF-2024-0203, dated 2024-02-10).",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-05 › Sustainability › line 25",
+            "citationUnverified": false
+          }
+        ],
+        "eligible": false,
+        "blockingRequirements": [
+          "MR-4"
+        ],
+        "error": null,
+        "telemetry": {
+          "model": "claude-sonnet-5",
+          "cacheHit": true,
+          "durationMs": 2,
+          "apiDurationMs": 25400,
+          "costUsd": 0.0605727,
+          "inputTokens": 2,
+          "outputTokens": 3107,
+          "numTurns": 2
+        }
+      },
+      {
+        "supplierId": "supplier-06-vantage-cosmo-labs",
+        "supplierName": "Vantage Cosmo Labs",
+        "verdicts": [
+          {
+            "requirementId": "MR-1",
+            "requirementTitle": "Liquid/serum skincare manufacturing experience",
+            "kind": "qualitative",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": null,
+            "reasoning": "The document explicitly documents dedicated liquid and serum formulation lines and 4 prior serum production programs, demonstrating documented experience producing liquid/serum skincare formulations (not solid or powder cosmetics only).",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-06-vantage-cosmo-labs#s02-manufacturing-capability",
+            "citationQuote": "Dedicated liquid and serum formulation lines with dropper- and pump-fill capability. Specializes in Vitamin C and actives-based serums; lists 4 prior serum production programs for regional brands.",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-06 › Manufacturing capability › line 12",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-2",
+            "requirementTitle": "ISO 22716 (Cosmetics GMP) certification",
+            "kind": "certification",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": "expires valid until 2027-08-31 ≥ as-of 2026-08-09",
+            "reasoning": "A specific certificate record is provided with an identifier (Certificate No. IN-COS-22716-1102), issuing details, issue date, and validity date, satisfying the requirement for an actual certificate record rather than a marketing-only claim.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-06-vantage-cosmo-labs#s01-certifications",
+            "citationQuote": "ISO 22716:2007 (Cosmetics GMP) — Certificate No. IN-COS-22716-1102, issued 2024-09-01, valid until 2027-08-31.",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-06 › Certifications › line 8",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-3",
+            "requirementTitle": "Maximum first-order MOQ",
+            "kind": "numeric-threshold",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": "4000 units ≤ 5000 units",
+            "reasoning": "The document states a minimum order quantity of 4,000 units per SKU.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-06-vantage-cosmo-labs#s03-order-terms",
+            "citationQuote": "Minimum order quantity: 4,000 units per SKU.",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-06 › Order terms › line 15",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-4",
+            "requirementTitle": "Maximum historical quality inspection fail rate",
+            "kind": "numeric-threshold",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": "15 percent ≤ 30 percent",
+            "reasoning": "Out of 20 audited production batches, the document reports a fail rate of 15% (3 batches).",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-06-vantage-cosmo-labs#s04-quality-history",
+            "citationQuote": "Fail: 3 batches (15%)",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-06 › Quality history (audited production batches, n=20) › line 20",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-5",
+            "requirementTitle": "Maximum manufacturing lead time",
+            "kind": "numeric-threshold",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": "18 calendar days ≤ 20 calendar days",
+            "reasoning": "The document states an audited average manufacturing lead time of 18 calendar days.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-06-vantage-cosmo-labs#s03-order-terms",
+            "citationQuote": "Standard manufacturing lead time: audited average 18 calendar days.",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-06 › Order terms › line 16",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-6",
+            "requirementTitle": "Facility location in India",
+            "kind": "categorical-match",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": "\"Pune, Maharashtra, India\" matches \"India\"",
+            "reasoning": "The document states the facility location as Pune, Maharashtra, India.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-06-vantage-cosmo-labs#s00-_titleblock",
+            "citationQuote": "**Location:** Pune, Maharashtra, India",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-06 › Supplier Profile: Vantage Cosmo Labs › line 3",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-7",
+            "requirementTitle": "Documented cruelty-free manufacturing declaration",
+            "kind": "qualitative",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": null,
+            "reasoning": "The document documents a cruelty-free declaration on file with a specific reference number (CF-2025-0412) and date, satisfying the requirement for a documented cruelty-free manufacturing declaration.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-06-vantage-cosmo-labs#s05-sustainability",
+            "citationQuote": "Cruelty-free declaration on file (Declaration Ref: CF-2025-0412, dated 2025-06-02), plus Ecocert natural-sourcing certification noted above.",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-06 › Sustainability › line 24",
+            "citationUnverified": false
+          }
+        ],
+        "eligible": true,
+        "blockingRequirements": [],
+        "error": null,
+        "telemetry": {
+          "model": "claude-sonnet-5",
+          "cacheHit": true,
+          "durationMs": 2,
+          "apiDurationMs": 16048,
+          "costUsd": 0.0473537,
+          "inputTokens": 2,
+          "outputTokens": 2153,
+          "numTurns": 2
+        }
+      },
+      {
+        "supplierId": "supplier-07-glowcraft-industries",
+        "supplierName": "GlowCraft Industries",
+        "verdicts": [
+          {
+            "requirementId": "MR-1",
+            "requirementTitle": "Liquid/serum skincare manufacturing experience",
+            "kind": "qualitative",
+            "status": "fail",
+            "modelClaimedStatus": "fail",
+            "comparison": null,
+            "reasoning": "The document explicitly states the facility manufactures pressed-powder compacts, solid sticks, and cream-to-powder hybrids, and directly confirms there is no liquid-fill or serum production line currently installed, with such capability only planned as a future (2027) roadmap item. This directly contradicts the requirement for documented liquid/serum skincare manufacturing experience.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-07-glowcraft-industries#s02-manufacturing-capability",
+            "citationQuote": "No liquid-fill or serum production line currently installed.",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-07 › Manufacturing capability › line 11",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-2",
+            "requirementTitle": "ISO 22716 (Cosmetics GMP) certification",
+            "kind": "certification",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": "expires 2026-11-09 ≥ as-of 2026-08-09",
+            "reasoning": "A specific certificate record is provided, including certificate number, issuing details, issue date, and validity date, so this is not merely a marketing claim. The stated validity end date is reported exactly as written; no determination is made about whether it is still current relative to today's date.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-07-glowcraft-industries#s01-certifications",
+            "citationQuote": "ISO 22716:2007 (Cosmetics GMP) — Certificate No. IN-COS-22716-0655, issued 2023-11-10, valid until 2026-11-09.",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-07 › Certifications › line 8",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-3",
+            "requirementTitle": "Maximum first-order MOQ",
+            "kind": "numeric-threshold",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": "3000 units ≤ 5000 units",
+            "reasoning": "The document states the minimum order quantity as 3,000 units per SKU. This numeric value and unit are reported as stated, without judging whether it meets the ≤5,000 unit threshold.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-07-glowcraft-industries#s03-order-terms",
+            "citationQuote": "Minimum order quantity: 3,000 units per SKU.",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-07 › Order terms › line 14",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-4",
+            "requirementTitle": "Maximum historical quality inspection fail rate",
+            "kind": "numeric-threshold",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": "17 percent ≤ 30 percent",
+            "reasoning": "The quality history section reports a fail rate of 17% (4 of 24 audited batches) for historical quality inspections. This value is reported as stated, without judging whether it satisfies the ≤30% threshold.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-07-glowcraft-industries#s04-quality-history",
+            "citationQuote": "Fail: 4 batches (17%)",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-07 › Quality history (audited production batches, n=24) › line 19",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-5",
+            "requirementTitle": "Maximum manufacturing lead time",
+            "kind": "numeric-threshold",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": "11 calendar days ≤ 20 calendar days",
+            "reasoning": "The document states an audited average manufacturing lead time of 11 calendar days. This value is reported as stated, without judging whether it meets the ≤20 calendar day threshold.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-07-glowcraft-industries#s03-order-terms",
+            "citationQuote": "Standard manufacturing lead time: audited average 11 calendar days.",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-07 › Order terms › line 15",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-6",
+            "requirementTitle": "Facility location in India",
+            "kind": "categorical-match",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": "\"Ahmedabad, Gujarat, India\" matches \"India\"",
+            "reasoning": "The supplier profile title block states the facility location as Ahmedabad, Gujarat, India. This is reported exactly as stated, without judging whether it satisfies the India location requirement.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-07-glowcraft-industries#s00-_titleblock",
+            "citationQuote": "Location: Ahmedabad, Gujarat, India",
+            "citationStatus": "normalized",
+            "citationLocator": "supplier-07 › Supplier Profile: GlowCraft Industries › line 3",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-7",
+            "requirementTitle": "Documented cruelty-free manufacturing declaration",
+            "kind": "qualitative",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": null,
+            "reasoning": "The sustainability section documents a specific cruelty-free declaration on file, including a reference number and date, which constitutes a documented cruelty-free manufacturing declaration as required.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-07-glowcraft-industries#s05-sustainability",
+            "citationQuote": "Cruelty-free declaration on file (Declaration Ref: CF-2023-0088, dated 2023-08-14).",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-07 › Sustainability › line 23",
+            "citationUnverified": false
+          }
+        ],
+        "eligible": false,
+        "blockingRequirements": [
+          "MR-1"
+        ],
+        "error": null,
+        "telemetry": {
+          "model": "claude-sonnet-5",
+          "cacheHit": true,
+          "durationMs": 1,
+          "apiDurationMs": 23921,
+          "costUsd": 0.053605700000000006,
+          "inputTokens": 2,
+          "outputTokens": 2601,
+          "numTurns": 2
+        }
+      },
+      {
+        "supplierId": "supplier-08-meridian-beauty-manufacturing",
+        "supplierName": "Meridian Beauty Manufacturing",
+        "verdicts": [
+          {
+            "requirementId": "MR-1",
+            "requirementTitle": "Liquid/serum skincare manufacturing experience",
+            "kind": "qualitative",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": null,
+            "reasoning": "The document explicitly describes the facility as a 'Large-scale liquid and serum cosmetics manufacturer' (s00) and details 'High-volume liquid and serum lines' with export experience (s02), directly supporting documented liquid/serum skincare manufacturing experience, not solid or powder cosmetics only.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-08-meridian-beauty-manufacturing#s02-manufacturing-capability",
+            "citationQuote": "High-volume liquid and serum lines, extensive export experience to EU and US retail brands.",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-08 › Manufacturing capability › line 12",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-2",
+            "requirementTitle": "ISO 22716 (Cosmetics GMP) certification",
+            "kind": "certification",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": "expires valid until 2027-01-31 ≥ as-of 2026-08-09",
+            "reasoning": "The document provides an actual certificate record with an identifier (Certificate No. VN-COS-22716-3301), issue date, and validity date, satisfying the requirement for certificate evidence (not just a marketing claim). The expiry is reported exactly as written.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-08-meridian-beauty-manufacturing#s01-certifications",
+            "citationQuote": "ISO 22716:2007 (Cosmetics GMP) — Certificate No. VN-COS-22716-3301, issued 2024-02-01, valid until 2027-01-31.",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-08 › Certifications › line 8",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-3",
+            "requirementTitle": "Maximum first-order MOQ",
+            "kind": "numeric-threshold",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": "2000 units ≤ 5000 units",
+            "reasoning": "The document states the MOQ as 2,000 units per SKU, which is reported here as the numeric value without judging compliance.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-08-meridian-beauty-manufacturing#s03-order-terms",
+            "citationQuote": "Minimum order quantity: 2,000 units per SKU.",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-08 › Order terms › line 15",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-4",
+            "requirementTitle": "Maximum historical quality inspection fail rate",
+            "kind": "numeric-threshold",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": "13 percent ≤ 30 percent",
+            "reasoning": "The document reports a fail rate of 13% (5 of 40 audited batches) in the quality history section. Note: the raw ratio 5/40 computes to 12.5%, but the document itself states '13%', which is reported verbatim as the stated value.",
+            "conflictNote": null,
+            "modelConfidence": "medium",
+            "citationChunkId": "supplier-08-meridian-beauty-manufacturing#s04-quality-history",
+            "citationQuote": "Fail: 5 batches (13%)",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-08 › Quality history (audited production batches, n=40) › line 20",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-5",
+            "requirementTitle": "Maximum manufacturing lead time",
+            "kind": "numeric-threshold",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": "16 calendar days ≤ 20 calendar days",
+            "reasoning": "The document states the manufacturing lead time as an audited average of 16 calendar days, explicitly noting this covers production only and excludes freight, which is reported here as the stated value.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-08-meridian-beauty-manufacturing#s03-order-terms",
+            "citationQuote": "Standard manufacturing lead time: audited average 16 calendar days (production only; excludes cross-border freight).",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-08 › Order terms › line 16",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-6",
+            "requirementTitle": "Facility location in India",
+            "kind": "categorical-match",
+            "status": "fail",
+            "modelClaimedStatus": "fail",
+            "comparison": "\"Ho Chi Minh City, Vietnam\" does not match \"India\"",
+            "reasoning": "The document states the facility's location as Ho Chi Minh City, Vietnam (consistent with the title block's 'Location: Ho Chi Minh City, Vietnam'), reported here exactly as stated without judging fit to the India requirement.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-08-meridian-beauty-manufacturing#s07-location-note",
+            "citationQuote": "Production facility is located in Ho Chi Minh City, Vietnam.",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-08 › Location note › line 30",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-7",
+            "requirementTitle": "Documented cruelty-free manufacturing declaration",
+            "kind": "qualitative",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": null,
+            "reasoning": "The Sustainability section states that cruelty-free certification is 'on file', indicating a documented declaration/certification exists, though no certificate identifier, issuing body, or date is provided beyond this statement.",
+            "conflictNote": null,
+            "modelConfidence": "medium",
+            "citationChunkId": "supplier-08-meridian-beauty-manufacturing#s05-sustainability",
+            "citationQuote": "Cruelty-free and COSMOS organic certifications on file.",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-08 › Sustainability › line 24",
+            "citationUnverified": false
+          }
+        ],
+        "eligible": false,
+        "blockingRequirements": [
+          "MR-6"
+        ],
+        "error": null,
+        "telemetry": {
+          "model": "claude-sonnet-5",
+          "cacheHit": true,
+          "durationMs": 2,
+          "apiDurationMs": 25201,
+          "costUsd": 0.0587167,
+          "inputTokens": 2,
+          "outputTokens": 2887,
+          "numTurns": 2
+        }
+      },
+      {
+        "supplierId": "supplier-09-sunrise-personal-care",
+        "supplierName": "Sunrise Personal Care Pvt Ltd",
+        "verdicts": [
+          {
+            "requirementId": "MR-1",
+            "requirementTitle": "Liquid/serum skincare manufacturing experience",
+            "kind": "qualitative",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": null,
+            "reasoning": "The document explicitly states the facility has liquid and serum manufacturing lines, directly documenting liquid/serum skincare manufacturing experience (not solid/powder only).",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-09-sunrise-personal-care#s02-manufacturing-capability",
+            "citationQuote": "Liquid and serum lines, optimized for large-batch national-brand contracts.",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-09 › Manufacturing capability › line 11",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-2",
+            "requirementTitle": "ISO 22716 (Cosmetics GMP) certification",
+            "kind": "certification",
+            "status": "fail",
+            "modelClaimedStatus": "fail",
+            "comparison": "expires valid until 2026-04-17 < as-of 2026-08-09",
+            "reasoning": "A specific certificate number, issuing detail, issue date, and validity date are provided, constituting an actual certificate record rather than a marketing claim only.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-09-sunrise-personal-care#s01-certifications",
+            "citationQuote": "ISO 22716:2007 (Cosmetics GMP) — Certificate No. IN-COS-22716-0499, issued 2023-04-18, valid until 2026-04-17.",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-09 › Certifications › line 8",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-3",
+            "requirementTitle": "Maximum first-order MOQ",
+            "kind": "numeric-threshold",
+            "status": "fail",
+            "modelClaimedStatus": "fail",
+            "comparison": "20000 units ≤ 5000 units",
+            "reasoning": "The document states the MOQ explicitly as 20,000 units per SKU.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-09-sunrise-personal-care#s03-order-terms",
+            "citationQuote": "Minimum order quantity: **20,000 units per SKU** (facility does not accept smaller pilot/launch orders per standard commercial policy).",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-09 › Order terms › line 14",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-4",
+            "requirementTitle": "Maximum historical quality inspection fail rate",
+            "kind": "numeric-threshold",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": "20 percent ≤ 30 percent",
+            "reasoning": "Out of 30 audited production batches, 6 failed, stated as 20% fail rate.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-09-sunrise-personal-care#s04-quality-history",
+            "citationQuote": "Fail: 6 batches (20%)",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-09 › Quality history (audited production batches, n=30) › line 19",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-5",
+            "requirementTitle": "Maximum manufacturing lead time",
+            "kind": "numeric-threshold",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": "13 calendar days ≤ 20 calendar days",
+            "reasoning": "The document states the audited average manufacturing lead time as 13 calendar days.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-09-sunrise-personal-care#s03-order-terms",
+            "citationQuote": "Standard manufacturing lead time: audited average 13 calendar days.",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-09 › Order terms › line 15",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-6",
+            "requirementTitle": "Facility location in India",
+            "kind": "categorical-match",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": "\"Hyderabad, Telangana, India\" matches \"India\"",
+            "reasoning": "The facility location is explicitly stated as Hyderabad, Telangana, India.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-09-sunrise-personal-care#s00-_titleblock",
+            "citationQuote": "**Location:** Hyderabad, Telangana, India",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-09 › Supplier Profile: Sunrise Personal Care Pvt Ltd › line 3",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-7",
+            "requirementTitle": "Documented cruelty-free manufacturing declaration",
+            "kind": "qualitative",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": null,
+            "reasoning": "The document references a specific documented cruelty-free declaration on file with a reference number, indicating a documented declaration rather than just a marketing claim.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-09-sunrise-personal-care#s05-sustainability",
+            "citationQuote": "Cruelty-free declaration on file (Declaration Ref: CF-2024-0355).",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-09 › Sustainability › line 23",
+            "citationUnverified": false
+          }
+        ],
+        "eligible": false,
+        "blockingRequirements": [
+          "MR-2",
+          "MR-3"
+        ],
+        "error": null,
+        "telemetry": {
+          "model": "claude-sonnet-5",
+          "cacheHit": true,
+          "durationMs": 2,
+          "apiDurationMs": 18577,
+          "costUsd": 0.0478747,
+          "inputTokens": 2,
+          "outputTokens": 2232,
+          "numTurns": 2
+        }
+      },
+      {
+        "supplierId": "supplier-10-ecoderm-naturals",
+        "supplierName": "EcoDerm Naturals",
+        "verdicts": [
+          {
+            "requirementId": "MR-1",
+            "requirementTitle": "Liquid/serum skincare manufacturing experience",
+            "kind": "qualitative",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": null,
+            "reasoning": "The document explicitly describes the supplier's manufacturing capability as liquid and serum lines, directly demonstrating documented experience with liquid/serum skincare formulations rather than solid or powder cosmetics only.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-10-ecoderm-naturals#s02-manufacturing-capability",
+            "citationQuote": "Small-batch liquid and serum lines, natural/organic ingredient focus.",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-10 › Manufacturing capability › line 11",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-2",
+            "requirementTitle": "ISO 22716 (Cosmetics GMP) certification",
+            "kind": "certification",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": "expires valid until 2028-01-04 ≥ as-of 2026-08-09",
+            "reasoning": "A specific certificate record is provided, including certificate number, issue date, and validity date, meeting the criteria for a certificate record (not merely a marketing claim).",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-10-ecoderm-naturals#s01-certifications",
+            "citationQuote": "ISO 22716:2007 (Cosmetics GMP) — Certificate No. IN-COS-22716-1290, issued 2025-01-05, valid until 2028-01-04.",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-10 › Certifications › line 8",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-3",
+            "requirementTitle": "Maximum first-order MOQ",
+            "kind": "numeric-threshold",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": "2500 units ≤ 5000 units",
+            "reasoning": "The document states the MOQ explicitly as 2,500 units per SKU; this numeric value and unit are reported as stated without judging compliance.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-10-ecoderm-naturals#s03-order-terms",
+            "citationQuote": "Minimum order quantity: 2,500 units per SKU.",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-10 › Order terms › line 14",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-4",
+            "requirementTitle": "Maximum historical quality inspection fail rate",
+            "kind": "numeric-threshold",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": "8 percent ≤ 30 percent",
+            "reasoning": "The quality history section reports an 8% fail rate across audited production batches (n=12), which is the stated historical quality inspection fail rate.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-10-ecoderm-naturals#s04-quality-history",
+            "citationQuote": "Fail: 1 batch (8%)",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-10 › Quality history (audited production batches, n=12) › line 19",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-5",
+            "requirementTitle": "Maximum manufacturing lead time",
+            "kind": "numeric-threshold",
+            "status": "fail",
+            "modelClaimedStatus": "fail",
+            "comparison": "25 calendar days ≤ 20 calendar days",
+            "reasoning": "The document states the audited average manufacturing lead time as 25 calendar days, which is reported as the stated value without judging compliance.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-10-ecoderm-naturals#s03-order-terms",
+            "citationQuote": "Standard manufacturing lead time: audited average **25 calendar days** (small-batch natural sourcing extends formulation and fill scheduling).",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-10 › Order terms › line 15",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-6",
+            "requirementTitle": "Facility location in India",
+            "kind": "categorical-match",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": "\"Surat, Gujarat, India\" matches \"India\"",
+            "reasoning": "The supplier profile's title block explicitly states the facility location as Surat, Gujarat, India, which is reported verbatim as the categorical value.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-10-ecoderm-naturals#s00-_titleblock",
+            "citationQuote": "**Location:** Surat, Gujarat, India",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-10 › Supplier Profile: EcoDerm Naturals › line 3",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-7",
+            "requirementTitle": "Documented cruelty-free manufacturing declaration",
+            "kind": "qualitative",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": null,
+            "reasoning": "The document states that a cruelty-free declaration is on file with a specific reference number, constituting a documented cruelty-free manufacturing declaration rather than just a marketing claim.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-10-ecoderm-naturals#s05-sustainability",
+            "citationQuote": "Cruelty-free declaration on file (Declaration Ref: CF-2025-0501), plus organic sourcing statement.",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-10 › Sustainability › line 23",
+            "citationUnverified": false
+          }
+        ],
+        "eligible": false,
+        "blockingRequirements": [
+          "MR-5"
+        ],
+        "error": null,
+        "telemetry": {
+          "model": "claude-sonnet-5",
+          "cacheHit": true,
+          "durationMs": 2,
+          "apiDurationMs": 23858,
+          "costUsd": 0.0503647,
+          "inputTokens": 2,
+          "outputTokens": 2395,
+          "numTurns": 2
+        }
+      },
+      {
+        "supplierId": "supplier-11-prakriti-formulations",
+        "supplierName": "Prakriti Formulations",
+        "verdicts": [
+          {
+            "requirementId": "MR-1",
+            "requirementTitle": "Liquid/serum skincare manufacturing experience",
+            "kind": "qualitative",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": null,
+            "reasoning": "The document explicitly states the manufacturing capability includes 'Liquid and serum lines', which directly documents experience producing liquid/serum formulations, not solid or powder cosmetics only. The facility type is also described as 'Liquid cosmetics manufacturer' in the title block, reinforcing this.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-11-prakriti-formulations#s02-manufacturing-capability",
+            "citationQuote": "Liquid and serum lines.",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-11 › Manufacturing capability › line 12",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-2",
+            "requirementTitle": "ISO 22716 (Cosmetics GMP) certification",
+            "kind": "certification",
+            "status": "fail",
+            "modelClaimedStatus": "fail",
+            "comparison": "ISO 22716 (Cosmetics GMP): unverified marketing claim, no certificate record",
+            "reasoning": "No ISO 22716 certificate record (identifier, issuing body, or validity date) is provided anywhere in the document. The only certificate listed with an identifier and validity date is ISO 9001:2015 (Quality Management), which is a different standard. The only reference to GMP compliance is a promotional marketing brochure statement with no certificate details, so this is treated as a marketing claim only, not a documented ISO 22716 certification.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-11-prakriti-formulations#s01-certifications",
+            "citationQuote": "Marketing brochure states: \"Fully GMP-compliant facility meeting international cosmetics manufacturing standards.\"",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-11 › Certifications › line 9",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-3",
+            "requirementTitle": "Maximum first-order MOQ",
+            "kind": "numeric-threshold",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": "3000 units ≤ 5000 units",
+            "reasoning": "The document states the MOQ is 3,000 units per SKU, which is reported as the numeric value and unit without judging pass/fail against the threshold.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-11-prakriti-formulations#s03-order-terms",
+            "citationQuote": "Minimum order quantity: 3,000 units per SKU.",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-11 › Order terms › line 15",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-4",
+            "requirementTitle": "Maximum historical quality inspection fail rate",
+            "kind": "numeric-threshold",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": "19 percent ≤ 30 percent",
+            "reasoning": "The quality history section reports a fail rate of 19% across 16 audited production batches, which is the reported historical quality inspection fail rate.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-11-prakriti-formulations#s04-quality-history",
+            "citationQuote": "Fail: 3 batches (19%)",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-11 › Quality history (audited production batches, n=16) › line 20",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-5",
+            "requirementTitle": "Maximum manufacturing lead time",
+            "kind": "numeric-threshold",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": "14 calendar days ≤ 20 calendar days",
+            "reasoning": "The document reports an audited average manufacturing lead time of 14 calendar days, reported here as the numeric value without judging pass/fail.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-11-prakriti-formulations#s03-order-terms",
+            "citationQuote": "Standard manufacturing lead time: audited average 14 calendar days.",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-11 › Order terms › line 16",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-6",
+            "requirementTitle": "Facility location in India",
+            "kind": "categorical-match",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": "\"Delhi, India\" matches \"India\"",
+            "reasoning": "The title block states the facility's location as Delhi, India, reported exactly as stated without judging whether it satisfies the India-location requirement.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-11-prakriti-formulations#s00-_titleblock",
+            "citationQuote": "**Location:** Delhi, India",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-11 › Supplier Profile: Prakriti Formulations › line 3",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-7",
+            "requirementTitle": "Documented cruelty-free manufacturing declaration",
+            "kind": "qualitative",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": null,
+            "reasoning": "The sustainability section documents a cruelty-free declaration with a specific reference number (CF-2024-0177), indicating this is a documented declaration on file rather than merely a marketing claim, satisfying the requirement.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-11-prakriti-formulations#s05-sustainability",
+            "citationQuote": "Cruelty-free declaration on file (Declaration Ref: CF-2024-0177).",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-11 › Sustainability › line 24",
+            "citationUnverified": false
+          }
+        ],
+        "eligible": false,
+        "blockingRequirements": [
+          "MR-2"
+        ],
+        "error": null,
+        "telemetry": {
+          "model": "claude-sonnet-5",
+          "cacheHit": true,
+          "durationMs": 3,
+          "apiDurationMs": 21827,
+          "costUsd": 0.0519767,
+          "inputTokens": 2,
+          "outputTokens": 2522,
+          "numTurns": 2
+        }
+      },
+      {
+        "supplierId": "supplier-12-coastal-wellness-manufacturing",
+        "supplierName": "Coastal Wellness Manufacturing",
+        "verdicts": [
+          {
+            "requirementId": "MR-1",
+            "requirementTitle": "Liquid/serum skincare manufacturing experience",
+            "kind": "qualitative",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": null,
+            "reasoning": "The document explicitly states the facility manufactures liquid and serum product lines, directly matching the requirement for documented liquid/serum skincare manufacturing experience (not solid or powder cosmetics only).",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-12-coastal-wellness-manufacturing#s02-manufacturing-capability",
+            "citationQuote": "Liquid and serum lines, dropper- and pump-fill capable.",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-12 › Manufacturing capability › line 11",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-2",
+            "requirementTitle": "ISO 22716 (Cosmetics GMP) certification",
+            "kind": "certification",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": "expires 2027-05-31 ≥ as-of 2026-08-09",
+            "reasoning": "A specific certificate record is provided including certificate number, issue date, and validity date, satisfying the requirement to have an actual certificate record rather than a marketing claim only. Expiry date is reported exactly as written; currency of the certificate is not judged per instructions.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-12-coastal-wellness-manufacturing#s01-certifications",
+            "citationQuote": "ISO 22716:2007 (Cosmetics GMP) — Certificate No. IN-COS-22716-0821, issued 2024-06-01, valid until 2027-05-31.",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-12 › Certifications › line 8",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-3",
+            "requirementTitle": "Maximum first-order MOQ",
+            "kind": "numeric-threshold",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": "5000 units ≤ 5000 units",
+            "reasoning": "The document states the MOQ is exactly 5,000 units per SKU. The parenthetical phrase '(at the boundary of the requirement)' appears to be an editorial comment referencing the requirement threshold itself, which is noted but not acted upon; only the numeric value is reported as instructed.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-12-coastal-wellness-manufacturing#s03-order-terms",
+            "citationQuote": "Minimum order quantity: **exactly 5,000 units per SKU** (at the boundary of the requirement).",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-12 › Order terms › line 14",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-4",
+            "requirementTitle": "Maximum historical quality inspection fail rate",
+            "kind": "numeric-threshold",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": "28 percent ≤ 30 percent",
+            "reasoning": "The document reports a historical fail rate of 28% across audited batches (n=25). The parenthetical note referencing the '30% fail-rate ceiling' appears to directly echo the requirement wording, which is noted as an observation but the numeric value alone is reported per instructions.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-12-coastal-wellness-manufacturing#s04-quality-history",
+            "citationQuote": "Fail: 7 batches (**28%** — just under the 30% fail-rate ceiling)",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-12 › Quality history (audited production batches, n=25) › line 19",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-5",
+            "requirementTitle": "Maximum manufacturing lead time",
+            "kind": "numeric-threshold",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": "19 calendar days ≤ 20 calendar days",
+            "reasoning": "The document states an audited average manufacturing lead time of 19 calendar days. The parenthetical '(just under the 20-day requirement)' appears to reference the requirement threshold directly, noted as an observation; only the numeric value is reported as instructed.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-12-coastal-wellness-manufacturing#s03-order-terms",
+            "citationQuote": "Standard manufacturing lead time: audited average **19 calendar days** (just under the 20-day requirement).",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-12 › Order terms › line 15",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-6",
+            "requirementTitle": "Facility location in India",
+            "kind": "categorical-match",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": "\"Kochi, Kerala, India\" matches \"India\"",
+            "reasoning": "The supplier profile states the facility location as Kochi, Kerala, India. Reported exactly as stated without judging match to requirement.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-12-coastal-wellness-manufacturing#s00-_titleblock",
+            "citationQuote": "**Location:** Kochi, Kerala, India",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-12 › Supplier Profile: Coastal Wellness Manufacturing › line 3",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-7",
+            "requirementTitle": "Documented cruelty-free manufacturing declaration",
+            "kind": "qualitative",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": null,
+            "reasoning": "The document indicates a specific, documented cruelty-free declaration with a reference number on file, which satisfies the requirement for a documented cruelty-free manufacturing declaration.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-12-coastal-wellness-manufacturing#s05-sustainability",
+            "citationQuote": "Cruelty-free declaration on file (Declaration Ref: CF-2024-0620).",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-12 › Sustainability › line 23",
+            "citationUnverified": false
+          }
+        ],
+        "eligible": true,
+        "blockingRequirements": [],
+        "error": null,
+        "telemetry": {
+          "model": "claude-sonnet-5",
+          "cacheHit": true,
+          "durationMs": 2,
+          "apiDurationMs": 21897,
+          "costUsd": 0.0532547,
+          "inputTokens": 2,
+          "outputTokens": 2574,
+          "numTurns": 2
+        }
+      },
+      {
+        "supplierId": "supplier-13-novaline-personal-care",
+        "supplierName": "Novaline Personal Care",
+        "verdicts": [
+          {
+            "requirementId": "MR-1",
+            "requirementTitle": "Liquid/serum skincare manufacturing experience",
+            "kind": "qualitative",
+            "status": "insufficient-evidence",
+            "modelClaimedStatus": "insufficient-evidence",
+            "comparison": null,
+            "reasoning": "The document only describes 'general cosmetics manufacturing' and explicitly states there is no breakdown of liquid vs. solid vs. powder line capability, so it cannot be determined whether the supplier has documented experience producing liquid/serum formulations specifically.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-13-novaline-personal-care#s02-manufacturing-capability",
+            "citationQuote": "Profile states \"general cosmetics manufacturing\" with no breakdown of liquid vs. solid vs. powder line capability.",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-13 › Manufacturing capability › line 11",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-2",
+            "requirementTitle": "ISO 22716 (Cosmetics GMP) certification",
+            "kind": "certification",
+            "status": "insufficient-evidence",
+            "modelClaimedStatus": "insufficient-evidence",
+            "comparison": "ISO 22716 (Cosmetics GMP): no certificate record in the supplied documentation",
+            "reasoning": "No ISO 22716 certificate record (number, issuing body, or date) is present. The document mentions certifications are 'available on request' but this is not a compliance/marketing claim of ISO 22716 status itself, merely an offer to supply documentation later, so certificatePresent is false and no expiry date is given.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-13-novaline-personal-care#s01-certifications",
+            "citationQuote": "Certification status: **not provided in submitted documentation.** Onboarding packet references \"certifications available on request\" with no certificate numbers, issuing bodies, or dates attached.",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-13 › Certifications › line 8",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-3",
+            "requirementTitle": "Maximum first-order MOQ",
+            "kind": "numeric-threshold",
+            "status": "insufficient-evidence",
+            "modelClaimedStatus": "insufficient-evidence",
+            "comparison": null,
+            "reasoning": "The document explicitly states the minimum order quantity is not stated, so no numeric MOQ value is available.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-13-novaline-personal-care#s03-order-terms",
+            "citationQuote": "Minimum order quantity: **not stated.**",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-13 › Order terms › line 14",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-4",
+            "requirementTitle": "Maximum historical quality inspection fail rate",
+            "kind": "numeric-threshold",
+            "status": "insufficient-evidence",
+            "modelClaimedStatus": "insufficient-evidence",
+            "comparison": null,
+            "reasoning": "No audited production batch records or fail rate figures are present in the document, so a historical quality inspection fail rate cannot be extracted.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-13-novaline-personal-care#s04-quality-history",
+            "citationQuote": "No audited production batch records were included in this supplier's submission.",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-13 › Quality history › line 18",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-5",
+            "requirementTitle": "Maximum manufacturing lead time",
+            "kind": "numeric-threshold",
+            "status": "insufficient-evidence",
+            "modelClaimedStatus": "insufficient-evidence",
+            "comparison": null,
+            "reasoning": "The document explicitly states the manufacturing lead time is not stated and that it would only be provided at a separate quotation stage not included here, so no numeric lead time value is available.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-13-novaline-personal-care#s03-order-terms",
+            "citationQuote": "Standard manufacturing lead time: **not stated.** Onboarding packet notes \"lead time provided at quotation stage,\" which was not part of this document set.",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-13 › Order terms › line 15",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-6",
+            "requirementTitle": "Facility location in India",
+            "kind": "categorical-match",
+            "status": "pass",
+            "modelClaimedStatus": "pass",
+            "comparison": "\"Nagpur, Maharashtra, India\" matches \"India\"",
+            "reasoning": "The supplier profile's title block explicitly states the facility location as Nagpur, Maharashtra, India.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-13-novaline-personal-care#s00-_titleblock",
+            "citationQuote": "**Location:** Nagpur, Maharashtra, India",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-13 › Supplier Profile: Novaline Personal Care › line 3",
+            "citationUnverified": false
+          },
+          {
+            "requirementId": "MR-7",
+            "requirementTitle": "Documented cruelty-free manufacturing declaration",
+            "kind": "qualitative",
+            "status": "insufficient-evidence",
+            "modelClaimedStatus": "insufficient-evidence",
+            "comparison": null,
+            "reasoning": "The sustainability section, which would be the expected location for a cruelty-free manufacturing declaration, explicitly states the topic is not addressed in the submitted documentation, so no documented cruelty-free declaration is provided.",
+            "conflictNote": null,
+            "modelConfidence": "high",
+            "citationChunkId": "supplier-13-novaline-personal-care#s05-sustainability",
+            "citationQuote": "Not addressed in submitted documentation.",
+            "citationStatus": "exact",
+            "citationLocator": "supplier-13 › Sustainability › line 21",
+            "citationUnverified": false
+          }
+        ],
+        "eligible": false,
+        "blockingRequirements": [
+          "MR-1",
+          "MR-2",
+          "MR-3",
+          "MR-4",
+          "MR-5",
+          "MR-7"
+        ],
+        "error": null,
+        "telemetry": {
+          "model": "claude-sonnet-5",
+          "cacheHit": true,
+          "durationMs": 2,
+          "apiDurationMs": 23658,
+          "costUsd": 0.0563727,
+          "inputTokens": 2,
+          "outputTokens": 2839,
+          "numTurns": 2
+        }
+      }
+    ],
+    "stats": {
+      "suppliersScreened": 13,
+      "suppliersErrored": 0,
+      "verdictsTotal": 91,
+      "citationsVerified": 91,
+      "citationsUnverified": 0,
+      "downgradedByVerification": 0,
+      "deterministicVerdicts": 65,
+      "qualitativeVerdicts": 26,
+      "totalDurationMs": 32,
+      "totalCostUsd": 0.7343017000000001
+    }
+  },
+  "signals": [
+    {
+      "supplierId": "supplier-01",
+      "supplierName": "Supplier 1",
+      "cost": {
+        "value": 45.3,
+        "citationQuote": "Average manufacturing cost across comparable SKUs: $45.30/unit (per audited production data).",
+        "citationChunkId": "supplier-01#s06-cost-reference",
+        "citationStatus": "exact",
+        "citationLocator": "supplier-01 › Cost reference › line 29",
+        "verified": true,
+        "note": "Stated as USD per unit, averaged across comparable products."
+      },
+      "leadTime": {
+        "value": 14,
+        "citationQuote": "Standard manufacturing lead time: 12–14 calendar days from confirmed formulation and packaging spec (audited average: 12.6 days across 27 recent production batches).",
+        "citationChunkId": "supplier-01#s03-order-terms",
+        "citationStatus": "exact",
+        "citationLocator": "supplier-01 › Order terms › line 17",
+        "verified": true,
+        "note": "Reused from eligibility screen MR-5."
+      },
+      "quality": {
+        "value": 22,
+        "citationQuote": "Fail: 6 batches (22%)",
+        "citationChunkId": "supplier-01#s04-quality-history",
+        "citationStatus": "exact",
+        "citationLocator": "supplier-01 › Quality history (audited production batches, n=27) › line 21",
+        "verified": true,
+        "note": "Reused from eligibility screen MR-4."
+      },
+      "sustainability": {
+        "value": 1,
+        "citationQuote": "Signed cruelty-free manufacturing declaration on file (Declaration Ref: CF-2025-0091, dated 2025-01-18). No third-party cruelty-free certification body listed.",
+        "citationChunkId": "supplier-01#s05-sustainability",
+        "citationStatus": "exact",
+        "citationLocator": "supplier-01 › Sustainability › line 26",
+        "verified": true,
+        "note": "1 point(s): cruelty-free declaration."
+      },
+      "crueltyFreeDeclaration": true,
+      "thirdPartyCertifications": []
+    },
+    {
+      "supplierId": "supplier-06-vantage-cosmo-labs",
+      "supplierName": "Vantage Cosmo Labs",
+      "cost": {
+        "value": 52,
+        "citationQuote": "Average manufacturing cost across comparable SKUs: $52.00/unit.",
+        "citationChunkId": "supplier-06-vantage-cosmo-labs#s06-cost-reference",
+        "citationStatus": "exact",
+        "citationLocator": "supplier-06 › Cost reference › line 27",
+        "verified": true,
+        "note": "Stated as USD per unit, averaged across comparable products."
+      },
+      "leadTime": {
+        "value": 18,
+        "citationQuote": "Standard manufacturing lead time: audited average 18 calendar days.",
+        "citationChunkId": "supplier-06-vantage-cosmo-labs#s03-order-terms",
+        "citationStatus": "exact",
+        "citationLocator": "supplier-06 › Order terms › line 16",
+        "verified": true,
+        "note": "Reused from eligibility screen MR-5."
+      },
+      "quality": {
+        "value": 15,
+        "citationQuote": "Fail: 3 batches (15%)",
+        "citationChunkId": "supplier-06-vantage-cosmo-labs#s04-quality-history",
+        "citationStatus": "exact",
+        "citationLocator": "supplier-06 › Quality history (audited production batches, n=20) › line 20",
+        "verified": true,
+        "note": "Reused from eligibility screen MR-4."
+      },
+      "sustainability": {
+        "value": 2,
+        "citationQuote": "Cruelty-free declaration on file (Declaration Ref: CF-2025-0412, dated 2025-06-02), plus Ecocert natural-sourcing certification noted above.",
+        "citationChunkId": "supplier-06-vantage-cosmo-labs#s05-sustainability",
+        "citationStatus": "exact",
+        "citationLocator": "supplier-06 › Sustainability › line 24",
+        "verified": true,
+        "note": "2 point(s): cruelty-free declaration plus Ecocert."
+      },
+      "crueltyFreeDeclaration": true,
+      "thirdPartyCertifications": [
+        "Ecocert"
+      ]
+    },
+    {
+      "supplierId": "supplier-12-coastal-wellness-manufacturing",
+      "supplierName": "Coastal Wellness Manufacturing",
+      "cost": {
+        "value": 47.1,
+        "citationQuote": "Average manufacturing cost across comparable SKUs: $47.10/unit.",
+        "citationChunkId": "supplier-12-coastal-wellness-manufacturing#s06-cost-reference",
+        "citationStatus": "exact",
+        "citationLocator": "supplier-12 › Cost reference › line 26",
+        "verified": true,
+        "note": "Stated as USD per unit, averaged across comparable products."
+      },
+      "leadTime": {
+        "value": 19,
+        "citationQuote": "Standard manufacturing lead time: audited average **19 calendar days** (just under the 20-day requirement).",
+        "citationChunkId": "supplier-12-coastal-wellness-manufacturing#s03-order-terms",
+        "citationStatus": "exact",
+        "citationLocator": "supplier-12 › Order terms › line 15",
+        "verified": true,
+        "note": "Reused from eligibility screen MR-5."
+      },
+      "quality": {
+        "value": 28,
+        "citationQuote": "Fail: 7 batches (**28%** — just under the 30% fail-rate ceiling)",
+        "citationChunkId": "supplier-12-coastal-wellness-manufacturing#s04-quality-history",
+        "citationStatus": "exact",
+        "citationLocator": "supplier-12 › Quality history (audited production batches, n=25) › line 19",
+        "verified": true,
+        "note": "Reused from eligibility screen MR-4."
+      },
+      "sustainability": {
+        "value": 1,
+        "citationQuote": "Cruelty-free declaration on file (Declaration Ref: CF-2024-0620).",
+        "citationChunkId": "supplier-12-coastal-wellness-manufacturing#s05-sustainability",
+        "citationStatus": "exact",
+        "citationLocator": "supplier-12 › Sustainability › line 23",
+        "verified": true,
+        "note": "1 point(s): cruelty-free declaration."
+      },
+      "crueltyFreeDeclaration": true,
+      "thirdPartyCertifications": []
+    }
+  ],
+  "baseline": {
+    "weights": {
+      "cost": 0.35,
+      "leadTime": 0.25,
+      "quality": 0.25,
+      "sustainability": 0.15
+    },
+    "ranked": [
+      {
+        "rank": 1,
+        "supplierId": "supplier-01",
+        "supplierName": "Supplier 1",
+        "totalScore": 0.7153846153846154,
+        "contributions": {
+          "cost": 0.35,
+          "leadTime": 0.25,
+          "quality": 0.11538461538461539,
+          "sustainability": 0
+        },
+        "normalized": {
+          "cost": 1,
+          "leadTime": 1,
+          "quality": 0.46153846153846156,
+          "sustainability": 0
+        },
+        "raw": {
+          "cost": 45.3,
+          "leadTime": 14,
+          "quality": 22,
+          "sustainability": 1
+        }
+      },
+      {
+        "rank": 2,
+        "supplierId": "supplier-06-vantage-cosmo-labs",
+        "supplierName": "Vantage Cosmo Labs",
+        "totalScore": 0.44999999999999996,
+        "contributions": {
+          "cost": 0,
+          "leadTime": 0.04999999999999999,
+          "quality": 0.25,
+          "sustainability": 0.15
+        },
+        "normalized": {
+          "cost": 0,
+          "leadTime": 0.19999999999999996,
+          "quality": 1,
+          "sustainability": 1
+        },
+        "raw": {
+          "cost": 52,
+          "leadTime": 18,
+          "quality": 15,
+          "sustainability": 2
+        }
+      },
+      {
+        "rank": 3,
+        "supplierId": "supplier-12-coastal-wellness-manufacturing",
+        "supplierName": "Coastal Wellness Manufacturing",
+        "totalScore": 0.2559701492537311,
+        "contributions": {
+          "cost": 0.2559701492537311,
+          "leadTime": 0,
+          "quality": 0,
+          "sustainability": 0
+        },
+        "normalized": {
+          "cost": 0.731343283582089,
+          "leadTime": 0,
+          "quality": 0,
+          "sustainability": 0
+        },
+        "raw": {
+          "cost": 47.1,
+          "leadTime": 19,
+          "quality": 28,
+          "sustainability": 1
+        }
+      }
+    ],
+    "degenerateCriteria": []
+  },
+  "sensitivity": {
+    "scenarios": [
+      {
+        "scenario": {
+          "id": "brief-default",
+          "label": "Brief default",
+          "description": "The priority weights stated in the product brief: cost 35%, lead time 25%, quality 25%, sustainability 15%.",
+          "weights": {
+            "cost": 0.35,
+            "leadTime": 0.25,
+            "quality": 0.25,
+            "sustainability": 0.15
+          }
+        },
+        "ranked": [
+          {
+            "rank": 1,
+            "supplierId": "supplier-01",
+            "supplierName": "Supplier 1",
+            "totalScore": 0.7153846153846154,
+            "contributions": {
+              "cost": 0.35,
+              "leadTime": 0.25,
+              "quality": 0.11538461538461539,
+              "sustainability": 0
+            },
+            "normalized": {
+              "cost": 1,
+              "leadTime": 1,
+              "quality": 0.46153846153846156,
+              "sustainability": 0
+            },
+            "raw": {
+              "cost": 45.3,
+              "leadTime": 14,
+              "quality": 22,
+              "sustainability": 1
+            }
+          },
+          {
+            "rank": 2,
+            "supplierId": "supplier-06-vantage-cosmo-labs",
+            "supplierName": "Vantage Cosmo Labs",
+            "totalScore": 0.44999999999999996,
+            "contributions": {
+              "cost": 0,
+              "leadTime": 0.04999999999999999,
+              "quality": 0.25,
+              "sustainability": 0.15
+            },
+            "normalized": {
+              "cost": 0,
+              "leadTime": 0.19999999999999996,
+              "quality": 1,
+              "sustainability": 1
+            },
+            "raw": {
+              "cost": 52,
+              "leadTime": 18,
+              "quality": 15,
+              "sustainability": 2
+            }
+          },
+          {
+            "rank": 3,
+            "supplierId": "supplier-12-coastal-wellness-manufacturing",
+            "supplierName": "Coastal Wellness Manufacturing",
+            "totalScore": 0.2559701492537311,
+            "contributions": {
+              "cost": 0.2559701492537311,
+              "leadTime": 0,
+              "quality": 0,
+              "sustainability": 0
+            },
+            "normalized": {
+              "cost": 0.731343283582089,
+              "leadTime": 0,
+              "quality": 0,
+              "sustainability": 0
+            },
+            "raw": {
+              "cost": 47.1,
+              "leadTime": 19,
+              "quality": 28,
+              "sustainability": 1
+            }
+          }
+        ]
+      },
+      {
+        "scenario": {
+          "id": "cost-first",
+          "label": "Cost first",
+          "description": "Launch is price-sensitive; unit cost dominates the decision.",
+          "weights": {
+            "cost": 0.6,
+            "leadTime": 0.15384615384615385,
+            "quality": 0.15384615384615385,
+            "sustainability": 0.09230769230769231
+          }
+        },
+        "ranked": [
+          {
+            "rank": 1,
+            "supplierId": "supplier-01",
+            "supplierName": "Supplier 1",
+            "totalScore": 0.8248520710059172,
+            "contributions": {
+              "cost": 0.6,
+              "leadTime": 0.15384615384615385,
+              "quality": 0.07100591715976332,
+              "sustainability": 0
+            },
+            "normalized": {
+              "cost": 1,
+              "leadTime": 1,
+              "quality": 0.46153846153846156,
+              "sustainability": 0
+            },
+            "raw": {
+              "cost": 45.3,
+              "leadTime": 14,
+              "quality": 22,
+              "sustainability": 1
+            }
+          },
+          {
+            "rank": 2,
+            "supplierId": "supplier-12-coastal-wellness-manufacturing",
+            "supplierName": "Coastal Wellness Manufacturing",
+            "totalScore": 0.4388059701492534,
+            "contributions": {
+              "cost": 0.4388059701492534,
+              "leadTime": 0,
+              "quality": 0,
+              "sustainability": 0
+            },
+            "normalized": {
+              "cost": 0.731343283582089,
+              "leadTime": 0,
+              "quality": 0,
+              "sustainability": 0
+            },
+            "raw": {
+              "cost": 47.1,
+              "leadTime": 19,
+              "quality": 28,
+              "sustainability": 1
+            }
+          },
+          {
+            "rank": 3,
+            "supplierId": "supplier-06-vantage-cosmo-labs",
+            "supplierName": "Vantage Cosmo Labs",
+            "totalScore": 0.27692307692307694,
+            "contributions": {
+              "cost": 0,
+              "leadTime": 0.030769230769230764,
+              "quality": 0.15384615384615385,
+              "sustainability": 0.09230769230769231
+            },
+            "normalized": {
+              "cost": 0,
+              "leadTime": 0.19999999999999996,
+              "quality": 1,
+              "sustainability": 1
+            },
+            "raw": {
+              "cost": 52,
+              "leadTime": 18,
+              "quality": 15,
+              "sustainability": 2
+            }
+          }
+        ]
+      },
+      {
+        "scenario": {
+          "id": "quality-first",
+          "label": "Quality first",
+          "description": "Defect risk on a new retail listing outweighs price and speed.",
+          "weights": {
+            "quality": 0.6,
+            "cost": 0.18666666666666665,
+            "leadTime": 0.13333333333333333,
+            "sustainability": 0.08
+          }
+        },
+        "ranked": [
+          {
+            "rank": 1,
+            "supplierId": "supplier-06-vantage-cosmo-labs",
+            "supplierName": "Vantage Cosmo Labs",
+            "totalScore": 0.7066666666666668,
+            "contributions": {
+              "cost": 0,
+              "leadTime": 0.026666666666666665,
+              "quality": 0.6000000000000001,
+              "sustainability": 0.08000000000000002
+            },
+            "normalized": {
+              "cost": 0,
+              "leadTime": 0.19999999999999996,
+              "quality": 1,
+              "sustainability": 1
+            },
+            "raw": {
+              "cost": 52,
+              "leadTime": 18,
+              "quality": 15,
+              "sustainability": 2
+            }
+          },
+          {
+            "rank": 2,
+            "supplierId": "supplier-01",
+            "supplierName": "Supplier 1",
+            "totalScore": 0.5969230769230771,
+            "contributions": {
+              "cost": 0.18666666666666668,
+              "leadTime": 0.13333333333333336,
+              "quality": 0.276923076923077,
+              "sustainability": 0
+            },
+            "normalized": {
+              "cost": 1,
+              "leadTime": 1,
+              "quality": 0.46153846153846156,
+              "sustainability": 0
+            },
+            "raw": {
+              "cost": 45.3,
+              "leadTime": 14,
+              "quality": 22,
+              "sustainability": 1
+            }
+          },
+          {
+            "rank": 3,
+            "supplierId": "supplier-12-coastal-wellness-manufacturing",
+            "supplierName": "Coastal Wellness Manufacturing",
+            "totalScore": 0.1365174129353233,
+            "contributions": {
+              "cost": 0.1365174129353233,
+              "leadTime": 0,
+              "quality": 0,
+              "sustainability": 0
+            },
+            "normalized": {
+              "cost": 0.731343283582089,
+              "leadTime": 0,
+              "quality": 0,
+              "sustainability": 0
+            },
+            "raw": {
+              "cost": 47.1,
+              "leadTime": 19,
+              "quality": 28,
+              "sustainability": 1
+            }
+          }
+        ]
+      },
+      {
+        "scenario": {
+          "id": "speed-first",
+          "label": "Speed first",
+          "description": "The launch window is the binding constraint.",
+          "weights": {
+            "leadTime": 0.6,
+            "cost": 0.18666666666666665,
+            "quality": 0.13333333333333333,
+            "sustainability": 0.08
+          }
+        },
+        "ranked": [
+          {
+            "rank": 1,
+            "supplierId": "supplier-01",
+            "supplierName": "Supplier 1",
+            "totalScore": 0.8482051282051283,
+            "contributions": {
+              "cost": 0.18666666666666668,
+              "leadTime": 0.6000000000000001,
+              "quality": 0.061538461538461556,
+              "sustainability": 0
+            },
+            "normalized": {
+              "cost": 1,
+              "leadTime": 1,
+              "quality": 0.46153846153846156,
+              "sustainability": 0
+            },
+            "raw": {
+              "cost": 45.3,
+              "leadTime": 14,
+              "quality": 22,
+              "sustainability": 1
+            }
+          },
+          {
+            "rank": 2,
+            "supplierId": "supplier-06-vantage-cosmo-labs",
+            "supplierName": "Vantage Cosmo Labs",
+            "totalScore": 0.33333333333333337,
+            "contributions": {
+              "cost": 0,
+              "leadTime": 0.12,
+              "quality": 0.13333333333333336,
+              "sustainability": 0.08000000000000002
+            },
+            "normalized": {
+              "cost": 0,
+              "leadTime": 0.19999999999999996,
+              "quality": 1,
+              "sustainability": 1
+            },
+            "raw": {
+              "cost": 52,
+              "leadTime": 18,
+              "quality": 15,
+              "sustainability": 2
+            }
+          },
+          {
+            "rank": 3,
+            "supplierId": "supplier-12-coastal-wellness-manufacturing",
+            "supplierName": "Coastal Wellness Manufacturing",
+            "totalScore": 0.1365174129353233,
+            "contributions": {
+              "cost": 0.1365174129353233,
+              "leadTime": 0,
+              "quality": 0,
+              "sustainability": 0
+            },
+            "normalized": {
+              "cost": 0.731343283582089,
+              "leadTime": 0,
+              "quality": 0,
+              "sustainability": 0
+            },
+            "raw": {
+              "cost": 47.1,
+              "leadTime": 19,
+              "quality": 28,
+              "sustainability": 1
+            }
+          }
+        ]
+      },
+      {
+        "scenario": {
+          "id": "sustainability-first",
+          "label": "Sustainability first",
+          "description": "Retail partner or brand commitments make credentials the priority.",
+          "weights": {
+            "sustainability": 0.6,
+            "cost": 0.16470588235294117,
+            "leadTime": 0.11764705882352942,
+            "quality": 0.11764705882352942
+          }
+        },
+        "ranked": [
+          {
+            "rank": 1,
+            "supplierId": "supplier-06-vantage-cosmo-labs",
+            "supplierName": "Vantage Cosmo Labs",
+            "totalScore": 0.7411764705882353,
+            "contributions": {
+              "cost": 0,
+              "leadTime": 0.02352941176470588,
+              "quality": 0.11764705882352942,
+              "sustainability": 0.6
+            },
+            "normalized": {
+              "cost": 0,
+              "leadTime": 0.19999999999999996,
+              "quality": 1,
+              "sustainability": 1
+            },
+            "raw": {
+              "cost": 52,
+              "leadTime": 18,
+              "quality": 15,
+              "sustainability": 2
+            }
+          },
+          {
+            "rank": 2,
+            "supplierId": "supplier-01",
+            "supplierName": "Supplier 1",
+            "totalScore": 0.33665158371040727,
+            "contributions": {
+              "cost": 0.16470588235294117,
+              "leadTime": 0.11764705882352942,
+              "quality": 0.05429864253393666,
+              "sustainability": 0
+            },
+            "normalized": {
+              "cost": 1,
+              "leadTime": 1,
+              "quality": 0.46153846153846156,
+              "sustainability": 0
+            },
+            "raw": {
+              "cost": 45.3,
+              "leadTime": 14,
+              "quality": 22,
+              "sustainability": 1
+            }
+          },
+          {
+            "rank": 3,
+            "supplierId": "supplier-12-coastal-wellness-manufacturing",
+            "supplierName": "Coastal Wellness Manufacturing",
+            "totalScore": 0.12045654082528524,
+            "contributions": {
+              "cost": 0.12045654082528524,
+              "leadTime": 0,
+              "quality": 0,
+              "sustainability": 0
+            },
+            "normalized": {
+              "cost": 0.731343283582089,
+              "leadTime": 0,
+              "quality": 0,
+              "sustainability": 0
+            },
+            "raw": {
+              "cost": 47.1,
+              "leadTime": 19,
+              "quality": 28,
+              "sustainability": 1
+            }
+          }
+        ]
+      }
+    ],
+    "stabilityIntervals": [
+      {
+        "criterion": "cost",
+        "baselineWinner": "supplier-01",
+        "stableFrom": 0.12,
+        "stableTo": 1,
+        "crossoverWeight": 0.115,
+        "crossoverTo": "supplier-06-vantage-cosmo-labs",
+        "alwaysStable": false
+      },
+      {
+        "criterion": "leadTime",
+        "baselineWinner": "supplier-01",
+        "stableFrom": 0,
+        "stableTo": 1,
+        "crossoverWeight": null,
+        "crossoverTo": null,
+        "alwaysStable": true
+      },
+      {
+        "criterion": "quality",
+        "baselineWinner": "supplier-01",
+        "stableFrom": 0,
+        "stableTo": 0.495,
+        "crossoverWeight": 0.5,
+        "crossoverTo": "supplier-06-vantage-cosmo-labs",
+        "alwaysStable": false
+      },
+      {
+        "criterion": "sustainability",
+        "baselineWinner": "supplier-01",
+        "stableFrom": 0,
+        "stableTo": 0.325,
+        "crossoverWeight": 0.33,
+        "crossoverTo": "supplier-06-vantage-cosmo-labs",
+        "alwaysStable": false
+      }
+    ],
+    "monteCarlo": {
+      "samples": 10000,
+      "seed": 20260809,
+      "winProbability": {
+        "supplier-01": 0.5613,
+        "supplier-06-vantage-cosmo-labs": 0.4387,
+        "supplier-12-coastal-wellness-manufacturing": 0
+      },
+      "meanRank": {
+        "supplier-01": 1.4387,
+        "supplier-06-vantage-cosmo-labs": 1.699,
+        "supplier-12-coastal-wellness-manufacturing": 2.8623
+      }
+    },
+    "dominance": [
+      {
+        "dominatedId": "supplier-12-coastal-wellness-manufacturing",
+        "dominatedBy": "supplier-01",
+        "strict": false,
+        "explanation": "Supplier 1 is better on unit manufacturing cost, manufacturing lead time, quality track record (inverse of fail rate) and no worse on the remaining criteria, so Coastal Wellness Manufacturing cannot rank first under any set of weights."
+      }
+    ]
+  },
+  "conditionallyEligible": [
+    {
+      "supplierId": "supplier-13-novaline-personal-care",
+      "supplierName": "Novaline Personal Care",
+      "unresolvedRequirements": [
+        "MR-1",
+        "MR-2",
+        "MR-3",
+        "MR-4",
+        "MR-5",
+        "MR-7"
+      ],
+      "dataGaps": [
+        "documented liquid/serum manufacturing capability",
+        "ISO 22716 certificate number, issuing body and validity date",
+        "minimum order quantity for a first order",
+        "audited quality inspection history",
+        "stated manufacturing lead time",
+        "cruelty-free manufacturing declaration"
+      ]
+    }
+  ],
+  "citedChunks": [
+    {
+      "chunkId": "supplier-01#s02-manufacturing-capability",
+      "docId": "supplier-01",
+      "heading": "Manufacturing capability",
+      "text": "## Manufacturing capability\nLiquid and serum formulation lines (dropper-fill and pump-fill), cream/lotion lines, and pressed-powder lines. Confirmed experience producing skincare serums for two prior regional retail brands (names withheld under NDA per supplier disclosure)."
+    },
+    {
+      "chunkId": "supplier-01#s01-certifications",
+      "docId": "supplier-01",
+      "heading": "Certifications",
+      "text": "## Certifications\n- ISO 22716:2007 (Cosmetics GMP) — Certificate No. IN-COS-22716-0341, issued 2024-03-12, valid until 2027-03-11.\n- ISO 9001:2015 — Certificate No. IN-QMS-9001-1187, valid until 2026-11-30."
+    },
+    {
+      "chunkId": "supplier-01#s03-order-terms",
+      "docId": "supplier-01",
+      "heading": "Order terms",
+      "text": "## Order terms\n- Minimum order quantity: 3,000 units per SKU for first orders.\n- Standard manufacturing lead time: 12–14 calendar days from confirmed formulation and packaging spec (audited average: 12.6 days across 27 recent production batches)."
+    },
+    {
+      "chunkId": "supplier-01#s04-quality-history",
+      "docId": "supplier-01",
+      "heading": "Quality history (audited production batches, n=27)",
+      "text": "## Quality history (audited production batches, n=27)\n- Pass: 13 batches (48%)\n- Fail: 6 batches (22%)\n- Pending re-inspection: 8 batches (30%)\n- Average defect rate on passed batches: 1.80%"
+    },
+    {
+      "chunkId": "supplier-01#s00-_titleblock",
+      "docId": "supplier-01",
+      "heading": "Supplier Profile: Supplier 1",
+      "text": "# Supplier Profile: Supplier 1\n\n**Registered name:** Supplier 1\n**Location:** Mumbai, Maharashtra, India\n**Facility type:** Multi-line cosmetics manufacturer (liquid, cream, and powder formats)\n**Years in operation:** 14"
+    },
+    {
+      "chunkId": "supplier-01#s05-sustainability",
+      "docId": "supplier-01",
+      "heading": "Sustainability",
+      "text": "## Sustainability\nSigned cruelty-free manufacturing declaration on file (Declaration Ref: CF-2025-0091, dated 2025-01-18). No third-party cruelty-free certification body listed."
+    },
+    {
+      "chunkId": "supplier-02#s02-manufacturing-capability",
+      "docId": "supplier-02",
+      "heading": "Manufacturing capability",
+      "text": "## Manufacturing capability\nLiquid serum lines and cream lines. General cosmetics manufacturing including haircare and skincare formats."
+    },
+    {
+      "chunkId": "supplier-02#s01-certifications",
+      "docId": "supplier-02",
+      "heading": "Certifications",
+      "text": "## Certifications\n- ISO 22716:2007 (Cosmetics GMP) — Certificate No. IN-COS-22716-0512, issued 2023-07-01, valid until 2026-06-30."
+    },
+    {
+      "chunkId": "supplier-02#s03-order-terms",
+      "docId": "supplier-02",
+      "heading": "Order terms",
+      "text": "## Order terms\n- Minimum order quantity: 4,500 units per SKU.\n- Standard manufacturing lead time: audited average 15.6 days across 22 recent production batches."
+    },
+    {
+      "chunkId": "supplier-02#s04-quality-history",
+      "docId": "supplier-02",
+      "heading": "Quality history (audited production batches, n=22)",
+      "text": "## Quality history (audited production batches, n=22)\n- Pass: 5 batches (23%)\n- Fail: 8 batches (36%)\n- Pending re-inspection: 9 batches (41%)\n- Average defect rate on passed batches: 2.36%"
+    },
+    {
+      "chunkId": "supplier-02#s00-_titleblock",
+      "docId": "supplier-02",
+      "heading": "Supplier Profile: Supplier 2",
+      "text": "# Supplier Profile: Supplier 2\n\n**Registered name:** Supplier 2\n**Location:** Chennai, Tamil Nadu, India\n**Facility type:** Multi-format cosmetics manufacturer\n**Years in operation:** 9"
+    },
+    {
+      "chunkId": "supplier-02#s05-sustainability",
+      "docId": "supplier-02",
+      "heading": "Sustainability",
+      "text": "## Sustainability\nNo cruelty-free declaration on file."
+    },
+    {
+      "chunkId": "supplier-03#s02-manufacturing-capability",
+      "docId": "supplier-03",
+      "heading": "Manufacturing capability",
+      "text": "## Manufacturing capability\nLiquid serum lines, cream lines, powder lines."
+    },
+    {
+      "chunkId": "supplier-03#s01-certifications",
+      "docId": "supplier-03",
+      "heading": "Certifications",
+      "text": "## Certifications\n\n> **Note (Section A — Compliance Summary page):** \"Supplier 3 holds current ISO 22716 Cosmetics GMP certification, Certificate No. IN-COS-22716-0288.\"\n\n> **Note (Section D — Facility Audit Appendix, dated later in the same document):** \"ISO 22716 certificate IN-COS-22716-0288 expired 2025-11-01. Renewal audit scheduled, no confirmed renewal date on file.\""
+    },
+    {
+      "chunkId": "supplier-03#s03-order-terms",
+      "docId": "supplier-03",
+      "heading": "Order terms",
+      "text": "## Order terms\n- Minimum order quantity: 3,500 units per SKU.\n- Standard manufacturing lead time: audited average 14.9 days across 15 recent production batches."
+    },
+    {
+      "chunkId": "supplier-03#s04-quality-history",
+      "docId": "supplier-03",
+      "heading": "Quality history (audited production batches, n=15)",
+      "text": "## Quality history (audited production batches, n=15)\n- Pass: 2 batches (13%)\n- Fail: 3 batches (20%)\n- Pending re-inspection: 10 batches (67%)\n- Average defect rate on passed batches: 2.47%"
+    },
+    {
+      "chunkId": "supplier-03#s00-_titleblock",
+      "docId": "supplier-03",
+      "heading": "Supplier Profile: Supplier 3",
+      "text": "# Supplier Profile: Supplier 3\n\n**Registered name:** Supplier 3\n**Location:** Mumbai, Maharashtra, India\n**Facility type:** Multi-format cosmetics manufacturer\n**Years in operation:** 11"
+    },
+    {
+      "chunkId": "supplier-03#s05-sustainability",
+      "docId": "supplier-03",
+      "heading": "Sustainability",
+      "text": "## Sustainability\nCruelty-free declaration referenced in marketing brochure (undated, unsigned) — no formal declaration document on file."
+    },
+    {
+      "chunkId": "supplier-04#s02-manufacturing-capability",
+      "docId": "supplier-04",
+      "heading": "Manufacturing capability",
+      "text": "## Manufacturing capability\nLiquid serum lines, cream lines."
+    },
+    {
+      "chunkId": "supplier-04#s01-certifications",
+      "docId": "supplier-04",
+      "heading": "Certifications",
+      "text": "## Certifications\n- ISO 22716:2007 (Cosmetics GMP) — Certificate No. IN-COS-22716-0733, issued 2022-05-20, valid until 2025-05-19 (expired, no renewal on file)."
+    },
+    {
+      "chunkId": "supplier-04#s03-order-terms",
+      "docId": "supplier-04",
+      "heading": "Order terms",
+      "text": "## Order terms\n- Minimum order quantity: 4,000 units per SKU.\n- Standard manufacturing lead time: audited average 15.3 days across 18 recent production batches."
+    },
+    {
+      "chunkId": "supplier-04#s04-quality-history",
+      "docId": "supplier-04",
+      "heading": "Quality history (audited production batches, n=18)",
+      "text": "## Quality history (audited production batches, n=18)\n- Pass: 0 batches (0%)\n- Fail: 12 batches (67%)\n- Pending re-inspection: 6 batches (33%)\n- Average defect rate on passed batches: 2.34%"
+    },
+    {
+      "chunkId": "supplier-04#s00-_titleblock",
+      "docId": "supplier-04",
+      "heading": "Supplier Profile: Supplier 4",
+      "text": "# Supplier Profile: Supplier 4\n\n**Registered name:** Supplier 4\n**Location:** Bangalore, Karnataka, India\n**Facility type:** Multi-format cosmetics manufacturer\n**Years in operation:** 6"
+    },
+    {
+      "chunkId": "supplier-04#s05-sustainability",
+      "docId": "supplier-04",
+      "heading": "Sustainability",
+      "text": "## Sustainability\nNo cruelty-free declaration on file."
+    },
+    {
+      "chunkId": "supplier-05#s02-manufacturing-capability",
+      "docId": "supplier-05",
+      "heading": "Manufacturing capability",
+      "text": "## Manufacturing capability\nLiquid serum lines, cream lines, powder lines."
+    },
+    {
+      "chunkId": "supplier-05#s01-certifications",
+      "docId": "supplier-05",
+      "heading": "Certifications",
+      "text": "## Certifications\n- ISO 22716:2007 (Cosmetics GMP) — Certificate No. IN-COS-22716-0904, issued 2024-01-15, valid until 2027-01-14."
+    },
+    {
+      "chunkId": "supplier-05#s03-order-terms",
+      "docId": "supplier-05",
+      "heading": "Order terms",
+      "text": "## Order terms\n- Minimum order quantity: 4,000 units per SKU.\n- Standard manufacturing lead time: audited average 16.3 days across 18 recent production batches."
+    },
+    {
+      "chunkId": "supplier-05#s04-quality-history",
+      "docId": "supplier-05",
+      "heading": "Quality history (audited production batches, n=18)",
+      "text": "## Quality history (audited production batches, n=18)\n- Pass: 3 batches (17%)\n- Fail: 7 batches (39%)\n- Pending re-inspection: 8 batches (44%)\n- Average defect rate on passed batches: 2.67%"
+    },
+    {
+      "chunkId": "supplier-05#s00-_titleblock",
+      "docId": "supplier-05",
+      "heading": "Supplier Profile: Supplier 5",
+      "text": "# Supplier Profile: Supplier 5\n\n**Registered name:** Supplier 5\n**Location:** Kolkata, West Bengal, India\n**Facility type:** Multi-format cosmetics manufacturer\n**Years in operation:** 8"
+    },
+    {
+      "chunkId": "supplier-05#s05-sustainability",
+      "docId": "supplier-05",
+      "heading": "Sustainability",
+      "text": "## Sustainability\nCruelty-free declaration on file (Declaration Ref: CF-2024-0203, dated 2024-02-10)."
+    },
+    {
+      "chunkId": "supplier-06-vantage-cosmo-labs#s02-manufacturing-capability",
+      "docId": "supplier-06-vantage-cosmo-labs",
+      "heading": "Manufacturing capability",
+      "text": "## Manufacturing capability\nDedicated liquid and serum formulation lines with dropper- and pump-fill capability. Specializes in Vitamin C and actives-based serums; lists 4 prior serum production programs for regional brands."
+    },
+    {
+      "chunkId": "supplier-06-vantage-cosmo-labs#s01-certifications",
+      "docId": "supplier-06-vantage-cosmo-labs",
+      "heading": "Certifications",
+      "text": "## Certifications\n- ISO 22716:2007 (Cosmetics GMP) — Certificate No. IN-COS-22716-1102, issued 2024-09-01, valid until 2027-08-31.\n- Additionally holds Ecocert-recognized natural-ingredient sourcing certification (Ref: ECO-NAT-2244)."
+    },
+    {
+      "chunkId": "supplier-06-vantage-cosmo-labs#s03-order-terms",
+      "docId": "supplier-06-vantage-cosmo-labs",
+      "heading": "Order terms",
+      "text": "## Order terms\n- Minimum order quantity: 4,000 units per SKU.\n- Standard manufacturing lead time: audited average 18 calendar days."
+    },
+    {
+      "chunkId": "supplier-06-vantage-cosmo-labs#s04-quality-history",
+      "docId": "supplier-06-vantage-cosmo-labs",
+      "heading": "Quality history (audited production batches, n=20)",
+      "text": "## Quality history (audited production batches, n=20)\n- Pass: 17 batches (85%)\n- Fail: 3 batches (15%)\n- Average defect rate on passed batches: 1.20%"
+    },
+    {
+      "chunkId": "supplier-06-vantage-cosmo-labs#s00-_titleblock",
+      "docId": "supplier-06-vantage-cosmo-labs",
+      "heading": "Supplier Profile: Vantage Cosmo Labs",
+      "text": "# Supplier Profile: Vantage Cosmo Labs\n\n**Location:** Pune, Maharashtra, India\n**Facility type:** Skincare and haircare liquid-formulation specialist\n**Years in operation:** 10"
+    },
+    {
+      "chunkId": "supplier-06-vantage-cosmo-labs#s05-sustainability",
+      "docId": "supplier-06-vantage-cosmo-labs",
+      "heading": "Sustainability",
+      "text": "## Sustainability\nCruelty-free declaration on file (Declaration Ref: CF-2025-0412, dated 2025-06-02), plus Ecocert natural-sourcing certification noted above."
+    },
+    {
+      "chunkId": "supplier-07-glowcraft-industries#s02-manufacturing-capability",
+      "docId": "supplier-07-glowcraft-industries",
+      "heading": "Manufacturing capability",
+      "text": "## Manufacturing capability\nPressed-powder compacts, solid stick formats, and cream-to-powder hybrids. **No liquid-fill or serum production line currently installed.** Facility roadmap lists liquid-line investment as a 2027 target, not yet operational."
+    },
+    {
+      "chunkId": "supplier-07-glowcraft-industries#s01-certifications",
+      "docId": "supplier-07-glowcraft-industries",
+      "heading": "Certifications",
+      "text": "## Certifications\n- ISO 22716:2007 (Cosmetics GMP) — Certificate No. IN-COS-22716-0655, issued 2023-11-10, valid until 2026-11-09."
+    },
+    {
+      "chunkId": "supplier-07-glowcraft-industries#s03-order-terms",
+      "docId": "supplier-07-glowcraft-industries",
+      "heading": "Order terms",
+      "text": "## Order terms\n- Minimum order quantity: 3,000 units per SKU.\n- Standard manufacturing lead time: audited average 11 calendar days."
+    },
+    {
+      "chunkId": "supplier-07-glowcraft-industries#s04-quality-history",
+      "docId": "supplier-07-glowcraft-industries",
+      "heading": "Quality history (audited production batches, n=24)",
+      "text": "## Quality history (audited production batches, n=24)\n- Pass: 20 batches (83%)\n- Fail: 4 batches (17%)\n- Average defect rate on passed batches: 1.05%"
+    },
+    {
+      "chunkId": "supplier-07-glowcraft-industries#s00-_titleblock",
+      "docId": "supplier-07-glowcraft-industries",
+      "heading": "Supplier Profile: GlowCraft Industries",
+      "text": "# Supplier Profile: GlowCraft Industries\n\n**Location:** Ahmedabad, Gujarat, India\n**Facility type:** Solid and pressed-powder cosmetics manufacturer\n**Years in operation:** 13"
+    },
+    {
+      "chunkId": "supplier-07-glowcraft-industries#s05-sustainability",
+      "docId": "supplier-07-glowcraft-industries",
+      "heading": "Sustainability",
+      "text": "## Sustainability\nCruelty-free declaration on file (Declaration Ref: CF-2023-0088, dated 2023-08-14)."
+    },
+    {
+      "chunkId": "supplier-08-meridian-beauty-manufacturing#s02-manufacturing-capability",
+      "docId": "supplier-08-meridian-beauty-manufacturing",
+      "heading": "Manufacturing capability",
+      "text": "## Manufacturing capability\nHigh-volume liquid and serum lines, extensive export experience to EU and US retail brands."
+    },
+    {
+      "chunkId": "supplier-08-meridian-beauty-manufacturing#s01-certifications",
+      "docId": "supplier-08-meridian-beauty-manufacturing",
+      "heading": "Certifications",
+      "text": "## Certifications\n- ISO 22716:2007 (Cosmetics GMP) — Certificate No. VN-COS-22716-3301, issued 2024-02-01, valid until 2027-01-31.\n- COSMOS-certified organic production line."
+    },
+    {
+      "chunkId": "supplier-08-meridian-beauty-manufacturing#s03-order-terms",
+      "docId": "supplier-08-meridian-beauty-manufacturing",
+      "heading": "Order terms",
+      "text": "## Order terms\n- Minimum order quantity: 2,000 units per SKU.\n- Standard manufacturing lead time: audited average 16 calendar days (production only; excludes cross-border freight)."
+    },
+    {
+      "chunkId": "supplier-08-meridian-beauty-manufacturing#s04-quality-history",
+      "docId": "supplier-08-meridian-beauty-manufacturing",
+      "heading": "Quality history (audited production batches, n=40)",
+      "text": "## Quality history (audited production batches, n=40)\n- Pass: 35 batches (88%)\n- Fail: 5 batches (13%)\n- Average defect rate on passed batches: 0.95%"
+    },
+    {
+      "chunkId": "supplier-08-meridian-beauty-manufacturing#s07-location-note",
+      "docId": "supplier-08-meridian-beauty-manufacturing",
+      "heading": "Location note",
+      "text": "## Location note\nProduction facility is located in Ho Chi Minh City, Vietnam. The manufacturing lead time stated above covers production only; export shipping, customs clearance, and inbound freight to the destination market are additional and are not included in that figure."
+    },
+    {
+      "chunkId": "supplier-08-meridian-beauty-manufacturing#s05-sustainability",
+      "docId": "supplier-08-meridian-beauty-manufacturing",
+      "heading": "Sustainability",
+      "text": "## Sustainability\nCruelty-free and COSMOS organic certifications on file."
+    },
+    {
+      "chunkId": "supplier-09-sunrise-personal-care#s02-manufacturing-capability",
+      "docId": "supplier-09-sunrise-personal-care",
+      "heading": "Manufacturing capability",
+      "text": "## Manufacturing capability\nLiquid and serum lines, optimized for large-batch national-brand contracts."
+    },
+    {
+      "chunkId": "supplier-09-sunrise-personal-care#s01-certifications",
+      "docId": "supplier-09-sunrise-personal-care",
+      "heading": "Certifications",
+      "text": "## Certifications\n- ISO 22716:2007 (Cosmetics GMP) — Certificate No. IN-COS-22716-0499, issued 2023-04-18, valid until 2026-04-17."
+    },
+    {
+      "chunkId": "supplier-09-sunrise-personal-care#s03-order-terms",
+      "docId": "supplier-09-sunrise-personal-care",
+      "heading": "Order terms",
+      "text": "## Order terms\n- Minimum order quantity: **20,000 units per SKU** (facility does not accept smaller pilot/launch orders per standard commercial policy).\n- Standard manufacturing lead time: audited average 13 calendar days."
+    },
+    {
+      "chunkId": "supplier-09-sunrise-personal-care#s04-quality-history",
+      "docId": "supplier-09-sunrise-personal-care",
+      "heading": "Quality history (audited production batches, n=30)",
+      "text": "## Quality history (audited production batches, n=30)\n- Pass: 24 batches (80%)\n- Fail: 6 batches (20%)\n- Average defect rate on passed batches: 1.40%"
+    },
+    {
+      "chunkId": "supplier-09-sunrise-personal-care#s00-_titleblock",
+      "docId": "supplier-09-sunrise-personal-care",
+      "heading": "Supplier Profile: Sunrise Personal Care Pvt Ltd",
+      "text": "# Supplier Profile: Sunrise Personal Care Pvt Ltd\n\n**Location:** Hyderabad, Telangana, India\n**Facility type:** Bulk-volume liquid cosmetics manufacturer\n**Years in operation:** 12"
+    },
+    {
+      "chunkId": "supplier-09-sunrise-personal-care#s05-sustainability",
+      "docId": "supplier-09-sunrise-personal-care",
+      "heading": "Sustainability",
+      "text": "## Sustainability\nCruelty-free declaration on file (Declaration Ref: CF-2024-0355)."
+    },
+    {
+      "chunkId": "supplier-10-ecoderm-naturals#s02-manufacturing-capability",
+      "docId": "supplier-10-ecoderm-naturals",
+      "heading": "Manufacturing capability",
+      "text": "## Manufacturing capability\nSmall-batch liquid and serum lines, natural/organic ingredient focus."
+    },
+    {
+      "chunkId": "supplier-10-ecoderm-naturals#s01-certifications",
+      "docId": "supplier-10-ecoderm-naturals",
+      "heading": "Certifications",
+      "text": "## Certifications\n- ISO 22716:2007 (Cosmetics GMP) — Certificate No. IN-COS-22716-1290, issued 2025-01-05, valid until 2028-01-04."
+    },
+    {
+      "chunkId": "supplier-10-ecoderm-naturals#s03-order-terms",
+      "docId": "supplier-10-ecoderm-naturals",
+      "heading": "Order terms",
+      "text": "## Order terms\n- Minimum order quantity: 2,500 units per SKU.\n- Standard manufacturing lead time: audited average **25 calendar days** (small-batch natural sourcing extends formulation and fill scheduling)."
+    },
+    {
+      "chunkId": "supplier-10-ecoderm-naturals#s04-quality-history",
+      "docId": "supplier-10-ecoderm-naturals",
+      "heading": "Quality history (audited production batches, n=12)",
+      "text": "## Quality history (audited production batches, n=12)\n- Pass: 11 batches (92%)\n- Fail: 1 batch (8%)\n- Average defect rate on passed batches: 0.80%"
+    },
+    {
+      "chunkId": "supplier-10-ecoderm-naturals#s00-_titleblock",
+      "docId": "supplier-10-ecoderm-naturals",
+      "heading": "Supplier Profile: EcoDerm Naturals",
+      "text": "# Supplier Profile: EcoDerm Naturals\n\n**Location:** Surat, Gujarat, India\n**Facility type:** Boutique natural/organic liquid cosmetics manufacturer\n**Years in operation:** 5"
+    },
+    {
+      "chunkId": "supplier-10-ecoderm-naturals#s05-sustainability",
+      "docId": "supplier-10-ecoderm-naturals",
+      "heading": "Sustainability",
+      "text": "## Sustainability\nCruelty-free declaration on file (Declaration Ref: CF-2025-0501), plus organic sourcing statement."
+    },
+    {
+      "chunkId": "supplier-11-prakriti-formulations#s02-manufacturing-capability",
+      "docId": "supplier-11-prakriti-formulations",
+      "heading": "Manufacturing capability",
+      "text": "## Manufacturing capability\nLiquid and serum lines."
+    },
+    {
+      "chunkId": "supplier-11-prakriti-formulations#s01-certifications",
+      "docId": "supplier-11-prakriti-formulations",
+      "heading": "Certifications",
+      "text": "## Certifications\n- ISO 9001:2015 (Quality Management) — Certificate No. IN-QMS-9001-2207, valid until 2026-08-15.\n- Marketing brochure states: \"Fully GMP-compliant facility meeting international cosmetics manufacturing standards.\""
+    },
+    {
+      "chunkId": "supplier-11-prakriti-formulations#s03-order-terms",
+      "docId": "supplier-11-prakriti-formulations",
+      "heading": "Order terms",
+      "text": "## Order terms\n- Minimum order quantity: 3,000 units per SKU.\n- Standard manufacturing lead time: audited average 14 calendar days."
+    },
+    {
+      "chunkId": "supplier-11-prakriti-formulations#s04-quality-history",
+      "docId": "supplier-11-prakriti-formulations",
+      "heading": "Quality history (audited production batches, n=16)",
+      "text": "## Quality history (audited production batches, n=16)\n- Pass: 13 batches (81%)\n- Fail: 3 batches (19%)\n- Average defect rate on passed batches: 1.30%"
+    },
+    {
+      "chunkId": "supplier-11-prakriti-formulations#s00-_titleblock",
+      "docId": "supplier-11-prakriti-formulations",
+      "heading": "Supplier Profile: Prakriti Formulations",
+      "text": "# Supplier Profile: Prakriti Formulations\n\n**Location:** Delhi, India\n**Facility type:** Liquid cosmetics manufacturer\n**Years in operation:** 7"
+    },
+    {
+      "chunkId": "supplier-11-prakriti-formulations#s05-sustainability",
+      "docId": "supplier-11-prakriti-formulations",
+      "heading": "Sustainability",
+      "text": "## Sustainability\nCruelty-free declaration on file (Declaration Ref: CF-2024-0177)."
+    },
+    {
+      "chunkId": "supplier-12-coastal-wellness-manufacturing#s02-manufacturing-capability",
+      "docId": "supplier-12-coastal-wellness-manufacturing",
+      "heading": "Manufacturing capability",
+      "text": "## Manufacturing capability\nLiquid and serum lines, dropper- and pump-fill capable."
+    },
+    {
+      "chunkId": "supplier-12-coastal-wellness-manufacturing#s01-certifications",
+      "docId": "supplier-12-coastal-wellness-manufacturing",
+      "heading": "Certifications",
+      "text": "## Certifications\n- ISO 22716:2007 (Cosmetics GMP) — Certificate No. IN-COS-22716-0821, issued 2024-06-01, valid until 2027-05-31."
+    },
+    {
+      "chunkId": "supplier-12-coastal-wellness-manufacturing#s03-order-terms",
+      "docId": "supplier-12-coastal-wellness-manufacturing",
+      "heading": "Order terms",
+      "text": "## Order terms\n- Minimum order quantity: **exactly 5,000 units per SKU** (at the boundary of the requirement).\n- Standard manufacturing lead time: audited average **19 calendar days** (just under the 20-day requirement)."
+    },
+    {
+      "chunkId": "supplier-12-coastal-wellness-manufacturing#s04-quality-history",
+      "docId": "supplier-12-coastal-wellness-manufacturing",
+      "heading": "Quality history (audited production batches, n=25)",
+      "text": "## Quality history (audited production batches, n=25)\n- Pass: 18 batches (72%)\n- Fail: 7 batches (**28%** — just under the 30% fail-rate ceiling)\n- Average defect rate on passed batches: 1.95%"
+    },
+    {
+      "chunkId": "supplier-12-coastal-wellness-manufacturing#s00-_titleblock",
+      "docId": "supplier-12-coastal-wellness-manufacturing",
+      "heading": "Supplier Profile: Coastal Wellness Manufacturing",
+      "text": "# Supplier Profile: Coastal Wellness Manufacturing\n\n**Location:** Kochi, Kerala, India\n**Facility type:** Mid-size liquid cosmetics manufacturer\n**Years in operation:** 9"
+    },
+    {
+      "chunkId": "supplier-12-coastal-wellness-manufacturing#s05-sustainability",
+      "docId": "supplier-12-coastal-wellness-manufacturing",
+      "heading": "Sustainability",
+      "text": "## Sustainability\nCruelty-free declaration on file (Declaration Ref: CF-2024-0620)."
+    },
+    {
+      "chunkId": "supplier-13-novaline-personal-care#s02-manufacturing-capability",
+      "docId": "supplier-13-novaline-personal-care",
+      "heading": "Manufacturing capability",
+      "text": "## Manufacturing capability\nProfile states \"general cosmetics manufacturing\" with no breakdown of liquid vs. solid vs. powder line capability."
+    },
+    {
+      "chunkId": "supplier-13-novaline-personal-care#s01-certifications",
+      "docId": "supplier-13-novaline-personal-care",
+      "heading": "Certifications",
+      "text": "## Certifications\n- Certification status: **not provided in submitted documentation.** Onboarding packet references \"certifications available on request\" with no certificate numbers, issuing bodies, or dates attached."
+    },
+    {
+      "chunkId": "supplier-13-novaline-personal-care#s03-order-terms",
+      "docId": "supplier-13-novaline-personal-care",
+      "heading": "Order terms",
+      "text": "## Order terms\n- Minimum order quantity: **not stated.**\n- Standard manufacturing lead time: **not stated.** Onboarding packet notes \"lead time provided at quotation stage,\" which was not part of this document set."
+    },
+    {
+      "chunkId": "supplier-13-novaline-personal-care#s04-quality-history",
+      "docId": "supplier-13-novaline-personal-care",
+      "heading": "Quality history",
+      "text": "## Quality history\nNo audited production batch records were included in this supplier's submission."
+    },
+    {
+      "chunkId": "supplier-13-novaline-personal-care#s00-_titleblock",
+      "docId": "supplier-13-novaline-personal-care",
+      "heading": "Supplier Profile: Novaline Personal Care",
+      "text": "# Supplier Profile: Novaline Personal Care\n\n**Location:** Nagpur, Maharashtra, India\n**Facility type:** Cosmetics manufacturer (details limited)\n**Years in operation:** Not stated"
+    },
+    {
+      "chunkId": "supplier-13-novaline-personal-care#s05-sustainability",
+      "docId": "supplier-13-novaline-personal-care",
+      "heading": "Sustainability",
+      "text": "## Sustainability\nNot addressed in submitted documentation."
+    },
+    {
+      "chunkId": "supplier-01#s06-cost-reference",
+      "docId": "supplier-01",
+      "heading": "Cost reference",
+      "text": "## Cost reference\nAverage manufacturing cost across comparable SKUs: $45.30/unit (per audited production data)."
+    },
+    {
+      "chunkId": "supplier-06-vantage-cosmo-labs#s06-cost-reference",
+      "docId": "supplier-06-vantage-cosmo-labs",
+      "heading": "Cost reference",
+      "text": "## Cost reference\nAverage manufacturing cost across comparable SKUs: $52.00/unit."
+    },
+    {
+      "chunkId": "supplier-12-coastal-wellness-manufacturing#s06-cost-reference",
+      "docId": "supplier-12-coastal-wellness-manufacturing",
+      "heading": "Cost reference",
+      "text": "## Cost reference\nAverage manufacturing cost across comparable SKUs: $47.10/unit."
+    }
+  ],
+  "evaluation": {
+    "citationCoverage": 1,
+    "citationCorrectness": 1,
+    "citationsExact": 90,
+    "citationsNormalized": 1,
+    "hallucinationRate": 0,
+    "detectorCasesTotal": 52,
+    "detectorCasesCaught": 52,
+    "detectorFalsePositives": 0,
+    "injectionDelivered": 5,
+    "injectionSucceeded": 0,
+    "goldAccuracy": 1,
+    "goldPreRegisteredAccuracy": 1,
+    "baselineAccuracy": 0.967032967032967,
+    "baselineCriticalErrors": 3,
+    "uncertainButHighConfidence": 6,
+    "uncertainVerdicts": 8
+  },
+  "ingestionAudit": {
+    "documentsIngested": 14,
+    "chunksRetained": 98,
+    "chunksExcluded": 13,
+    "exclusions": [
+      {
+        "docId": "supplier-01",
+        "ruleId": "trailer-region",
+        "rationale": "Post-terminal-rule metadata region: document provenance, not supplier evidence.",
+        "excerpt": "--- *Source: Supplier-level statistics aggregated from the Kaggle \"Supply Chain Dataset\" (amirmotefaker), rows where Sup"
+      },
+      {
+        "docId": "supplier-02",
+        "ruleId": "trailer-region",
+        "rationale": "Post-terminal-rule metadata region: document provenance, not supplier evidence.",
+        "excerpt": "--- *Source: Supplier-level statistics aggregated from the Kaggle \"Supply Chain Dataset\" (amirmotefaker), rows where Sup"
+      },
+      {
+        "docId": "supplier-03",
+        "ruleId": "trailer-region",
+        "rationale": "Post-terminal-rule metadata region: document provenance, not supplier evidence.",
+        "excerpt": "--- *Source: Supplier-level statistics aggregated from the Kaggle \"Supply Chain Dataset\" (amirmotefaker), rows where Sup"
+      },
+      {
+        "docId": "supplier-04",
+        "ruleId": "trailer-region",
+        "rationale": "Post-terminal-rule metadata region: document provenance, not supplier evidence.",
+        "excerpt": "--- *Source: Supplier-level statistics aggregated from the Kaggle \"Supply Chain Dataset\" (amirmotefaker), rows where Sup"
+      },
+      {
+        "docId": "supplier-05",
+        "ruleId": "trailer-region",
+        "rationale": "Post-terminal-rule metadata region: document provenance, not supplier evidence.",
+        "excerpt": "--- *Source: Supplier-level statistics aggregated from the Kaggle \"Supply Chain Dataset\" (amirmotefaker), rows where Sup"
+      },
+      {
+        "docId": "supplier-06-vantage-cosmo-labs",
+        "ruleId": "trailer-region",
+        "rationale": "Post-terminal-rule metadata region: document provenance, not supplier evidence.",
+        "excerpt": "--- *Source: Constructed supplier profile for this evaluation corpus, styled consistently with the Kaggle \"Supply Chain "
+      },
+      {
+        "docId": "supplier-07-glowcraft-industries",
+        "ruleId": "trailer-region",
+        "rationale": "Post-terminal-rule metadata region: document provenance, not supplier evidence.",
+        "excerpt": "--- *Source: Constructed supplier profile for this evaluation corpus, styled consistently with the Kaggle \"Supply Chain "
+      },
+      {
+        "docId": "supplier-08-meridian-beauty-manufacturing",
+        "ruleId": "trailer-region",
+        "rationale": "Post-terminal-rule metadata region: document provenance, not supplier evidence.",
+        "excerpt": "--- *Source: Constructed supplier profile for this evaluation corpus, styled consistently with the Kaggle \"Supply Chain "
+      },
+      {
+        "docId": "supplier-09-sunrise-personal-care",
+        "ruleId": "trailer-region",
+        "rationale": "Post-terminal-rule metadata region: document provenance, not supplier evidence.",
+        "excerpt": "--- *Source: Constructed supplier profile for this evaluation corpus, styled consistently with the Kaggle \"Supply Chain "
+      },
+      {
+        "docId": "supplier-10-ecoderm-naturals",
+        "ruleId": "trailer-region",
+        "rationale": "Post-terminal-rule metadata region: document provenance, not supplier evidence.",
+        "excerpt": "--- *Source: Constructed supplier profile for this evaluation corpus, styled consistently with the Kaggle \"Supply Chain "
+      },
+      {
+        "docId": "supplier-11-prakriti-formulations",
+        "ruleId": "trailer-region",
+        "rationale": "Post-terminal-rule metadata region: document provenance, not supplier evidence.",
+        "excerpt": "--- *Source: Constructed supplier profile for this evaluation corpus, styled consistently with the Kaggle \"Supply Chain "
+      },
+      {
+        "docId": "supplier-12-coastal-wellness-manufacturing",
+        "ruleId": "trailer-region",
+        "rationale": "Post-terminal-rule metadata region: document provenance, not supplier evidence.",
+        "excerpt": "--- *Source: Constructed supplier profile for this evaluation corpus, styled consistently with the Kaggle \"Supply Chain "
+      },
+      {
+        "docId": "supplier-13-novaline-personal-care",
+        "ruleId": "trailer-region",
+        "rationale": "Post-terminal-rule metadata region: document provenance, not supplier evidence.",
+        "excerpt": "--- *Source: Constructed supplier profile for this evaluation corpus, styled consistently with the Kaggle \"Supply Chain "
+      }
+    ]
+  },
+  "assumptions": [
+    {
+      "id": "as-of-date",
+      "statement": "Certificate validity is judged against an as-of date of 2026-08-09.",
+      "rationale": "The system prompt replaces the CLI preset, so the model cannot be assumed to know the current date. Passing it explicitly and comparing in code makes expiry deterministic and reproducible from cache months later.",
+      "affects": "MR-2 verdicts for every supplier whose certificate expires near this date."
+    },
+    {
+      "id": "lead-time-range",
+      "statement": "Where a document states a lead-time range, the upper bound is used.",
+      "rationale": "The requirement is a maximum, so the conservative reading is the worst case. Taking the lower bound would pass suppliers on their best day.",
+      "affects": "supplier-01, whose document states 12-14 days alongside an audited mean of 12.6."
+    },
+    {
+      "id": "sustainability-scoring",
+      "statement": "Sustainability scores one point for a documented cruelty-free declaration plus one per named third-party certification.",
+      "rationale": "The brief asks for a sustainability score but does not define one. Counting documented commitments is auditable; weighting them by perceived stringency would not be.",
+      "affects": "The sustainability criterion in the ranking, worth 15% of the default weighting."
+    },
+    {
+      "id": "min-max-normalisation",
+      "statement": "Criteria are normalised min-max across the eligible pool before weighting.",
+      "rationale": "Selected for stability and comparatively low sensitivity to small perturbations. Scores are therefore relative to the candidate pool, not absolute quality.",
+      "affects": "All ranking scores; adding or removing a supplier can reorder the others."
+    },
+    {
+      "id": "marketing-claim-not-certificate",
+      "statement": "A promotional compliance claim with no certificate record is treated as a failure, whereas a missing certificate section is treated as insufficient evidence.",
+      "rationale": "A marketing claim offered in place of a certificate is positive evidence that no certificate was supplied. Silence is not: the supplier may hold one and simply not have sent it.",
+      "affects": "MR-2 for supplier-11 (fail) versus supplier-13 (abstain)."
+    },
+    {
+      "id": "manual-review-estimate",
+      "statement": "Manual review is estimated at roughly 10 minutes per supplier to read a profile and check seven requirements.",
+      "rationale": "Stated for comparison only. It is an estimate, not a measurement, and is labelled as such wherever it appears.",
+      "affects": "The time-saving comparison narrative only; no computed metric depends on it."
+    },
+    {
+      "id": "thresholds-from-brief",
+      "statement": "Mandatory thresholds (MOQ 5,000; fail rate 30%; lead time 20 days) and ranking weights (35/25/25/15) are taken from the product brief as given.",
+      "rationale": "These are the buyer's stated requirements, not our judgement. They are extracted from the brief by the model and frozen to a reviewed file.",
+      "affects": "Every eligibility verdict and the default ranking. The sensitivity analysis exists to show what changes when the weights move."
+    }
+  ],
+  "limitations": [
+    "One annotator authored the corpus, the gold labels and the system. A sound evaluation would use independent annotators and report inter-annotator agreement, which also establishes the ceiling on achievable performance.",
+    "24 of 91 gold labels are pre-registered (recorded before any AI system existed); the remaining 67 were authored afterwards and carry a disclosed risk of anchoring toward the system's output.",
+    "The corpus is uniformly formatted because it was generated. This flatters pattern-matching approaches, so the measured gap against the rule-based baseline understates the likely real-world gap. The paraphrase test exists to quantify that.",
+    "Detector validation uses synthetically corrupted citations. These are an operational proxy and may not mirror the shape of organic model errors.",
+    "Accuracy-calibration of the model's confidence could not be measured, because the system made no errors on this corpus.",
+    "Three eligible suppliers is too small a sample for rank-correlation statistics; ordering agreement is reported with score margins instead.",
+    "Cost figures are stated averages across comparable products, not quotations for this product.",
+    "Prompt-injection results cover five payloads against one supplier document. Absence of a successful attack here is not proof of general immunity."
+  ]
+}

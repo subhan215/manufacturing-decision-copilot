@@ -1,0 +1,40 @@
+{
+  "name": "manufacturing-decision-copilot",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "inspect:ingestion": "node scripts/inspect-ingestion.ts",
+    "probe:llm": "node scripts/probe-llm.ts",
+    "extract:requirements": "node scripts/extract-requirements.ts",
+    "screen": "node scripts/run-screening.ts",
+    "rank": "node scripts/run-ranking.ts",
+    "baseline": "node scripts/run-baseline.ts",
+    "eval": "node scripts/run-eval.ts",
+    "build:snapshot": "node scripts/build-snapshot.ts",
+    "check:ui": "node scripts/check-ui.ts",
+    "check:submission": "node scripts/check-submission.ts"
+  },
+  "dependencies": {
+    "@anthropic-ai/claude-agent-sdk": "^0.3.226",
+    "next": "16.3.0",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "server-only": "^0.0.1",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.0",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}

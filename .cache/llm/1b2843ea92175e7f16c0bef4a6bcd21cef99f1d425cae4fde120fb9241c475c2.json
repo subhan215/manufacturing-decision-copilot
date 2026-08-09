@@ -1,0 +1,24 @@
+{
+  "data": {
+    "costValue": 45.3,
+    "costCurrency": "USD",
+    "costUnit": "unit",
+    "costCitationChunkId": "supplier-01#s06-cost-reference",
+    "costCitationQuote": "Average manufacturing cost across comparable SKUs: $45.30/unit (per audited production data).",
+    "crueltyFreeDeclaration": true,
+    "thirdPartyCertifications": [],
+    "sustainabilityCitationChunkId": "supplier-01#s05-sustainability",
+    "sustainabilityCitationQuote": "Signed cruelty-free manufacturing declaration on file (Declaration Ref: CF-2025-0091, dated 2025-01-18). No third-party cruelty-free certification body listed."
+  },
+  "telemetry": {
+    "model": "claude-sonnet-5",
+    "cacheHit": false,
+    "durationMs": 8230,
+    "apiDurationMs": 7851,
+    "costUsd": 0.024753,
+    "inputTokens": 2,
+    "outputTokens": 577,
+    "numTurns": 2
+  },
+  "storedAt": "2026-08-09T09:46:34.417Z"
+}

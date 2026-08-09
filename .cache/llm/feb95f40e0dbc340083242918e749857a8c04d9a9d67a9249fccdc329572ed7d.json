@@ -1,0 +1,24 @@
+{
+  "data": {
+    "costValue": 47.1,
+    "costCurrency": "USD",
+    "costUnit": "unit",
+    "costCitationChunkId": "supplier-12-coastal-wellness-manufacturing#s06-cost-reference",
+    "costCitationQuote": "Average manufacturing cost across comparable SKUs: $47.10/unit.",
+    "crueltyFreeDeclaration": true,
+    "thirdPartyCertifications": [],
+    "sustainabilityCitationChunkId": "supplier-12-coastal-wellness-manufacturing#s05-sustainability",
+    "sustainabilityCitationQuote": "Cruelty-free declaration on file (Declaration Ref: CF-2024-0620)."
+  },
+  "telemetry": {
+    "model": "claude-sonnet-5",
+    "cacheHit": false,
+    "durationMs": 10233,
+    "apiDurationMs": 11045,
+    "costUsd": 0.023142500000000003,
+    "inputTokens": 2,
+    "outputTokens": 847,
+    "numTurns": 2
+  },
+  "storedAt": "2026-08-09T09:46:57.085Z"
+}

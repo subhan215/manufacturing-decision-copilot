@@ -1,0 +1,66 @@
+{
+  "data": {
+    "verdicts": [
+      {
+        "requirementId": "MR-1",
+        "status": "pass",
+        "reasoning": "Supplier explicitly documents liquid and serum cosmetics manufacturing capability, distinct from solid/powder-only production.",
+        "citationChunkId": "supplier-08-meridian-beauty-manufacturing#s02-manufacturing-capability",
+        "citationQuote": "High-volume liquid and serum lines, extensive export experience to EU and US retail brands."
+      },
+      {
+        "requirementId": "MR-2",
+        "status": "pass",
+        "reasoning": "Supplier holds a current ISO 22716 (Cosmetics GMP) certification, valid through 2027-01-31, which is after the current date of 2026-08-09.",
+        "citationChunkId": "supplier-08-meridian-beauty-manufacturing#s01-certifications",
+        "citationQuote": "ISO 22716:2007 (Cosmetics GMP) — Certificate No. VN-COS-22716-3301, issued 2024-02-01, valid until 2027-01-31."
+      },
+      {
+        "requirementId": "MR-3",
+        "status": "pass",
+        "reasoning": "The stated minimum order quantity of 2,000 units per SKU is well within the required ≤5,000 unit threshold, and would accommodate the 8,000-unit first order without forcing a larger minimum commitment.",
+        "citationChunkId": "supplier-08-meridian-beauty-manufacturing#s03-order-terms",
+        "citationQuote": "Minimum order quantity: 2,000 units per SKU."
+      },
+      {
+        "requirementId": "MR-4",
+        "status": "pass",
+        "reasoning": "Audited quality history shows a 13% fail rate across 40 batches, which is below the ≤30% maximum fail rate threshold.",
+        "citationChunkId": "supplier-08-meridian-beauty-manufacturing#s04-quality-history",
+        "citationQuote": "Fail: 5 batches (13%)"
+      },
+      {
+        "requirementId": "MR-5",
+        "status": "pass",
+        "reasoning": "The documented manufacturing lead time is 16 calendar days, which is within the ≤20 calendar day requirement. Note that this figure explicitly excludes cross-border freight and customs clearance time, which are additional and not part of the manufacturing lead time itself.",
+        "citationChunkId": "supplier-08-meridian-beauty-manufacturing#s03-order-terms",
+        "citationQuote": "Standard manufacturing lead time: audited average 16 calendar days (production only; excludes cross-border freight)."
+      },
+      {
+        "requirementId": "MR-6",
+        "status": "fail",
+        "reasoning": "The requirement mandates a facility located in India for this sourcing round. The supplier's facility is explicitly located in Ho Chi Minh City, Vietnam, not India, disqualifying it from this sourcing round regardless of other criteria met.",
+        "citationChunkId": "supplier-08-meridian-beauty-manufacturing#s07-location-note",
+        "citationQuote": "Production facility is located in Ho Chi Minh City, Vietnam."
+      },
+      {
+        "requirementId": "MR-7",
+        "status": "pass",
+        "reasoning": "Supplier documents a cruelty-free declaration on file alongside their organic certification.",
+        "citationChunkId": "supplier-08-meridian-beauty-manufacturing#s05-sustainability",
+        "citationQuote": "Cruelty-free and COSMOS organic certifications on file."
+      }
+    ]
+  },
+  "telemetry": {
+    "model": "claude-sonnet-5",
+    "cacheHit": false,
+    "durationMs": 16617,
+    "apiDurationMs": 15536,
+    "costUsd": 0.042667000000000004,
+    "inputTokens": 2,
+    "outputTokens": 1657,
+    "numTurns": 2
+  },
+  "storedAt": "2026-08-09T08:19:12.499Z"
+}

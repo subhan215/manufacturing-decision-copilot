@@ -1,0 +1,26 @@
+{
+  "data": {
+    "costValue": 52,
+    "costCurrency": "USD",
+    "costUnit": "unit",
+    "costCitationChunkId": "supplier-06-vantage-cosmo-labs#s06-cost-reference",
+    "costCitationQuote": "Average manufacturing cost across comparable SKUs: $52.00/unit.",
+    "crueltyFreeDeclaration": true,
+    "thirdPartyCertifications": [
+      "Ecocert"
+    ],
+    "sustainabilityCitationChunkId": "supplier-06-vantage-cosmo-labs#s05-sustainability",
+    "sustainabilityCitationQuote": "Cruelty-free declaration on file (Declaration Ref: CF-2025-0412, dated 2025-06-02), plus Ecocert natural-sourcing certification noted above."
+  },
+  "telemetry": {
+    "model": "claude-sonnet-5",
+    "cacheHit": false,
+    "durationMs": 12427,
+    "apiDurationMs": 11121,
+    "costUsd": 0.05833699999999999,
+    "inputTokens": 2,
+    "outputTokens": 1202,
+    "numTurns": 2
+  },
+  "storedAt": "2026-08-09T09:46:46.849Z"
+}

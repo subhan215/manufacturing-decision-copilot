@@ -1,0 +1,92 @@
+{
+  "sourceDocumentId": "product-brief",
+  "sourceSha256": "fe3ab3287c1b9cd2f9efb2c018bba818207ff635c46d8e60ff9e6943d17c6bee",
+  "extractedAt": "2026-08-09T08:57:12.536Z",
+  "model": "claude-sonnet-5",
+  "requirements": [
+    {
+      "id": "MR-1",
+      "title": "Liquid/serum skincare manufacturing experience",
+      "description": "Manufacturing capability: documented experience producing liquid/serum skincare formulations (not solid or powder cosmetics only)",
+      "rationale": "Serum filling requires liquid-fill line capability, distinct from solid-format cosmetics",
+      "kind": "qualitative",
+      "operator": null,
+      "threshold": null,
+      "unit": null,
+      "expectedValue": null,
+      "certificationName": null
+    },
+    {
+      "id": "MR-2",
+      "title": "ISO 22716 (Cosmetics GMP) certification",
+      "description": "Holds a current ISO 22716 (Cosmetics GMP) certification",
+      "rationale": "Regulatory baseline for cosmetics manufacturing; non-negotiable for retail listing",
+      "kind": "certification",
+      "operator": null,
+      "threshold": null,
+      "unit": null,
+      "expectedValue": null,
+      "certificationName": "ISO 22716 (Cosmetics GMP)"
+    },
+    {
+      "id": "MR-3",
+      "title": "Maximum first-order MOQ",
+      "description": "Minimum order quantity (MOQ) accepted is ≤ 5,000 units for a first order",
+      "rationale": "Initial order is 8,000 units; supplier must be willing to accept an order in that range without forcing a much larger commitment",
+      "kind": "numeric-threshold",
+      "operator": "lte",
+      "threshold": 5000,
+      "unit": "units",
+      "expectedValue": null,
+      "certificationName": null
+    },
+    {
+      "id": "MR-4",
+      "title": "Maximum historical quality inspection fail rate",
+      "description": "Historical quality inspection fail rate ≤ 30% across audited production batches",
+      "rationale": "Reject rate above this threshold indicates unacceptable process variability for a new retail product",
+      "kind": "numeric-threshold",
+      "operator": "lte",
+      "threshold": 30,
+      "unit": "percent",
+      "expectedValue": null,
+      "certificationName": null
+    },
+    {
+      "id": "MR-5",
+      "title": "Maximum manufacturing lead time",
+      "description": "Manufacturing lead time ≤ 20 calendar days",
+      "rationale": "Needed to hit the planned retail launch window",
+      "kind": "numeric-threshold",
+      "operator": "lte",
+      "threshold": 20,
+      "unit": "calendar days",
+      "expectedValue": null,
+      "certificationName": null
+    },
+    {
+      "id": "MR-6",
+      "title": "Facility location in India",
+      "description": "Facility located in India (for this sourcing round)",
+      "rationale": "Import/logistics timeline for this launch phase is scoped to domestic manufacturing only; cross-border sourcing is out of scope for this decision",
+      "kind": "categorical-match",
+      "operator": null,
+      "threshold": null,
+      "unit": null,
+      "expectedValue": "India",
+      "certificationName": null
+    },
+    {
+      "id": "MR-7",
+      "title": "Documented cruelty-free manufacturing declaration",
+      "description": "Provides documented cruelty-free manufacturing declaration",
+      "rationale": "Required for brand positioning and retail partner compliance",
+      "kind": "qualitative",
+      "operator": null,
+      "threshold": null,
+      "unit": null,
+      "expectedValue": null,
+      "certificationName": null
+    }
+  ]
+}

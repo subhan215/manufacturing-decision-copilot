@@ -1,0 +1,18 @@
+{
+  "data": {
+    "supplierName": "Meridian Beauty Manufacturing",
+    "city": "Ho Chi Minh City",
+    "country": "Vietnam"
+  },
+  "telemetry": {
+    "model": "claude-sonnet-5",
+    "cacheHit": false,
+    "durationMs": 7099,
+    "apiDurationMs": 3868,
+    "costUsd": 0.00923,
+    "inputTokens": 2,
+    "outputTokens": 134,
+    "numTurns": 2
+  },
+  "storedAt": "2026-08-09T08:18:55.875Z"
+}

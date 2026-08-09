@@ -1,0 +1,33 @@
+{
+  "note": "Document-stated reference values for the three eligible suppliers, read by hand from the source profiles. Used to measure numeric extraction error and to check whether extraction error is large enough to change the recommendation. Where a document states a range rather than a single figure, both bounds are recorded and any value inside the range counts as correct — inventing a single 'true' number there would measure our own preference rather than the system's accuracy.",
+  "asOfDate": "2026-08-09",
+  "values": [
+    {
+      "supplierId": "supplier-01",
+      "cost": { "value": 45.3, "unit": "USD/unit", "quote": "Average manufacturing cost across comparable SKUs: $45.30/unit" },
+      "leadTime": {
+        "min": 12,
+        "max": 14,
+        "unit": "calendar days",
+        "quote": "Standard manufacturing lead time: 12-14 calendar days from confirmed formulation and packaging spec (audited average: 12.6 days across 27 recent production batches)",
+        "ambiguity": "The document states a 12-14 day range and separately an audited mean of 12.6 days. Three readings are defensible: 12 (lower bound, what a first-number regex takes), 12.6 (audited mean), and 14 (upper bound, the conservative reading for a maximum threshold). Any value in [12, 14] is scored correct."
+      },
+      "failRate": { "value": 22, "unit": "percent", "quote": "Fail: 6 batches (22%)" },
+      "sustainabilityPoints": { "value": 1, "basis": "Signed cruelty-free declaration on file; no third-party certification body listed." }
+    },
+    {
+      "supplierId": "supplier-06-vantage-cosmo-labs",
+      "cost": { "value": 52.0, "unit": "USD/unit", "quote": "Average manufacturing cost across comparable SKUs: $52.00/unit" },
+      "leadTime": { "min": 18, "max": 18, "unit": "calendar days", "quote": "Standard manufacturing lead time: audited average 18 calendar days" },
+      "failRate": { "value": 15, "unit": "percent", "quote": "Fail: 3 batches (15%)" },
+      "sustainabilityPoints": { "value": 2, "basis": "Cruelty-free declaration on file plus Ecocert natural-sourcing certification." }
+    },
+    {
+      "supplierId": "supplier-12-coastal-wellness-manufacturing",
+      "cost": { "value": 47.1, "unit": "USD/unit", "quote": "Average manufacturing cost across comparable SKUs: $47.10/unit" },
+      "leadTime": { "min": 19, "max": 19, "unit": "calendar days", "quote": "Standard manufacturing lead time: audited average 19 calendar days" },
+      "failRate": { "value": 28, "unit": "percent", "quote": "Fail: 7 batches (28%)" },
+      "sustainabilityPoints": { "value": 1, "basis": "Cruelty-free declaration on file; no third-party certification listed." }
+    }
+  ]
+}

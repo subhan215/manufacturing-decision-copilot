@@ -1,0 +1,22 @@
+# Line endings are load-bearing in this repository, not a style preference.
+#
+# Citations are verified by character offset into the source text: the system
+# records that a quote sits at position N and re-checks it there. Git's Windows
+# default (core.autocrlf=true) rewrites LF to CRLF on checkout, which shifts
+# every offset after the first line and would break citation verification on a
+# reviewer's machine while it kept passing on ours.
+#
+# The same text is embedded in the cached model responses, the analysis snapshot
+# and the evaluation bundle, so the rule applies repo-wide rather than to data/
+# alone — a cached prompt that gains carriage returns no longer matches its key,
+# and every cache hit silently becomes a miss.
+
+* text=auto eol=lf
+
+*.png binary
+*.ico binary
+*.pdf binary
+*.jpg binary
+*.jpeg binary
+*.woff binary
+*.woff2 binary
