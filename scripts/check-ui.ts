@@ -179,6 +179,24 @@ if (!res || !res.ok) {
     !/\b\d{1,3}%\s*(confiden|certain)/i.test(html),
   );
 
+  // The brief asks for source, retrieval date, confidence, assumptions and
+  // conflicts beside consequential recommendations. Four of the five are shown
+  // and the confidence omission is argued in INTENDED_USE; the retrieval date
+  // is the one that was simply missing, so it is asserted rather than assumed.
+  check(
+    "the evidence source is named beside the recommendation",
+    /supplier documents/i.test(html),
+  );
+  check(
+    "the retrieval date is shown beside the recommendation",
+    /Retrieved/i.test(html) && /August 2026/.test(html),
+    "the brief lists retrieval date among what must appear beside a consequential recommendation",
+  );
+  check(
+    "the interface says the documents are not re-fetched",
+    /not re-fetched/i.test(html),
+  );
+
   check(
     "no control implies contacting, approving or ordering",
     !/<button[^>]*>\s*(approve|contact|request quote|place order)/i.test(html),

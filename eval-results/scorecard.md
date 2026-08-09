@@ -1,6 +1,6 @@
 # Evaluation Scorecard
 
-Generated 2026-08-09T17:08:29.196Z · model `claude-sonnet-5` · as-of date 2026-08-09 · requirements `2f6f7d26f631941b`
+Generated 2026-08-09T17:16:18.180Z · model `claude-sonnet-5` · as-of date 2026-08-09 · requirements `2f6f7d26f631941b`
 
 All figures below are produced by `npm run eval`, which exits non-zero if any assertion fails.
 
@@ -67,6 +67,19 @@ Re-ranking with hand-read reference values instead of AI-extracted ones produces
 - supplier-06-vantage-cosmo-labs leads supplier-12-coastal-wellness-manufacturing by 0.153
 
 *4 eligible suppliers give 24 possible orderings, so a chance match would occur about 4% of the time. Ordering agreement is reported with score margins rather than a rank-correlation coefficient, which carries almost no information at this sample size.*
+
+## Completion time and human-review effort
+
+| System | Verdicts flagged for review | Review burden | Runtime | Cost |
+|---|---|---|---|---|
+| AI (Claude) | 16/161 | 9.9% | 0.0s | $1.4128 |
+| Rule-based baseline | 7/161 | 4.3% | 0.0s | $0.0000 |
+
+Runtime is measured from the committed response cache, so it reflects replay rather than a cold run; a full uncached screen of 161 verdicts took roughly two and a half minutes.
+
+**Against a human baseline.** Reading a supplier profile and checking seven requirements is estimated at roughly 10 minutes, so 23 suppliers is roughly 3.8 hours of analyst time. That estimate is ours and is not measured — it is stated so the comparison is legible, and no reported metric depends on it.
+
+The more useful number is where the effort goes. The system flags 16 of 161 verdicts (9.9%) as needing a person — conflicts, abstentions and unverified evidence. The baseline flags 7 (4.3%), which sounds better until you notice it hides 12 critical errors among the verdicts it did **not** flag. A lower review burden is only an improvement if what goes unreviewed is actually correct.
 
 ## Confidence
 

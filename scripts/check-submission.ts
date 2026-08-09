@@ -149,11 +149,36 @@ check(".gitattributes exists", existsSync(path.join(root, ".gitattributes")));
   );
 }
 
+{
+  // The brief describes the case pack as frozen and versioned with SHA-256
+  // checksums. Ours is self-authored, so verifying it is our job — and it is
+  // load-bearing rather than ceremonial: a single edited character shifts every
+  // citation offset after it in that document.
+  let verified = false;
+  let detail = "";
+  try {
+    execFileSync("node", ["scripts/write-checksums.ts", "--check"], {
+      cwd: root,
+      encoding: "utf8",
+    });
+    verified = true;
+  } catch (err) {
+    detail = String((err as { stderr?: string }).stderr ?? err).trim();
+  }
+  check(
+    "corpus checksums match the files on disk",
+    verified,
+    detail.split("\n").slice(0, 4).join("\n        "),
+  );
+}
+
 // ----------------------------------------------------------------- artifacts
 section("C. REQUIRED ARTIFACTS");
 
 const required = [
   "data/DATA_MANIFEST.md",
+  "data/DATA_DICTIONARY.md",
+  "data/CHECKSUMS.txt",
   "data/product-brief.md",
   "data/derived/requirements.json",
   "data/derived/gold-labels.json",
@@ -162,6 +187,10 @@ const required = [
   "eval-results/results.json",
   "eval-results/scorecard.md",
   "docs/INTENDED_USE.md",
+  "docs/PROJECT_DESCRIPTION.md",
+  "docs/DEMO_SCRIPT.md",
+  "docs/SLIDES.md",
+  "README.md",
   ".cache/README.md",
 ];
 

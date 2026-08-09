@@ -287,6 +287,17 @@ Corpus-size literals (13, 91) are gone — replaced by a single `SUPPLIER_COUNT`
 
 Fixed while writing: the ranking-agreement caveat still said "three eligible suppliers give six possible orderings" after a fourth became eligible. Now derived from the signal count — a wrong number inside a caveat about statistical rigour is worse than no caveat. Also corrected two figures I had written from memory: near-misses are seven, not five, and a 25% lead-time slip leaves two of four eligible suppliers, not one.
 
+## Brief re-audit — gaps closed
+
+Went back to `AI_Manufacturing_Decision_Copilot.pdf` rather than trusting my own checklist, since a derived checklist inherits whatever it missed. Four real gaps, all now closed:
+
+- **Completion time and human-review effort** — the brief lists it under "report at minimum". The figures were already in `results.json` but never rendered into `scorecard.md`, which is the document a judge reads. That is the same as not reporting them. New section, with the point that the baseline's *lower* review burden (4.3% vs 9.9%) is worse, because it hides 12 critical errors among the verdicts it did not flag.
+- **SHA-256 checksums** — the brief describes the case pack as frozen and versioned with checksums. No organiser pack existed, so ours is self-authored and the checksums are our job. `npm run checksums` / `checksums:check`, 32 files, hashed over *normalised* text because that is what citation offsets index into — hashing raw bytes would false-alarm on a CRLF checkout that is actually correct. Verified inside `check:submission`.
+- **Data dictionary** — also listed as part of the pack. `data/DATA_DICTIONARY.md` covers every source section, every derived file and field, the identifier schemes, and why `fail` and `insufficient-evidence` are different answers.
+- **Retrieval date in the UI** — the brief wants source, retrieval date, confidence, assumptions and conflicts *beside consequential recommendations*. We had four of five: source in the evidence drawer, assumptions in their panel, conflicts surfaced, confidence deliberately omitted and argued. The retrieval date was simply missing. Now in the decision header with a line stating documents are not re-fetched, and asserted by `check:ui` so it cannot quietly vanish.
+
+**Suite totals: 42 · 14 · 21 · 20 · 20 · 22 · 52 · 22 · 36 · 2 = 251 assertions.**
+
 ## Not yet built
 - [ ] Demo video — script is ready, needs recording and an unlisted upload
 - [ ] Push to a public GitHub remote (user's step)

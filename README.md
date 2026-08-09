@@ -116,12 +116,13 @@ There's still no API key. The only optional setting is `CLAUDE_CODE_EXECUTABLE_P
 ```bash
 npm run inspect:ingestion   # chunking, offsets, leakage audit   (42 checks)
 npm run probe:llm           # SDK isolation — needs a live CLI   (14 checks)
-npm run check:ui            # snapshot integrity, client/server   (19 checks)
-npm run check:submission    # submission artifacts                (29 checks)
+npm run check:ui            # snapshot integrity, client/server   (22 checks)
+npm run check:submission    # submission artifacts                (36 checks)
 npm run cache:audit         # cache completeness                   (2 checks)
+npm run checksums:check     # corpus integrity, 32 files
 ```
 
-**241 assertions across ten suites.** They're not decoration — several of the design decisions below exist because an assertion failed and I couldn't argue with it.
+**251 assertions across ten suites.** They're not decoration — several of the design decisions below exist because an assertion failed and I couldn't argue with it.
 
 ---
 
@@ -227,6 +228,8 @@ data/
   supplier-profiles/          23 profiles (5 CSV-derived, 18 authored)
   paraphrased/                reworded variants for robustness testing
   DATA_MANIFEST.md            every source, plus 94 pre-registered verdicts
+  DATA_DICTIONARY.md          what every file and field means
+  CHECKSUMS.txt               SHA-256 over normalised text, 32 files
   derived/                    frozen requirements, gold labels, UI snapshot
 src/lib/                      ingestion · llm · eligibility · ranking · scenarios
 src/eval/                     scoring, citations, robustness, provenance

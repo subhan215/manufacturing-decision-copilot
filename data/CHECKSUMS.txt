@@ -1,0 +1,40 @@
+# SHA-256 checksums — AI Manufacturing Decision Copilot corpus
+#
+# Hashes are over normalised text (BOM stripped, CRLF->LF, NFC), not raw bytes,
+# because that is the text every citation offset indexes into. A checkout with
+# different line endings is still correct and still verifies here.
+#
+# Regenerate: npm run checksums      Verify: npm run checksums:check
+
+fe3ab3287c1b9cd2f9efb2c018bba818207ff635c46d8e60ff9e6943d17c6bee  data/product-brief.md
+3902f7616cfee4aed277ce604d00607eba442104bb9ecd9a756c8708f0677882  data/DATA_MANIFEST.md
+ad90d5e384a6361ad0bea47ccbabc20d382e5e6ec5a81229e86e47b64ec32c5c  data/supplier-profiles/supplier-01.md
+96c77b1ba9a366b1bb0fccd0d0fa43ef1a0837a9e1f3ad1f5e86b9ff643710da  data/supplier-profiles/supplier-02.md
+6e3211b6ed7d6b8f5e0ccaee85835c092c963429d7456edadc9705a4bd4b3e11  data/supplier-profiles/supplier-03.md
+37d36cc85ddb251419ec45c99d834500f65725917914ba3fece1ca149128a51e  data/supplier-profiles/supplier-04.md
+0d1a8d624751980ef57322b4bfb5fc6f8e3445acf6ed95d8c9935460fb025928  data/supplier-profiles/supplier-05.md
+a5465d60bd23a180dad168cd7ffbdeb3423b0dba9ba07926b61bc215434bd958  data/supplier-profiles/supplier-06-vantage-cosmo-labs.md
+bd5643bcc125cea98026277f18797473e01cad2c30fef1d586403f7be993035a  data/supplier-profiles/supplier-07-glowcraft-industries.md
+596448ed1a1e3b5a555bfe413976610c0bd8a7ab250bc6b44d4fbd928822426b  data/supplier-profiles/supplier-08-meridian-beauty-manufacturing.md
+c4e56bc499bb63345d6fdb352bef412138fe250327339ef0170ab93efbfbe7ad  data/supplier-profiles/supplier-09-sunrise-personal-care.md
+0324428f4c22765a52ee2adc270c679dd9fd28ec8f474a228df0939b58944861  data/supplier-profiles/supplier-10-ecoderm-naturals.md
+b99440394ccc9d2485ee531208ba4f4f802b302d8598e8ed8468016d675cdfdb  data/supplier-profiles/supplier-11-prakriti-formulations.md
+7d6db5e001a8859eac70808a87cc406a2447d32880e3fa9dc81dc7a74c1ea6d0  data/supplier-profiles/supplier-12-coastal-wellness-manufacturing.md
+2b1a415e83d83cea1c06a51ca6f82aa6887333347b3bd6db67581e0d9ac38fc9  data/supplier-profiles/supplier-13-novaline-personal-care.md
+cc7e73418f8903c678c63a570f2ee81ff5de5396b8ff47701df4c11feea15101  data/supplier-profiles/supplier-14-anantara-formulations.md
+d9eea27d0615438f28406dae0e9dd98bbf443b299740c2550a270d86344f324c  data/supplier-profiles/supplier-15-rathore-cosmetic-works.md
+2642c2bdd0d1e6c85e482823de150f7afac17588ef9dda138a22f026982f891d  data/supplier-profiles/supplier-16-bluepeak-skincare-solutions.md
+f15e179a34e929b84f8372c1422ce19ff8acee748016708774d382c529a7373b  data/supplier-profiles/supplier-17-sahyadri-beauty-group.md
+051f8f82b4933b129772dc8d097699bb6c0b41008b86c9626bb3b25b88b225e3  data/supplier-profiles/supplier-18-trilok-personal-care.md
+d876b8b78a82661274266b51788de451bf861aaac498a91054d44d06f4481582  data/supplier-profiles/supplier-19-kanan-naturals.md
+a721337d58d958411b4844a9dbd2ac6d93636e65d10dcaabbcacb4005bad3c6b  data/supplier-profiles/supplier-20-meghdoot-labs.md
+18725ad67b5a2f05416c9f2968fd0cc120af4f0c090e162cf06eea3d6a7d4d5c  data/supplier-profiles/supplier-21-vasanth-bio-cosmetics.md
+1e27dce387c3c07cc47c2ebf1c4e7cfe46fe0d90384437315355ab879b4f9273  data/supplier-profiles/supplier-22-ashvattha-wellness.md
+74ea7870d28fa2deac040b5aac7d89009435dbccaecb1423d1f71114a9cf4c91  data/supplier-profiles/supplier-23-nirvaan-skin-sciences.md
+432b9ca283b010507039ba7dacac6987f2c225312177b852e04ca266706d0dc8  data/paraphrased/supplier-01.md
+362612fe039f232e56f49b574c3fb541f1aaff37029c68c25318abe311e0c97e  data/paraphrased/supplier-07-glowcraft-industries.md
+a22d0395e3962848fb9134c7c5e76cdfcf9d39c93f40590434c01764e1815889  data/paraphrased/supplier-09-sunrise-personal-care.md
+c7c95a2b4719037c7d27b8986322077690da49cb27747dd800b265b99c2e7a0a  data/derived/gold-labels.json
+a7cba7e16abf240f56a90c6b707de3d4f86d85806e971b3a95de715cf7d9e45e  data/derived/reference-values.json
+96aa69dae04d5ba0c2f2537153b5ee7cd6ea5f59c4107256d6d9fe5574d4a43f  data/derived/requirements.json
+fe5a8b826d2d224264da531a10c8f7da8bb8cde1037b77ff04952f6f520bcbda  data/derived/ui-snapshot.json

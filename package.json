@@ -18,6 +18,8 @@
     "scenarios": "node scripts/run-scenarios.ts",
     "build:snapshot": "node scripts/build-snapshot.ts",
     "cache:audit": "node scripts/audit-cache.ts",
+    "checksums": "node scripts/write-checksums.ts",
+    "checksums:check": "node scripts/write-checksums.ts --check",
     "check:ui": "node scripts/check-ui.ts",
     "check:submission": "node scripts/check-submission.ts"
   },

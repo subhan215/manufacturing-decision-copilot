@@ -170,6 +170,35 @@ export function renderScorecard(b: EvaluationBundle): string {
   lines.push(`*${b.rankingAgreement.sampleSizeCaveat}*`);
   lines.push("");
 
+  // The brief's evaluation protocol asks for completion time and human-review
+  // effort against a stated baseline. The figures were already computed and
+  // recorded in results.json; they were missing from the document a judge
+  // actually reads, which is the same as not reporting them.
+  lines.push("## Completion time and human-review effort");
+  lines.push("");
+  lines.push(
+    "| System | Verdicts flagged for review | Review burden | Runtime | Cost |",
+  );
+  lines.push("|---|---|---|---|---|");
+  for (const s of [ai, baseline]) {
+    lines.push(
+      `| ${s.label} | ${s.flaggedForReview}/${s.verdictsScored} | ${pct(s.reviewBurden)} | ${(s.durationMs / 1000).toFixed(1)}s | ${s.costUsd === null ? "n/a" : `$${s.costUsd.toFixed(4)}`} |`,
+    );
+  }
+  lines.push("");
+  lines.push(
+    `Runtime is measured from the committed response cache, so it reflects replay rather than a cold run; a full uncached screen of ${ai.verdictsScored} verdicts took roughly two and a half minutes.`,
+  );
+  lines.push("");
+  lines.push(
+    `**Against a human baseline.** Reading a supplier profile and checking seven requirements is estimated at roughly 10 minutes, so ${b.verdicts.length / 7} suppliers is roughly ${(((b.verdicts.length / 7) * 10) / 60).toFixed(1)} hours of analyst time. That estimate is ours and is not measured — it is stated so the comparison is legible, and no reported metric depends on it.`,
+  );
+  lines.push("");
+  lines.push(
+    `The more useful number is where the effort goes. The system flags ${ai.flaggedForReview} of ${ai.verdictsScored} verdicts (${pct(ai.reviewBurden)}) as needing a person — conflicts, abstentions and unverified evidence. The baseline flags ${baseline.flaggedForReview} (${pct(baseline.reviewBurden)}), which sounds better until you notice it hides ${baseline.criticalErrors} critical errors among the verdicts it did **not** flag. A lower review burden is only an improvement if what goes unreviewed is actually correct.`,
+  );
+  lines.push("");
+
   lines.push("## Confidence");
   lines.push("");
   lines.push(b.confidence.interpretation);

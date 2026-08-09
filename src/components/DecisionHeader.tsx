@@ -1,5 +1,12 @@
 import type { UiSnapshot } from "@/lib/snapshot";
 
+/**
+ * When the supplier documents were obtained. Recorded in data/DATA_MANIFEST.md
+ * §1; the corpus is frozen at that date and is never re-fetched, so this is a
+ * constant rather than a runtime value.
+ */
+const CORPUS_RETRIEVED = "8 August 2026";
+
 function Meta({ label, value }: { label: string; value: string }) {
   return (
     <div>
@@ -48,18 +55,26 @@ export function DecisionHeader({ snapshot }: { snapshot: UiSnapshot }) {
           : "The ranking below shows the basis for this result."}
       </p>
 
-      <dl className="mt-5 grid grid-cols-2 gap-x-8 gap-y-4 border-t border-[var(--hairline)] pt-4 sm:grid-cols-4">
+      {/* Source and retrieval date sit beside the recommendation, not in a
+          separate provenance page. A recommendation read without knowing how
+          old its evidence is invites acting on a stale document. */}
+      <dl className="mt-5 grid grid-cols-2 gap-x-8 gap-y-4 border-t border-[var(--hairline)] pt-4 sm:grid-cols-3 lg:grid-cols-5">
+        <Meta label="Evidence" value={`${snapshot.screen.suppliers.length} supplier documents`} />
+        <Meta label="Retrieved" value={CORPUS_RETRIEVED} />
         <Meta label="Assessed as of" value={asOf} />
         <Meta label="Model" value={snapshot.model} />
         <Meta label="Requirements" value={snapshot.requirementsVersion} />
-        <Meta
-          label="Analysis run"
-          value={new Date(snapshot.generatedAt).toLocaleString("en-GB", {
-            dateStyle: "medium",
-            timeStyle: "short",
-          })}
-        />
       </dl>
+
+      <p className="mt-3 text-xs text-[var(--text-muted)]">
+        Analysis run{" "}
+        {new Date(snapshot.generatedAt).toLocaleString("en-GB", {
+          dateStyle: "medium",
+          timeStyle: "short",
+        })}
+        . Supplier documents are static and are not re-fetched; anything a
+        supplier changed after the retrieval date is not reflected here.
+      </p>
     </header>
   );
 }
