@@ -1,0 +1,26 @@
+{
+  "data": {
+    "costValue": 31.5,
+    "costCurrency": "USD",
+    "costUnit": "unit",
+    "costCitationChunkId": "supplier-08-meridian-beauty-manufacturing#s06-cost-reference",
+    "costCitationQuote": "Average manufacturing cost across comparable SKUs: $31.50/unit.",
+    "crueltyFreeDeclaration": true,
+    "thirdPartyCertifications": [
+      "COSMOS"
+    ],
+    "sustainabilityCitationChunkId": "supplier-08-meridian-beauty-manufacturing#s05-sustainability",
+    "sustainabilityCitationQuote": "Cruelty-free and COSMOS organic certifications on file."
+  },
+  "telemetry": {
+    "model": "claude-sonnet-5",
+    "cacheHit": false,
+    "durationMs": 8543,
+    "apiDurationMs": 7179,
+    "costUsd": 0.021354500000000002,
+    "inputTokens": 2,
+    "outputTokens": 677,
+    "numTurns": 2
+  },
+  "storedAt": "2026-08-09T15:38:38.044Z"
+}

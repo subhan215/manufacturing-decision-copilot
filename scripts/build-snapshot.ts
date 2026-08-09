@@ -16,7 +16,9 @@ import {
   requirementsVersion,
   screenAll,
 } from "../src/lib/eligibility/index.ts";
-import { buildRankingReport } from "../src/lib/ranking/index.ts";
+import { buildRankingReport, extractSignals } from "../src/lib/ranking/index.ts";
+import type { SupplierSignals } from "../src/lib/ranking/index.ts";
+import { runAllScenarios } from "../src/lib/scenarios/index.ts";
 import {
   analyseConfidence,
   loadGoldLabels,
@@ -41,6 +43,32 @@ const screen = await screenAll();
 console.log("  ranking eligible suppliers…");
 const ranking = await buildRankingReport({ screen });
 
+// Suppliers blocked by exactly one requirement. Extracting their commercial
+// signals is what lets a relaxation scenario say where they would rank, rather
+// than only naming them.
+const nearMisses = screen.suppliers.filter(
+  (s) => !s.eligible && !s.error && s.blockingRequirements.length === 1,
+);
+const nearMissSignals: SupplierSignals[] = [];
+for (const supplierScreen of nearMisses) {
+  const doc = corpus.suppliers.find(
+    (d) => d.doc.docId === supplierScreen.supplierId,
+  );
+  if (!doc) continue;
+  console.log(`  signals for near miss ${doc.doc.shortId}…`);
+  nearMissSignals.push(
+    await extractSignals({ supplier: doc, screen: supplierScreen, corpus }),
+  );
+}
+
+console.log("  running supply-risk scenarios…");
+const scenarios = runAllScenarios({
+  screen,
+  signals: ranking.signals,
+  requirements: requirementsFile.requirements,
+  asOfDate: screen.asOfDate,
+});
+
 console.log("  scoring against gold labels…");
 const baseScreen = await baselineScreen();
 const ai = scoreScreen("AI", screen, goldFile);
@@ -55,7 +83,7 @@ const citedIds = new Set<string>();
 for (const s of screen.suppliers) {
   for (const v of s.verdicts) if (v.citationChunkId) citedIds.add(v.citationChunkId);
 }
-for (const s of ranking.signals) {
+for (const s of [...ranking.signals, ...nearMissSignals]) {
   for (const signal of [s.cost, s.leadTime, s.quality, s.sustainability]) {
     if (signal.citationChunkId) citedIds.add(signal.citationChunkId);
   }
@@ -82,8 +110,10 @@ const snapshot: UiSnapshot = {
   requirementsVersion: requirementsVersion(requirementsFile),
   screen,
   signals: ranking.signals,
+  nearMissSignals,
   baseline: ranking.baseline,
   sensitivity: ranking.sensitivity,
+  scenarios,
   conditionallyEligible: ranking.conditionallyEligible,
   citedChunks,
   evaluation: {
@@ -125,6 +155,10 @@ await writeFile(outPath, JSON.stringify(snapshot, null, 2) + "\n", "utf8");
 
 console.log(`\n  ${screen.suppliers.length} suppliers · ${screen.stats.verdictsTotal} verdicts`);
 console.log(`  ${ranking.signals.length} eligible · winner ${ranking.baseline.ranked[0]?.supplierId}`);
+console.log(`  ${nearMissSignals.length} near misses with signals`);
+console.log(
+  `  ${scenarios.scenarios.length} scenarios · ${scenarios.splits.length} order quantities analysed`,
+);
 console.log(`  ${citedChunks.length} cited sections captured`);
 console.log(`\nWrote ${outPath}`);
 console.log(

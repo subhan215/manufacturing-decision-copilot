@@ -1,0 +1,24 @@
+{
+  "data": {
+    "costValue": 38.9,
+    "costCurrency": "USD",
+    "costUnit": "unit",
+    "costCitationChunkId": "supplier-07-glowcraft-industries#s06-cost-reference",
+    "costCitationQuote": "Average manufacturing cost across comparable SKUs: $38.90/unit.",
+    "crueltyFreeDeclaration": true,
+    "thirdPartyCertifications": [],
+    "sustainabilityCitationChunkId": "supplier-07-glowcraft-industries#s05-sustainability",
+    "sustainabilityCitationQuote": "Cruelty-free declaration on file (Declaration Ref: CF-2023-0088, dated 2023-08-14)."
+  },
+  "telemetry": {
+    "model": "claude-sonnet-5",
+    "cacheHit": false,
+    "durationMs": 11341,
+    "apiDurationMs": 10070,
+    "costUsd": 0.022898500000000002,
+    "inputTokens": 2,
+    "outputTokens": 835,
+    "numTurns": 2
+  },
+  "storedAt": "2026-08-09T15:38:29.498Z"
+}

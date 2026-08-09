@@ -1,0 +1,26 @@
+{
+  "data": {
+    "costValue": 39.2,
+    "costCurrency": "USD",
+    "costUnit": "unit",
+    "costCitationChunkId": "supplier-11-prakriti-formulations#s06-cost-reference",
+    "costCitationQuote": "Average manufacturing cost across comparable SKUs: $39.20/unit.",
+    "crueltyFreeDeclaration": true,
+    "thirdPartyCertifications": [
+      "ISO 9001:2015"
+    ],
+    "sustainabilityCitationChunkId": "supplier-11-prakriti-formulations#s05-sustainability",
+    "sustainabilityCitationQuote": "Cruelty-free declaration on file (Declaration Ref: CF-2024-0177)."
+  },
+  "telemetry": {
+    "model": "claude-sonnet-5",
+    "cacheHit": false,
+    "durationMs": 12785,
+    "apiDurationMs": 11942,
+    "costUsd": 0.026259499999999995,
+    "inputTokens": 2,
+    "outputTokens": 1089,
+    "numTurns": 2
+  },
+  "storedAt": "2026-08-09T15:39:00.191Z"
+}

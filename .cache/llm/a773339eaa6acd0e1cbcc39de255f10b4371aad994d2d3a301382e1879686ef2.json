@@ -1,0 +1,24 @@
+{
+  "data": {
+    "costValue": 58.4,
+    "costCurrency": "USD",
+    "costUnit": "unit",
+    "costCitationChunkId": "supplier-10-ecoderm-naturals#s06-cost-reference",
+    "costCitationQuote": "Average manufacturing cost across comparable SKUs: $58.40/unit.",
+    "crueltyFreeDeclaration": true,
+    "thirdPartyCertifications": [],
+    "sustainabilityCitationChunkId": "supplier-10-ecoderm-naturals#s05-sustainability",
+    "sustainabilityCitationQuote": "Cruelty-free declaration on file (Declaration Ref: CF-2025-0501), plus organic sourcing statement."
+  },
+  "telemetry": {
+    "model": "claude-sonnet-5",
+    "cacheHit": false,
+    "durationMs": 9357,
+    "apiDurationMs": 8796,
+    "costUsd": 0.024376000000000002,
+    "inputTokens": 2,
+    "outputTokens": 604,
+    "numTurns": 2
+  },
+  "storedAt": "2026-08-09T15:38:47.403Z"
+}

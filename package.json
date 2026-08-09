@@ -15,6 +15,7 @@
     "rank": "node scripts/run-ranking.ts",
     "baseline": "node scripts/run-baseline.ts",
     "eval": "node scripts/run-eval.ts",
+    "scenarios": "node scripts/run-scenarios.ts",
     "build:snapshot": "node scripts/build-snapshot.ts",
     "check:ui": "node scripts/check-ui.ts",
     "check:submission": "node scripts/check-submission.ts"

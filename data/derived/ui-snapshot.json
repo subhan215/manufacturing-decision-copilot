@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-09T12:26:40.575Z",
+  "generatedAt": "2026-08-09T15:47:49.767Z",
   "model": "claude-sonnet-5",
   "asOfDate": "2026-08-09",
   "requirementsVersion": "2f6f7d26f631941b",
   "screen": {
     "asOfDate": "2026-08-09",
     "model": "claude-sonnet-5",
-    "generatedAt": "2026-08-09T12:26:40.399Z",
+    "generatedAt": "2026-08-09T15:47:49.638Z",
     "requirementsVersion": "2f6f7d26f631941b",
     "suppliers": [
       {
@@ -132,7 +132,7 @@
         "telemetry": {
           "model": "claude-sonnet-5",
           "cacheHit": true,
-          "durationMs": 6,
+          "durationMs": 2,
           "apiDurationMs": 27320,
           "costUsd": 0.071162,
           "inputTokens": 2,
@@ -267,7 +267,7 @@
         "telemetry": {
           "model": "claude-sonnet-5",
           "cacheHit": true,
-          "durationMs": 9,
+          "durationMs": 4,
           "apiDurationMs": 22561,
           "costUsd": 0.06138099999999999,
           "inputTokens": 2,
@@ -401,7 +401,7 @@
         "telemetry": {
           "model": "claude-sonnet-5",
           "cacheHit": true,
-          "durationMs": 6,
+          "durationMs": 2,
           "apiDurationMs": 24389,
           "costUsd": 0.0534977,
           "inputTokens": 2,
@@ -536,7 +536,7 @@
         "telemetry": {
           "model": "claude-sonnet-5",
           "cacheHit": true,
-          "durationMs": 6,
+          "durationMs": 1,
           "apiDurationMs": 30662,
           "costUsd": 0.06816869999999998,
           "inputTokens": 2,
@@ -669,7 +669,7 @@
         "telemetry": {
           "model": "claude-sonnet-5",
           "cacheHit": true,
-          "durationMs": 2,
+          "durationMs": 1,
           "apiDurationMs": 25400,
           "costUsd": 0.0605727,
           "inputTokens": 2,
@@ -800,7 +800,7 @@
         "telemetry": {
           "model": "claude-sonnet-5",
           "cacheHit": true,
-          "durationMs": 2,
+          "durationMs": 1,
           "apiDurationMs": 16048,
           "costUsd": 0.0473537,
           "inputTokens": 2,
@@ -1066,7 +1066,7 @@
         "telemetry": {
           "model": "claude-sonnet-5",
           "cacheHit": true,
-          "durationMs": 2,
+          "durationMs": 1,
           "apiDurationMs": 25201,
           "costUsd": 0.0587167,
           "inputTokens": 2,
@@ -1200,7 +1200,7 @@
         "telemetry": {
           "model": "claude-sonnet-5",
           "cacheHit": true,
-          "durationMs": 2,
+          "durationMs": 1,
           "apiDurationMs": 18577,
           "costUsd": 0.0478747,
           "inputTokens": 2,
@@ -1333,7 +1333,7 @@
         "telemetry": {
           "model": "claude-sonnet-5",
           "cacheHit": true,
-          "durationMs": 2,
+          "durationMs": 1,
           "apiDurationMs": 23858,
           "costUsd": 0.0503647,
           "inputTokens": 2,
@@ -1466,7 +1466,7 @@
         "telemetry": {
           "model": "claude-sonnet-5",
           "cacheHit": true,
-          "durationMs": 3,
+          "durationMs": 1,
           "apiDurationMs": 21827,
           "costUsd": 0.0519767,
           "inputTokens": 2,
@@ -1597,7 +1597,7 @@
         "telemetry": {
           "model": "claude-sonnet-5",
           "cacheHit": true,
-          "durationMs": 2,
+          "durationMs": 3,
           "apiDurationMs": 21897,
           "costUsd": 0.0532547,
           "inputTokens": 2,
@@ -1753,7 +1753,7 @@
       "downgradedByVerification": 0,
       "deterministicVerdicts": 65,
       "qualitativeVerdicts": 26,
-      "totalDurationMs": 32,
+      "totalDurationMs": 16,
       "totalCostUsd": 0.7343017000000001
     }
   },
@@ -1885,6 +1885,222 @@
       },
       "crueltyFreeDeclaration": true,
       "thirdPartyCertifications": []
+    }
+  ],
+  "nearMissSignals": [
+    {
+      "supplierId": "supplier-05",
+      "supplierName": "Supplier 5",
+      "cost": {
+        "value": 44.8,
+        "citationQuote": "Average manufacturing cost across comparable SKUs: $44.80/unit.",
+        "citationChunkId": "supplier-05#s06-cost-reference",
+        "citationStatus": "exact",
+        "citationLocator": "supplier-05 › Cost reference › line 28",
+        "verified": true,
+        "note": "Stated as USD per unit, averaged across comparable products."
+      },
+      "leadTime": {
+        "value": 16.3,
+        "citationQuote": "Standard manufacturing lead time: audited average 16.3 days across 18 recent production batches.",
+        "citationChunkId": "supplier-05#s03-order-terms",
+        "citationStatus": "exact",
+        "citationLocator": "supplier-05 › Order terms › line 16",
+        "verified": true,
+        "note": "Reused from eligibility screen MR-5."
+      },
+      "quality": {
+        "value": 39,
+        "citationQuote": "Fail: 7 batches (39%)",
+        "citationChunkId": "supplier-05#s04-quality-history",
+        "citationStatus": "exact",
+        "citationLocator": "supplier-05 › Quality history (audited production batches, n=18) › line 20",
+        "verified": true,
+        "note": "Reused from eligibility screen MR-4."
+      },
+      "sustainability": {
+        "value": 1,
+        "citationQuote": "Cruelty-free declaration on file (Declaration Ref: CF-2024-0203, dated 2024-02-10).",
+        "citationChunkId": "supplier-05#s05-sustainability",
+        "citationStatus": "exact",
+        "citationLocator": "supplier-05 › Sustainability › line 25",
+        "verified": true,
+        "note": "1 point(s): cruelty-free declaration."
+      },
+      "crueltyFreeDeclaration": true,
+      "thirdPartyCertifications": []
+    },
+    {
+      "supplierId": "supplier-07-glowcraft-industries",
+      "supplierName": "GlowCraft Industries",
+      "cost": {
+        "value": 38.9,
+        "citationQuote": "Average manufacturing cost across comparable SKUs: $38.90/unit.",
+        "citationChunkId": "supplier-07-glowcraft-industries#s06-cost-reference",
+        "citationStatus": "exact",
+        "citationLocator": "supplier-07 › Cost reference › line 26",
+        "verified": true,
+        "note": "Stated as USD per unit, averaged across comparable products."
+      },
+      "leadTime": {
+        "value": 11,
+        "citationQuote": "Standard manufacturing lead time: audited average 11 calendar days.",
+        "citationChunkId": "supplier-07-glowcraft-industries#s03-order-terms",
+        "citationStatus": "exact",
+        "citationLocator": "supplier-07 › Order terms › line 15",
+        "verified": true,
+        "note": "Reused from eligibility screen MR-5."
+      },
+      "quality": {
+        "value": 17,
+        "citationQuote": "Fail: 4 batches (17%)",
+        "citationChunkId": "supplier-07-glowcraft-industries#s04-quality-history",
+        "citationStatus": "exact",
+        "citationLocator": "supplier-07 › Quality history (audited production batches, n=24) › line 19",
+        "verified": true,
+        "note": "Reused from eligibility screen MR-4."
+      },
+      "sustainability": {
+        "value": 1,
+        "citationQuote": "Cruelty-free declaration on file (Declaration Ref: CF-2023-0088, dated 2023-08-14).",
+        "citationChunkId": "supplier-07-glowcraft-industries#s05-sustainability",
+        "citationStatus": "exact",
+        "citationLocator": "supplier-07 › Sustainability › line 23",
+        "verified": true,
+        "note": "1 point(s): cruelty-free declaration."
+      },
+      "crueltyFreeDeclaration": true,
+      "thirdPartyCertifications": []
+    },
+    {
+      "supplierId": "supplier-08-meridian-beauty-manufacturing",
+      "supplierName": "Meridian Beauty Manufacturing",
+      "cost": {
+        "value": 31.5,
+        "citationQuote": "Average manufacturing cost across comparable SKUs: $31.50/unit.",
+        "citationChunkId": "supplier-08-meridian-beauty-manufacturing#s06-cost-reference",
+        "citationStatus": "exact",
+        "citationLocator": "supplier-08 › Cost reference › line 27",
+        "verified": true,
+        "note": "Stated as USD per unit, averaged across comparable products."
+      },
+      "leadTime": {
+        "value": 16,
+        "citationQuote": "Standard manufacturing lead time: audited average 16 calendar days (production only; excludes cross-border freight).",
+        "citationChunkId": "supplier-08-meridian-beauty-manufacturing#s03-order-terms",
+        "citationStatus": "exact",
+        "citationLocator": "supplier-08 › Order terms › line 16",
+        "verified": true,
+        "note": "Reused from eligibility screen MR-5."
+      },
+      "quality": {
+        "value": 13,
+        "citationQuote": "Fail: 5 batches (13%)",
+        "citationChunkId": "supplier-08-meridian-beauty-manufacturing#s04-quality-history",
+        "citationStatus": "exact",
+        "citationLocator": "supplier-08 › Quality history (audited production batches, n=40) › line 20",
+        "verified": true,
+        "note": "Reused from eligibility screen MR-4."
+      },
+      "sustainability": {
+        "value": 2,
+        "citationQuote": "Cruelty-free and COSMOS organic certifications on file.",
+        "citationChunkId": "supplier-08-meridian-beauty-manufacturing#s05-sustainability",
+        "citationStatus": "exact",
+        "citationLocator": "supplier-08 › Sustainability › line 24",
+        "verified": true,
+        "note": "2 point(s): cruelty-free declaration plus COSMOS."
+      },
+      "crueltyFreeDeclaration": true,
+      "thirdPartyCertifications": [
+        "COSMOS"
+      ]
+    },
+    {
+      "supplierId": "supplier-10-ecoderm-naturals",
+      "supplierName": "EcoDerm Naturals",
+      "cost": {
+        "value": 58.4,
+        "citationQuote": "Average manufacturing cost across comparable SKUs: $58.40/unit.",
+        "citationChunkId": "supplier-10-ecoderm-naturals#s06-cost-reference",
+        "citationStatus": "exact",
+        "citationLocator": "supplier-10 › Cost reference › line 26",
+        "verified": true,
+        "note": "Stated as USD per unit, averaged across comparable products."
+      },
+      "leadTime": {
+        "value": 25,
+        "citationQuote": "Standard manufacturing lead time: audited average **25 calendar days** (small-batch natural sourcing extends formulation and fill scheduling).",
+        "citationChunkId": "supplier-10-ecoderm-naturals#s03-order-terms",
+        "citationStatus": "exact",
+        "citationLocator": "supplier-10 › Order terms › line 15",
+        "verified": true,
+        "note": "Reused from eligibility screen MR-5."
+      },
+      "quality": {
+        "value": 8,
+        "citationQuote": "Fail: 1 batch (8%)",
+        "citationChunkId": "supplier-10-ecoderm-naturals#s04-quality-history",
+        "citationStatus": "exact",
+        "citationLocator": "supplier-10 › Quality history (audited production batches, n=12) › line 19",
+        "verified": true,
+        "note": "Reused from eligibility screen MR-4."
+      },
+      "sustainability": {
+        "value": 1,
+        "citationQuote": "Cruelty-free declaration on file (Declaration Ref: CF-2025-0501), plus organic sourcing statement.",
+        "citationChunkId": "supplier-10-ecoderm-naturals#s05-sustainability",
+        "citationStatus": "exact",
+        "citationLocator": "supplier-10 › Sustainability › line 23",
+        "verified": true,
+        "note": "1 point(s): cruelty-free declaration."
+      },
+      "crueltyFreeDeclaration": true,
+      "thirdPartyCertifications": []
+    },
+    {
+      "supplierId": "supplier-11-prakriti-formulations",
+      "supplierName": "Prakriti Formulations",
+      "cost": {
+        "value": 39.2,
+        "citationQuote": "Average manufacturing cost across comparable SKUs: $39.20/unit.",
+        "citationChunkId": "supplier-11-prakriti-formulations#s06-cost-reference",
+        "citationStatus": "exact",
+        "citationLocator": "supplier-11 › Cost reference › line 27",
+        "verified": true,
+        "note": "Stated as USD per unit, averaged across comparable products."
+      },
+      "leadTime": {
+        "value": 14,
+        "citationQuote": "Standard manufacturing lead time: audited average 14 calendar days.",
+        "citationChunkId": "supplier-11-prakriti-formulations#s03-order-terms",
+        "citationStatus": "exact",
+        "citationLocator": "supplier-11 › Order terms › line 16",
+        "verified": true,
+        "note": "Reused from eligibility screen MR-5."
+      },
+      "quality": {
+        "value": 19,
+        "citationQuote": "Fail: 3 batches (19%)",
+        "citationChunkId": "supplier-11-prakriti-formulations#s04-quality-history",
+        "citationStatus": "exact",
+        "citationLocator": "supplier-11 › Quality history (audited production batches, n=16) › line 20",
+        "verified": true,
+        "note": "Reused from eligibility screen MR-4."
+      },
+      "sustainability": {
+        "value": 2,
+        "citationQuote": "Cruelty-free declaration on file (Declaration Ref: CF-2024-0177).",
+        "citationChunkId": "supplier-11-prakriti-formulations#s05-sustainability",
+        "citationStatus": "exact",
+        "citationLocator": "supplier-11 › Sustainability › line 24",
+        "verified": true,
+        "note": "2 point(s): cruelty-free declaration plus ISO 9001:2015."
+      },
+      "crueltyFreeDeclaration": true,
+      "thirdPartyCertifications": [
+        "ISO 9001:2015"
+      ]
     }
   ],
   "baseline": {
@@ -2469,6 +2685,2193 @@
       }
     ]
   },
+  "scenarios": {
+    "generatedAt": "2026-08-09T15:47:49.727Z",
+    "baseline": {
+      "orderQuantity": 8000,
+      "supplierId": "supplier-01",
+      "supplierName": "Supplier 1",
+      "unitCost": 45.3,
+      "totalCost": 362400,
+      "leadTimeDays": 14,
+      "concentration": {
+        "hhi": 1,
+        "effectiveSuppliers": 1
+      },
+      "description": "Place the full 8,000-unit launch order with Supplier 1. This is a sole-source plan: the entire order depends on one supplier, and the concentration measure is 1.0 by definition."
+    },
+    "scenarios": [
+      {
+        "id": "relax-MR-1",
+        "kind": "requirement-relaxed",
+        "label": "MR-1 not required",
+        "description": "If \"Liquid/serum skincare manufacturing experience\" were dropped for this sourcing round.",
+        "eligibleBefore": [
+          "supplier-01",
+          "supplier-06-vantage-cosmo-labs",
+          "supplier-12-coastal-wellness-manufacturing"
+        ],
+        "eligibleAfter": [
+          "supplier-01",
+          "supplier-06-vantage-cosmo-labs",
+          "supplier-07-glowcraft-industries",
+          "supplier-12-coastal-wellness-manufacturing"
+        ],
+        "entered": [
+          "supplier-07-glowcraft-industries"
+        ],
+        "exited": [],
+        "rankingBefore": [],
+        "rankingAfter": [],
+        "winnerChanged": false,
+        "constraintChecks": [
+          {
+            "supplierId": "supplier-07-glowcraft-industries",
+            "requirementId": "MR-1",
+            "before": "fail",
+            "after": "pass"
+          },
+          {
+            "supplierId": "supplier-07-glowcraft-industries",
+            "requirementId": "MR-2",
+            "before": "pass",
+            "after": "pass"
+          },
+          {
+            "supplierId": "supplier-07-glowcraft-industries",
+            "requirementId": "MR-3",
+            "before": "pass",
+            "after": "pass"
+          },
+          {
+            "supplierId": "supplier-07-glowcraft-industries",
+            "requirementId": "MR-4",
+            "before": "pass",
+            "after": "pass"
+          },
+          {
+            "supplierId": "supplier-07-glowcraft-industries",
+            "requirementId": "MR-5",
+            "before": "pass",
+            "after": "pass"
+          },
+          {
+            "supplierId": "supplier-07-glowcraft-industries",
+            "requirementId": "MR-6",
+            "before": "pass",
+            "after": "pass"
+          },
+          {
+            "supplierId": "supplier-07-glowcraft-industries",
+            "requirementId": "MR-7",
+            "before": "pass",
+            "after": "pass"
+          }
+        ],
+        "impact": "GlowCraft Industries would become eligible; every other requirement is already satisfied.",
+        "caveats": [
+          "This requirement was set by the buyer for a reason the supplied documents do not record. The figure below is what the constraint costs, not a recommendation to drop it.",
+          "Capability is not a threshold that can be negotiated. A facility without a liquid-fill line cannot produce this product at any price."
+        ]
+      },
+      {
+        "id": "relax-MR-2",
+        "kind": "requirement-relaxed",
+        "label": "MR-2 not required",
+        "description": "If \"ISO 22716 (Cosmetics GMP) certification\" were dropped for this sourcing round.",
+        "eligibleBefore": [
+          "supplier-01",
+          "supplier-06-vantage-cosmo-labs",
+          "supplier-12-coastal-wellness-manufacturing"
+        ],
+        "eligibleAfter": [
+          "supplier-01",
+          "supplier-06-vantage-cosmo-labs",
+          "supplier-11-prakriti-formulations",
+          "supplier-12-coastal-wellness-manufacturing"
+        ],
+        "entered": [
+          "supplier-11-prakriti-formulations"
+        ],
+        "exited": [],
+        "rankingBefore": [],
+        "rankingAfter": [],
+        "winnerChanged": false,
+        "constraintChecks": [
+          {
+            "supplierId": "supplier-11-prakriti-formulations",
+            "requirementId": "MR-1",
+            "before": "pass",
+            "after": "pass"
+          },
+          {
+            "supplierId": "supplier-11-prakriti-formulations",
+            "requirementId": "MR-2",
+            "before": "fail",
+            "after": "pass"
+          },
+          {
+            "supplierId": "supplier-11-prakriti-formulations",
+            "requirementId": "MR-3",
+            "before": "pass",
+            "after": "pass"
+          },
+          {
+            "supplierId": "supplier-11-prakriti-formulations",
+            "requirementId": "MR-4",
+            "before": "pass",
+            "after": "pass"
+          },
+          {
+            "supplierId": "supplier-11-prakriti-formulations",
+            "requirementId": "MR-5",
+            "before": "pass",
+            "after": "pass"
+          },
+          {
+            "supplierId": "supplier-11-prakriti-formulations",
+            "requirementId": "MR-6",
+            "before": "pass",
+            "after": "pass"
+          },
+          {
+            "supplierId": "supplier-11-prakriti-formulations",
+            "requirementId": "MR-7",
+            "before": "pass",
+            "after": "pass"
+          }
+        ],
+        "impact": "Prakriti Formulations would become eligible; every other requirement is already satisfied.",
+        "caveats": [
+          "This requirement was set by the buyer for a reason the supplied documents do not record. The figure below is what the constraint costs, not a recommendation to drop it.",
+          "This is a regulatory exposure rather than a cost trade-off. The supplier waiting on this requirement offers a promotional compliance claim with no certificate record, so relaxing it means accepting an unverified claim, not accepting a known risk."
+        ]
+      },
+      {
+        "id": "threshold-MR-4-39",
+        "kind": "requirement-relaxed",
+        "label": "MR-4 limit moved to 39 percent",
+        "description": "If the maximum historical quality inspection fail rate limit were 39 percent instead of 30.",
+        "eligibleBefore": [
+          "supplier-01",
+          "supplier-06-vantage-cosmo-labs",
+          "supplier-12-coastal-wellness-manufacturing"
+        ],
+        "eligibleAfter": [
+          "supplier-01",
+          "supplier-05",
+          "supplier-06-vantage-cosmo-labs",
+          "supplier-12-coastal-wellness-manufacturing"
+        ],
+        "entered": [
+          "supplier-05"
+        ],
+        "exited": [],
+        "rankingBefore": [],
+        "rankingAfter": [],
+        "winnerChanged": false,
+        "constraintChecks": [
+          {
+            "supplierId": "supplier-02",
+            "requirementId": "MR-4",
+            "before": "conflicting",
+            "after": "insufficient-evidence"
+          },
+          {
+            "supplierId": "supplier-05",
+            "requirementId": "MR-4",
+            "before": "fail",
+            "after": "pass"
+          }
+        ],
+        "impact": "Supplier 5 would become eligible.",
+        "caveats": [
+          "This threshold came from the product brief. Changing it is a commercial decision, and the effect shown here is only on eligibility — not on whether the looser limit is acceptable.",
+          "A higher accepted defect rate converts into rework, scrap and returns downstream. Those costs are real and are not modelled here."
+        ]
+      },
+      {
+        "id": "threshold-MR-5-25",
+        "kind": "requirement-relaxed",
+        "label": "MR-5 limit moved to 25 calendar days",
+        "description": "If the maximum manufacturing lead time limit were 25 calendar days instead of 20.",
+        "eligibleBefore": [
+          "supplier-01",
+          "supplier-06-vantage-cosmo-labs",
+          "supplier-12-coastal-wellness-manufacturing"
+        ],
+        "eligibleAfter": [
+          "supplier-01",
+          "supplier-06-vantage-cosmo-labs",
+          "supplier-10-ecoderm-naturals",
+          "supplier-12-coastal-wellness-manufacturing"
+        ],
+        "entered": [
+          "supplier-10-ecoderm-naturals"
+        ],
+        "exited": [],
+        "rankingBefore": [],
+        "rankingAfter": [],
+        "winnerChanged": false,
+        "constraintChecks": [
+          {
+            "supplierId": "supplier-10-ecoderm-naturals",
+            "requirementId": "MR-5",
+            "before": "fail",
+            "after": "pass"
+          }
+        ],
+        "impact": "EcoDerm Naturals would become eligible.",
+        "caveats": [
+          "This threshold came from the product brief. Changing it is a commercial decision, and the effect shown here is only on eligibility — not on whether the looser limit is acceptable.",
+          "The lead-time limit exists to hit a launch date, which the supplied documents do not give. Moving it is a decision about the launch, not about the supplier — and the supplier this admits is the most expensive option in the set, so it buys no cost relief either."
+        ]
+      },
+      {
+        "id": "relax-MR-6",
+        "kind": "requirement-relaxed",
+        "label": "MR-6 not required",
+        "description": "If \"Facility location in India\" were dropped for this sourcing round.",
+        "eligibleBefore": [
+          "supplier-01",
+          "supplier-06-vantage-cosmo-labs",
+          "supplier-12-coastal-wellness-manufacturing"
+        ],
+        "eligibleAfter": [
+          "supplier-01",
+          "supplier-06-vantage-cosmo-labs",
+          "supplier-08-meridian-beauty-manufacturing",
+          "supplier-12-coastal-wellness-manufacturing"
+        ],
+        "entered": [
+          "supplier-08-meridian-beauty-manufacturing"
+        ],
+        "exited": [],
+        "rankingBefore": [],
+        "rankingAfter": [],
+        "winnerChanged": false,
+        "constraintChecks": [
+          {
+            "supplierId": "supplier-08-meridian-beauty-manufacturing",
+            "requirementId": "MR-1",
+            "before": "pass",
+            "after": "pass"
+          },
+          {
+            "supplierId": "supplier-08-meridian-beauty-manufacturing",
+            "requirementId": "MR-2",
+            "before": "pass",
+            "after": "pass"
+          },
+          {
+            "supplierId": "supplier-08-meridian-beauty-manufacturing",
+            "requirementId": "MR-3",
+            "before": "pass",
+            "after": "pass"
+          },
+          {
+            "supplierId": "supplier-08-meridian-beauty-manufacturing",
+            "requirementId": "MR-4",
+            "before": "pass",
+            "after": "pass"
+          },
+          {
+            "supplierId": "supplier-08-meridian-beauty-manufacturing",
+            "requirementId": "MR-5",
+            "before": "pass",
+            "after": "pass"
+          },
+          {
+            "supplierId": "supplier-08-meridian-beauty-manufacturing",
+            "requirementId": "MR-6",
+            "before": "fail",
+            "after": "pass"
+          },
+          {
+            "supplierId": "supplier-08-meridian-beauty-manufacturing",
+            "requirementId": "MR-7",
+            "before": "pass",
+            "after": "pass"
+          }
+        ],
+        "impact": "Meridian Beauty Manufacturing would become eligible; every other requirement is already satisfied.",
+        "caveats": [
+          "This requirement was set by the buyer for a reason the supplied documents do not record. The figure below is what the constraint costs, not a recommendation to drop it.",
+          "The cheaper overseas option states that export shipping, customs clearance and inbound freight are additional and are not included in its quoted lead time. The unit-price saving shown is therefore not the landed saving, and the supplied documents do not contain enough to compute one."
+        ]
+      },
+      {
+        "id": "unavailable-supplier-01",
+        "kind": "supplier-unavailable",
+        "label": "Supplier 1 unavailable",
+        "description": "If the recommended supplier could not take the order — capacity, a failed audit, or a commercial breakdown.",
+        "eligibleBefore": [
+          "supplier-01",
+          "supplier-06-vantage-cosmo-labs",
+          "supplier-12-coastal-wellness-manufacturing"
+        ],
+        "eligibleAfter": [
+          "supplier-06-vantage-cosmo-labs",
+          "supplier-12-coastal-wellness-manufacturing"
+        ],
+        "entered": [],
+        "exited": [
+          "supplier-01"
+        ],
+        "rankingBefore": [
+          "supplier-01",
+          "supplier-06-vantage-cosmo-labs",
+          "supplier-12-coastal-wellness-manufacturing"
+        ],
+        "rankingAfter": [
+          "supplier-06-vantage-cosmo-labs",
+          "supplier-12-coastal-wellness-manufacturing"
+        ],
+        "winnerChanged": true,
+        "constraintChecks": [
+          {
+            "supplierId": "supplier-06-vantage-cosmo-labs",
+            "requirementId": "MR-1",
+            "before": "pass",
+            "after": "pass"
+          },
+          {
+            "supplierId": "supplier-06-vantage-cosmo-labs",
+            "requirementId": "MR-2",
+            "before": "pass",
+            "after": "pass"
+          },
+          {
+            "supplierId": "supplier-06-vantage-cosmo-labs",
+            "requirementId": "MR-3",
+            "before": "pass",
+            "after": "pass"
+          },
+          {
+            "supplierId": "supplier-06-vantage-cosmo-labs",
+            "requirementId": "MR-4",
+            "before": "pass",
+            "after": "pass"
+          },
+          {
+            "supplierId": "supplier-06-vantage-cosmo-labs",
+            "requirementId": "MR-5",
+            "before": "pass",
+            "after": "pass"
+          },
+          {
+            "supplierId": "supplier-06-vantage-cosmo-labs",
+            "requirementId": "MR-6",
+            "before": "pass",
+            "after": "pass"
+          },
+          {
+            "supplierId": "supplier-06-vantage-cosmo-labs",
+            "requirementId": "MR-7",
+            "before": "pass",
+            "after": "pass"
+          },
+          {
+            "supplierId": "supplier-12-coastal-wellness-manufacturing",
+            "requirementId": "MR-1",
+            "before": "pass",
+            "after": "pass"
+          },
+          {
+            "supplierId": "supplier-12-coastal-wellness-manufacturing",
+            "requirementId": "MR-2",
+            "before": "pass",
+            "after": "pass"
+          },
+          {
+            "supplierId": "supplier-12-coastal-wellness-manufacturing",
+            "requirementId": "MR-3",
+            "before": "pass",
+            "after": "pass"
+          },
+          {
+            "supplierId": "supplier-12-coastal-wellness-manufacturing",
+            "requirementId": "MR-4",
+            "before": "pass",
+            "after": "pass"
+          },
+          {
+            "supplierId": "supplier-12-coastal-wellness-manufacturing",
+            "requirementId": "MR-5",
+            "before": "pass",
+            "after": "pass"
+          },
+          {
+            "supplierId": "supplier-12-coastal-wellness-manufacturing",
+            "requirementId": "MR-6",
+            "before": "pass",
+            "after": "pass"
+          },
+          {
+            "supplierId": "supplier-12-coastal-wellness-manufacturing",
+            "requirementId": "MR-7",
+            "before": "pass",
+            "after": "pass"
+          }
+        ],
+        "impact": "Vantage Cosmo Labs becomes the recommendation. It already satisfies every mandatory requirement, so no re-qualification is needed.",
+        "caveats": [
+          "Scores are relative to the suppliers in the comparison, so removing one changes the others' numbers as well as the order. The figures in this scenario are not directly comparable with the baseline.",
+          "This assumes the alternative can absorb the full order at its stated terms. Capacity at short notice is not something the supplied documents establish."
+        ]
+      },
+      {
+        "id": "lead-time-slip-25",
+        "kind": "lead-time-slip",
+        "label": "Lead times slip 25%",
+        "description": "If every supplier's manufacturing lead time ran 25% longer than quoted.",
+        "eligibleBefore": [
+          "supplier-01",
+          "supplier-06-vantage-cosmo-labs",
+          "supplier-12-coastal-wellness-manufacturing"
+        ],
+        "eligibleAfter": [
+          "supplier-01"
+        ],
+        "entered": [],
+        "exited": [
+          "supplier-06-vantage-cosmo-labs",
+          "supplier-12-coastal-wellness-manufacturing"
+        ],
+        "rankingBefore": [
+          "supplier-01",
+          "supplier-06-vantage-cosmo-labs",
+          "supplier-12-coastal-wellness-manufacturing"
+        ],
+        "rankingAfter": [
+          "supplier-01"
+        ],
+        "winnerChanged": false,
+        "constraintChecks": [
+          {
+            "supplierId": "supplier-05",
+            "requirementId": "MR-5",
+            "before": "pass",
+            "after": "fail"
+          },
+          {
+            "supplierId": "supplier-06-vantage-cosmo-labs",
+            "requirementId": "MR-5",
+            "before": "pass",
+            "after": "fail"
+          },
+          {
+            "supplierId": "supplier-12-coastal-wellness-manufacturing",
+            "requirementId": "MR-5",
+            "before": "pass",
+            "after": "fail"
+          }
+        ],
+        "impact": "Vantage Cosmo Labs, Coastal Wellness Manufacturing would miss the launch window, leaving 1 qualified supplier. Suppliers quoting close to the limit have no room for slippage.",
+        "caveats": [
+          "A uniform slip is a simplification. Real delays hit suppliers unevenly, and a shared cause — a material shortage, a shipping disruption — would not respect the percentages used here.",
+          "This tests the stated manufacturing lead time only. It does not model freight, customs or the time to qualify a replacement."
+        ]
+      }
+    ],
+    "splits": [
+      {
+        "orderQuantity": 8000,
+        "soleSourceBest": {
+          "supplierId": "supplier-01",
+          "supplierName": "Supplier 1",
+          "unitCost": 45.3,
+          "totalCost": 362400,
+          "leadTimeDays": 14,
+          "concentration": {
+            "hhi": 1,
+            "effectiveSuppliers": 1
+          }
+        },
+        "options": [
+          {
+            "orderQuantity": 8000,
+            "primary": {
+              "supplierId": "supplier-01",
+              "supplierName": "Supplier 1",
+              "share": 0.8,
+              "units": 6400,
+              "moq": 3000,
+              "meetsMoq": true,
+              "unitCost": 45.3
+            },
+            "secondary": {
+              "supplierId": "supplier-06-vantage-cosmo-labs",
+              "supplierName": "Vantage Cosmo Labs",
+              "share": 0.2,
+              "units": 1600,
+              "moq": 4000,
+              "meetsMoq": false,
+              "unitCost": 52
+            },
+            "feasible": false,
+            "infeasibleReason": "Vantage Cosmo Labs would receive 1,600 units, below its 4,000-unit minimum",
+            "derivedFromMoq": false,
+            "blendedUnitCost": 46.64,
+            "totalCost": 373120,
+            "leadTimeDays": 18,
+            "blendedFailRate": 20.6,
+            "blendedSustainability": 1.2000000000000002,
+            "concentration": {
+              "hhi": 0.6800000000000002,
+              "effectiveSuppliers": 1.4705882352941173
+            },
+            "costDeltaVsSoleSource": 10720.000000000027
+          },
+          {
+            "orderQuantity": 8000,
+            "primary": {
+              "supplierId": "supplier-01",
+              "supplierName": "Supplier 1",
+              "share": 0.8,
+              "units": 6400,
+              "moq": 3000,
+              "meetsMoq": true,
+              "unitCost": 45.3
+            },
+            "secondary": {
+              "supplierId": "supplier-12-coastal-wellness-manufacturing",
+              "supplierName": "Coastal Wellness Manufacturing",
+              "share": 0.2,
+              "units": 1600,
+              "moq": 5000,
+              "meetsMoq": false,
+              "unitCost": 47.1
+            },
+            "feasible": false,
+            "infeasibleReason": "Coastal Wellness Manufacturing would receive 1,600 units, below its 5,000-unit minimum",
+            "derivedFromMoq": false,
+            "blendedUnitCost": 45.660000000000004,
+            "totalCost": 365280.00000000006,
+            "leadTimeDays": 19,
+            "blendedFailRate": 23.200000000000003,
+            "blendedSustainability": 1,
+            "concentration": {
+              "hhi": 0.6800000000000002,
+              "effectiveSuppliers": 1.4705882352941173
+            },
+            "costDeltaVsSoleSource": 2880.0000000000523
+          },
+          {
+            "orderQuantity": 8000,
+            "primary": {
+              "supplierId": "supplier-06-vantage-cosmo-labs",
+              "supplierName": "Vantage Cosmo Labs",
+              "share": 0.8,
+              "units": 6400,
+              "moq": 4000,
+              "meetsMoq": true,
+              "unitCost": 52
+            },
+            "secondary": {
+              "supplierId": "supplier-01",
+              "supplierName": "Supplier 1",
+              "share": 0.2,
+              "units": 1600,
+              "moq": 3000,
+              "meetsMoq": false,
+              "unitCost": 45.3
+            },
+            "feasible": false,
+            "infeasibleReason": "Supplier 1 would receive 1,600 units, below its 3,000-unit minimum",
+            "derivedFromMoq": false,
+            "blendedUnitCost": 50.660000000000004,
+            "totalCost": 405280.00000000006,
+            "leadTimeDays": 18,
+            "blendedFailRate": 16.4,
+            "blendedSustainability": 1.8,
+            "concentration": {
+              "hhi": 0.6800000000000002,
+              "effectiveSuppliers": 1.4705882352941173
+            },
+            "costDeltaVsSoleSource": 42880.00000000005
+          },
+          {
+            "orderQuantity": 8000,
+            "primary": {
+              "supplierId": "supplier-06-vantage-cosmo-labs",
+              "supplierName": "Vantage Cosmo Labs",
+              "share": 0.8,
+              "units": 6400,
+              "moq": 4000,
+              "meetsMoq": true,
+              "unitCost": 52
+            },
+            "secondary": {
+              "supplierId": "supplier-12-coastal-wellness-manufacturing",
+              "supplierName": "Coastal Wellness Manufacturing",
+              "share": 0.2,
+              "units": 1600,
+              "moq": 5000,
+              "meetsMoq": false,
+              "unitCost": 47.1
+            },
+            "feasible": false,
+            "infeasibleReason": "Coastal Wellness Manufacturing would receive 1,600 units, below its 5,000-unit minimum",
+            "derivedFromMoq": false,
+            "blendedUnitCost": 51.02,
+            "totalCost": 408160,
+            "leadTimeDays": 19,
+            "blendedFailRate": 17.6,
+            "blendedSustainability": 1.8,
+            "concentration": {
+              "hhi": 0.6800000000000002,
+              "effectiveSuppliers": 1.4705882352941173
+            },
+            "costDeltaVsSoleSource": 45760.00000000005
+          },
+          {
+            "orderQuantity": 8000,
+            "primary": {
+              "supplierId": "supplier-12-coastal-wellness-manufacturing",
+              "supplierName": "Coastal Wellness Manufacturing",
+              "share": 0.8,
+              "units": 6400,
+              "moq": 5000,
+              "meetsMoq": true,
+              "unitCost": 47.1
+            },
+            "secondary": {
+              "supplierId": "supplier-01",
+              "supplierName": "Supplier 1",
+              "share": 0.2,
+              "units": 1600,
+              "moq": 3000,
+              "meetsMoq": false,
+              "unitCost": 45.3
+            },
+            "feasible": false,
+            "infeasibleReason": "Supplier 1 would receive 1,600 units, below its 3,000-unit minimum",
+            "derivedFromMoq": false,
+            "blendedUnitCost": 46.74,
+            "totalCost": 373920,
+            "leadTimeDays": 19,
+            "blendedFailRate": 26.800000000000004,
+            "blendedSustainability": 1,
+            "concentration": {
+              "hhi": 0.6800000000000002,
+              "effectiveSuppliers": 1.4705882352941173
+            },
+            "costDeltaVsSoleSource": 11520.000000000038
+          },
+          {
+            "orderQuantity": 8000,
+            "primary": {
+              "supplierId": "supplier-12-coastal-wellness-manufacturing",
+              "supplierName": "Coastal Wellness Manufacturing",
+              "share": 0.8,
+              "units": 6400,
+              "moq": 5000,
+              "meetsMoq": true,
+              "unitCost": 47.1
+            },
+            "secondary": {
+              "supplierId": "supplier-06-vantage-cosmo-labs",
+              "supplierName": "Vantage Cosmo Labs",
+              "share": 0.2,
+              "units": 1600,
+              "moq": 4000,
+              "meetsMoq": false,
+              "unitCost": 52
+            },
+            "feasible": false,
+            "infeasibleReason": "Vantage Cosmo Labs would receive 1,600 units, below its 4,000-unit minimum",
+            "derivedFromMoq": false,
+            "blendedUnitCost": 48.08,
+            "totalCost": 384640,
+            "leadTimeDays": 19,
+            "blendedFailRate": 25.400000000000002,
+            "blendedSustainability": 1.2000000000000002,
+            "concentration": {
+              "hhi": 0.6800000000000002,
+              "effectiveSuppliers": 1.4705882352941173
+            },
+            "costDeltaVsSoleSource": 22240.000000000007
+          },
+          {
+            "orderQuantity": 8000,
+            "primary": {
+              "supplierId": "supplier-01",
+              "supplierName": "Supplier 1",
+              "share": 0.7,
+              "units": 5600,
+              "moq": 3000,
+              "meetsMoq": true,
+              "unitCost": 45.3
+            },
+            "secondary": {
+              "supplierId": "supplier-06-vantage-cosmo-labs",
+              "supplierName": "Vantage Cosmo Labs",
+              "share": 0.3,
+              "units": 2400,
+              "moq": 4000,
+              "meetsMoq": false,
+              "unitCost": 52
+            },
+            "feasible": false,
+            "infeasibleReason": "Vantage Cosmo Labs would receive 2,400 units, below its 4,000-unit minimum",
+            "derivedFromMoq": false,
+            "blendedUnitCost": 47.309999999999995,
+            "totalCost": 378479.99999999994,
+            "leadTimeDays": 18,
+            "blendedFailRate": 19.9,
+            "blendedSustainability": 1.2999999999999998,
+            "concentration": {
+              "hhi": 0.58,
+              "effectiveSuppliers": 1.7241379310344829
+            },
+            "costDeltaVsSoleSource": 16079.999999999984
+          },
+          {
+            "orderQuantity": 8000,
+            "primary": {
+              "supplierId": "supplier-01",
+              "supplierName": "Supplier 1",
+              "share": 0.7,
+              "units": 5600,
+              "moq": 3000,
+              "meetsMoq": true,
+              "unitCost": 45.3
+            },
+            "secondary": {
+              "supplierId": "supplier-12-coastal-wellness-manufacturing",
+              "supplierName": "Coastal Wellness Manufacturing",
+              "share": 0.3,
+              "units": 2400,
+              "moq": 5000,
+              "meetsMoq": false,
+              "unitCost": 47.1
+            },
+            "feasible": false,
+            "infeasibleReason": "Coastal Wellness Manufacturing would receive 2,400 units, below its 5,000-unit minimum",
+            "derivedFromMoq": false,
+            "blendedUnitCost": 45.839999999999996,
+            "totalCost": 366719.99999999994,
+            "leadTimeDays": 19,
+            "blendedFailRate": 23.799999999999997,
+            "blendedSustainability": 1,
+            "concentration": {
+              "hhi": 0.58,
+              "effectiveSuppliers": 1.7241379310344829
+            },
+            "costDeltaVsSoleSource": 4319.999999999993
+          },
+          {
+            "orderQuantity": 8000,
+            "primary": {
+              "supplierId": "supplier-06-vantage-cosmo-labs",
+              "supplierName": "Vantage Cosmo Labs",
+              "share": 0.7,
+              "units": 5600,
+              "moq": 4000,
+              "meetsMoq": true,
+              "unitCost": 52
+            },
+            "secondary": {
+              "supplierId": "supplier-01",
+              "supplierName": "Supplier 1",
+              "share": 0.3,
+              "units": 2400,
+              "moq": 3000,
+              "meetsMoq": false,
+              "unitCost": 45.3
+            },
+            "feasible": false,
+            "infeasibleReason": "Supplier 1 would receive 2,400 units, below its 3,000-unit minimum",
+            "derivedFromMoq": false,
+            "blendedUnitCost": 49.989999999999995,
+            "totalCost": 399919.99999999994,
+            "leadTimeDays": 18,
+            "blendedFailRate": 17.1,
+            "blendedSustainability": 1.7,
+            "concentration": {
+              "hhi": 0.58,
+              "effectiveSuppliers": 1.7241379310344829
+            },
+            "costDeltaVsSoleSource": 37519.999999999985
+          },
+          {
+            "orderQuantity": 8000,
+            "primary": {
+              "supplierId": "supplier-06-vantage-cosmo-labs",
+              "supplierName": "Vantage Cosmo Labs",
+              "share": 0.7,
+              "units": 5600,
+              "moq": 4000,
+              "meetsMoq": true,
+              "unitCost": 52
+            },
+            "secondary": {
+              "supplierId": "supplier-12-coastal-wellness-manufacturing",
+              "supplierName": "Coastal Wellness Manufacturing",
+              "share": 0.3,
+              "units": 2400,
+              "moq": 5000,
+              "meetsMoq": false,
+              "unitCost": 47.1
+            },
+            "feasible": false,
+            "infeasibleReason": "Coastal Wellness Manufacturing would receive 2,400 units, below its 5,000-unit minimum",
+            "derivedFromMoq": false,
+            "blendedUnitCost": 50.53,
+            "totalCost": 404240,
+            "leadTimeDays": 19,
+            "blendedFailRate": 18.9,
+            "blendedSustainability": 1.7,
+            "concentration": {
+              "hhi": 0.58,
+              "effectiveSuppliers": 1.7241379310344829
+            },
+            "costDeltaVsSoleSource": 41840.00000000003
+          },
+          {
+            "orderQuantity": 8000,
+            "primary": {
+              "supplierId": "supplier-12-coastal-wellness-manufacturing",
+              "supplierName": "Coastal Wellness Manufacturing",
+              "share": 0.7,
+              "units": 5600,
+              "moq": 5000,
+              "meetsMoq": true,
+              "unitCost": 47.1
+            },
+            "secondary": {
+              "supplierId": "supplier-01",
+              "supplierName": "Supplier 1",
+              "share": 0.3,
+              "units": 2400,
+              "moq": 3000,
+              "meetsMoq": false,
+              "unitCost": 45.3
+            },
+            "feasible": false,
+            "infeasibleReason": "Supplier 1 would receive 2,400 units, below its 3,000-unit minimum",
+            "derivedFromMoq": false,
+            "blendedUnitCost": 46.559999999999995,
+            "totalCost": 372479.99999999994,
+            "leadTimeDays": 19,
+            "blendedFailRate": 26.199999999999996,
+            "blendedSustainability": 1,
+            "concentration": {
+              "hhi": 0.58,
+              "effectiveSuppliers": 1.7241379310344829
+            },
+            "costDeltaVsSoleSource": 10079.999999999984
+          },
+          {
+            "orderQuantity": 8000,
+            "primary": {
+              "supplierId": "supplier-12-coastal-wellness-manufacturing",
+              "supplierName": "Coastal Wellness Manufacturing",
+              "share": 0.7,
+              "units": 5600,
+              "moq": 5000,
+              "meetsMoq": true,
+              "unitCost": 47.1
+            },
+            "secondary": {
+              "supplierId": "supplier-06-vantage-cosmo-labs",
+              "supplierName": "Vantage Cosmo Labs",
+              "share": 0.3,
+              "units": 2400,
+              "moq": 4000,
+              "meetsMoq": false,
+              "unitCost": 52
+            },
+            "feasible": false,
+            "infeasibleReason": "Vantage Cosmo Labs would receive 2,400 units, below its 4,000-unit minimum",
+            "derivedFromMoq": false,
+            "blendedUnitCost": 48.57,
+            "totalCost": 388560,
+            "leadTimeDays": 19,
+            "blendedFailRate": 24.099999999999998,
+            "blendedSustainability": 1.2999999999999998,
+            "concentration": {
+              "hhi": 0.58,
+              "effectiveSuppliers": 1.7241379310344829
+            },
+            "costDeltaVsSoleSource": 26160.000000000025
+          },
+          {
+            "orderQuantity": 8000,
+            "primary": {
+              "supplierId": "supplier-01",
+              "supplierName": "Supplier 1",
+              "share": 0.6,
+              "units": 4800,
+              "moq": 3000,
+              "meetsMoq": true,
+              "unitCost": 45.3
+            },
+            "secondary": {
+              "supplierId": "supplier-06-vantage-cosmo-labs",
+              "supplierName": "Vantage Cosmo Labs",
+              "share": 0.4,
+              "units": 3200,
+              "moq": 4000,
+              "meetsMoq": false,
+              "unitCost": 52
+            },
+            "feasible": false,
+            "infeasibleReason": "Vantage Cosmo Labs would receive 3,200 units, below its 4,000-unit minimum",
+            "derivedFromMoq": false,
+            "blendedUnitCost": 47.98,
+            "totalCost": 383840,
+            "leadTimeDays": 18,
+            "blendedFailRate": 19.2,
+            "blendedSustainability": 1.4,
+            "concentration": {
+              "hhi": 0.52,
+              "effectiveSuppliers": 1.923076923076923
+            },
+            "costDeltaVsSoleSource": 21439.999999999996
+          },
+          {
+            "orderQuantity": 8000,
+            "primary": {
+              "supplierId": "supplier-01",
+              "supplierName": "Supplier 1",
+              "share": 0.6,
+              "units": 4800,
+              "moq": 3000,
+              "meetsMoq": true,
+              "unitCost": 45.3
+            },
+            "secondary": {
+              "supplierId": "supplier-12-coastal-wellness-manufacturing",
+              "supplierName": "Coastal Wellness Manufacturing",
+              "share": 0.4,
+              "units": 3200,
+              "moq": 5000,
+              "meetsMoq": false,
+              "unitCost": 47.1
+            },
+            "feasible": false,
+            "infeasibleReason": "Coastal Wellness Manufacturing would receive 3,200 units, below its 5,000-unit minimum",
+            "derivedFromMoq": false,
+            "blendedUnitCost": 46.019999999999996,
+            "totalCost": 368159.99999999994,
+            "leadTimeDays": 19,
+            "blendedFailRate": 24.4,
+            "blendedSustainability": 1,
+            "concentration": {
+              "hhi": 0.52,
+              "effectiveSuppliers": 1.923076923076923
+            },
+            "costDeltaVsSoleSource": 5759.999999999991
+          },
+          {
+            "orderQuantity": 8000,
+            "primary": {
+              "supplierId": "supplier-06-vantage-cosmo-labs",
+              "supplierName": "Vantage Cosmo Labs",
+              "share": 0.6,
+              "units": 4800,
+              "moq": 4000,
+              "meetsMoq": true,
+              "unitCost": 52
+            },
+            "secondary": {
+              "supplierId": "supplier-01",
+              "supplierName": "Supplier 1",
+              "share": 0.4,
+              "units": 3200,
+              "moq": 3000,
+              "meetsMoq": true,
+              "unitCost": 45.3
+            },
+            "feasible": true,
+            "infeasibleReason": null,
+            "derivedFromMoq": false,
+            "blendedUnitCost": 49.32,
+            "totalCost": 394560,
+            "leadTimeDays": 18,
+            "blendedFailRate": 17.8,
+            "blendedSustainability": 1.6,
+            "concentration": {
+              "hhi": 0.52,
+              "effectiveSuppliers": 1.923076923076923
+            },
+            "costDeltaVsSoleSource": 32160.000000000025
+          },
+          {
+            "orderQuantity": 8000,
+            "primary": {
+              "supplierId": "supplier-06-vantage-cosmo-labs",
+              "supplierName": "Vantage Cosmo Labs",
+              "share": 0.6,
+              "units": 4800,
+              "moq": 4000,
+              "meetsMoq": true,
+              "unitCost": 52
+            },
+            "secondary": {
+              "supplierId": "supplier-12-coastal-wellness-manufacturing",
+              "supplierName": "Coastal Wellness Manufacturing",
+              "share": 0.4,
+              "units": 3200,
+              "moq": 5000,
+              "meetsMoq": false,
+              "unitCost": 47.1
+            },
+            "feasible": false,
+            "infeasibleReason": "Coastal Wellness Manufacturing would receive 3,200 units, below its 5,000-unit minimum",
+            "derivedFromMoq": false,
+            "blendedUnitCost": 50.04,
+            "totalCost": 400320,
+            "leadTimeDays": 19,
+            "blendedFailRate": 20.200000000000003,
+            "blendedSustainability": 1.6,
+            "concentration": {
+              "hhi": 0.52,
+              "effectiveSuppliers": 1.923076923076923
+            },
+            "costDeltaVsSoleSource": 37920.000000000015
+          },
+          {
+            "orderQuantity": 8000,
+            "primary": {
+              "supplierId": "supplier-12-coastal-wellness-manufacturing",
+              "supplierName": "Coastal Wellness Manufacturing",
+              "share": 0.6,
+              "units": 4800,
+              "moq": 5000,
+              "meetsMoq": false,
+              "unitCost": 47.1
+            },
+            "secondary": {
+              "supplierId": "supplier-01",
+              "supplierName": "Supplier 1",
+              "share": 0.4,
+              "units": 3200,
+              "moq": 3000,
+              "meetsMoq": true,
+              "unitCost": 45.3
+            },
+            "feasible": false,
+            "infeasibleReason": "Coastal Wellness Manufacturing would receive 4,800 units, below its 5,000-unit minimum",
+            "derivedFromMoq": false,
+            "blendedUnitCost": 46.38,
+            "totalCost": 371040,
+            "leadTimeDays": 19,
+            "blendedFailRate": 25.6,
+            "blendedSustainability": 1,
+            "concentration": {
+              "hhi": 0.52,
+              "effectiveSuppliers": 1.923076923076923
+            },
+            "costDeltaVsSoleSource": 8640.000000000044
+          },
+          {
+            "orderQuantity": 8000,
+            "primary": {
+              "supplierId": "supplier-12-coastal-wellness-manufacturing",
+              "supplierName": "Coastal Wellness Manufacturing",
+              "share": 0.6,
+              "units": 4800,
+              "moq": 5000,
+              "meetsMoq": false,
+              "unitCost": 47.1
+            },
+            "secondary": {
+              "supplierId": "supplier-06-vantage-cosmo-labs",
+              "supplierName": "Vantage Cosmo Labs",
+              "share": 0.4,
+              "units": 3200,
+              "moq": 4000,
+              "meetsMoq": false,
+              "unitCost": 52
+            },
+            "feasible": false,
+            "infeasibleReason": "Coastal Wellness Manufacturing would receive 4,800 units, below its 5,000-unit minimum; Vantage Cosmo Labs would receive 3,200 units, below its 4,000-unit minimum",
+            "derivedFromMoq": false,
+            "blendedUnitCost": 49.06,
+            "totalCost": 392480,
+            "leadTimeDays": 19,
+            "blendedFailRate": 22.8,
+            "blendedSustainability": 1.4,
+            "concentration": {
+              "hhi": 0.52,
+              "effectiveSuppliers": 1.923076923076923
+            },
+            "costDeltaVsSoleSource": 30080.00000000004
+          },
+          {
+            "orderQuantity": 8000,
+            "primary": {
+              "supplierId": "supplier-01",
+              "supplierName": "Supplier 1",
+              "share": 0.5,
+              "units": 4000,
+              "moq": 3000,
+              "meetsMoq": true,
+              "unitCost": 45.3
+            },
+            "secondary": {
+              "supplierId": "supplier-06-vantage-cosmo-labs",
+              "supplierName": "Vantage Cosmo Labs",
+              "share": 0.5,
+              "units": 4000,
+              "moq": 4000,
+              "meetsMoq": true,
+              "unitCost": 52
+            },
+            "feasible": true,
+            "infeasibleReason": null,
+            "derivedFromMoq": false,
+            "blendedUnitCost": 48.65,
+            "totalCost": 389200,
+            "leadTimeDays": 18,
+            "blendedFailRate": 18.5,
+            "blendedSustainability": 1.5,
+            "concentration": {
+              "hhi": 0.5,
+              "effectiveSuppliers": 2
+            },
+            "costDeltaVsSoleSource": 26800.00000000001
+          },
+          {
+            "orderQuantity": 8000,
+            "primary": {
+              "supplierId": "supplier-01",
+              "supplierName": "Supplier 1",
+              "share": 0.5,
+              "units": 4000,
+              "moq": 3000,
+              "meetsMoq": true,
+              "unitCost": 45.3
+            },
+            "secondary": {
+              "supplierId": "supplier-12-coastal-wellness-manufacturing",
+              "supplierName": "Coastal Wellness Manufacturing",
+              "share": 0.5,
+              "units": 4000,
+              "moq": 5000,
+              "meetsMoq": false,
+              "unitCost": 47.1
+            },
+            "feasible": false,
+            "infeasibleReason": "Coastal Wellness Manufacturing would receive 4,000 units, below its 5,000-unit minimum",
+            "derivedFromMoq": false,
+            "blendedUnitCost": 46.2,
+            "totalCost": 369600,
+            "leadTimeDays": 19,
+            "blendedFailRate": 25,
+            "blendedSustainability": 1,
+            "concentration": {
+              "hhi": 0.5,
+              "effectiveSuppliers": 2
+            },
+            "costDeltaVsSoleSource": 7200.0000000000455
+          },
+          {
+            "orderQuantity": 8000,
+            "primary": {
+              "supplierId": "supplier-06-vantage-cosmo-labs",
+              "supplierName": "Vantage Cosmo Labs",
+              "share": 0.5,
+              "units": 4000,
+              "moq": 4000,
+              "meetsMoq": true,
+              "unitCost": 52
+            },
+            "secondary": {
+              "supplierId": "supplier-12-coastal-wellness-manufacturing",
+              "supplierName": "Coastal Wellness Manufacturing",
+              "share": 0.5,
+              "units": 4000,
+              "moq": 5000,
+              "meetsMoq": false,
+              "unitCost": 47.1
+            },
+            "feasible": false,
+            "infeasibleReason": "Coastal Wellness Manufacturing would receive 4,000 units, below its 5,000-unit minimum",
+            "derivedFromMoq": false,
+            "blendedUnitCost": 49.55,
+            "totalCost": 396400,
+            "leadTimeDays": 19,
+            "blendedFailRate": 21.5,
+            "blendedSustainability": 1.5,
+            "concentration": {
+              "hhi": 0.5,
+              "effectiveSuppliers": 2
+            },
+            "costDeltaVsSoleSource": 34000
+          },
+          {
+            "orderQuantity": 8000,
+            "primary": {
+              "supplierId": "supplier-01",
+              "supplierName": "Supplier 1",
+              "share": 0.625,
+              "units": 5000,
+              "moq": 3000,
+              "meetsMoq": true,
+              "unitCost": 45.3
+            },
+            "secondary": {
+              "supplierId": "supplier-06-vantage-cosmo-labs",
+              "supplierName": "Vantage Cosmo Labs",
+              "share": 0.375,
+              "units": 3000,
+              "moq": 4000,
+              "meetsMoq": false,
+              "unitCost": 52
+            },
+            "feasible": false,
+            "infeasibleReason": "Vantage Cosmo Labs would receive 3,000 units, below its 4,000-unit minimum",
+            "derivedFromMoq": true,
+            "blendedUnitCost": 47.8125,
+            "totalCost": 382500,
+            "leadTimeDays": 18,
+            "blendedFailRate": 19.375,
+            "blendedSustainability": 1.375,
+            "concentration": {
+              "hhi": 0.53125,
+              "effectiveSuppliers": 1.8823529411764706
+            },
+            "costDeltaVsSoleSource": 20100.000000000022
+          },
+          {
+            "orderQuantity": 8000,
+            "primary": {
+              "supplierId": "supplier-01",
+              "supplierName": "Supplier 1",
+              "share": 0.625,
+              "units": 5000,
+              "moq": 3000,
+              "meetsMoq": true,
+              "unitCost": 45.3
+            },
+            "secondary": {
+              "supplierId": "supplier-12-coastal-wellness-manufacturing",
+              "supplierName": "Coastal Wellness Manufacturing",
+              "share": 0.375,
+              "units": 3000,
+              "moq": 5000,
+              "meetsMoq": false,
+              "unitCost": 47.1
+            },
+            "feasible": false,
+            "infeasibleReason": "Coastal Wellness Manufacturing would receive 3,000 units, below its 5,000-unit minimum",
+            "derivedFromMoq": true,
+            "blendedUnitCost": 45.975,
+            "totalCost": 367800,
+            "leadTimeDays": 19,
+            "blendedFailRate": 24.25,
+            "blendedSustainability": 1,
+            "concentration": {
+              "hhi": 0.53125,
+              "effectiveSuppliers": 1.8823529411764706
+            },
+            "costDeltaVsSoleSource": 5400.000000000035
+          },
+          {
+            "orderQuantity": 8000,
+            "primary": {
+              "supplierId": "supplier-06-vantage-cosmo-labs",
+              "supplierName": "Vantage Cosmo Labs",
+              "share": 0.625,
+              "units": 5000,
+              "moq": 4000,
+              "meetsMoq": true,
+              "unitCost": 52
+            },
+            "secondary": {
+              "supplierId": "supplier-01",
+              "supplierName": "Supplier 1",
+              "share": 0.375,
+              "units": 3000,
+              "moq": 3000,
+              "meetsMoq": true,
+              "unitCost": 45.3
+            },
+            "feasible": true,
+            "infeasibleReason": null,
+            "derivedFromMoq": true,
+            "blendedUnitCost": 49.4875,
+            "totalCost": 395900,
+            "leadTimeDays": 18,
+            "blendedFailRate": 17.625,
+            "blendedSustainability": 1.625,
+            "concentration": {
+              "hhi": 0.53125,
+              "effectiveSuppliers": 1.8823529411764706
+            },
+            "costDeltaVsSoleSource": 33500
+          },
+          {
+            "orderQuantity": 8000,
+            "primary": {
+              "supplierId": "supplier-06-vantage-cosmo-labs",
+              "supplierName": "Vantage Cosmo Labs",
+              "share": 0.625,
+              "units": 5000,
+              "moq": 4000,
+              "meetsMoq": true,
+              "unitCost": 52
+            },
+            "secondary": {
+              "supplierId": "supplier-12-coastal-wellness-manufacturing",
+              "supplierName": "Coastal Wellness Manufacturing",
+              "share": 0.375,
+              "units": 3000,
+              "moq": 5000,
+              "meetsMoq": false,
+              "unitCost": 47.1
+            },
+            "feasible": false,
+            "infeasibleReason": "Coastal Wellness Manufacturing would receive 3,000 units, below its 5,000-unit minimum",
+            "derivedFromMoq": true,
+            "blendedUnitCost": 50.1625,
+            "totalCost": 401300,
+            "leadTimeDays": 19,
+            "blendedFailRate": 19.875,
+            "blendedSustainability": 1.625,
+            "concentration": {
+              "hhi": 0.53125,
+              "effectiveSuppliers": 1.8823529411764706
+            },
+            "costDeltaVsSoleSource": 38900.00000000004
+          },
+          {
+            "orderQuantity": 8000,
+            "primary": {
+              "supplierId": "supplier-12-coastal-wellness-manufacturing",
+              "supplierName": "Coastal Wellness Manufacturing",
+              "share": 0.625,
+              "units": 5000,
+              "moq": 5000,
+              "meetsMoq": true,
+              "unitCost": 47.1
+            },
+            "secondary": {
+              "supplierId": "supplier-01",
+              "supplierName": "Supplier 1",
+              "share": 0.375,
+              "units": 3000,
+              "moq": 3000,
+              "meetsMoq": true,
+              "unitCost": 45.3
+            },
+            "feasible": true,
+            "infeasibleReason": null,
+            "derivedFromMoq": true,
+            "blendedUnitCost": 46.425,
+            "totalCost": 371400,
+            "leadTimeDays": 19,
+            "blendedFailRate": 25.75,
+            "blendedSustainability": 1,
+            "concentration": {
+              "hhi": 0.53125,
+              "effectiveSuppliers": 1.8823529411764706
+            },
+            "costDeltaVsSoleSource": 9000
+          },
+          {
+            "orderQuantity": 8000,
+            "primary": {
+              "supplierId": "supplier-12-coastal-wellness-manufacturing",
+              "supplierName": "Coastal Wellness Manufacturing",
+              "share": 0.625,
+              "units": 5000,
+              "moq": 5000,
+              "meetsMoq": true,
+              "unitCost": 47.1
+            },
+            "secondary": {
+              "supplierId": "supplier-06-vantage-cosmo-labs",
+              "supplierName": "Vantage Cosmo Labs",
+              "share": 0.375,
+              "units": 3000,
+              "moq": 4000,
+              "meetsMoq": false,
+              "unitCost": 52
+            },
+            "feasible": false,
+            "infeasibleReason": "Vantage Cosmo Labs would receive 3,000 units, below its 4,000-unit minimum",
+            "derivedFromMoq": true,
+            "blendedUnitCost": 48.9375,
+            "totalCost": 391500,
+            "leadTimeDays": 19,
+            "blendedFailRate": 23.125,
+            "blendedSustainability": 1.375,
+            "concentration": {
+              "hhi": 0.53125,
+              "effectiveSuppliers": 1.8823529411764706
+            },
+            "costDeltaVsSoleSource": 29100.000000000022
+          }
+        ],
+        "feasibleCount": 4,
+        "ratiosBlockedByMoq": [
+          0.2,
+          0.3
+        ],
+        "headline": "Dual sourcing is possible for 8,000 units, but not at the ratios normally used. At 80/20 and 70/30 the second supplier's share falls below every candidate's minimum order quantity, so only more even splits remain — and those forfeit the volume concentration that earns the better unit price.",
+        "caveats": [
+          "Blended cost assumes each supplier charges its stated unit price regardless of the volume allocated. In practice a smaller allocation attracts a premium — commonly 10–20% — so the modelled cost of splitting is a best case. The supplied documents contain no volume-pricing data.",
+          "Lead time is taken as the slower of the two suppliers, since the order is not complete until both have delivered. Our data gives one lead time per supplier and does not model how it might change with a smaller batch.",
+          "Splitting is modelled on stated minimums and prices only. Qualification cost, tooling duplication and the overhead of managing a second relationship are real and are not represented here.",
+          "One or more arrangements shown are not standard ratios but the exact boundary a supplier's minimum order quantity allows. They work only at that precise allocation: any reduction, and the order falls below a minimum."
+        ]
+      },
+      {
+        "orderQuantity": 40000,
+        "soleSourceBest": {
+          "supplierId": "supplier-01",
+          "supplierName": "Supplier 1",
+          "unitCost": 45.3,
+          "totalCost": 1812000,
+          "leadTimeDays": 14,
+          "concentration": {
+            "hhi": 1,
+            "effectiveSuppliers": 1
+          }
+        },
+        "options": [
+          {
+            "orderQuantity": 40000,
+            "primary": {
+              "supplierId": "supplier-01",
+              "supplierName": "Supplier 1",
+              "share": 0.8,
+              "units": 32000,
+              "moq": 3000,
+              "meetsMoq": true,
+              "unitCost": 45.3
+            },
+            "secondary": {
+              "supplierId": "supplier-06-vantage-cosmo-labs",
+              "supplierName": "Vantage Cosmo Labs",
+              "share": 0.2,
+              "units": 8000,
+              "moq": 4000,
+              "meetsMoq": true,
+              "unitCost": 52
+            },
+            "feasible": true,
+            "infeasibleReason": null,
+            "derivedFromMoq": false,
+            "blendedUnitCost": 46.64,
+            "totalCost": 1865600,
+            "leadTimeDays": 18,
+            "blendedFailRate": 20.6,
+            "blendedSustainability": 1.2000000000000002,
+            "concentration": {
+              "hhi": 0.6800000000000002,
+              "effectiveSuppliers": 1.4705882352941173
+            },
+            "costDeltaVsSoleSource": 53600.00000000014
+          },
+          {
+            "orderQuantity": 40000,
+            "primary": {
+              "supplierId": "supplier-01",
+              "supplierName": "Supplier 1",
+              "share": 0.8,
+              "units": 32000,
+              "moq": 3000,
+              "meetsMoq": true,
+              "unitCost": 45.3
+            },
+            "secondary": {
+              "supplierId": "supplier-12-coastal-wellness-manufacturing",
+              "supplierName": "Coastal Wellness Manufacturing",
+              "share": 0.2,
+              "units": 8000,
+              "moq": 5000,
+              "meetsMoq": true,
+              "unitCost": 47.1
+            },
+            "feasible": true,
+            "infeasibleReason": null,
+            "derivedFromMoq": false,
+            "blendedUnitCost": 45.660000000000004,
+            "totalCost": 1826400.0000000002,
+            "leadTimeDays": 19,
+            "blendedFailRate": 23.200000000000003,
+            "blendedSustainability": 1,
+            "concentration": {
+              "hhi": 0.6800000000000002,
+              "effectiveSuppliers": 1.4705882352941173
+            },
+            "costDeltaVsSoleSource": 14400.000000000262
+          },
+          {
+            "orderQuantity": 40000,
+            "primary": {
+              "supplierId": "supplier-06-vantage-cosmo-labs",
+              "supplierName": "Vantage Cosmo Labs",
+              "share": 0.8,
+              "units": 32000,
+              "moq": 4000,
+              "meetsMoq": true,
+              "unitCost": 52
+            },
+            "secondary": {
+              "supplierId": "supplier-01",
+              "supplierName": "Supplier 1",
+              "share": 0.2,
+              "units": 8000,
+              "moq": 3000,
+              "meetsMoq": true,
+              "unitCost": 45.3
+            },
+            "feasible": true,
+            "infeasibleReason": null,
+            "derivedFromMoq": false,
+            "blendedUnitCost": 50.660000000000004,
+            "totalCost": 2026400.0000000002,
+            "leadTimeDays": 18,
+            "blendedFailRate": 16.4,
+            "blendedSustainability": 1.8,
+            "concentration": {
+              "hhi": 0.6800000000000002,
+              "effectiveSuppliers": 1.4705882352941173
+            },
+            "costDeltaVsSoleSource": 214400.00000000026
+          },
+          {
+            "orderQuantity": 40000,
+            "primary": {
+              "supplierId": "supplier-06-vantage-cosmo-labs",
+              "supplierName": "Vantage Cosmo Labs",
+              "share": 0.8,
+              "units": 32000,
+              "moq": 4000,
+              "meetsMoq": true,
+              "unitCost": 52
+            },
+            "secondary": {
+              "supplierId": "supplier-12-coastal-wellness-manufacturing",
+              "supplierName": "Coastal Wellness Manufacturing",
+              "share": 0.2,
+              "units": 8000,
+              "moq": 5000,
+              "meetsMoq": true,
+              "unitCost": 47.1
+            },
+            "feasible": true,
+            "infeasibleReason": null,
+            "derivedFromMoq": false,
+            "blendedUnitCost": 51.02,
+            "totalCost": 2040800.0000000002,
+            "leadTimeDays": 19,
+            "blendedFailRate": 17.6,
+            "blendedSustainability": 1.8,
+            "concentration": {
+              "hhi": 0.6800000000000002,
+              "effectiveSuppliers": 1.4705882352941173
+            },
+            "costDeltaVsSoleSource": 228800.00000000023
+          },
+          {
+            "orderQuantity": 40000,
+            "primary": {
+              "supplierId": "supplier-12-coastal-wellness-manufacturing",
+              "supplierName": "Coastal Wellness Manufacturing",
+              "share": 0.8,
+              "units": 32000,
+              "moq": 5000,
+              "meetsMoq": true,
+              "unitCost": 47.1
+            },
+            "secondary": {
+              "supplierId": "supplier-01",
+              "supplierName": "Supplier 1",
+              "share": 0.2,
+              "units": 8000,
+              "moq": 3000,
+              "meetsMoq": true,
+              "unitCost": 45.3
+            },
+            "feasible": true,
+            "infeasibleReason": null,
+            "derivedFromMoq": false,
+            "blendedUnitCost": 46.74,
+            "totalCost": 1869600,
+            "leadTimeDays": 19,
+            "blendedFailRate": 26.800000000000004,
+            "blendedSustainability": 1,
+            "concentration": {
+              "hhi": 0.6800000000000002,
+              "effectiveSuppliers": 1.4705882352941173
+            },
+            "costDeltaVsSoleSource": 57600.0000000002
+          },
+          {
+            "orderQuantity": 40000,
+            "primary": {
+              "supplierId": "supplier-12-coastal-wellness-manufacturing",
+              "supplierName": "Coastal Wellness Manufacturing",
+              "share": 0.8,
+              "units": 32000,
+              "moq": 5000,
+              "meetsMoq": true,
+              "unitCost": 47.1
+            },
+            "secondary": {
+              "supplierId": "supplier-06-vantage-cosmo-labs",
+              "supplierName": "Vantage Cosmo Labs",
+              "share": 0.2,
+              "units": 8000,
+              "moq": 4000,
+              "meetsMoq": true,
+              "unitCost": 52
+            },
+            "feasible": true,
+            "infeasibleReason": null,
+            "derivedFromMoq": false,
+            "blendedUnitCost": 48.08,
+            "totalCost": 1923200,
+            "leadTimeDays": 19,
+            "blendedFailRate": 25.400000000000002,
+            "blendedSustainability": 1.2000000000000002,
+            "concentration": {
+              "hhi": 0.6800000000000002,
+              "effectiveSuppliers": 1.4705882352941173
+            },
+            "costDeltaVsSoleSource": 111200.00000000004
+          },
+          {
+            "orderQuantity": 40000,
+            "primary": {
+              "supplierId": "supplier-01",
+              "supplierName": "Supplier 1",
+              "share": 0.7,
+              "units": 28000,
+              "moq": 3000,
+              "meetsMoq": true,
+              "unitCost": 45.3
+            },
+            "secondary": {
+              "supplierId": "supplier-06-vantage-cosmo-labs",
+              "supplierName": "Vantage Cosmo Labs",
+              "share": 0.3,
+              "units": 12000,
+              "moq": 4000,
+              "meetsMoq": true,
+              "unitCost": 52
+            },
+            "feasible": true,
+            "infeasibleReason": null,
+            "derivedFromMoq": false,
+            "blendedUnitCost": 47.309999999999995,
+            "totalCost": 1892399.9999999998,
+            "leadTimeDays": 18,
+            "blendedFailRate": 19.9,
+            "blendedSustainability": 1.2999999999999998,
+            "concentration": {
+              "hhi": 0.58,
+              "effectiveSuppliers": 1.7241379310344829
+            },
+            "costDeltaVsSoleSource": 80399.99999999993
+          },
+          {
+            "orderQuantity": 40000,
+            "primary": {
+              "supplierId": "supplier-01",
+              "supplierName": "Supplier 1",
+              "share": 0.7,
+              "units": 28000,
+              "moq": 3000,
+              "meetsMoq": true,
+              "unitCost": 45.3
+            },
+            "secondary": {
+              "supplierId": "supplier-12-coastal-wellness-manufacturing",
+              "supplierName": "Coastal Wellness Manufacturing",
+              "share": 0.3,
+              "units": 12000,
+              "moq": 5000,
+              "meetsMoq": true,
+              "unitCost": 47.1
+            },
+            "feasible": true,
+            "infeasibleReason": null,
+            "derivedFromMoq": false,
+            "blendedUnitCost": 45.839999999999996,
+            "totalCost": 1833599.9999999998,
+            "leadTimeDays": 19,
+            "blendedFailRate": 23.799999999999997,
+            "blendedSustainability": 1,
+            "concentration": {
+              "hhi": 0.58,
+              "effectiveSuppliers": 1.7241379310344829
+            },
+            "costDeltaVsSoleSource": 21599.999999999967
+          },
+          {
+            "orderQuantity": 40000,
+            "primary": {
+              "supplierId": "supplier-06-vantage-cosmo-labs",
+              "supplierName": "Vantage Cosmo Labs",
+              "share": 0.7,
+              "units": 28000,
+              "moq": 4000,
+              "meetsMoq": true,
+              "unitCost": 52
+            },
+            "secondary": {
+              "supplierId": "supplier-01",
+              "supplierName": "Supplier 1",
+              "share": 0.3,
+              "units": 12000,
+              "moq": 3000,
+              "meetsMoq": true,
+              "unitCost": 45.3
+            },
+            "feasible": true,
+            "infeasibleReason": null,
+            "derivedFromMoq": false,
+            "blendedUnitCost": 49.989999999999995,
+            "totalCost": 1999599.9999999998,
+            "leadTimeDays": 18,
+            "blendedFailRate": 17.1,
+            "blendedSustainability": 1.7,
+            "concentration": {
+              "hhi": 0.58,
+              "effectiveSuppliers": 1.7241379310344829
+            },
+            "costDeltaVsSoleSource": 187599.9999999999
+          },
+          {
+            "orderQuantity": 40000,
+            "primary": {
+              "supplierId": "supplier-06-vantage-cosmo-labs",
+              "supplierName": "Vantage Cosmo Labs",
+              "share": 0.7,
+              "units": 28000,
+              "moq": 4000,
+              "meetsMoq": true,
+              "unitCost": 52
+            },
+            "secondary": {
+              "supplierId": "supplier-12-coastal-wellness-manufacturing",
+              "supplierName": "Coastal Wellness Manufacturing",
+              "share": 0.3,
+              "units": 12000,
+              "moq": 5000,
+              "meetsMoq": true,
+              "unitCost": 47.1
+            },
+            "feasible": true,
+            "infeasibleReason": null,
+            "derivedFromMoq": false,
+            "blendedUnitCost": 50.53,
+            "totalCost": 2021200,
+            "leadTimeDays": 19,
+            "blendedFailRate": 18.9,
+            "blendedSustainability": 1.7,
+            "concentration": {
+              "hhi": 0.58,
+              "effectiveSuppliers": 1.7241379310344829
+            },
+            "costDeltaVsSoleSource": 209200.00000000015
+          },
+          {
+            "orderQuantity": 40000,
+            "primary": {
+              "supplierId": "supplier-12-coastal-wellness-manufacturing",
+              "supplierName": "Coastal Wellness Manufacturing",
+              "share": 0.7,
+              "units": 28000,
+              "moq": 5000,
+              "meetsMoq": true,
+              "unitCost": 47.1
+            },
+            "secondary": {
+              "supplierId": "supplier-01",
+              "supplierName": "Supplier 1",
+              "share": 0.3,
+              "units": 12000,
+              "moq": 3000,
+              "meetsMoq": true,
+              "unitCost": 45.3
+            },
+            "feasible": true,
+            "infeasibleReason": null,
+            "derivedFromMoq": false,
+            "blendedUnitCost": 46.559999999999995,
+            "totalCost": 1862399.9999999998,
+            "leadTimeDays": 19,
+            "blendedFailRate": 26.199999999999996,
+            "blendedSustainability": 1,
+            "concentration": {
+              "hhi": 0.58,
+              "effectiveSuppliers": 1.7241379310344829
+            },
+            "costDeltaVsSoleSource": 50399.99999999992
+          },
+          {
+            "orderQuantity": 40000,
+            "primary": {
+              "supplierId": "supplier-12-coastal-wellness-manufacturing",
+              "supplierName": "Coastal Wellness Manufacturing",
+              "share": 0.7,
+              "units": 28000,
+              "moq": 5000,
+              "meetsMoq": true,
+              "unitCost": 47.1
+            },
+            "secondary": {
+              "supplierId": "supplier-06-vantage-cosmo-labs",
+              "supplierName": "Vantage Cosmo Labs",
+              "share": 0.3,
+              "units": 12000,
+              "moq": 4000,
+              "meetsMoq": true,
+              "unitCost": 52
+            },
+            "feasible": true,
+            "infeasibleReason": null,
+            "derivedFromMoq": false,
+            "blendedUnitCost": 48.57,
+            "totalCost": 1942800,
+            "leadTimeDays": 19,
+            "blendedFailRate": 24.099999999999998,
+            "blendedSustainability": 1.2999999999999998,
+            "concentration": {
+              "hhi": 0.58,
+              "effectiveSuppliers": 1.7241379310344829
+            },
+            "costDeltaVsSoleSource": 130800.00000000013
+          },
+          {
+            "orderQuantity": 40000,
+            "primary": {
+              "supplierId": "supplier-01",
+              "supplierName": "Supplier 1",
+              "share": 0.6,
+              "units": 24000,
+              "moq": 3000,
+              "meetsMoq": true,
+              "unitCost": 45.3
+            },
+            "secondary": {
+              "supplierId": "supplier-06-vantage-cosmo-labs",
+              "supplierName": "Vantage Cosmo Labs",
+              "share": 0.4,
+              "units": 16000,
+              "moq": 4000,
+              "meetsMoq": true,
+              "unitCost": 52
+            },
+            "feasible": true,
+            "infeasibleReason": null,
+            "derivedFromMoq": false,
+            "blendedUnitCost": 47.98,
+            "totalCost": 1919199.9999999998,
+            "leadTimeDays": 18,
+            "blendedFailRate": 19.2,
+            "blendedSustainability": 1.4,
+            "concentration": {
+              "hhi": 0.52,
+              "effectiveSuppliers": 1.923076923076923
+            },
+            "costDeltaVsSoleSource": 107199.99999999999
+          },
+          {
+            "orderQuantity": 40000,
+            "primary": {
+              "supplierId": "supplier-01",
+              "supplierName": "Supplier 1",
+              "share": 0.6,
+              "units": 24000,
+              "moq": 3000,
+              "meetsMoq": true,
+              "unitCost": 45.3
+            },
+            "secondary": {
+              "supplierId": "supplier-12-coastal-wellness-manufacturing",
+              "supplierName": "Coastal Wellness Manufacturing",
+              "share": 0.4,
+              "units": 16000,
+              "moq": 5000,
+              "meetsMoq": true,
+              "unitCost": 47.1
+            },
+            "feasible": true,
+            "infeasibleReason": null,
+            "derivedFromMoq": false,
+            "blendedUnitCost": 46.019999999999996,
+            "totalCost": 1840799.9999999998,
+            "leadTimeDays": 19,
+            "blendedFailRate": 24.4,
+            "blendedSustainability": 1,
+            "concentration": {
+              "hhi": 0.52,
+              "effectiveSuppliers": 1.923076923076923
+            },
+            "costDeltaVsSoleSource": 28799.999999999956
+          },
+          {
+            "orderQuantity": 40000,
+            "primary": {
+              "supplierId": "supplier-06-vantage-cosmo-labs",
+              "supplierName": "Vantage Cosmo Labs",
+              "share": 0.6,
+              "units": 24000,
+              "moq": 4000,
+              "meetsMoq": true,
+              "unitCost": 52
+            },
+            "secondary": {
+              "supplierId": "supplier-01",
+              "supplierName": "Supplier 1",
+              "share": 0.4,
+              "units": 16000,
+              "moq": 3000,
+              "meetsMoq": true,
+              "unitCost": 45.3
+            },
+            "feasible": true,
+            "infeasibleReason": null,
+            "derivedFromMoq": false,
+            "blendedUnitCost": 49.32,
+            "totalCost": 1972800,
+            "leadTimeDays": 18,
+            "blendedFailRate": 17.8,
+            "blendedSustainability": 1.6,
+            "concentration": {
+              "hhi": 0.52,
+              "effectiveSuppliers": 1.923076923076923
+            },
+            "costDeltaVsSoleSource": 160800.00000000012
+          },
+          {
+            "orderQuantity": 40000,
+            "primary": {
+              "supplierId": "supplier-06-vantage-cosmo-labs",
+              "supplierName": "Vantage Cosmo Labs",
+              "share": 0.6,
+              "units": 24000,
+              "moq": 4000,
+              "meetsMoq": true,
+              "unitCost": 52
+            },
+            "secondary": {
+              "supplierId": "supplier-12-coastal-wellness-manufacturing",
+              "supplierName": "Coastal Wellness Manufacturing",
+              "share": 0.4,
+              "units": 16000,
+              "moq": 5000,
+              "meetsMoq": true,
+              "unitCost": 47.1
+            },
+            "feasible": true,
+            "infeasibleReason": null,
+            "derivedFromMoq": false,
+            "blendedUnitCost": 50.04,
+            "totalCost": 2001600,
+            "leadTimeDays": 19,
+            "blendedFailRate": 20.200000000000003,
+            "blendedSustainability": 1.6,
+            "concentration": {
+              "hhi": 0.52,
+              "effectiveSuppliers": 1.923076923076923
+            },
+            "costDeltaVsSoleSource": 189600.0000000001
+          },
+          {
+            "orderQuantity": 40000,
+            "primary": {
+              "supplierId": "supplier-12-coastal-wellness-manufacturing",
+              "supplierName": "Coastal Wellness Manufacturing",
+              "share": 0.6,
+              "units": 24000,
+              "moq": 5000,
+              "meetsMoq": true,
+              "unitCost": 47.1
+            },
+            "secondary": {
+              "supplierId": "supplier-01",
+              "supplierName": "Supplier 1",
+              "share": 0.4,
+              "units": 16000,
+              "moq": 3000,
+              "meetsMoq": true,
+              "unitCost": 45.3
+            },
+            "feasible": true,
+            "infeasibleReason": null,
+            "derivedFromMoq": false,
+            "blendedUnitCost": 46.38,
+            "totalCost": 1855200,
+            "leadTimeDays": 19,
+            "blendedFailRate": 25.6,
+            "blendedSustainability": 1,
+            "concentration": {
+              "hhi": 0.52,
+              "effectiveSuppliers": 1.923076923076923
+            },
+            "costDeltaVsSoleSource": 43200.00000000022
+          },
+          {
+            "orderQuantity": 40000,
+            "primary": {
+              "supplierId": "supplier-12-coastal-wellness-manufacturing",
+              "supplierName": "Coastal Wellness Manufacturing",
+              "share": 0.6,
+              "units": 24000,
+              "moq": 5000,
+              "meetsMoq": true,
+              "unitCost": 47.1
+            },
+            "secondary": {
+              "supplierId": "supplier-06-vantage-cosmo-labs",
+              "supplierName": "Vantage Cosmo Labs",
+              "share": 0.4,
+              "units": 16000,
+              "moq": 4000,
+              "meetsMoq": true,
+              "unitCost": 52
+            },
+            "feasible": true,
+            "infeasibleReason": null,
+            "derivedFromMoq": false,
+            "blendedUnitCost": 49.06,
+            "totalCost": 1962400,
+            "leadTimeDays": 19,
+            "blendedFailRate": 22.8,
+            "blendedSustainability": 1.4,
+            "concentration": {
+              "hhi": 0.52,
+              "effectiveSuppliers": 1.923076923076923
+            },
+            "costDeltaVsSoleSource": 150400.0000000002
+          },
+          {
+            "orderQuantity": 40000,
+            "primary": {
+              "supplierId": "supplier-01",
+              "supplierName": "Supplier 1",
+              "share": 0.5,
+              "units": 20000,
+              "moq": 3000,
+              "meetsMoq": true,
+              "unitCost": 45.3
+            },
+            "secondary": {
+              "supplierId": "supplier-06-vantage-cosmo-labs",
+              "supplierName": "Vantage Cosmo Labs",
+              "share": 0.5,
+              "units": 20000,
+              "moq": 4000,
+              "meetsMoq": true,
+              "unitCost": 52
+            },
+            "feasible": true,
+            "infeasibleReason": null,
+            "derivedFromMoq": false,
+            "blendedUnitCost": 48.65,
+            "totalCost": 1946000,
+            "leadTimeDays": 18,
+            "blendedFailRate": 18.5,
+            "blendedSustainability": 1.5,
+            "concentration": {
+              "hhi": 0.5,
+              "effectiveSuppliers": 2
+            },
+            "costDeltaVsSoleSource": 134000.00000000006
+          },
+          {
+            "orderQuantity": 40000,
+            "primary": {
+              "supplierId": "supplier-01",
+              "supplierName": "Supplier 1",
+              "share": 0.5,
+              "units": 20000,
+              "moq": 3000,
+              "meetsMoq": true,
+              "unitCost": 45.3
+            },
+            "secondary": {
+              "supplierId": "supplier-12-coastal-wellness-manufacturing",
+              "supplierName": "Coastal Wellness Manufacturing",
+              "share": 0.5,
+              "units": 20000,
+              "moq": 5000,
+              "meetsMoq": true,
+              "unitCost": 47.1
+            },
+            "feasible": true,
+            "infeasibleReason": null,
+            "derivedFromMoq": false,
+            "blendedUnitCost": 46.2,
+            "totalCost": 1848000,
+            "leadTimeDays": 19,
+            "blendedFailRate": 25,
+            "blendedSustainability": 1,
+            "concentration": {
+              "hhi": 0.5,
+              "effectiveSuppliers": 2
+            },
+            "costDeltaVsSoleSource": 36000.000000000226
+          },
+          {
+            "orderQuantity": 40000,
+            "primary": {
+              "supplierId": "supplier-06-vantage-cosmo-labs",
+              "supplierName": "Vantage Cosmo Labs",
+              "share": 0.5,
+              "units": 20000,
+              "moq": 4000,
+              "meetsMoq": true,
+              "unitCost": 52
+            },
+            "secondary": {
+              "supplierId": "supplier-12-coastal-wellness-manufacturing",
+              "supplierName": "Coastal Wellness Manufacturing",
+              "share": 0.5,
+              "units": 20000,
+              "moq": 5000,
+              "meetsMoq": true,
+              "unitCost": 47.1
+            },
+            "feasible": true,
+            "infeasibleReason": null,
+            "derivedFromMoq": false,
+            "blendedUnitCost": 49.55,
+            "totalCost": 1982000,
+            "leadTimeDays": 19,
+            "blendedFailRate": 21.5,
+            "blendedSustainability": 1.5,
+            "concentration": {
+              "hhi": 0.5,
+              "effectiveSuppliers": 2
+            },
+            "costDeltaVsSoleSource": 170000
+          }
+        ],
+        "feasibleCount": 21,
+        "ratiosBlockedByMoq": [],
+        "headline": "Dual sourcing is available at 40,000 units across the full range of standard ratios.",
+        "caveats": [
+          "Blended cost assumes each supplier charges its stated unit price regardless of the volume allocated. In practice a smaller allocation attracts a premium — commonly 10–20% — so the modelled cost of splitting is a best case. The supplied documents contain no volume-pricing data.",
+          "Lead time is taken as the slower of the two suppliers, since the order is not complete until both have delivered. Our data gives one lead time per supplier and does not model how it might change with a smaller batch.",
+          "Splitting is modelled on stated minimums and prices only. Qualification cost, tooling duplication and the overhead of managing a second relationship are real and are not represented here."
+        ]
+      }
+    ],
+    "trackEvidence": {
+      "hasBaselinePlan": true,
+      "disruptionScenarioCount": 2,
+      "everyScenarioHasConstraintChecks": true,
+      "tradeoffsCovered": {
+        "cost": true,
+        "timing": true,
+        "quality": true,
+        "concentration": true
+      }
+    }
+  },
   "conditionallyEligible": [
     {
       "supplierId": "supplier-13-novaline-personal-care",
@@ -2977,6 +5380,36 @@
       "docId": "supplier-12-coastal-wellness-manufacturing",
       "heading": "Cost reference",
       "text": "## Cost reference\nAverage manufacturing cost across comparable SKUs: $47.10/unit."
+    },
+    {
+      "chunkId": "supplier-05#s06-cost-reference",
+      "docId": "supplier-05",
+      "heading": "Cost reference",
+      "text": "## Cost reference\nAverage manufacturing cost across comparable SKUs: $44.80/unit."
+    },
+    {
+      "chunkId": "supplier-07-glowcraft-industries#s06-cost-reference",
+      "docId": "supplier-07-glowcraft-industries",
+      "heading": "Cost reference",
+      "text": "## Cost reference\nAverage manufacturing cost across comparable SKUs: $38.90/unit."
+    },
+    {
+      "chunkId": "supplier-08-meridian-beauty-manufacturing#s06-cost-reference",
+      "docId": "supplier-08-meridian-beauty-manufacturing",
+      "heading": "Cost reference",
+      "text": "## Cost reference\nAverage manufacturing cost across comparable SKUs: $31.50/unit."
+    },
+    {
+      "chunkId": "supplier-10-ecoderm-naturals#s06-cost-reference",
+      "docId": "supplier-10-ecoderm-naturals",
+      "heading": "Cost reference",
+      "text": "## Cost reference\nAverage manufacturing cost across comparable SKUs: $58.40/unit."
+    },
+    {
+      "chunkId": "supplier-11-prakriti-formulations#s06-cost-reference",
+      "docId": "supplier-11-prakriti-formulations",
+      "heading": "Cost reference",
+      "text": "## Cost reference\nAverage manufacturing cost across comparable SKUs: $39.20/unit."
     }
   ],
   "evaluation": {

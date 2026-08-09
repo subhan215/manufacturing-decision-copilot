@@ -219,11 +219,30 @@ One flaw this exposed in my own check: "working tree is clean" failed after runn
 
 **Commit style for this repo: short messages, no `Co-Authored-By` trailer** (user preference, recorded in memory).
 
+## Track 3 — Supply-risk scenario planning — DONE
+
+A second complete track, permitted by the brief only once one track's minimum evidence is fully delivered. `src/lib/scenarios/` (types, split, relax, disrupt, index), `src/components/ScenarioPanel.tsx`, `scripts/run-scenarios.ts` — **55 assertions**, no model access needed. Track 2 was ruled out: freight, duties, tooling and Incoterms appear twice in the whole corpus, so a landed-cost view would mean rewriting 13 profiles and invalidating the gold labels, snapshot and cache.
+
+Every scenario is arithmetic over verdicts and signals we already hold. The only new model work was extracting cost and sustainability for the five near-miss suppliers, so a returned supplier can be *ranked* rather than merely named. Relaxation splits by requirement kind — qualitative requirements are dropped by **set arithmetic over existing verdicts** (nothing re-parsed, nothing to mis-parse); numeric ones are re-thresholded through `evaluateFinding`, reusing the mechanism piece 8 already validated 26/26 against arithmetic predictions.
+
+**The headline finding is a negative result, and it only appeared after checking practice.** Procurement teams use 70/30 or 80/20, keeping ≥20–30% with the second source, because a supplier holding a token allocation will not prioritise you in a shortage. Run those ratios against the brief's 8,000-unit launch and the extracted MOQs and both are unavailable: the secondary allocation (1,600 / 2,400 units) falls below every eligible supplier's minimum. Only 60/40 and 50/50 survive — the splits practitioners avoid — and dual sourcing becomes properly available at the 40,000-unit scale-up the brief already anticipates (21 arrangements vs 4). Had we led with 50/50 we would have reported the opposite conclusion.
+
+Details worth keeping:
+
+- **Concentration is HHI**, verified against published worked examples (70/30 → 0.58; four-way 25% → 0.25), reported alongside **effective number of suppliers** (1/HHI) because "the equivalent of 1.9 independent suppliers" means something to a buyer that "0.53" does not. The current recommendation is stated as what it is: sole-source, HHI 1.0.
+- **MOQ boundary ratios are generated, not just the standard four.** Supplier 12's 5,000 minimum is exactly 62.5% of the launch order, so the only arrangement including it puts *both* legs precisely on their minimum — feasible, and flagged in the UI as having no room to move. Without the derived ratio it would have looked simply impossible.
+- **Infeasible options are kept with their reason**, not filtered away. At launch volume the infeasibility *is* the finding.
+- **No upside is reported without its caveat**, asserted rather than trusted: every scenario admitting a supplier carries ≥2. The MR-6 saving (a supplier $13.80/unit cheaper) is stated beside the fact that its own document puts export freight and customs outside its quote, so the unit-price saving is not a landed saving. Blended split cost is labelled a best case — we assume price is independent of volume, whereas a backup source typically charges a 10–20% premium.
+- **Caveats that make claims about the data are checked against the data.** The MR-5 caveat asserts the supplier it admits brings no cost relief; an assertion verifies it is genuinely the dearest, so the prose cannot go stale silently.
+
+Two things the suite caught:
+
+- I asserted the lead-time slip would flip exactly as many verdicts as suppliers it removed. It flipped three for two exits — supplier-05 also loses its MR-5 pass, though it was already blocked on MR-4. The code was right and my assertion was wrong; the corrected check is stronger, since that overlap is exactly the case where relaxing one requirement stops helping.
+- The MR-5 relaxation shipped with one caveat where every other admitting scenario had two. That was a real gap, not a test artefact — relaxing a lead-time limit is a decision about the launch date, which the documents do not contain.
+
+Regenerating the snapshot moved nothing: ingestion 42, probe 14, screen 21, rank 20, baseline 20, eval 21, check:ui 19 — all identical, as required.
+
 ## Not yet built
-- [ ] Citation tracking / evidence display
-- [ ] UI for eligibility screen → ranked list → weight sliders → conflict/insufficient-evidence states
-- [ ] Baseline comparison (need to define a simple non-AI baseline, e.g. naive keyword/threshold rule, per rubric requirement)
-- [ ] Evaluation harness (citation accuracy, constraint-satisfaction rate, hallucination rate — see brief's evaluation protocol)
 - [ ] README (setup instructions, Claude Code CLI dependency disclosed, architecture explanation)
 - [ ] Demo video covering the 3 required cases
 - [ ] Team size / CV upload logistics still unconfirmed

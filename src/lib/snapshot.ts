@@ -10,6 +10,7 @@ import type {
   SupplierSignals,
 } from "./ranking/types.ts";
 import type { TeamAssumption } from "../eval/provenance.ts";
+import type { ScenarioReport } from "./scenarios/types.ts";
 
 /**
  * Frozen snapshot of a completed analysis run.
@@ -71,8 +72,16 @@ export interface UiSnapshot {
   requirementsVersion: string;
   screen: EligibilityScreen;
   signals: SupplierSignals[];
+  /**
+   * Cost and sustainability for suppliers blocked by exactly one requirement.
+   * Kept separate from `signals` so the baseline ranking is never accidentally
+   * computed over a pool that includes ineligible suppliers — they appear only
+   * inside the scenario that admits them.
+   */
+  nearMissSignals: SupplierSignals[];
   baseline: RankingResult;
   sensitivity: SensitivityReport;
+  scenarios: ScenarioReport;
   conditionallyEligible: ConditionallyEligibleSupplier[];
   citedChunks: CitedChunk[];
   evaluation: EvaluationHighlights;

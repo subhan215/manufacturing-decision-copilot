@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-09T12:38:29.095Z",
+  "generatedAt": "2026-08-09T15:48:07.654Z",
   "model": "claude-sonnet-5",
   "asOfDate": "2026-08-09",
   "requirementsVersion": "2f6f7d26f631941b",
@@ -26,7 +26,7 @@
       "eligibilityTotal": 13,
       "flaggedForReview": 8,
       "reviewBurden": 0.08791208791208792,
-      "durationMs": 65,
+      "durationMs": 15,
       "costUsd": 0.7343017000000001
     },
     "baseline": {
@@ -79,7 +79,7 @@
       "eligibilityTotal": 13,
       "flaggedForReview": 5,
       "reviewBurden": 0.054945054945054944,
-      "durationMs": 14,
+      "durationMs": 3,
       "costUsd": 0
     }
   },

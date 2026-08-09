@@ -4,6 +4,7 @@ import { DecisionHeader } from "@/components/DecisionHeader";
 import { CounterExplanation } from "@/components/CounterExplanation";
 import { EligibilityMatrix } from "@/components/EligibilityMatrix";
 import { RankingPanel } from "@/components/RankingPanel";
+import { ScenarioPanel } from "@/components/ScenarioPanel";
 import { IntegrityPanel } from "@/components/IntegrityPanel";
 import { AssumptionsPanel } from "@/components/AssumptionsPanel";
 
@@ -20,6 +21,7 @@ const SECTIONS = [
   { id: "cautions", label: "Cautions" },
   { id: "eligibility", label: "Eligibility" },
   { id: "ranking", label: "Ranking" },
+  { id: "scenarios", label: "Supply risk" },
   { id: "integrity", label: "Evidence checks" },
   { id: "assumptions", label: "Assumptions" },
 ];
@@ -59,6 +61,7 @@ export default async function Home() {
         <CounterExplanation snapshot={snapshot} />
         <EligibilityMatrix snapshot={snapshot} />
         <RankingPanel snapshot={snapshot} />
+        <ScenarioPanel snapshot={snapshot} />
         <IntegrityPanel snapshot={snapshot} />
         <AssumptionsPanel snapshot={snapshot} />
 

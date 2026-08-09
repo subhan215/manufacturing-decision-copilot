@@ -1,0 +1,24 @@
+{
+  "data": {
+    "costValue": 44.8,
+    "costCurrency": "USD",
+    "costUnit": "unit",
+    "costCitationChunkId": "supplier-05#s06-cost-reference",
+    "costCitationQuote": "Average manufacturing cost across comparable SKUs: $44.80/unit.",
+    "crueltyFreeDeclaration": true,
+    "thirdPartyCertifications": [],
+    "sustainabilityCitationChunkId": "supplier-05#s05-sustainability",
+    "sustainabilityCitationQuote": "Cruelty-free declaration on file (Declaration Ref: CF-2024-0203, dated 2024-02-10)."
+  },
+  "telemetry": {
+    "model": "claude-sonnet-5",
+    "cacheHit": false,
+    "durationMs": 9743,
+    "apiDurationMs": 8292,
+    "costUsd": 0.051075999999999996,
+    "inputTokens": 2,
+    "outputTokens": 791,
+    "numTurns": 2
+  },
+  "storedAt": "2026-08-09T15:38:18.155Z"
+}
