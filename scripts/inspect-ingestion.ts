@@ -39,6 +39,13 @@ function section(title: string): void {
   console.log(`\n${"=".repeat(74)}\n${title}\n${"=".repeat(74)}`);
 }
 
+/**
+ * Corpus size, stated once. Every profile must carry the same six sections, so
+ * a count that drifts below this means a new profile broke the shared shape
+ * rather than that the corpus simply grew.
+ */
+const SUPPLIER_COUNT = 23;
+
 const EXPECTED_SUPPLIER_SLUGS = [
   "certifications",
   "manufacturing-capability",
@@ -69,9 +76,9 @@ for (const d of all) {
 // ------------------------------------------------------- A. structural
 section("A. STRUCTURAL INVARIANTS");
 
-check("14 documents discovered (1 brief + 13 supplier profiles)", all.length === 14,
+check(`${SUPPLIER_COUNT + 1} documents discovered (1 brief + ${SUPPLIER_COUNT} supplier profiles)`, all.length === SUPPLIER_COUNT + 1,
   `got ${all.length}`);
-check("13 supplier profiles", corpus.suppliers.length === 13,
+check(`${SUPPLIER_COUNT} supplier profiles`, corpus.suppliers.length === SUPPLIER_COUNT,
   `got ${corpus.suppliers.length}`);
 check(
   "DATA_MANIFEST.md and raw/ are absent from the corpus",
@@ -134,8 +141,8 @@ for (const slug of EXPECTED_SUPPLIER_SLUGS) {
     d.chunks.some((c) => c.headingSlug === slug),
   ).length;
   check(
-    `"${slug}" present in exactly 13 supplier profiles`,
-    count === 13,
+    `"${slug}" present in exactly ${SUPPLIER_COUNT} supplier profiles`,
+    count === SUPPLIER_COUNT,
     `got ${count} — heading normalization (e.g. the "n=NN" suffix) is broken`,
   );
 }
@@ -179,8 +186,8 @@ console.log(
 
 {
   const trailers = audit.exclusions.filter((e) => e.ruleId === "trailer-region");
-  check("13 trailer regions excluded (one per supplier profile)",
-    trailers.length === 13, `got ${trailers.length}`);
+  check(`${SUPPLIER_COUNT} trailer regions excluded (one per supplier profile)`,
+    trailers.length === SUPPLIER_COUNT, `got ${trailers.length}`);
   check(
     "no trailer excluded from the product brief (its |---| table rows are not rules)",
     !trailers.some((e) => e.docId === "product-brief"),
