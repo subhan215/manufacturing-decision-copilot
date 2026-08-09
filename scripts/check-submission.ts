@@ -84,12 +84,29 @@ if (isRepo) {
     "without it, a reviewer cannot reproduce any reported figure without their own Claude Code login",
   );
 
-  const dirty = git(["status", "--porcelain"]);
-  check(
-    "the working tree is clean",
-    dirty === "",
-    dirty ? dirty.split("\n").slice(0, 6).join("\n        ") : undefined,
+  // Re-running the evaluation legitimately rewrites its own bundle with a new
+  // timestamp, so a dirty `eval-results/` means the harness was run, not that
+  // work is unfinished. What must not be uncommitted is source, data or docs.
+  const dirtyLines = (git(["status", "--porcelain"]) ?? "")
+    .split("\n")
+    .filter(Boolean);
+  const regenerated = dirtyLines.filter((l) =>
+    /\s(eval-results|data\/derived)\//.test(l),
   );
+  const unexpected = dirtyLines.filter((l) => !regenerated.includes(l));
+
+  check(
+    "no uncommitted source, data or documentation changes",
+    unexpected.length === 0,
+    unexpected.slice(0, 6).join("\n        "),
+  );
+
+  if (regenerated.length > 0) {
+    console.log(
+      `        note: ${regenerated.length} regenerated output(s) differ from the commit —\n` +
+        "        commit the fresh run or `git checkout` them before submitting.",
+    );
+  }
 }
 
 // -------------------------------------------------------------- line endings
