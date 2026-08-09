@@ -1,8 +1,14 @@
 # Slides
 
-**The deck itself is `slides.html`** — open it in Chrome or Edge and it presents as ten 16:9 pages.
+**The deck is `slides.pdf`** — ten pages, 13.333in × 7.5in (standard 16:9), ready to present or attach.
 
-**To export a PDF:** `Ctrl`+`P` → Destination **Save as PDF** → Layout **Landscape** → Margins **None** → tick **Background graphics**. Each slide becomes one page at 13.333in × 7.5in, the standard 16:9 slide size.
+`slides.html` is the source it was rendered from. Edit that, then regenerate:
+
+```bash
+chrome --headless --disable-gpu --no-pdf-header-footer   --print-to-pdf="docs/slides.pdf" "file:///ABSOLUTE/PATH/docs/slides.html"
+```
+
+By hand instead: open `slides.html` in Chrome or Edge → `Ctrl`+`P` → Destination **Save as PDF**, Layout **Landscape**, Margins **None**, tick **Background graphics**.
 
 This file is the *script*: the same ten slides in plain text, with the speaker notes in italics. Those notes are deliberately not on the slides — a slide a presenter reads aloud is a slide the audience is reading instead of listening.
 

@@ -105,7 +105,15 @@
     letter-spacing: 0.02em;
   }
 
-  .body { flex: 1; padding-top: 40px; min-height: 0; }
+  .body {
+    flex: 1;
+    min-height: 0;
+    padding-top: 40px;
+    padding-bottom: 74px; /* clears the document-control strip */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 
   h1 {
     font-size: 68px;
@@ -180,8 +188,13 @@
   td { color: var(--ink-2); }
   td.num, th.num { text-align: right; font-family: var(--mono); font-variant-numeric: tabular-nums; padding-right: 0; }
   tr.key td { color: var(--ink); font-weight: 620; }
-  .win { color: var(--pass); font-weight: 650; }
-  .lose { color: var(--fail); font-weight: 650; }
+  td.win { color: var(--pass); font-weight: 650; }
+  td.lose { color: var(--fail); font-weight: 650; }
+  /* Stated explicitly: `tr.key td` outranks a bare class selector, and would
+     otherwise cancel the verdict colour on the one row that carries the
+     argument. */
+  tr.key td.win { color: var(--pass); }
+  tr.key td.lose { color: var(--fail); }
 
   .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 34px 56px; }
 
@@ -244,7 +257,7 @@
 
   /* ------------------------------------------------------- title page */
   .title-slide { background: var(--sheet); }
-  .title-slide .body { display: flex; flex-direction: column; justify-content: center; padding-top: 0; }
+  .title-slide .body { padding-top: 0; }
   .title-rule { width: 96px; height: 3px; background: var(--accent); margin: 0 0 34px; }
 
   /* ----------------------------------------------------------- print */
@@ -327,7 +340,7 @@
 <!-- 3 ------------------------------------------------------------------ -->
 <section class="slide">
   <div class="eyebrow">The idea everything is built on</div>
-  <div class="body" style="display:flex;flex-direction:column;justify-content:center;padding-top:0;">
+  <div class="body" style="padding-top:0;">
     <h1 style="font-size:76px;max-width:16ch;">The model reads.<br>The code decides.</h1>
     <p style="margin-top:36px;max-width:56ch;font-size:26px;">
       The LLM never compares a number to a threshold. It reports what a document says,
