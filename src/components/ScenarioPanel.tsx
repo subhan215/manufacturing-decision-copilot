@@ -1,5 +1,5 @@
 import type { UiSnapshot } from "@/lib/snapshot";
-import { ORDER_QUANTITIES } from "@/lib/scenarios/types";
+import { ORDER_QUANTITIES, type SplitAnalysis } from "@/lib/scenarios/types";
 
 /**
  * Supply-risk planning: what happens when the recommendation stops holding.
@@ -19,6 +19,28 @@ const money = (n: number) =>
 // Boundary ratios are not round numbers — 62.5/37.5 must not be shown as 63/38,
 // because the whole point of that split is that it sits exactly on a minimum.
 const share = (n: number) => `${Number((n * 100).toFixed(1))}%`;
+
+/**
+ * The cheapest workable pairing at each standard ratio.
+ *
+ * Listing every feasible arrangement means the cross-product of eligible
+ * suppliers — nineteen rows at launch volume, most of them the same split with
+ * a dearer partner. A buyer is asking "can we split, and what does it cost?",
+ * which four rows answer and nineteen bury. The full count is still stated.
+ */
+function bestPerRatio(analysis: SplitAnalysis) {
+  const byRatio = new Map<number, SplitAnalysis["options"][number]>();
+  for (const o of analysis.options) {
+    if (!o.feasible) continue;
+    const current = byRatio.get(o.secondary.share);
+    if (!current || o.totalCost < current.totalCost) {
+      byRatio.set(o.secondary.share, o);
+    }
+  }
+  return [...byRatio.values()].sort(
+    (a, b) => a.secondary.share - b.secondary.share,
+  );
+}
 
 function Caveats({ items }: { items: string[] }) {
   if (items.length === 0) return null;
@@ -106,8 +128,9 @@ export function ScenarioPanel({ snapshot }: { snapshot: UiSnapshot }) {
               {launch.headline}
             </p>
 
-            {launch.options.filter((o) => o.feasible).length > 0 && (
-              <table className="tnum mt-3 w-full border-collapse text-sm">
+            {bestPerRatio(launch).length > 0 && (
+              <div className="mt-3 overflow-x-auto">
+              <table className="tnum w-full min-w-[36rem] border-collapse text-sm">
                 <thead>
                   <tr className="text-left text-xs uppercase tracking-wide text-[var(--text-muted)]">
                     <th className="py-1 pr-3 font-medium">Allocation</th>
@@ -118,9 +141,7 @@ export function ScenarioPanel({ snapshot }: { snapshot: UiSnapshot }) {
                   </tr>
                 </thead>
                 <tbody>
-                  {launch.options
-                    .filter((o) => o.feasible)
-                    .map((o) => (
+                  {bestPerRatio(launch).map((o) => (
                       <tr
                         key={`${o.primary.supplierId}-${o.secondary.supplierId}-${o.secondary.share}`}
                         className="border-t border-[var(--gridline)]"
@@ -152,20 +173,35 @@ export function ScenarioPanel({ snapshot }: { snapshot: UiSnapshot }) {
                     ))}
                 </tbody>
               </table>
+              </div>
+            )}
+
+            {launch.feasibleCount > bestPerRatio(launch).length && (
+              <p className="mt-2 text-xs text-[var(--text-muted)]">
+                Showing the cheapest pairing at each standard ratio.{" "}
+                {launch.feasibleCount} arrangements are workable in total; the
+                rest are the same ratios with more expensive partners.
+              </p>
             )}
 
             <Caveats items={launch.caveats} />
           </div>
         )}
 
-        {scale && (
+        {scale && launch && (
           <p className="mt-4 text-sm leading-relaxed text-[var(--text-secondary)]">
             <strong className="font-medium text-[var(--text-primary)]">
               At {scale.orderQuantity.toLocaleString()} units —{" "}
               {scale.feasibleCount} workable arrangements.
             </strong>{" "}
-            {scale.headline} The constraint at launch volume is order size, not
-            supplier willingness.
+            {scale.headline}{" "}
+            {/* Derived, because this sentence used to be a hardcoded claim that
+                the launch order was too small to split — true of an earlier
+                supplier set, and false as soon as a low-minimum supplier
+                qualified. */}
+            {launch.ratiosBlockedByMoq.length > 0
+              ? "The binding constraint at launch volume is order size: the standard ratios leave the second supplier below every minimum."
+              : `Scaling up widens the choice rather than unlocking it — splitting is already possible at ${launch.orderQuantity.toLocaleString()} units, because at least one qualified supplier accepts an order small enough to be a minority share.`}
           </p>
         )}
       </div>

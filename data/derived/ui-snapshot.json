@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-09T16:50:43.569Z",
+  "generatedAt": "2026-08-09T17:22:41.070Z",
   "model": "claude-sonnet-5",
   "asOfDate": "2026-08-09",
   "requirementsVersion": "2f6f7d26f631941b",
   "screen": {
     "asOfDate": "2026-08-09",
     "model": "claude-sonnet-5",
-    "generatedAt": "2026-08-09T16:50:23.449Z",
+    "generatedAt": "2026-08-09T17:22:40.833Z",
     "requirementsVersion": "2f6f7d26f631941b",
     "suppliers": [
       {
@@ -132,7 +132,7 @@
         "telemetry": {
           "model": "claude-sonnet-5",
           "cacheHit": true,
-          "durationMs": 2,
+          "durationMs": 4,
           "apiDurationMs": 27320,
           "costUsd": 0.071162,
           "inputTokens": 2,
@@ -267,7 +267,7 @@
         "telemetry": {
           "model": "claude-sonnet-5",
           "cacheHit": true,
-          "durationMs": 4,
+          "durationMs": 14,
           "apiDurationMs": 22561,
           "costUsd": 0.06138099999999999,
           "inputTokens": 2,
@@ -401,7 +401,7 @@
         "telemetry": {
           "model": "claude-sonnet-5",
           "cacheHit": true,
-          "durationMs": 2,
+          "durationMs": 10,
           "apiDurationMs": 24389,
           "costUsd": 0.0534977,
           "inputTokens": 2,
@@ -1066,7 +1066,7 @@
         "telemetry": {
           "model": "claude-sonnet-5",
           "cacheHit": true,
-          "durationMs": 3,
+          "durationMs": 4,
           "apiDurationMs": 25201,
           "costUsd": 0.0587167,
           "inputTokens": 2,
@@ -1200,7 +1200,7 @@
         "telemetry": {
           "model": "claude-sonnet-5",
           "cacheHit": true,
-          "durationMs": 1,
+          "durationMs": 2,
           "apiDurationMs": 18577,
           "costUsd": 0.0478747,
           "inputTokens": 2,
@@ -1466,7 +1466,7 @@
         "telemetry": {
           "model": "claude-sonnet-5",
           "cacheHit": true,
-          "durationMs": 1,
+          "durationMs": 2,
           "apiDurationMs": 21827,
           "costUsd": 0.0519767,
           "inputTokens": 2,
@@ -1597,7 +1597,7 @@
         "telemetry": {
           "model": "claude-sonnet-5",
           "cacheHit": true,
-          "durationMs": 1,
+          "durationMs": 0,
           "apiDurationMs": 21897,
           "costUsd": 0.0532547,
           "inputTokens": 2,
@@ -1869,7 +1869,7 @@
         "telemetry": {
           "model": "claude-sonnet-5",
           "cacheHit": true,
-          "durationMs": 1,
+          "durationMs": 2,
           "apiDurationMs": 22395,
           "costUsd": 0.063994,
           "inputTokens": 2,
@@ -2139,7 +2139,7 @@
         "telemetry": {
           "model": "claude-sonnet-5",
           "cacheHit": true,
-          "durationMs": 1,
+          "durationMs": 2,
           "apiDurationMs": 26976,
           "costUsd": 0.0673528,
           "inputTokens": 2,
@@ -2273,7 +2273,7 @@
         "telemetry": {
           "model": "claude-sonnet-5",
           "cacheHit": true,
-          "durationMs": 1,
+          "durationMs": 2,
           "apiDurationMs": 28546,
           "costUsd": 0.0678398,
           "inputTokens": 2,
@@ -2406,7 +2406,7 @@
         "telemetry": {
           "model": "claude-sonnet-5",
           "cacheHit": true,
-          "durationMs": 1,
+          "durationMs": 2,
           "apiDurationMs": 29911,
           "costUsd": 0.0694088,
           "inputTokens": 2,
@@ -2540,7 +2540,7 @@
         "telemetry": {
           "model": "claude-sonnet-5",
           "cacheHit": true,
-          "durationMs": 2,
+          "durationMs": 4,
           "apiDurationMs": 35613,
           "costUsd": 0.07839479999999999,
           "inputTokens": 2,
@@ -2674,7 +2674,7 @@
         "telemetry": {
           "model": "claude-sonnet-5",
           "cacheHit": true,
-          "durationMs": 1,
+          "durationMs": 2,
           "apiDurationMs": 29348,
           "costUsd": 0.0662317,
           "inputTokens": 2,
@@ -3090,7 +3090,7 @@
       "downgradedByVerification": 0,
       "deterministicVerdicts": 115,
       "qualitativeVerdicts": 46,
-      "totalDurationMs": 26,
+      "totalDurationMs": 41,
       "totalCostUsd": 1.4128248999999997
     }
   },
@@ -4297,7 +4297,7 @@
     ]
   },
   "scenarios": {
-    "generatedAt": "2026-08-09T16:50:43.453Z",
+    "generatedAt": "2026-08-09T17:22:40.956Z",
     "baseline": {
       "orderQuantity": 8000,
       "supplierId": "supplier-01",
@@ -6790,7 +6790,7 @@
           "Blended cost assumes each supplier charges its stated unit price regardless of the volume allocated. In practice a smaller allocation attracts a premium — commonly 10–20% — so the modelled cost of splitting is a best case. The supplied documents contain no volume-pricing data.",
           "Lead time is taken as the slower of the two suppliers, since the order is not complete until both have delivered. Our data gives one lead time per supplier and does not model how it might change with a smaller batch.",
           "Splitting is modelled on stated minimums and prices only. Qualification cost, tooling duplication and the overhead of managing a second relationship are real and are not represented here.",
-          "One or more arrangements shown are not standard ratios but the exact boundary a supplier's minimum order quantity allows. They work only at that precise allocation: any reduction, and the order falls below a minimum."
+          "One or more workable arrangements at this quantity are not standard ratios but the exact boundary a supplier's minimum order quantity allows. Those work only at that precise allocation: any reduction, and the order falls below a minimum."
         ]
       },
       {
@@ -9391,11 +9391,12 @@
   ],
   "limitations": [
     "One annotator authored the corpus, the gold labels and the system. A sound evaluation would use independent annotators and report inter-annotator agreement, which also establishes the ceiling on achievable performance.",
-    "24 of 91 gold labels are pre-registered (recorded before any AI system existed); the remaining 67 were authored afterwards and carry a disclosed risk of anchoring toward the system's output.",
+    "94 of 161 gold labels are pre-registered (recorded in DATA_MANIFEST.md before any AI system existed); the remaining 67 were authored afterwards and carry a disclosed risk of anchoring toward the system's output. Accuracy is reported separately for the two subsets.",
     "The corpus is uniformly formatted because it was generated. This flatters pattern-matching approaches, so the measured gap against the rule-based baseline understates the likely real-world gap. The paraphrase test exists to quantify that.",
     "Detector validation uses synthetically corrupted citations. These are an operational proxy and may not mirror the shape of organic model errors.",
-    "Accuracy-calibration of the model's confidence could not be measured, because the system made no errors on this corpus.",
-    "Three eligible suppliers is too small a sample for rank-correlation statistics; ordering agreement is reported with score margins instead.",
+    "Confidence calibration rests on three errors, which is too few to calibrate against. What is reported instead is that the system declines to decide while reporting high confidence, which is the property that matters for a reviewer deciding whom to trust.",
+    "Four eligible suppliers is too small a sample for rank-correlation statistics; ordering agreement is reported with score margins instead.",
+    "One verdict in 161 abstains without citing anything, so a reviewer is told the evidence is missing but not where it should have been. Making the citation rule unconditional closes this gap and was tried; it also moved an unrelated verdict, and re-tuning a prompt after seeing pre-registered results would forfeit what pre-registration is for. The gap is left standing and asserted against growth.",
     "Cost figures are stated averages across comparable products, not quotations for this product.",
     "Prompt-injection results cover five payloads against one supplier document. Absence of a successful attack here is not proof of general immunity."
   ]

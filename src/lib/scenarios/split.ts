@@ -192,7 +192,10 @@ export function analyseSplits(params: {
 
   if (feasible.some((o) => o.derivedFromMoq)) {
     caveats.push(
-      "One or more arrangements shown are not standard ratios but the exact boundary a supplier's minimum order quantity allows. They work only at that precise allocation: any reduction, and the order falls below a minimum.",
+      // "available", not "shown": this module does not know what the interface
+      // chose to display, and a caveat that describes a table it cannot see
+      // will eventually describe a table that isn't there.
+      "One or more workable arrangements at this quantity are not standard ratios but the exact boundary a supplier's minimum order quantity allows. Those work only at that precise allocation: any reduction, and the order falls below a minimum.",
     );
   }
 
