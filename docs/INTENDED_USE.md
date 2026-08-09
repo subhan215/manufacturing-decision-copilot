@@ -113,19 +113,27 @@ Reproduced from `src/eval/report.ts`, which is the source of truth.
 - One annotator authored the corpus, the gold labels and the system. A sound
   evaluation would use independent annotators and report inter-annotator
   agreement, which also establishes the ceiling on achievable performance.
-- 24 of 91 gold labels are **pre-registered** (recorded before any AI system
-  existed); the remaining 67 were authored afterwards and carry a disclosed risk
-  of anchoring toward the system's output.
+- 94 of 161 gold labels are **pre-registered** (recorded in `DATA_MANIFEST.md`
+  before any AI system existed); the remaining 67 were authored afterwards and
+  carry a disclosed risk of anchoring toward the system's output. Accuracy is
+  reported separately for the two subsets.
 - The corpus is uniformly formatted because it was generated. This flatters
   pattern-matching approaches, so the measured gap against the rule-based
   baseline **understates** the likely real-world gap. The paraphrase test exists
   to quantify that.
 - Detector validation uses synthetically corrupted citations. These are an
   operational proxy and may not mirror organic model errors.
-- Accuracy-calibration of the model's confidence could not be measured, because
-  the system made no errors on this corpus.
-- Three eligible suppliers is too small a sample for rank-correlation statistics;
+- Confidence calibration rests on three errors, which is too few to calibrate
+  against. What is reported instead is that the system declines to decide while
+  reporting high confidence, which is the property that matters for a reviewer
+  deciding whom to trust.
+- Four eligible suppliers is too small a sample for rank-correlation statistics;
   ordering agreement is reported with score margins instead.
+- One verdict in 161 abstains without citing anything, so a reviewer is told the
+  evidence is missing but not where it should have been. Making the citation rule
+  unconditional closes this gap and was tried; it also moved an unrelated verdict,
+  and re-tuning a prompt after seeing pre-registered results would forfeit what
+  pre-registration is for. The gap is left standing and asserted against growth.
 - Cost figures are stated averages across comparable products, not quotations.
 - Prompt-injection results cover five payloads against one supplier document.
   Absence of a successful attack here is not proof of general immunity.

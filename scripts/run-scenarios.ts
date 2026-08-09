@@ -105,88 +105,112 @@ for (const m of moqs) {
 }
 console.log();
 
-// The finding the write-up leads with: at launch volume the ratios procurement
-// teams actually use are unavailable, because the secondary allocation lands
-// below every eligible supplier's minimum.
-for (const ratio of [0.2, 0.3]) {
-  const units = ratio * ORDER_QUANTITIES.launch;
+// Feasibility is asserted against the arithmetic, not against a conclusion.
+// An earlier corpus made 80/20 and 70/30 impossible at launch volume, and that
+// negative result was the headline. Adding a supplier with a 1,500-unit minimum
+// removed it. The lesson kept here is that the binding constraint was never the
+// order size but the supplier set, so the test now checks the rule that
+// produces either outcome rather than the outcome that happened to hold.
+{
+  const mismatches: string[] = [];
+  for (const analysis of report.splits) {
+    for (const o of analysis.options) {
+      const moqOk =
+        o.primary.units >= o.primary.moq && o.secondary.units >= o.secondary.moq;
+      const floorOk = o.secondary.share >= SECONDARY_VIABILITY_FLOOR;
+      const expected = moqOk && floorOk;
+      if (o.feasible !== expected) {
+        mismatches.push(
+          `${analysis.orderQuantity} ${short(o.primary.supplierId)}/${short(o.secondary.supplierId)} @${o.secondary.share}`,
+        );
+      }
+    }
+  }
   check(
-    `at ${ORDER_QUANTITIES.launch.toLocaleString()} units, a ${100 - ratio * 100}/${ratio * 100} split is blocked by minimum order quantities (secondary would get ${units.toLocaleString()})`,
-    launch.ratiosBlockedByMoq.some((r) => close(r, ratio)),
+    `every option's feasibility follows from minimum order quantities and the viability floor (${report.splits.reduce((n, s) => n + s.options.length, 0)} options)`,
+    mismatches.length === 0,
+    mismatches.slice(0, 5).join(", "),
   );
 }
+
 check(
-  "no 80/20 or 70/30 option is feasible at launch volume",
-  launch.options
-    .filter((o) => o.secondary.share <= 0.3)
-    .every((o) => !o.feasible),
-);
-check(
-  "every blocked option names the minimum order quantity as the reason",
-  launch.options
-    .filter((o) => !o.feasible && o.secondary.share <= 0.3)
-    .every((o) => /minimum/.test(o.infeasibleReason ?? "")),
+  "every infeasible option names its reason",
+  report.splits.every((a) =>
+    a.options
+      .filter((o) => !o.feasible)
+      .every((o) => (o.infeasibleReason ?? "").length > 0),
+  ),
   "infeasibility must be explained, not merely asserted",
 );
 check(
-  "the launch headline says dual sourcing is possible but not at standard ratios",
-  /not at the ratios normally used/.test(launch.headline),
-  launch.headline,
+  "an option blocked by a minimum says so",
+  launch.options
+    .filter((o) => !o.feasible && !o.primary.meetsMoq)
+    .every((o) => /minimum/.test(o.infeasibleReason ?? "")),
 );
 
 {
-  // 60/40 at 8,000 puts 3,200 units with the secondary — reachable only by a
-  // supplier whose minimum is at or below that.
-  const canTake3200 = moqs
-    .filter((m) => m.moq <= 3200)
-    .filter((m) =>
-      screen.suppliers.some((s) => s.supplierId === m.supplierId && s.eligible),
-    );
-  check(
-    `exactly one eligible supplier can take the 60/40 secondary share (${canTake3200.map((m) => short(m.supplierId)).join(", ") || "none"})`,
-    canTake3200.length === 1,
+  // A ratio is blocked exactly when no eligible supplier can take the secondary
+  // allocation at that quantity.
+  const eligibleMoqs = moqs.filter((m) =>
+    screen.suppliers.some((s) => s.supplierId === m.supplierId && s.eligible),
+  );
+  const derived = [0.2, 0.3, 0.4, 0.5].filter((share) =>
+    eligibleMoqs.every((m) => share * ORDER_QUANTITIES.launch < m.moq),
   );
   check(
-    "the feasible 60/40 option is the one with that supplier as secondary",
-    launch.options
-      .filter((o) => close(o.secondary.share, 0.4) && o.feasible)
-      .every((o) => o.secondary.supplierId === canTake3200[0]?.supplierId),
+    `blocked ratios at launch volume are exactly those no eligible supplier can take (${derived.join(", ") || "none"})`,
+    derived.length === launch.ratiosBlockedByMoq.length &&
+      derived.every((d) => launch.ratiosBlockedByMoq.some((r) => close(r, d))),
+    `analysis reports ${launch.ratiosBlockedByMoq.join(", ") || "none"}`,
+  );
+  check(
+    "the headline agrees with whether any standard ratio is blocked",
+    launch.ratiosBlockedByMoq.length > 0
+      ? /not at the ratios normally used/.test(launch.headline)
+      : /across the full range of standard ratios|No dual-source/.test(
+          launch.headline,
+        ),
+    launch.headline,
+  );
+  const smallest = Math.min(...eligibleMoqs.map((m) => m.moq));
+  console.log(
+    `\n  smallest eligible minimum is ${smallest.toLocaleString()} units, which is ${((smallest / ORDER_QUANTITIES.launch) * 100).toFixed(1)}% of the launch order`,
+  );
+  check(
+    "dual sourcing at the standard 80/20 ratio is available precisely when some supplier's minimum fits within 20% of the order",
+    (smallest <= 0.2 * ORDER_QUANTITIES.launch) ===
+      launch.options.some((o) => close(o.secondary.share, 0.2) && o.feasible),
   );
 }
 
 {
-  // Supplier 12's 5,000 minimum is 62.5% of the launch order, so it can only
-  // ever be the primary — and only at exactly that boundary.
-  const s12 = moqs.find((m) => m.moq === 5000);
-  const boundary = s12 ? s12.moq / ORDER_QUANTITIES.launch : null;
-  check(
-    "the 5,000-unit minimum equals 62.5% of the launch order",
-    boundary !== null && close(boundary, 0.625),
-    `got ${boundary}`,
-  );
-  const withS12 = launch.options.filter(
-    (o) =>
-      o.feasible &&
-      (o.primary.supplierId === s12?.supplierId ||
-        o.secondary.supplierId === s12?.supplierId),
-  );
-  check(
-    "that supplier appears in no feasible launch split as the secondary",
-    withS12.every((o) => o.secondary.supplierId !== s12?.supplierId),
-  );
-  check(
-    "where it does appear, it holds exactly the boundary share and both legs sit on their minimum",
-    withS12.length === 0 ||
-      withS12.every(
+  // A supplier whose minimum exceeds half the order can only ever be the
+  // primary, and only at or above the share its minimum forces.
+  for (const m of moqs.filter(
+    (x) =>
+      x.moq > ORDER_QUANTITIES.launch / 2 &&
+      screen.suppliers.some((s) => s.supplierId === x.supplierId && s.eligible),
+  )) {
+    const boundary = m.moq / ORDER_QUANTITIES.launch;
+    const appearances = launch.options.filter(
+      (o) =>
+        o.feasible &&
+        (o.primary.supplierId === m.supplierId ||
+          o.secondary.supplierId === m.supplierId),
+    );
+    check(
+      `${short(m.supplierId)} (minimum ${m.moq.toLocaleString()}, ${(boundary * 100).toFixed(1)}% of the order) never appears as the secondary and never below its boundary share`,
+      appearances.every(
         (o) =>
-          close(o.primary.share, 0.625) &&
-          o.primary.units === o.primary.moq &&
-          o.derivedFromMoq,
+          o.primary.supplierId === m.supplierId &&
+          o.primary.share >= boundary - 1e-9,
       ),
-    withS12
-      .map((o) => `${o.primary.share} ${o.primary.units}/${o.primary.moq}`)
-      .join(" · "),
-  );
+      appearances
+        .map((o) => `${short(o.primary.supplierId)}@${o.primary.share}`)
+        .join(", "),
+    );
+  }
 }
 
 check(
@@ -426,9 +450,20 @@ section("F. REQUIREMENT RELAXATION");
   const mr6 = report.scenarios.find((s) => s.id === "relax-MR-6");
   check("the origin requirement has a relaxation scenario", !!mr6);
   if (mr6) {
+    // Derived from the screen: every supplier blocked by this requirement and
+    // nothing else, however many that is.
+    const blockedSolelyByMr6 = screen.suppliers
+      .filter(
+        (s) =>
+          !s.eligible &&
+          s.blockingRequirements.length === 1 &&
+          s.blockingRequirements[0] === "MR-6",
+      )
+      .map((s) => s.supplierId);
     check(
-      "relaxing it admits exactly one supplier",
-      mr6.entered.length === 1,
+      `relaxing it admits exactly the suppliers blocked by it alone (${blockedSolelyByMr6.map(short).join(", ")})`,
+      mr6.entered.length === blockedSolelyByMr6.length &&
+        blockedSolelyByMr6.every((id) => mr6.entered.includes(id)),
       mr6.entered.join(", "),
     );
     // This is the scenario carrying the largest apparent saving, so it is the

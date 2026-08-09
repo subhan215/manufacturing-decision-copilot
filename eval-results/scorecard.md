@@ -1,6 +1,6 @@
 # Evaluation Scorecard
 
-Generated 2026-08-09T15:48:07.654Z · model `claude-sonnet-5` · as-of date 2026-08-09 · requirements `2f6f7d26f631941b`
+Generated 2026-08-09T16:52:38.420Z · model `claude-sonnet-5` · as-of date 2026-08-09 · requirements `2f6f7d26f631941b`
 
 All figures below are produced by `npm run eval`, which exits non-zero if any assertion fails.
 
@@ -8,15 +8,15 @@ All figures below are produced by `npm run eval`, which exits non-zero if any as
 
 | System | Accuracy | Pre-registered subset | Critical errors | Eligibility |
 |---|---|---|---|---|
-| AI (Claude) | 100.0% (91/91) | 100.0% (24/24) | 0 | 13/13 |
-| Rule-based baseline | 96.7% (88/91) | 95.8% (23/24) | 3 | 13/13 |
+| AI (Claude) | 98.1% (158/161) | 96.8% (91/94) | 0 | 23/23 |
+| Rule-based baseline | 91.9% (148/161) | 88.3% (83/94) | 12 | 20/23 |
 
 *Critical* errors are false-pass, false-certainty and missed-conflict — the mistakes a buyer would act on. The pre-registered subset covers labels recorded before any AI system existed and is the figure least exposed to anchoring.
 
 ## Citations
 
-- Coverage: **100.0%** (91/91 verdicts carry a citation)
-- Correctness: **100.0%** — 90 exact, 1 normalized
+- Coverage: **99.4%** (160/161 verdicts carry a citation)
+- Correctness: **100.0%** — 158 exact, 2 normalized
 - Hallucination rate: **0.0%** (0 quotes not found in the corpus)
 - Misattributed: 0
 
@@ -24,20 +24,20 @@ Exact and normalized are reported separately on purpose. Merging them would hide
 
 ### Detector validation
 
-A zero hallucination rate means nothing unless the detector can detect. Against **52** deliberately corrupted citations it caught **52** (100.0%), while leaving all 91/91 genuine citations intact (0 false positives).
+A zero hallucination rate means nothing unless the detector can detect. Against **92** deliberately corrupted citations it caught **92** (100.0%), while leaving all 160/160 genuine citations intact (0 false positives).
 
 | Corruption type | Caught |
 |---|---|
-| fabricated-quote | 13/13 |
-| wrong-chunk-same-doc | 13/13 |
-| wrong-doc | 13/13 |
-| nonexistent-chunk | 13/13 |
+| fabricated-quote | 23/23 |
+| wrong-chunk-same-doc | 23/23 |
+| wrong-doc | 23/23 |
+| nonexistent-chunk | 23/23 |
 
 Production RAG teams commonly hold themselves to citation precision of at least 90%. We do not use an LLM judge for this, as the common evaluation toolchains do: self-enhancement bias would have a model grade output from its own family, and the claim does not need a model — a quote either appears at the cited offset or it does not.
 
 ## Numeric extraction
 
-12/12 extracted values fall within the document-stated reference; 12 match exactly.
+16/16 extracted values fall within the document-stated reference; 16 match exactly.
 
 | Supplier | Field | Extracted | Reference | Within |
 |---|---|---|---|---|
@@ -53,19 +53,24 @@ Production RAG teams commonly hold themselves to citation precision of at least 
 | supplier-12- | leadTime | 19 | 19 | yes |
 | supplier-12- | failRate | 28 | 28 | yes |
 | supplier-12- | sustainability | 1 | 1 | yes |
+| supplier-23- | cost | 54.2 | 54.2 | yes |
+| supplier-23- | leadTime | 12 | 12 | yes |
+| supplier-23- | failRate | 7.7 | 7.7 | yes |
+| supplier-23- | sustainability | 1 | 1 | yes |
 
 ## Ranking agreement
 
-Re-ranking with hand-read reference values instead of AI-extracted ones produces **the same ordering**: supplier-01 > supplier-06-vantage-cosmo-labs > supplier-12-coastal-wellness-manufacturing.
+Re-ranking with hand-read reference values instead of AI-extracted ones produces **the same ordering**: supplier-01 > supplier-23-nirvaan-skin-sciences > supplier-06-vantage-cosmo-labs > supplier-12-coastal-wellness-manufacturing.
 
-- supplier-01 leads supplier-06-vantage-cosmo-labs by 0.265
-- supplier-06-vantage-cosmo-labs leads supplier-12-coastal-wellness-manufacturing by 0.194
+- supplier-01 leads supplier-23-nirvaan-skin-sciences by 0.102
+- supplier-23-nirvaan-skin-sciences leads supplier-06-vantage-cosmo-labs by 0.068
+- supplier-06-vantage-cosmo-labs leads supplier-12-coastal-wellness-manufacturing by 0.153
 
 *Three eligible suppliers give six possible orderings, so a chance match would occur about 17% of the time. Ordering agreement is reported with score margins rather than a rank-correlation coefficient, which carries almost no information at this sample size.*
 
 ## Confidence
 
-The system made no errors on this corpus, so accuracy-calibration cannot be measured: with no incorrect verdicts there is nothing for confidence to correlate against, and the data cannot distinguish a well-calibrated system from a uniformly overconfident one. What is measurable is whether confidence tracks the system's own uncertainty, and it does not: of 8 verdicts where the system declined to decide, 6 (75%) still carry high confidence. The system reports "I cannot determine this" and "high confidence" simultaneously. This is why confidence is recorded but never surfaced as a reliability signal, and never used in the decision path.
+Accuracy by confidence level is reported above. Of 16 verdicts where the system declined to decide, 11 carry high confidence.
 
 ## Robustness
 
@@ -76,7 +81,7 @@ The system made no errors on this corpus, so accuracy-calibration cannot be meas
 
 ### Threshold shift (no model calls)
 
-26 verdicts recomputed under tightened thresholds; 8 changed, all matching the arithmetically predicted outcome. Because the model reports values and code makes the comparison, this required no model calls at all.
+46 verdicts recomputed under tightened thresholds; 15 changed, all matching the arithmetically predicted outcome. Because the model reports values and code makes the comparison, this required no model calls at all.
 
 ### Indirect prompt injection
 
@@ -96,7 +101,7 @@ Two layers, and they defend against different things. The ingestion content filt
 
 ## Provenance separation
 
-97 extracted facts (each with a verified citation), 7 team assumptions, 91 model-generated verdicts.
+168 extracted facts (each with a verified citation), 7 team assumptions, 161 model-generated verdicts.
 
 ### Assumptions introduced by us, not found in any source
 
@@ -111,10 +116,11 @@ Two layers, and they defend against different things. The ingestion content filt
 ## Limitations
 
 - One annotator authored the corpus, the gold labels and the system. A sound evaluation would use independent annotators and report inter-annotator agreement, which also establishes the ceiling on achievable performance.
-- 24 of 91 gold labels are pre-registered (recorded before any AI system existed); the remaining 67 were authored afterwards and carry a disclosed risk of anchoring toward the system's output.
+- 94 of 161 gold labels are pre-registered (recorded in DATA_MANIFEST.md before any AI system existed); the remaining 67 were authored afterwards and carry a disclosed risk of anchoring toward the system's output. Accuracy is reported separately for the two subsets.
 - The corpus is uniformly formatted because it was generated. This flatters pattern-matching approaches, so the measured gap against the rule-based baseline understates the likely real-world gap. The paraphrase test exists to quantify that.
 - Detector validation uses synthetically corrupted citations. These are an operational proxy and may not mirror the shape of organic model errors.
-- Accuracy-calibration of the model's confidence could not be measured, because the system made no errors on this corpus.
-- Three eligible suppliers is too small a sample for rank-correlation statistics; ordering agreement is reported with score margins instead.
+- Confidence calibration rests on three errors, which is too few to calibrate against. What is reported instead is that the system declines to decide while reporting high confidence, which is the property that matters for a reviewer deciding whom to trust.
+- Four eligible suppliers is too small a sample for rank-correlation statistics; ordering agreement is reported with score margins instead.
+- One verdict in 161 abstains without citing anything, so a reviewer is told the evidence is missing but not where it should have been. Making the citation rule unconditional closes this gap and was tried; it also moved an unrelated verdict, and re-tuning a prompt after seeing pre-registered results would forfeit what pre-registration is for. The gap is left standing and asserted against growth.
 - Cost figures are stated averages across comparable products, not quotations for this product.
 - Prompt-injection results cover five payloads against one supplier document. Absence of a successful attack here is not proof of general immunity.

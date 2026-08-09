@@ -229,8 +229,8 @@ section("E. ARTIFACTS ARE CURRENT");
     bundle.requirementsVersion === current,
   );
   check(
-    `the evaluation bundle carries all 91 verdicts (${bundle.verdicts.length})`,
-    bundle.verdicts.length === 91,
+    `the evaluation bundle carries a verdict for every supplier x requirement (${bundle.verdicts.length})`,
+    bundle.verdicts.length === snapshot.screen.suppliers.length * 7,
   );
 }
 

@@ -7,108 +7,1307 @@
     "Where competent reviewers could reasonably disagree, the label carries alsoAcceptable alternatives rather than forcing a single answer."
   ],
   "labels": [
-    { "supplierId": "supplier-01", "requirementId": "MR-1", "expected": "pass", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "\"Liquid and serum formulation lines (dropper-fill and pump-fill)\" plus \"Confirmed experience producing skincare serums\"." },
-    { "supplierId": "supplier-01", "requirementId": "MR-2", "expected": "pass", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "ISO 22716 certificate IN-COS-22716-0341, \"valid until 2027-03-11\", after the as-of date." },
-    { "supplierId": "supplier-01", "requirementId": "MR-3", "expected": "pass", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "\"Minimum order quantity: 3,000 units per SKU for first orders\" is at or below 5,000." },
-    { "supplierId": "supplier-01", "requirementId": "MR-4", "expected": "pass", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "\"Fail: 6 batches (22%)\" is at or below the 30% ceiling." },
-    { "supplierId": "supplier-01", "requirementId": "MR-5", "expected": "pass", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "\"12-14 calendar days\"; even the conservative upper bound is within 20 days." },
-    { "supplierId": "supplier-01", "requirementId": "MR-6", "expected": "pass", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "\"Location: Mumbai, Maharashtra, India\"." },
-    { "supplierId": "supplier-01", "requirementId": "MR-7", "expected": "pass", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "\"Signed cruelty-free manufacturing declaration on file (Declaration Ref: CF-2025-0091)\"." },
-
-    { "supplierId": "supplier-02", "requirementId": "MR-1", "expected": "pass", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "\"Liquid serum lines and cream lines\"." },
-    { "supplierId": "supplier-02", "requirementId": "MR-2", "expected": "fail", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "ISO 22716 certificate \"valid until 2026-06-30\", which precedes the as-of date 2026-08-09." },
-    { "supplierId": "supplier-02", "requirementId": "MR-3", "expected": "pass", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "\"Minimum order quantity: 4,500 units per SKU\"." },
-    { "supplierId": "supplier-02", "requirementId": "MR-4", "expected": "fail", "alsoAcceptable": ["conflicting"], "provenance": "post-hoc", "rationale": "\"Fail: 8 batches (36%)\" exceeds 30%. Genuinely ambiguous: 41% of batches are \"Pending re-inspection\", so the denominator is unclear (8/22 = 36%, or 8/13 = 62% of resolved batches). Surfacing that as a conflict is a defensible alternative." },
-    { "supplierId": "supplier-02", "requirementId": "MR-5", "expected": "pass", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "\"audited average 15.6 days\" is within 20." },
-    { "supplierId": "supplier-02", "requirementId": "MR-6", "expected": "pass", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "\"Location: Chennai, Tamil Nadu, India\"." },
-    { "supplierId": "supplier-02", "requirementId": "MR-7", "expected": "fail", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "\"No cruelty-free declaration on file.\" — positive evidence of absence, not merely missing." },
-
-    { "supplierId": "supplier-03", "requirementId": "MR-1", "expected": "pass", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "\"Liquid serum lines, cream lines, powder lines\"." },
-    { "supplierId": "supplier-03", "requirementId": "MR-2", "expected": "conflicting", "alsoAcceptable": [], "provenance": "pre-registered", "rationale": "DATA_MANIFEST section 2 records this document as engineered with internally conflicting certification statements. Section A asserts the certificate is current; Section D records the same certificate number \"expired 2025-11-01\". The contradiction must be surfaced, not resolved." },
-    { "supplierId": "supplier-03", "requirementId": "MR-3", "expected": "pass", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "\"Minimum order quantity: 3,500 units per SKU\"." },
-    { "supplierId": "supplier-03", "requirementId": "MR-4", "expected": "pass", "alsoAcceptable": ["conflicting"], "provenance": "post-hoc", "rationale": "\"Fail: 3 batches (20%)\" is within 30%. 67% pending re-inspection makes the denominator arguable, so a conflict finding is defensible." },
-    { "supplierId": "supplier-03", "requirementId": "MR-5", "expected": "pass", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "\"audited average 14.9 days\" is within 20." },
-    { "supplierId": "supplier-03", "requirementId": "MR-6", "expected": "pass", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "\"Location: Mumbai, Maharashtra, India\"." },
-    { "supplierId": "supplier-03", "requirementId": "MR-7", "expected": "fail", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "\"Cruelty-free declaration referenced in marketing brochure (undated, unsigned) - no formal declaration document on file.\" The requirement asks for a documented declaration; the document states there is none." },
-
-    { "supplierId": "supplier-04", "requirementId": "MR-1", "expected": "pass", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "\"Liquid serum lines, cream lines\"." },
-    { "supplierId": "supplier-04", "requirementId": "MR-2", "expected": "fail", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "ISO 22716 \"valid until 2025-05-19 (expired, no renewal on file)\"." },
-    { "supplierId": "supplier-04", "requirementId": "MR-3", "expected": "pass", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "\"Minimum order quantity: 4,000 units per SKU\"." },
-    { "supplierId": "supplier-04", "requirementId": "MR-4", "expected": "fail", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "\"Fail: 12 batches (67%)\" far exceeds the 30% ceiling." },
-    { "supplierId": "supplier-04", "requirementId": "MR-5", "expected": "pass", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "\"audited average 15.3 days\" is within 20." },
-    { "supplierId": "supplier-04", "requirementId": "MR-6", "expected": "pass", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "\"Location: Bangalore, Karnataka, India\"." },
-    { "supplierId": "supplier-04", "requirementId": "MR-7", "expected": "fail", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "\"No cruelty-free declaration on file.\"" },
-
-    { "supplierId": "supplier-05", "requirementId": "MR-1", "expected": "pass", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "\"Liquid serum lines, cream lines, powder lines\"." },
-    { "supplierId": "supplier-05", "requirementId": "MR-2", "expected": "pass", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "ISO 22716 \"valid until 2027-01-14\", after the as-of date." },
-    { "supplierId": "supplier-05", "requirementId": "MR-3", "expected": "pass", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "\"Minimum order quantity: 4,000 units per SKU\"." },
-    { "supplierId": "supplier-05", "requirementId": "MR-4", "expected": "fail", "alsoAcceptable": ["conflicting"], "provenance": "post-hoc", "rationale": "\"Fail: 7 batches (39%)\" exceeds 30%. 44% pending re-inspection makes the denominator arguable." },
-    { "supplierId": "supplier-05", "requirementId": "MR-5", "expected": "pass", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "\"audited average 16.3 days\" is within 20." },
-    { "supplierId": "supplier-05", "requirementId": "MR-6", "expected": "pass", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "\"Location: Kolkata, West Bengal, India\"." },
-    { "supplierId": "supplier-05", "requirementId": "MR-7", "expected": "pass", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "\"Cruelty-free declaration on file (Declaration Ref: CF-2024-0203)\"." },
-
-    { "supplierId": "supplier-06-vantage-cosmo-labs", "requirementId": "MR-1", "expected": "pass", "alsoAcceptable": [], "provenance": "pre-registered", "rationale": "DATA_MANIFEST section 2 records this supplier as a clean pass on all mandatory requirements. \"Dedicated liquid and serum formulation lines\"." },
-    { "supplierId": "supplier-06-vantage-cosmo-labs", "requirementId": "MR-2", "expected": "pass", "alsoAcceptable": [], "provenance": "pre-registered", "rationale": "Clean pass by design. ISO 22716 \"valid until 2027-08-31\"." },
-    { "supplierId": "supplier-06-vantage-cosmo-labs", "requirementId": "MR-3", "expected": "pass", "alsoAcceptable": [], "provenance": "pre-registered", "rationale": "Clean pass by design. \"Minimum order quantity: 4,000 units per SKU\"." },
-    { "supplierId": "supplier-06-vantage-cosmo-labs", "requirementId": "MR-4", "expected": "pass", "alsoAcceptable": [], "provenance": "pre-registered", "rationale": "Clean pass by design. \"Fail: 3 batches (15%)\"." },
-    { "supplierId": "supplier-06-vantage-cosmo-labs", "requirementId": "MR-5", "expected": "pass", "alsoAcceptable": [], "provenance": "pre-registered", "rationale": "Clean pass by design. \"audited average 18 calendar days\"." },
-    { "supplierId": "supplier-06-vantage-cosmo-labs", "requirementId": "MR-6", "expected": "pass", "alsoAcceptable": [], "provenance": "pre-registered", "rationale": "Clean pass by design. \"Location: Pune, Maharashtra, India\"." },
-    { "supplierId": "supplier-06-vantage-cosmo-labs", "requirementId": "MR-7", "expected": "pass", "alsoAcceptable": [], "provenance": "pre-registered", "rationale": "Clean pass by design. \"Cruelty-free declaration on file\" plus Ecocert certification." },
-
-    { "supplierId": "supplier-07-glowcraft-industries", "requirementId": "MR-1", "expected": "fail", "alsoAcceptable": [], "provenance": "pre-registered", "rationale": "DATA_MANIFEST section 2 records this supplier as failing MR-1 (no liquid/serum line). \"No liquid-fill or serum production line currently installed.\"" },
-    { "supplierId": "supplier-07-glowcraft-industries", "requirementId": "MR-2", "expected": "pass", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "ISO 22716 \"valid until 2026-11-09\", after the as-of date." },
-    { "supplierId": "supplier-07-glowcraft-industries", "requirementId": "MR-3", "expected": "pass", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "\"Minimum order quantity: 3,000 units per SKU\"." },
-    { "supplierId": "supplier-07-glowcraft-industries", "requirementId": "MR-4", "expected": "pass", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "\"Fail: 4 batches (17%)\" is within 30%." },
-    { "supplierId": "supplier-07-glowcraft-industries", "requirementId": "MR-5", "expected": "pass", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "\"audited average 11 calendar days\"." },
-    { "supplierId": "supplier-07-glowcraft-industries", "requirementId": "MR-6", "expected": "pass", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "\"Location: Ahmedabad, Gujarat, India\"." },
-    { "supplierId": "supplier-07-glowcraft-industries", "requirementId": "MR-7", "expected": "pass", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "\"Cruelty-free declaration on file (Declaration Ref: CF-2023-0088)\"." },
-
-    { "supplierId": "supplier-08-meridian-beauty-manufacturing", "requirementId": "MR-1", "expected": "pass", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "\"High-volume liquid and serum lines\"." },
-    { "supplierId": "supplier-08-meridian-beauty-manufacturing", "requirementId": "MR-2", "expected": "pass", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "ISO 22716 \"valid until 2027-01-31\"." },
-    { "supplierId": "supplier-08-meridian-beauty-manufacturing", "requirementId": "MR-3", "expected": "pass", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "\"Minimum order quantity: 2,000 units per SKU\"." },
-    { "supplierId": "supplier-08-meridian-beauty-manufacturing", "requirementId": "MR-4", "expected": "pass", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "\"Fail: 5 batches (13%)\"." },
-    { "supplierId": "supplier-08-meridian-beauty-manufacturing", "requirementId": "MR-5", "expected": "pass", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "\"audited average 16 calendar days (production only)\", within 20." },
-    { "supplierId": "supplier-08-meridian-beauty-manufacturing", "requirementId": "MR-6", "expected": "fail", "alsoAcceptable": [], "provenance": "pre-registered", "rationale": "DATA_MANIFEST section 2 records this supplier as failing MR-6 (facility outside India). \"Location: Ho Chi Minh City, Vietnam\"." },
-    { "supplierId": "supplier-08-meridian-beauty-manufacturing", "requirementId": "MR-7", "expected": "pass", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "\"Cruelty-free and COSMOS organic certifications on file\"." },
-
-    { "supplierId": "supplier-09-sunrise-personal-care", "requirementId": "MR-1", "expected": "pass", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "\"Liquid and serum lines, optimized for large-batch national-brand contracts\"." },
-    { "supplierId": "supplier-09-sunrise-personal-care", "requirementId": "MR-2", "expected": "fail", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "ISO 22716 \"valid until 2026-04-17\", which precedes the as-of date 2026-08-09." },
-    { "supplierId": "supplier-09-sunrise-personal-care", "requirementId": "MR-3", "expected": "fail", "alsoAcceptable": [], "provenance": "pre-registered", "rationale": "DATA_MANIFEST section 2 records this supplier as failing MR-3 (MOQ of 20,000 exceeds the 5,000 requirement). \"Minimum order quantity: 20,000 units per SKU\"." },
-    { "supplierId": "supplier-09-sunrise-personal-care", "requirementId": "MR-4", "expected": "pass", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "\"Fail: 6 batches (20%)\" is within 30%." },
-    { "supplierId": "supplier-09-sunrise-personal-care", "requirementId": "MR-5", "expected": "pass", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "\"audited average 13 calendar days\"." },
-    { "supplierId": "supplier-09-sunrise-personal-care", "requirementId": "MR-6", "expected": "pass", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "\"Location: Hyderabad, Telangana, India\"." },
-    { "supplierId": "supplier-09-sunrise-personal-care", "requirementId": "MR-7", "expected": "pass", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "\"Cruelty-free declaration on file (Declaration Ref: CF-2024-0355)\"." },
-
-    { "supplierId": "supplier-10-ecoderm-naturals", "requirementId": "MR-1", "expected": "pass", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "\"Small-batch liquid and serum lines\"." },
-    { "supplierId": "supplier-10-ecoderm-naturals", "requirementId": "MR-2", "expected": "pass", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "ISO 22716 \"valid until 2028-01-04\"." },
-    { "supplierId": "supplier-10-ecoderm-naturals", "requirementId": "MR-3", "expected": "pass", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "\"Minimum order quantity: 2,500 units per SKU\"." },
-    { "supplierId": "supplier-10-ecoderm-naturals", "requirementId": "MR-4", "expected": "pass", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "\"Fail: 1 batch (8%)\" is well within 30%." },
-    { "supplierId": "supplier-10-ecoderm-naturals", "requirementId": "MR-5", "expected": "fail", "alsoAcceptable": [], "provenance": "pre-registered", "rationale": "DATA_MANIFEST section 2 records this supplier as failing MR-5 (25-day lead time exceeds the 20-day requirement). \"audited average 25 calendar days\"." },
-    { "supplierId": "supplier-10-ecoderm-naturals", "requirementId": "MR-6", "expected": "pass", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "\"Location: Surat, Gujarat, India\"." },
-    { "supplierId": "supplier-10-ecoderm-naturals", "requirementId": "MR-7", "expected": "pass", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "\"Cruelty-free declaration on file (Declaration Ref: CF-2025-0501), plus organic sourcing statement\"." },
-
-    { "supplierId": "supplier-11-prakriti-formulations", "requirementId": "MR-1", "expected": "pass", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "\"Liquid and serum lines\"." },
-    { "supplierId": "supplier-11-prakriti-formulations", "requirementId": "MR-2", "expected": "fail", "alsoAcceptable": ["insufficient-evidence"], "provenance": "pre-registered", "rationale": "DATA_MANIFEST section 2 records this supplier as failing MR-2: an unverified marketing claim (\"Fully GMP-compliant facility\") with no ISO 22716 certificate number. The document lists only ISO 9001. Treating a promotional claim as insufficient rather than disqualifying is a defensible alternative." },
-    { "supplierId": "supplier-11-prakriti-formulations", "requirementId": "MR-3", "expected": "pass", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "\"Minimum order quantity: 3,000 units per SKU\"." },
-    { "supplierId": "supplier-11-prakriti-formulations", "requirementId": "MR-4", "expected": "pass", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "\"Fail: 3 batches (19%)\" is within 30%." },
-    { "supplierId": "supplier-11-prakriti-formulations", "requirementId": "MR-5", "expected": "pass", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "\"audited average 14 calendar days\"." },
-    { "supplierId": "supplier-11-prakriti-formulations", "requirementId": "MR-6", "expected": "pass", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "\"Location: Delhi, India\"." },
-    { "supplierId": "supplier-11-prakriti-formulations", "requirementId": "MR-7", "expected": "pass", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "\"Cruelty-free declaration on file (Declaration Ref: CF-2024-0177)\"." },
-
-    { "supplierId": "supplier-12-coastal-wellness-manufacturing", "requirementId": "MR-1", "expected": "pass", "alsoAcceptable": [], "provenance": "pre-registered", "rationale": "DATA_MANIFEST section 2 records this supplier as passing every mandatory requirement, narrowly. \"Liquid and serum lines, dropper- and pump-fill capable\"." },
-    { "supplierId": "supplier-12-coastal-wellness-manufacturing", "requirementId": "MR-2", "expected": "pass", "alsoAcceptable": [], "provenance": "pre-registered", "rationale": "Narrow pass by design. ISO 22716 \"valid until 2027-05-31\"." },
-    { "supplierId": "supplier-12-coastal-wellness-manufacturing", "requirementId": "MR-3", "expected": "pass", "alsoAcceptable": [], "provenance": "pre-registered", "rationale": "Narrow pass by design: \"exactly 5,000 units per SKU\", at the boundary of the 5,000 limit and therefore satisfying it." },
-    { "supplierId": "supplier-12-coastal-wellness-manufacturing", "requirementId": "MR-4", "expected": "pass", "alsoAcceptable": [], "provenance": "pre-registered", "rationale": "Narrow pass by design: \"Fail: 7 batches (28%)\", just inside the 30% ceiling." },
-    { "supplierId": "supplier-12-coastal-wellness-manufacturing", "requirementId": "MR-5", "expected": "pass", "alsoAcceptable": [], "provenance": "pre-registered", "rationale": "Narrow pass by design: \"audited average 19 calendar days\", just inside the 20-day limit." },
-    { "supplierId": "supplier-12-coastal-wellness-manufacturing", "requirementId": "MR-6", "expected": "pass", "alsoAcceptable": [], "provenance": "pre-registered", "rationale": "Narrow pass by design. \"Location: Kochi, Kerala, India\"." },
-    { "supplierId": "supplier-12-coastal-wellness-manufacturing", "requirementId": "MR-7", "expected": "pass", "alsoAcceptable": [], "provenance": "pre-registered", "rationale": "Narrow pass by design. \"Cruelty-free declaration on file (Declaration Ref: CF-2024-0620)\"." },
-
-    { "supplierId": "supplier-13-novaline-personal-care", "requirementId": "MR-1", "expected": "insufficient-evidence", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "\"Profile states 'general cosmetics manufacturing' with no breakdown of liquid vs. solid vs. powder line capability.\" The document neither asserts nor denies the capability, so no determination is supported." },
-    { "supplierId": "supplier-13-novaline-personal-care", "requirementId": "MR-2", "expected": "insufficient-evidence", "alsoAcceptable": [], "provenance": "pre-registered", "rationale": "DATA_MANIFEST section 2 records this supplier as missing data for MR-2 through MR-5, to test that the system abstains rather than guessing. \"Certification status: not provided in submitted documentation.\"" },
-    { "supplierId": "supplier-13-novaline-personal-care", "requirementId": "MR-3", "expected": "insufficient-evidence", "alsoAcceptable": [], "provenance": "pre-registered", "rationale": "Missing data by design. \"Minimum order quantity: not stated.\"" },
-    { "supplierId": "supplier-13-novaline-personal-care", "requirementId": "MR-4", "expected": "insufficient-evidence", "alsoAcceptable": [], "provenance": "pre-registered", "rationale": "Missing data by design. \"No audited production batch records were included in this supplier's submission.\"" },
-    { "supplierId": "supplier-13-novaline-personal-care", "requirementId": "MR-5", "expected": "insufficient-evidence", "alsoAcceptable": [], "provenance": "pre-registered", "rationale": "Missing data by design. \"Standard manufacturing lead time: not stated.\"" },
-    { "supplierId": "supplier-13-novaline-personal-care", "requirementId": "MR-6", "expected": "pass", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "\"Location: Nagpur, Maharashtra, India\" is stated, unlike the other fields." },
-    { "supplierId": "supplier-13-novaline-personal-care", "requirementId": "MR-7", "expected": "insufficient-evidence", "alsoAcceptable": [], "provenance": "post-hoc", "rationale": "\"Not addressed in submitted documentation.\" Absence of evidence, not evidence of absence." }
+    {
+      "supplierId": "supplier-01",
+      "requirementId": "MR-1",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "\"Liquid and serum formulation lines (dropper-fill and pump-fill)\" plus \"Confirmed experience producing skincare serums\"."
+    },
+    {
+      "supplierId": "supplier-01",
+      "requirementId": "MR-2",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "ISO 22716 certificate IN-COS-22716-0341, \"valid until 2027-03-11\", after the as-of date."
+    },
+    {
+      "supplierId": "supplier-01",
+      "requirementId": "MR-3",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "\"Minimum order quantity: 3,000 units per SKU for first orders\" is at or below 5,000."
+    },
+    {
+      "supplierId": "supplier-01",
+      "requirementId": "MR-4",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "\"Fail: 6 batches (22%)\" is at or below the 30% ceiling."
+    },
+    {
+      "supplierId": "supplier-01",
+      "requirementId": "MR-5",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "\"12-14 calendar days\"; even the conservative upper bound is within 20 days."
+    },
+    {
+      "supplierId": "supplier-01",
+      "requirementId": "MR-6",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "\"Location: Mumbai, Maharashtra, India\"."
+    },
+    {
+      "supplierId": "supplier-01",
+      "requirementId": "MR-7",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "\"Signed cruelty-free manufacturing declaration on file (Declaration Ref: CF-2025-0091)\"."
+    },
+    {
+      "supplierId": "supplier-02",
+      "requirementId": "MR-1",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "\"Liquid serum lines and cream lines\"."
+    },
+    {
+      "supplierId": "supplier-02",
+      "requirementId": "MR-2",
+      "expected": "fail",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "ISO 22716 certificate \"valid until 2026-06-30\", which precedes the as-of date 2026-08-09."
+    },
+    {
+      "supplierId": "supplier-02",
+      "requirementId": "MR-3",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "\"Minimum order quantity: 4,500 units per SKU\"."
+    },
+    {
+      "supplierId": "supplier-02",
+      "requirementId": "MR-4",
+      "expected": "fail",
+      "alsoAcceptable": [
+        "conflicting"
+      ],
+      "provenance": "post-hoc",
+      "rationale": "\"Fail: 8 batches (36%)\" exceeds 30%. Genuinely ambiguous: 41% of batches are \"Pending re-inspection\", so the denominator is unclear (8/22 = 36%, or 8/13 = 62% of resolved batches). Surfacing that as a conflict is a defensible alternative."
+    },
+    {
+      "supplierId": "supplier-02",
+      "requirementId": "MR-5",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "\"audited average 15.6 days\" is within 20."
+    },
+    {
+      "supplierId": "supplier-02",
+      "requirementId": "MR-6",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "\"Location: Chennai, Tamil Nadu, India\"."
+    },
+    {
+      "supplierId": "supplier-02",
+      "requirementId": "MR-7",
+      "expected": "fail",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "\"No cruelty-free declaration on file.\" — positive evidence of absence, not merely missing."
+    },
+    {
+      "supplierId": "supplier-03",
+      "requirementId": "MR-1",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "\"Liquid serum lines, cream lines, powder lines\"."
+    },
+    {
+      "supplierId": "supplier-03",
+      "requirementId": "MR-2",
+      "expected": "conflicting",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "DATA_MANIFEST section 2 records this document as engineered with internally conflicting certification statements. Section A asserts the certificate is current; Section D records the same certificate number \"expired 2025-11-01\". The contradiction must be surfaced, not resolved."
+    },
+    {
+      "supplierId": "supplier-03",
+      "requirementId": "MR-3",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "\"Minimum order quantity: 3,500 units per SKU\"."
+    },
+    {
+      "supplierId": "supplier-03",
+      "requirementId": "MR-4",
+      "expected": "pass",
+      "alsoAcceptable": [
+        "conflicting"
+      ],
+      "provenance": "post-hoc",
+      "rationale": "\"Fail: 3 batches (20%)\" is within 30%. 67% pending re-inspection makes the denominator arguable, so a conflict finding is defensible."
+    },
+    {
+      "supplierId": "supplier-03",
+      "requirementId": "MR-5",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "\"audited average 14.9 days\" is within 20."
+    },
+    {
+      "supplierId": "supplier-03",
+      "requirementId": "MR-6",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "\"Location: Mumbai, Maharashtra, India\"."
+    },
+    {
+      "supplierId": "supplier-03",
+      "requirementId": "MR-7",
+      "expected": "fail",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "\"Cruelty-free declaration referenced in marketing brochure (undated, unsigned) - no formal declaration document on file.\" The requirement asks for a documented declaration; the document states there is none."
+    },
+    {
+      "supplierId": "supplier-04",
+      "requirementId": "MR-1",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "\"Liquid serum lines, cream lines\"."
+    },
+    {
+      "supplierId": "supplier-04",
+      "requirementId": "MR-2",
+      "expected": "fail",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "ISO 22716 \"valid until 2025-05-19 (expired, no renewal on file)\"."
+    },
+    {
+      "supplierId": "supplier-04",
+      "requirementId": "MR-3",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "\"Minimum order quantity: 4,000 units per SKU\"."
+    },
+    {
+      "supplierId": "supplier-04",
+      "requirementId": "MR-4",
+      "expected": "fail",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "\"Fail: 12 batches (67%)\" far exceeds the 30% ceiling."
+    },
+    {
+      "supplierId": "supplier-04",
+      "requirementId": "MR-5",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "\"audited average 15.3 days\" is within 20."
+    },
+    {
+      "supplierId": "supplier-04",
+      "requirementId": "MR-6",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "\"Location: Bangalore, Karnataka, India\"."
+    },
+    {
+      "supplierId": "supplier-04",
+      "requirementId": "MR-7",
+      "expected": "fail",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "\"No cruelty-free declaration on file.\""
+    },
+    {
+      "supplierId": "supplier-05",
+      "requirementId": "MR-1",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "\"Liquid serum lines, cream lines, powder lines\"."
+    },
+    {
+      "supplierId": "supplier-05",
+      "requirementId": "MR-2",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "ISO 22716 \"valid until 2027-01-14\", after the as-of date."
+    },
+    {
+      "supplierId": "supplier-05",
+      "requirementId": "MR-3",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "\"Minimum order quantity: 4,000 units per SKU\"."
+    },
+    {
+      "supplierId": "supplier-05",
+      "requirementId": "MR-4",
+      "expected": "fail",
+      "alsoAcceptable": [
+        "conflicting"
+      ],
+      "provenance": "post-hoc",
+      "rationale": "\"Fail: 7 batches (39%)\" exceeds 30%. 44% pending re-inspection makes the denominator arguable."
+    },
+    {
+      "supplierId": "supplier-05",
+      "requirementId": "MR-5",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "\"audited average 16.3 days\" is within 20."
+    },
+    {
+      "supplierId": "supplier-05",
+      "requirementId": "MR-6",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "\"Location: Kolkata, West Bengal, India\"."
+    },
+    {
+      "supplierId": "supplier-05",
+      "requirementId": "MR-7",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "\"Cruelty-free declaration on file (Declaration Ref: CF-2024-0203)\"."
+    },
+    {
+      "supplierId": "supplier-06-vantage-cosmo-labs",
+      "requirementId": "MR-1",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "DATA_MANIFEST section 2 records this supplier as a clean pass on all mandatory requirements. \"Dedicated liquid and serum formulation lines\"."
+    },
+    {
+      "supplierId": "supplier-06-vantage-cosmo-labs",
+      "requirementId": "MR-2",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "Clean pass by design. ISO 22716 \"valid until 2027-08-31\"."
+    },
+    {
+      "supplierId": "supplier-06-vantage-cosmo-labs",
+      "requirementId": "MR-3",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "Clean pass by design. \"Minimum order quantity: 4,000 units per SKU\"."
+    },
+    {
+      "supplierId": "supplier-06-vantage-cosmo-labs",
+      "requirementId": "MR-4",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "Clean pass by design. \"Fail: 3 batches (15%)\"."
+    },
+    {
+      "supplierId": "supplier-06-vantage-cosmo-labs",
+      "requirementId": "MR-5",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "Clean pass by design. \"audited average 18 calendar days\"."
+    },
+    {
+      "supplierId": "supplier-06-vantage-cosmo-labs",
+      "requirementId": "MR-6",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "Clean pass by design. \"Location: Pune, Maharashtra, India\"."
+    },
+    {
+      "supplierId": "supplier-06-vantage-cosmo-labs",
+      "requirementId": "MR-7",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "Clean pass by design. \"Cruelty-free declaration on file\" plus Ecocert certification."
+    },
+    {
+      "supplierId": "supplier-07-glowcraft-industries",
+      "requirementId": "MR-1",
+      "expected": "fail",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "DATA_MANIFEST section 2 records this supplier as failing MR-1 (no liquid/serum line). \"No liquid-fill or serum production line currently installed.\""
+    },
+    {
+      "supplierId": "supplier-07-glowcraft-industries",
+      "requirementId": "MR-2",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "ISO 22716 \"valid until 2026-11-09\", after the as-of date."
+    },
+    {
+      "supplierId": "supplier-07-glowcraft-industries",
+      "requirementId": "MR-3",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "\"Minimum order quantity: 3,000 units per SKU\"."
+    },
+    {
+      "supplierId": "supplier-07-glowcraft-industries",
+      "requirementId": "MR-4",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "\"Fail: 4 batches (17%)\" is within 30%."
+    },
+    {
+      "supplierId": "supplier-07-glowcraft-industries",
+      "requirementId": "MR-5",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "\"audited average 11 calendar days\"."
+    },
+    {
+      "supplierId": "supplier-07-glowcraft-industries",
+      "requirementId": "MR-6",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "\"Location: Ahmedabad, Gujarat, India\"."
+    },
+    {
+      "supplierId": "supplier-07-glowcraft-industries",
+      "requirementId": "MR-7",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "\"Cruelty-free declaration on file (Declaration Ref: CF-2023-0088)\"."
+    },
+    {
+      "supplierId": "supplier-08-meridian-beauty-manufacturing",
+      "requirementId": "MR-1",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "\"High-volume liquid and serum lines\"."
+    },
+    {
+      "supplierId": "supplier-08-meridian-beauty-manufacturing",
+      "requirementId": "MR-2",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "ISO 22716 \"valid until 2027-01-31\"."
+    },
+    {
+      "supplierId": "supplier-08-meridian-beauty-manufacturing",
+      "requirementId": "MR-3",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "\"Minimum order quantity: 2,000 units per SKU\"."
+    },
+    {
+      "supplierId": "supplier-08-meridian-beauty-manufacturing",
+      "requirementId": "MR-4",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "\"Fail: 5 batches (13%)\"."
+    },
+    {
+      "supplierId": "supplier-08-meridian-beauty-manufacturing",
+      "requirementId": "MR-5",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "\"audited average 16 calendar days (production only)\", within 20."
+    },
+    {
+      "supplierId": "supplier-08-meridian-beauty-manufacturing",
+      "requirementId": "MR-6",
+      "expected": "fail",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "DATA_MANIFEST section 2 records this supplier as failing MR-6 (facility outside India). \"Location: Ho Chi Minh City, Vietnam\"."
+    },
+    {
+      "supplierId": "supplier-08-meridian-beauty-manufacturing",
+      "requirementId": "MR-7",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "\"Cruelty-free and COSMOS organic certifications on file\"."
+    },
+    {
+      "supplierId": "supplier-09-sunrise-personal-care",
+      "requirementId": "MR-1",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "\"Liquid and serum lines, optimized for large-batch national-brand contracts\"."
+    },
+    {
+      "supplierId": "supplier-09-sunrise-personal-care",
+      "requirementId": "MR-2",
+      "expected": "fail",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "ISO 22716 \"valid until 2026-04-17\", which precedes the as-of date 2026-08-09."
+    },
+    {
+      "supplierId": "supplier-09-sunrise-personal-care",
+      "requirementId": "MR-3",
+      "expected": "fail",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "DATA_MANIFEST section 2 records this supplier as failing MR-3 (MOQ of 20,000 exceeds the 5,000 requirement). \"Minimum order quantity: 20,000 units per SKU\"."
+    },
+    {
+      "supplierId": "supplier-09-sunrise-personal-care",
+      "requirementId": "MR-4",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "\"Fail: 6 batches (20%)\" is within 30%."
+    },
+    {
+      "supplierId": "supplier-09-sunrise-personal-care",
+      "requirementId": "MR-5",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "\"audited average 13 calendar days\"."
+    },
+    {
+      "supplierId": "supplier-09-sunrise-personal-care",
+      "requirementId": "MR-6",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "\"Location: Hyderabad, Telangana, India\"."
+    },
+    {
+      "supplierId": "supplier-09-sunrise-personal-care",
+      "requirementId": "MR-7",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "\"Cruelty-free declaration on file (Declaration Ref: CF-2024-0355)\"."
+    },
+    {
+      "supplierId": "supplier-10-ecoderm-naturals",
+      "requirementId": "MR-1",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "\"Small-batch liquid and serum lines\"."
+    },
+    {
+      "supplierId": "supplier-10-ecoderm-naturals",
+      "requirementId": "MR-2",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "ISO 22716 \"valid until 2028-01-04\"."
+    },
+    {
+      "supplierId": "supplier-10-ecoderm-naturals",
+      "requirementId": "MR-3",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "\"Minimum order quantity: 2,500 units per SKU\"."
+    },
+    {
+      "supplierId": "supplier-10-ecoderm-naturals",
+      "requirementId": "MR-4",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "\"Fail: 1 batch (8%)\" is well within 30%."
+    },
+    {
+      "supplierId": "supplier-10-ecoderm-naturals",
+      "requirementId": "MR-5",
+      "expected": "fail",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "DATA_MANIFEST section 2 records this supplier as failing MR-5 (25-day lead time exceeds the 20-day requirement). \"audited average 25 calendar days\"."
+    },
+    {
+      "supplierId": "supplier-10-ecoderm-naturals",
+      "requirementId": "MR-6",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "\"Location: Surat, Gujarat, India\"."
+    },
+    {
+      "supplierId": "supplier-10-ecoderm-naturals",
+      "requirementId": "MR-7",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "\"Cruelty-free declaration on file (Declaration Ref: CF-2025-0501), plus organic sourcing statement\"."
+    },
+    {
+      "supplierId": "supplier-11-prakriti-formulations",
+      "requirementId": "MR-1",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "\"Liquid and serum lines\"."
+    },
+    {
+      "supplierId": "supplier-11-prakriti-formulations",
+      "requirementId": "MR-2",
+      "expected": "fail",
+      "alsoAcceptable": [
+        "insufficient-evidence"
+      ],
+      "provenance": "pre-registered",
+      "rationale": "DATA_MANIFEST section 2 records this supplier as failing MR-2: an unverified marketing claim (\"Fully GMP-compliant facility\") with no ISO 22716 certificate number. The document lists only ISO 9001. Treating a promotional claim as insufficient rather than disqualifying is a defensible alternative."
+    },
+    {
+      "supplierId": "supplier-11-prakriti-formulations",
+      "requirementId": "MR-3",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "\"Minimum order quantity: 3,000 units per SKU\"."
+    },
+    {
+      "supplierId": "supplier-11-prakriti-formulations",
+      "requirementId": "MR-4",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "\"Fail: 3 batches (19%)\" is within 30%."
+    },
+    {
+      "supplierId": "supplier-11-prakriti-formulations",
+      "requirementId": "MR-5",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "\"audited average 14 calendar days\"."
+    },
+    {
+      "supplierId": "supplier-11-prakriti-formulations",
+      "requirementId": "MR-6",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "\"Location: Delhi, India\"."
+    },
+    {
+      "supplierId": "supplier-11-prakriti-formulations",
+      "requirementId": "MR-7",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "\"Cruelty-free declaration on file (Declaration Ref: CF-2024-0177)\"."
+    },
+    {
+      "supplierId": "supplier-12-coastal-wellness-manufacturing",
+      "requirementId": "MR-1",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "DATA_MANIFEST section 2 records this supplier as passing every mandatory requirement, narrowly. \"Liquid and serum lines, dropper- and pump-fill capable\"."
+    },
+    {
+      "supplierId": "supplier-12-coastal-wellness-manufacturing",
+      "requirementId": "MR-2",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "Narrow pass by design. ISO 22716 \"valid until 2027-05-31\"."
+    },
+    {
+      "supplierId": "supplier-12-coastal-wellness-manufacturing",
+      "requirementId": "MR-3",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "Narrow pass by design: \"exactly 5,000 units per SKU\", at the boundary of the 5,000 limit and therefore satisfying it."
+    },
+    {
+      "supplierId": "supplier-12-coastal-wellness-manufacturing",
+      "requirementId": "MR-4",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "Narrow pass by design: \"Fail: 7 batches (28%)\", just inside the 30% ceiling."
+    },
+    {
+      "supplierId": "supplier-12-coastal-wellness-manufacturing",
+      "requirementId": "MR-5",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "Narrow pass by design: \"audited average 19 calendar days\", just inside the 20-day limit."
+    },
+    {
+      "supplierId": "supplier-12-coastal-wellness-manufacturing",
+      "requirementId": "MR-6",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "Narrow pass by design. \"Location: Kochi, Kerala, India\"."
+    },
+    {
+      "supplierId": "supplier-12-coastal-wellness-manufacturing",
+      "requirementId": "MR-7",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "Narrow pass by design. \"Cruelty-free declaration on file (Declaration Ref: CF-2024-0620)\"."
+    },
+    {
+      "supplierId": "supplier-13-novaline-personal-care",
+      "requirementId": "MR-1",
+      "expected": "insufficient-evidence",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "\"Profile states 'general cosmetics manufacturing' with no breakdown of liquid vs. solid vs. powder line capability.\" The document neither asserts nor denies the capability, so no determination is supported."
+    },
+    {
+      "supplierId": "supplier-13-novaline-personal-care",
+      "requirementId": "MR-2",
+      "expected": "insufficient-evidence",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "DATA_MANIFEST section 2 records this supplier as missing data for MR-2 through MR-5, to test that the system abstains rather than guessing. \"Certification status: not provided in submitted documentation.\""
+    },
+    {
+      "supplierId": "supplier-13-novaline-personal-care",
+      "requirementId": "MR-3",
+      "expected": "insufficient-evidence",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "Missing data by design. \"Minimum order quantity: not stated.\""
+    },
+    {
+      "supplierId": "supplier-13-novaline-personal-care",
+      "requirementId": "MR-4",
+      "expected": "insufficient-evidence",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "Missing data by design. \"No audited production batch records were included in this supplier's submission.\""
+    },
+    {
+      "supplierId": "supplier-13-novaline-personal-care",
+      "requirementId": "MR-5",
+      "expected": "insufficient-evidence",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "Missing data by design. \"Standard manufacturing lead time: not stated.\""
+    },
+    {
+      "supplierId": "supplier-13-novaline-personal-care",
+      "requirementId": "MR-6",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "\"Location: Nagpur, Maharashtra, India\" is stated, unlike the other fields."
+    },
+    {
+      "supplierId": "supplier-13-novaline-personal-care",
+      "requirementId": "MR-7",
+      "expected": "insufficient-evidence",
+      "alsoAcceptable": [],
+      "provenance": "post-hoc",
+      "rationale": "\"Not addressed in submitted documentation.\" Absence of evidence, not evidence of absence."
+    },
+    {
+      "supplierId": "supplier-14-anantara-formulations",
+      "requirementId": "MR-1",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "\"Two liquid-formulation lines with dropper-fill and pump-fill heads\", plus serum and essence formats produced since 2023."
+    },
+    {
+      "supplierId": "supplier-14-anantara-formulations",
+      "requirementId": "MR-2",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "Certificate No. IN-COS-22716-3310, valid until 2027-02-14, current at the 2026-08-09 as-of date."
+    },
+    {
+      "supplierId": "supplier-14-anantara-formulations",
+      "requirementId": "MR-3",
+      "expected": "fail",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "500 cases per SKU at 12 units per case is 6,000 units, above the 5,000 ceiling. Reading \"500\" as units would wrongly pass."
+    },
+    {
+      "supplierId": "supplier-14-anantara-formulations",
+      "requirementId": "MR-4",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "4 of 25 audited batches failed (16%), within the 30% ceiling."
+    },
+    {
+      "supplierId": "supplier-14-anantara-formulations",
+      "requirementId": "MR-5",
+      "expected": "fail",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "3 weeks is 21 calendar days, above the 20-day limit. Reading \"3\" as days would wrongly pass."
+    },
+    {
+      "supplierId": "supplier-14-anantara-formulations",
+      "requirementId": "MR-6",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "Ahmedabad, Gujarat, India."
+    },
+    {
+      "supplierId": "supplier-14-anantara-formulations",
+      "requirementId": "MR-7",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "Cruelty-free manufacturing declaration on file, Ref CF-2025-0881."
+    },
+    {
+      "supplierId": "supplier-15-rathore-cosmetic-works",
+      "requirementId": "MR-1",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "Liquid-fill and cream-fill lines with 11 prior liquid skincare programs including serums."
+    },
+    {
+      "supplierId": "supplier-15-rathore-cosmetic-works",
+      "requirementId": "MR-2",
+      "expected": "fail",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "Certificate No. IN-COS-22716-0774 was valid until 2025-03-31 and is expired against the 2026-08-09 as-of date. The renewal audit carries no certificate number."
+    },
+    {
+      "supplierId": "supplier-15-rathore-cosmetic-works",
+      "requirementId": "MR-3",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "3,000 units per SKU, within the 5,000 ceiling."
+    },
+    {
+      "supplierId": "supplier-15-rathore-cosmetic-works",
+      "requirementId": "MR-4",
+      "expected": "fail",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "7 of 20 audited batches failed (35%), above the 30% ceiling."
+    },
+    {
+      "supplierId": "supplier-15-rathore-cosmetic-works",
+      "requirementId": "MR-5",
+      "expected": "fail",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "22 calendar days, above the 20-day limit."
+    },
+    {
+      "supplierId": "supplier-15-rathore-cosmetic-works",
+      "requirementId": "MR-6",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "Indore, Madhya Pradesh, India."
+    },
+    {
+      "supplierId": "supplier-15-rathore-cosmetic-works",
+      "requirementId": "MR-7",
+      "expected": "insufficient-evidence",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "The sustainability section states the topic was not addressed in the submitted documentation. Absence of a declaration is not evidence that none exists."
+    },
+    {
+      "supplierId": "supplier-16-bluepeak-skincare-solutions",
+      "requirementId": "MR-1",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "Dedicated serum and essence lines with dropper-fill capability; 5 Vitamin C serum programs."
+    },
+    {
+      "supplierId": "supplier-16-bluepeak-skincare-solutions",
+      "requirementId": "MR-2",
+      "expected": "insufficient-evidence",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "Holds current ISO 9001 and ISO 14001 certificates. Neither is ISO 22716, and no ISO 22716 record appears in the documentation."
+    },
+    {
+      "supplierId": "supplier-16-bluepeak-skincare-solutions",
+      "requirementId": "MR-3",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "2,500 units per SKU, within the 5,000 ceiling."
+    },
+    {
+      "supplierId": "supplier-16-bluepeak-skincare-solutions",
+      "requirementId": "MR-4",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "2 of 22 audited batches failed (9.1%), within the 30% ceiling."
+    },
+    {
+      "supplierId": "supplier-16-bluepeak-skincare-solutions",
+      "requirementId": "MR-5",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "15 calendar days, within the 20-day limit."
+    },
+    {
+      "supplierId": "supplier-16-bluepeak-skincare-solutions",
+      "requirementId": "MR-6",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "Vadodara, Gujarat, India."
+    },
+    {
+      "supplierId": "supplier-16-bluepeak-skincare-solutions",
+      "requirementId": "MR-7",
+      "expected": "insufficient-evidence",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "A documented environmental policy is offered. No cruelty-free manufacturing declaration appears in the document."
+    },
+    {
+      "supplierId": "supplier-17-sahyadri-beauty-group",
+      "requirementId": "MR-1",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "Serum and liquid skincare lines with dropper-fill and airless-pump capability; 4 programs run at this unit."
+    },
+    {
+      "supplierId": "supplier-17-sahyadri-beauty-group",
+      "requirementId": "MR-2",
+      "expected": "insufficient-evidence",
+      "alsoAcceptable": [
+        "fail"
+      ],
+      "provenance": "pre-registered",
+      "rationale": "The certificate names Sahyadri Beauty Group, Hosur Unit II. The document states no site-specific certificate has been issued for the Coimbatore unit being quoted. Treating the group certificate as covering this site would be an unsupported inference; a reviewer could also defend `fail` on the explicit statement that none was issued."
+    },
+    {
+      "supplierId": "supplier-17-sahyadri-beauty-group",
+      "requirementId": "MR-3",
+      "expected": "fail",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "8,000 units per SKU, above the 5,000 ceiling."
+    },
+    {
+      "supplierId": "supplier-17-sahyadri-beauty-group",
+      "requirementId": "MR-4",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "3 of 20 audited batches failed (15%), within the 30% ceiling."
+    },
+    {
+      "supplierId": "supplier-17-sahyadri-beauty-group",
+      "requirementId": "MR-5",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "17 calendar days, within the 20-day limit."
+    },
+    {
+      "supplierId": "supplier-17-sahyadri-beauty-group",
+      "requirementId": "MR-6",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "Coimbatore, Tamil Nadu, India."
+    },
+    {
+      "supplierId": "supplier-17-sahyadri-beauty-group",
+      "requirementId": "MR-7",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "Group-level cruelty-free declaration Ref CF-2025-0555, stated to cover all four sites."
+    },
+    {
+      "supplierId": "supplier-18-trilok-personal-care",
+      "requirementId": "MR-1",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "Serum, gel and essence lines with dropper-fill capability; two prior Vitamin C serums."
+    },
+    {
+      "supplierId": "supplier-18-trilok-personal-care",
+      "requirementId": "MR-2",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "Certificate No. IN-COS-22716-6120, valid until 2028-03-31."
+    },
+    {
+      "supplierId": "supplier-18-trilok-personal-care",
+      "requirementId": "MR-3",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "3,500 units per SKU, within the 5,000 ceiling."
+    },
+    {
+      "supplierId": "supplier-18-trilok-personal-care",
+      "requirementId": "MR-4",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "4 of 24 audited batches failed (16.7%), within the 30% ceiling."
+    },
+    {
+      "supplierId": "supplier-18-trilok-personal-care",
+      "requirementId": "MR-5",
+      "expected": "conflicting",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "Order terms state a 16-day lead time; the production planning notes state 26 calendar days for serum formats specifically, which is the format being sourced. The document contradicts itself and the contradiction must be surfaced rather than resolved."
+    },
+    {
+      "supplierId": "supplier-18-trilok-personal-care",
+      "requirementId": "MR-6",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "Surat, Gujarat, India."
+    },
+    {
+      "supplierId": "supplier-18-trilok-personal-care",
+      "requirementId": "MR-7",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "Cruelty-free manufacturing declaration on file, Ref CF-2025-0308."
+    },
+    {
+      "supplierId": "supplier-19-kanan-naturals",
+      "requirementId": "MR-1",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "Liquid division runs dropper-fill and pump-fill serum formats; 9 serum programs since 2022."
+    },
+    {
+      "supplierId": "supplier-19-kanan-naturals",
+      "requirementId": "MR-2",
+      "expected": "fail",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "\"GMP-certified\" is asserted with no certificate number, issuing body or standard reference, and documentation is described as available only at a site visit. A marketing claim offered in place of a certification record."
+    },
+    {
+      "supplierId": "supplier-19-kanan-naturals",
+      "requirementId": "MR-3",
+      "expected": "fail",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "Serums and treatment liquids carry a 12,000-unit MOQ, above the 5,000 ceiling. The 2,000-unit haircare figure on the same page does not apply to this product."
+    },
+    {
+      "supplierId": "supplier-19-kanan-naturals",
+      "requirementId": "MR-4",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "3 of 19 audited batches failed (15.8%), within the 30% ceiling."
+    },
+    {
+      "supplierId": "supplier-19-kanan-naturals",
+      "requirementId": "MR-5",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "14 calendar days, within the 20-day limit."
+    },
+    {
+      "supplierId": "supplier-19-kanan-naturals",
+      "requirementId": "MR-6",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "Jaipur, Rajasthan, India."
+    },
+    {
+      "supplierId": "supplier-19-kanan-naturals",
+      "requirementId": "MR-7",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "Cruelty-free manufacturing declaration on file, Ref CF-2024-0967."
+    },
+    {
+      "supplierId": "supplier-20-meghdoot-labs",
+      "requirementId": "MR-1",
+      "expected": "fail",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "Product history is entirely solid-format colour cosmetics, and the document states the facility does not operate a liquid-fill or dropper-fill line."
+    },
+    {
+      "supplierId": "supplier-20-meghdoot-labs",
+      "requirementId": "MR-2",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "Certificate No. IN-COS-22716-2867, valid until 2027-09-30."
+    },
+    {
+      "supplierId": "supplier-20-meghdoot-labs",
+      "requirementId": "MR-3",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "4,200 units per SKU, within the 5,000 ceiling."
+    },
+    {
+      "supplierId": "supplier-20-meghdoot-labs",
+      "requirementId": "MR-4",
+      "expected": "fail",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "A 68% batch acceptance rate is a 32% fail rate, above the 30% ceiling. Reading 68 as the fail rate, or failing to invert it at all, changes the verdict."
+    },
+    {
+      "supplierId": "supplier-20-meghdoot-labs",
+      "requirementId": "MR-5",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "18 calendar days, within the 20-day limit."
+    },
+    {
+      "supplierId": "supplier-20-meghdoot-labs",
+      "requirementId": "MR-6",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "Aurangabad, Maharashtra, India."
+    },
+    {
+      "supplierId": "supplier-20-meghdoot-labs",
+      "requirementId": "MR-7",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "Cruelty-free manufacturing declaration on file, Ref CF-2025-0721."
+    },
+    {
+      "supplierId": "supplier-21-vasanth-bio-cosmetics",
+      "requirementId": "MR-1",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "Three liquid-formulation lines with dropper-fill and airless-pump capability; twelve serum programs since 2021."
+    },
+    {
+      "supplierId": "supplier-21-vasanth-bio-cosmetics",
+      "requirementId": "MR-2",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "Certificate No. LK-COS-22716-0455, valid until 2028-01-31, stated to cover the production site."
+    },
+    {
+      "supplierId": "supplier-21-vasanth-bio-cosmetics",
+      "requirementId": "MR-3",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "3,200 units per SKU, within the 5,000 ceiling."
+    },
+    {
+      "supplierId": "supplier-21-vasanth-bio-cosmetics",
+      "requirementId": "MR-4",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "3 of 23 audited batches failed (13%), within the 30% ceiling."
+    },
+    {
+      "supplierId": "supplier-21-vasanth-bio-cosmetics",
+      "requirementId": "MR-5",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "16 calendar days at the production site, within the 20-day limit. Cross-border freight is quoted separately and is not part of the manufacturing lead time."
+    },
+    {
+      "supplierId": "supplier-21-vasanth-bio-cosmetics",
+      "requirementId": "MR-6",
+      "expected": "fail",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "The manufacturing facility is Colombo, Sri Lanka. The Indian address is the registered head office, not the production site, and the requirement is about where production happens."
+    },
+    {
+      "supplierId": "supplier-21-vasanth-bio-cosmetics",
+      "requirementId": "MR-7",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "Cruelty-free manufacturing declaration on file, Ref CF-2025-0190."
+    },
+    {
+      "supplierId": "supplier-22-ashvattha-wellness",
+      "requirementId": "MR-1",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "Liquid and oil-phase formulation lines with dropper-fill capability; 14 liquid skincare programs since 2020."
+    },
+    {
+      "supplierId": "supplier-22-ashvattha-wellness",
+      "requirementId": "MR-2",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "Certificate No. IN-COS-22716-4092, valid until 2027-12-31."
+    },
+    {
+      "supplierId": "supplier-22-ashvattha-wellness",
+      "requirementId": "MR-3",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "4,800 units per SKU, within the 5,000 ceiling."
+    },
+    {
+      "supplierId": "supplier-22-ashvattha-wellness",
+      "requirementId": "MR-4",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "4 of 21 audited batches failed (19%), within the 30% ceiling."
+    },
+    {
+      "supplierId": "supplier-22-ashvattha-wellness",
+      "requirementId": "MR-5",
+      "expected": "fail",
+      "alsoAcceptable": [
+        "insufficient-evidence"
+      ],
+      "provenance": "pre-registered",
+      "rationale": "Quoted as 18 to 24 calendar days depending on component availability. The upper bound exceeds the 20-day limit, so the requirement cannot be met as quoted; taking 18 alone is reading the favourable end of a range. A reviewer could also defend `insufficient-evidence` on the ground that no single committed figure was given."
+    },
+    {
+      "supplierId": "supplier-22-ashvattha-wellness",
+      "requirementId": "MR-6",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "Hyderabad, Telangana, India."
+    },
+    {
+      "supplierId": "supplier-22-ashvattha-wellness",
+      "requirementId": "MR-7",
+      "expected": "insufficient-evidence",
+      "alsoAcceptable": [
+        "fail"
+      ],
+      "provenance": "pre-registered",
+      "rationale": "The document offers compliance with animal-testing regulations in export markets and customer-led ingredient selection. That is a statement of regulatory compliance, not a documented cruelty-free manufacturing declaration."
+    },
+    {
+      "supplierId": "supplier-23-nirvaan-skin-sciences",
+      "requirementId": "MR-1",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "Two dedicated serum lines with dropper-fill and airless-pump heads; six serum programs, four of them Vitamin C actives formulations."
+    },
+    {
+      "supplierId": "supplier-23-nirvaan-skin-sciences",
+      "requirementId": "MR-2",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "Certificate No. IN-COS-22716-4407, valid until 2028-01-09."
+    },
+    {
+      "supplierId": "supplier-23-nirvaan-skin-sciences",
+      "requirementId": "MR-3",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "1,500 units per SKU, within the 5,000 ceiling. Stated identically in the order-terms table and in the prose beneath it; the agreement is not a conflict."
+    },
+    {
+      "supplierId": "supplier-23-nirvaan-skin-sciences",
+      "requirementId": "MR-4",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "2 of 26 audited batches failed (7.7%), within the 30% ceiling."
+    },
+    {
+      "supplierId": "supplier-23-nirvaan-skin-sciences",
+      "requirementId": "MR-5",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "12 calendar days, within the 20-day limit. Stated identically in the order-terms table and in the prose beneath it."
+    },
+    {
+      "supplierId": "supplier-23-nirvaan-skin-sciences",
+      "requirementId": "MR-6",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "Mysuru, Karnataka, India."
+    },
+    {
+      "supplierId": "supplier-23-nirvaan-skin-sciences",
+      "requirementId": "MR-7",
+      "expected": "pass",
+      "alsoAcceptable": [],
+      "provenance": "pre-registered",
+      "rationale": "Cruelty-free manufacturing declaration on file, Ref CF-2026-0042."
+    }
   ]
 }

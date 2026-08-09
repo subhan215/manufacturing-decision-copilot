@@ -31,6 +31,9 @@ function section(title: string): void {
   console.log(`\n${"=".repeat(78)}\n${title}\n${"=".repeat(78)}`);
 }
 
+/** Corpus size, stated once so a grown corpus cannot pass a stale assertion. */
+const SUPPLIER_COUNT = 23;
+
 const root = resolveProjectRoot();
 const snapshot = await loadSnapshot();
 
@@ -38,8 +41,8 @@ const snapshot = await loadSnapshot();
 section("A. SNAPSHOT INTEGRITY");
 
 check(
-  `13 suppliers screened (${snapshot.screen.suppliers.length})`,
-  snapshot.screen.suppliers.length === 13,
+  `${SUPPLIER_COUNT} suppliers screened (${snapshot.screen.suppliers.length})`,
+  snapshot.screen.suppliers.length === SUPPLIER_COUNT,
 );
 check(
   "every supplier has 7 verdicts",

@@ -1,0 +1,24 @@
+{
+  "data": {
+    "costValue": 33.8,
+    "costCurrency": "USD",
+    "costUnit": "unit",
+    "costCitationChunkId": "supplier-21-vasanth-bio-cosmetics#s06-cost-reference",
+    "costCitationQuote": "Average manufacturing cost across comparable SKUs: $33.80/unit.",
+    "crueltyFreeDeclaration": true,
+    "thirdPartyCertifications": [],
+    "sustainabilityCitationChunkId": "supplier-21-vasanth-bio-cosmetics#s05-sustainability",
+    "sustainabilityCitationQuote": "Cruelty-free manufacturing declaration on file (Declaration Ref: CF-2025-0190, dated 2025-01-22). Site holds a renewable-energy supply agreement covering 60% of facility load."
+  },
+  "telemetry": {
+    "model": "claude-sonnet-5",
+    "cacheHit": false,
+    "durationMs": 11166,
+    "apiDurationMs": 9914,
+    "costUsd": 0.053444,
+    "inputTokens": 2,
+    "outputTokens": 849,
+    "numTurns": 2
+  },
+  "storedAt": "2026-08-09T16:50:43.441Z"
+}

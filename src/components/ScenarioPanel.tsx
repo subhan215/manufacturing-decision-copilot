@@ -178,11 +178,15 @@ export function ScenarioPanel({ snapshot }: { snapshot: UiSnapshot }) {
 
         <ul className="mt-3 space-y-5">
           {scenarios.map((s) => {
-            const entered = s.entered[0];
-            const enteredCost = entered ? costOf(entered) : null;
+            // The cheapest supplier the scenario admits, which is the number a
+            // reader will anchor on. A scenario can admit more than one.
+            const cheapest = s.entered
+              .map((id) => ({ id, cost: costOf(id) }))
+              .filter((x): x is { id: string; cost: number } => x.cost !== null)
+              .sort((a, b) => a.cost - b.cost)[0];
             const saving =
-              enteredCost !== null && baseline
-                ? (baseline.unitCost - enteredCost) * baseline.orderQuantity
+              cheapest && baseline
+                ? (baseline.unitCost - cheapest.cost) * baseline.orderQuantity
                 : null;
 
             return (
@@ -203,10 +207,13 @@ export function ScenarioPanel({ snapshot }: { snapshot: UiSnapshot }) {
                   {s.impact}
                 </p>
 
-                {saving !== null && saving > 0 && entered && (
+                {saving !== null && saving > 0 && cheapest && (
                   <p className="tnum mt-1.5 text-sm text-[var(--text-primary)]">
-                    {nameOf(entered)} quotes {money(enteredCost!)} per unit
-                    against {money(baseline!.unitCost)} — a difference of{" "}
+                    {s.entered.length > 1
+                      ? `The cheapest of the ${s.entered.length} suppliers this admits, ${nameOf(cheapest.id)}, quotes `
+                      : `${nameOf(cheapest.id)} quotes `}
+                    {money(cheapest.cost)} per unit against{" "}
+                    {money(baseline!.unitCost)} — a difference of{" "}
                     {money(saving)} across the launch order,{" "}
                     <span className="text-[var(--text-secondary)]">
                       before the costs noted below.

@@ -1,0 +1,24 @@
+{
+  "data": {
+    "costValue": 43.75,
+    "costCurrency": "USD",
+    "costUnit": "unit",
+    "costCitationChunkId": "supplier-18-trilok-personal-care#s07-cost-reference",
+    "costCitationQuote": "Average manufacturing cost across comparable SKUs: $43.75/unit.",
+    "crueltyFreeDeclaration": true,
+    "thirdPartyCertifications": [],
+    "sustainabilityCitationChunkId": "supplier-18-trilok-personal-care#s06-sustainability",
+    "sustainabilityCitationQuote": "Cruelty-free manufacturing declaration on file (Declaration Ref: CF-2025-0308, dated 2025-05-11)."
+  },
+  "telemetry": {
+    "model": "claude-sonnet-5",
+    "cacheHit": false,
+    "durationMs": 8747,
+    "apiDurationMs": 8651,
+    "costUsd": 0.021128400000000002,
+    "inputTokens": 2,
+    "outputTokens": 748,
+    "numTurns": 2
+  },
+  "storedAt": "2026-08-09T16:50:32.272Z"
+}

@@ -242,6 +242,41 @@ Two things the suite caught:
 
 Regenerating the snapshot moved nothing: ingestion 42, probe 14, screen 21, rank 20, baseline 20, eval 21, check:ui 19 — all identical, as required.
 
+## Corpus expansion — 13 → 23 suppliers — DONE
+
+The real source was exhausted: the Kaggle CSV has 100 rows but only **5 distinct suppliers**, and no certification, MOQ, cruelty-free or country fields — the four things MR-1/2/3/6/7 test. Web search found no public dataset carrying those; MOQ is a negotiated commercial term and is not published in structured form. So growth had to be synthetic, which raised the question of whether it was worth doing.
+
+**More suppliers of the same kind would have been worthless.** The label distribution showed why: 70 of 91 expected verdicts were `pass`, so a system answering "pass" to everything scored 77%, and only 24 labels were pre-registered. Adding ordinary suppliers would have added mostly-pass labels the system already gets right.
+
+What was built instead: **10 adversarial suppliers, each encoding a named failure mode** — unit conversion (MOQ in cases, lead time in weeks), expired certificate, near-miss standard (ISO 9001/14001 but not 22716), certificate held by a sister site, internal contradiction, distractor MOQs by product format, metric inversion (68% acceptance = 32% fail), attribute on the wrong entity (Indian head office, Sri Lankan factory), favourable-end reading of a range, and one control that must **not** trip (every figure stated twice, table and prose, in agreement).
+
+All 70 expected verdicts were **pre-registered in `DATA_MANIFEST.md` §2 before the documents met any model**, with `alsoAcceptable` recorded up front for the three genuinely arguable calls. Pre-registered labels went 24 → 94.
+
+**I said this would drop the majority-class score to ~59% and that was wrong** — realistic supplier documents pass most requirements, so it sits at 76%. Forcing it down would have meant inventing suppliers that fail four things each, which is shaping a corpus to flatter a statistic. The manifest says so plainly.
+
+### What it caught
+
+| | before | after |
+|---|---|---|
+| AI accuracy | 100% (91/91) | **98.1%** (158/161), pre-registered 96.8% |
+| Baseline accuracy | 100% | **91.9%**, pre-registered 88.3% |
+| Baseline critical errors | small | **12**, including 6 false-passes |
+| AI critical errors | 0 | **0** |
+
+Every single trap caught the rule-based baseline: it passed the cases/weeks supplier, the 12,000-unit MOQ, the Sri Lankan factory and the 18–24 day range. The AI's three errors share one coherent failure mode — **it reports `conflicting` where a document states different values for different scopes or entities** (a certificate for a sister site, MOQs by product format, head office vs factory) rather than selecting the one that applies. It correctly flagged the one real self-contradiction and correctly did *not* flag the consistent restatement. All three errors are in the safe direction: still blocked, still routed to a human.
+
+### Three findings, handled deliberately
+
+- **A real extraction bug, found by the reference-value check.** The model counted **ISO 22716 as a third-party sustainability certification**, double-counting a mandatory requirement as a ranking bonus — and it inflated the score of the supplier that had just become the new winner. Fixed deterministically in `sustainabilityPoints()`: a certification that is already mandatory cannot also be an advantage, since every eligible supplier holds it. Extraction went back to 16/16 exact and supplier-01 is the winner again.
+- **A citation gap left standing on purpose.** Coverage fell to 160/161: supplier-16 abstains on cruelty-free, and its sustainability section discusses an environmental policy rather than saying nothing, so the prompt's conditional "cite the text that shows it is unaddressed" does not oblige a citation. Making the rule unconditional **does** close it — that was tried, and it flipped supplier-01's lead-time verdict to `conflicting`, costing it eligibility. Re-tuning a prompt after seeing pre-registered results is exactly the anchoring pre-registration exists to prevent, so the change was reverted and the gap disclosed. The assertion now hard-fails on any *decided* verdict lacking a citation and caps abstention gaps at one, so it can shrink but never grow.
+- **Track 3's headline finding flipped, and the write-up followed the data.** Nirvaan's 1,500-unit minimum means an 80/20 split at 8,000 units puts 1,600 with the secondary, which clears it — so dual sourcing is now available at every standard ratio at launch volume. The honest finding is better than the one it replaced: **the binding constraint was never the order size, it was the supplier set.** The assertions were rewritten to test the arithmetic that produces either outcome rather than the outcome that happened to hold, per the rule set when Track 3 was planned.
+
+Also fixed: the lead-time-slip scenario was re-evaluating verdicts with no parseable figure, turning `conflicting` into `insufficient-evidence` and reporting a change it had not caused.
+
+Corpus-size literals (13, 91) are gone — replaced by a single `SUPPLIER_COUNT` per script or derived from the data.
+
+**Suite totals: 42 · 14 · 21 · 20 · 20 · 22 · 52 · 19 · 29.**
+
 ## Not yet built
 - [ ] README (setup instructions, Claude Code CLI dependency disclosed, architecture explanation)
 - [ ] Demo video covering the 3 required cases

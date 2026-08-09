@@ -126,11 +126,27 @@ function signalFromScreen(
   });
 }
 
+/**
+ * Certifications that are already a mandatory requirement, and therefore cannot
+ * also be a sustainability advantage.
+ *
+ * Every eligible supplier holds ISO 22716 by definition — it is how they became
+ * eligible. Counting it again as a third-party sustainability credential
+ * double-counts a requirement as a bonus, and awards a point that carries no
+ * information because the whole shortlist has it. This was caught by the
+ * reference-value check on a supplier whose sustainability score came back a
+ * point higher than its document supports.
+ */
+const MANDATORY_CERTIFICATION = /\biso\s*22716\b|\bcosmetics?\s+gmp\b/i;
+
 export function sustainabilityPoints(
   crueltyFree: boolean,
   certifications: string[],
 ): number {
-  return (crueltyFree ? 1 : 0) + certifications.length;
+  const distinct = certifications.filter(
+    (c) => !MANDATORY_CERTIFICATION.test(c),
+  );
+  return (crueltyFree ? 1 : 0) + distinct.length;
 }
 
 export async function extractSignals(params: {
@@ -151,6 +167,11 @@ export async function extractSignals(params: {
   const points = sustainabilityPoints(
     data.crueltyFreeDeclaration,
     data.thirdPartyCertifications,
+  );
+  // Shown in the note as well, so a reader can see which credentials counted
+  // and which were set aside for being the mandatory certification.
+  const countedCertifications = data.thirdPartyCertifications.filter(
+    (c) => !MANDATORY_CERTIFICATION.test(c),
   );
 
   return {
@@ -174,8 +195,12 @@ export async function extractSignals(params: {
       quote: data.sustainabilityCitationQuote,
       corpus,
       note: `${points} point(s): ${data.crueltyFreeDeclaration ? "cruelty-free declaration" : "no declaration"}${
-        data.thirdPartyCertifications.length > 0
-          ? ` plus ${data.thirdPartyCertifications.join(", ")}`
+        countedCertifications.length > 0
+          ? ` plus ${countedCertifications.join(", ")}`
+          : ""
+      }${
+        countedCertifications.length < data.thirdPartyCertifications.length
+          ? " (the mandatory cosmetics-GMP certification is not counted here; every eligible supplier holds it)"
           : ""
       }.`,
     }),

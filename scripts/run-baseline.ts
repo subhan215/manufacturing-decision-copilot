@@ -163,10 +163,16 @@ console.log(
 // ------------------------------------------------------- A. gold integrity
 section("A. GOLD-LABEL INTEGRITY");
 
-check(
-  `91 gold labels, one per supplier x requirement (${goldFile.labels.length})`,
-  goldFile.labels.length === 91,
-);
+{
+  // Derived, not a literal: the corpus grows, and a stale number here would
+  // silently stop noticing a supplier with no ground truth at all.
+  const expectedLabels =
+    aiScreen.suppliers.length * (await loadRequirements()).requirements.length;
+  check(
+    `one gold label per supplier x requirement (${goldFile.labels.length} of ${expectedLabels})`,
+    goldFile.labels.length === expectedLabels,
+  );
+}
 check(
   "every label carries a rationale",
   goldFile.labels.every((l) => l.rationale.trim().length > 0),

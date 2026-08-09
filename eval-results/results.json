@@ -1,51 +1,79 @@
 {
-  "generatedAt": "2026-08-09T15:48:07.654Z",
+  "generatedAt": "2026-08-09T16:52:38.420Z",
   "model": "claude-sonnet-5",
   "asOfDate": "2026-08-09",
   "requirementsVersion": "2f6f7d26f631941b",
   "scorecards": {
     "ai": {
       "label": "AI (Claude)",
-      "verdictsScored": 91,
-      "correct": 91,
-      "accuracy": 1,
-      "preRegisteredCorrect": 24,
-      "preRegisteredTotal": 24,
-      "preRegisteredAccuracy": 1,
+      "verdictsScored": 161,
+      "correct": 158,
+      "accuracy": 0.9813664596273292,
+      "preRegisteredCorrect": 91,
+      "preRegisteredTotal": 94,
+      "preRegisteredAccuracy": 0.9680851063829787,
       "errorsByClass": {
         "false-pass": 0,
         "false-fail": 0,
         "false-certainty": 0,
         "over-abstention": 0,
         "missed-conflict": 0,
-        "other": 0
+        "other": 3
       },
       "criticalErrors": 0,
-      "disagreements": [],
-      "eligibilityCorrect": 13,
-      "eligibilityTotal": 13,
-      "flaggedForReview": 8,
-      "reviewBurden": 0.08791208791208792,
-      "durationMs": 15,
-      "costUsd": 0.7343017000000001
+      "disagreements": [
+        {
+          "supplierId": "supplier-17-sahyadri-beauty-group",
+          "requirementId": "MR-2",
+          "expected": "insufficient-evidence",
+          "actual": "conflicting",
+          "errorClass": "other",
+          "critical": false,
+          "rationale": "The certificate names Sahyadri Beauty Group, Hosur Unit II. The document states no site-specific certificate has been issued for the Coimbatore unit being quoted. Treating the group certificate as covering this site would be an unsupported inference; a reviewer could also defend `fail` on the explicit statement that none was issued."
+        },
+        {
+          "supplierId": "supplier-19-kanan-naturals",
+          "requirementId": "MR-3",
+          "expected": "fail",
+          "actual": "conflicting",
+          "errorClass": "other",
+          "critical": false,
+          "rationale": "Serums and treatment liquids carry a 12,000-unit MOQ, above the 5,000 ceiling. The 2,000-unit haircare figure on the same page does not apply to this product."
+        },
+        {
+          "supplierId": "supplier-21-vasanth-bio-cosmetics",
+          "requirementId": "MR-6",
+          "expected": "fail",
+          "actual": "conflicting",
+          "errorClass": "other",
+          "critical": false,
+          "rationale": "The manufacturing facility is Colombo, Sri Lanka. The Indian address is the registered head office, not the production site, and the requirement is about where production happens."
+        }
+      ],
+      "eligibilityCorrect": 23,
+      "eligibilityTotal": 23,
+      "flaggedForReview": 16,
+      "reviewBurden": 0.09937888198757763,
+      "durationMs": 21,
+      "costUsd": 1.4128248999999997
     },
     "baseline": {
       "label": "Rule-based baseline",
-      "verdictsScored": 91,
-      "correct": 88,
-      "accuracy": 0.967032967032967,
-      "preRegisteredCorrect": 23,
-      "preRegisteredTotal": 24,
-      "preRegisteredAccuracy": 0.9583333333333334,
+      "verdictsScored": 161,
+      "correct": 148,
+      "accuracy": 0.9192546583850931,
+      "preRegisteredCorrect": 83,
+      "preRegisteredTotal": 94,
+      "preRegisteredAccuracy": 0.8829787234042553,
       "errorsByClass": {
-        "false-pass": 1,
+        "false-pass": 6,
         "false-fail": 0,
-        "false-certainty": 1,
-        "over-abstention": 0,
-        "missed-conflict": 1,
+        "false-certainty": 4,
+        "over-abstention": 1,
+        "missed-conflict": 2,
         "other": 0
       },
-      "criticalErrors": 3,
+      "criticalErrors": 12,
       "disagreements": [
         {
           "supplierId": "supplier-03",
@@ -73,63 +101,154 @@
           "errorClass": "false-certainty",
           "critical": true,
           "rationale": "\"Profile states 'general cosmetics manufacturing' with no breakdown of liquid vs. solid vs. powder line capability.\" The document neither asserts nor denies the capability, so no determination is supported."
+        },
+        {
+          "supplierId": "supplier-14-anantara-formulations",
+          "requirementId": "MR-3",
+          "expected": "fail",
+          "actual": "pass",
+          "errorClass": "false-pass",
+          "critical": true,
+          "rationale": "500 cases per SKU at 12 units per case is 6,000 units, above the 5,000 ceiling. Reading \"500\" as units would wrongly pass."
+        },
+        {
+          "supplierId": "supplier-14-anantara-formulations",
+          "requirementId": "MR-5",
+          "expected": "fail",
+          "actual": "pass",
+          "errorClass": "false-pass",
+          "critical": true,
+          "rationale": "3 weeks is 21 calendar days, above the 20-day limit. Reading \"3\" as days would wrongly pass."
+        },
+        {
+          "supplierId": "supplier-16-bluepeak-skincare-solutions",
+          "requirementId": "MR-2",
+          "expected": "insufficient-evidence",
+          "actual": "fail",
+          "errorClass": "false-certainty",
+          "critical": true,
+          "rationale": "Holds current ISO 9001 and ISO 14001 certificates. Neither is ISO 22716, and no ISO 22716 record appears in the documentation."
+        },
+        {
+          "supplierId": "supplier-16-bluepeak-skincare-solutions",
+          "requirementId": "MR-7",
+          "expected": "insufficient-evidence",
+          "actual": "fail",
+          "errorClass": "false-certainty",
+          "critical": true,
+          "rationale": "A documented environmental policy is offered. No cruelty-free manufacturing declaration appears in the document."
+        },
+        {
+          "supplierId": "supplier-17-sahyadri-beauty-group",
+          "requirementId": "MR-2",
+          "expected": "insufficient-evidence",
+          "actual": "pass",
+          "errorClass": "false-certainty",
+          "critical": true,
+          "rationale": "The certificate names Sahyadri Beauty Group, Hosur Unit II. The document states no site-specific certificate has been issued for the Coimbatore unit being quoted. Treating the group certificate as covering this site would be an unsupported inference; a reviewer could also defend `fail` on the explicit statement that none was issued."
+        },
+        {
+          "supplierId": "supplier-18-trilok-personal-care",
+          "requirementId": "MR-5",
+          "expected": "conflicting",
+          "actual": "pass",
+          "errorClass": "missed-conflict",
+          "critical": true,
+          "rationale": "Order terms state a 16-day lead time; the production planning notes state 26 calendar days for serum formats specifically, which is the format being sourced. The document contradicts itself and the contradiction must be surfaced rather than resolved."
+        },
+        {
+          "supplierId": "supplier-19-kanan-naturals",
+          "requirementId": "MR-3",
+          "expected": "fail",
+          "actual": "pass",
+          "errorClass": "false-pass",
+          "critical": true,
+          "rationale": "Serums and treatment liquids carry a 12,000-unit MOQ, above the 5,000 ceiling. The 2,000-unit haircare figure on the same page does not apply to this product."
+        },
+        {
+          "supplierId": "supplier-20-meghdoot-labs",
+          "requirementId": "MR-4",
+          "expected": "fail",
+          "actual": "insufficient-evidence",
+          "errorClass": "over-abstention",
+          "critical": false,
+          "rationale": "A 68% batch acceptance rate is a 32% fail rate, above the 30% ceiling. Reading 68 as the fail rate, or failing to invert it at all, changes the verdict."
+        },
+        {
+          "supplierId": "supplier-21-vasanth-bio-cosmetics",
+          "requirementId": "MR-6",
+          "expected": "fail",
+          "actual": "pass",
+          "errorClass": "false-pass",
+          "critical": true,
+          "rationale": "The manufacturing facility is Colombo, Sri Lanka. The Indian address is the registered head office, not the production site, and the requirement is about where production happens."
+        },
+        {
+          "supplierId": "supplier-22-ashvattha-wellness",
+          "requirementId": "MR-5",
+          "expected": "fail",
+          "actual": "pass",
+          "errorClass": "false-pass",
+          "critical": true,
+          "rationale": "Quoted as 18 to 24 calendar days depending on component availability. The upper bound exceeds the 20-day limit, so the requirement cannot be met as quoted; taking 18 alone is reading the favourable end of a range. A reviewer could also defend `insufficient-evidence` on the ground that no single committed figure was given."
         }
       ],
-      "eligibilityCorrect": 13,
-      "eligibilityTotal": 13,
-      "flaggedForReview": 5,
-      "reviewBurden": 0.054945054945054944,
+      "eligibilityCorrect": 20,
+      "eligibilityTotal": 23,
+      "flaggedForReview": 7,
+      "reviewBurden": 0.043478260869565216,
       "durationMs": 3,
       "costUsd": 0
     }
   },
   "citations": {
-    "verdictsTotal": 91,
-    "withCitation": 91,
-    "coverage": 1,
+    "verdictsTotal": 161,
+    "withCitation": 160,
+    "coverage": 0.9937888198757764,
     "byStatus": {
-      "exact": 90,
-      "normalized": 1
+      "exact": 158,
+      "normalized": 2,
+      "none": 1
     },
-    "verified": 91,
+    "verified": 160,
     "correctness": 1,
     "hallucinated": 0,
     "hallucinationRate": 0,
     "misattributed": 0
   },
   "detectorValidation": {
-    "controlsTotal": 91,
-    "controlsPassed": 91,
-    "casesTotal": 52,
-    "casesCaught": 52,
+    "controlsTotal": 160,
+    "controlsPassed": 160,
+    "casesTotal": 92,
+    "casesCaught": 92,
     "detectionRate": 1,
     "byType": {
       "fabricated-quote": {
-        "total": 13,
-        "caught": 13,
+        "total": 23,
+        "caught": 23,
         "observed": {
-          "not-found": 13
+          "not-found": 23
         }
       },
       "wrong-chunk-same-doc": {
-        "total": 13,
-        "caught": 13,
+        "total": 23,
+        "caught": 23,
         "observed": {
-          "wrong-chunk": 13
+          "wrong-chunk": 23
         }
       },
       "wrong-doc": {
-        "total": 13,
-        "caught": 13,
+        "total": 23,
+        "caught": 23,
         "observed": {
-          "wrong-doc": 13
+          "wrong-doc": 23
         }
       },
       "nonexistent-chunk": {
-        "total": 13,
-        "caught": 13,
+        "total": 23,
+        "caught": 23,
         "observed": {
-          "unknown-chunk": 13
+          "unknown-chunk": 23
         }
       }
     },
@@ -256,11 +375,51 @@
         "relativeError": 0,
         "withinReference": true,
         "note": null
+      },
+      {
+        "supplierId": "supplier-23-nirvaan-skin-sciences",
+        "field": "cost",
+        "extracted": 54.2,
+        "reference": "54.2",
+        "absoluteError": 0,
+        "relativeError": 0,
+        "withinReference": true,
+        "note": null
+      },
+      {
+        "supplierId": "supplier-23-nirvaan-skin-sciences",
+        "field": "leadTime",
+        "extracted": 12,
+        "reference": "12",
+        "absoluteError": 0,
+        "relativeError": 0,
+        "withinReference": true,
+        "note": null
+      },
+      {
+        "supplierId": "supplier-23-nirvaan-skin-sciences",
+        "field": "failRate",
+        "extracted": 7.7,
+        "reference": "7.7",
+        "absoluteError": 0,
+        "relativeError": 0,
+        "withinReference": true,
+        "note": null
+      },
+      {
+        "supplierId": "supplier-23-nirvaan-skin-sciences",
+        "field": "sustainability",
+        "extracted": 1,
+        "reference": "1",
+        "absoluteError": 0,
+        "relativeError": 0,
+        "withinReference": true,
+        "note": null
       }
     ],
-    "fieldsChecked": 12,
-    "fieldsExact": 12,
-    "fieldsWithinRange": 12,
+    "fieldsChecked": 16,
+    "fieldsExact": 16,
+    "fieldsWithinRange": 16,
     "meanAbsoluteError": {
       "cost": 0,
       "leadTime": 0,
@@ -272,11 +431,13 @@
   "rankingAgreement": {
     "aiOrder": [
       "supplier-01",
+      "supplier-23-nirvaan-skin-sciences",
       "supplier-06-vantage-cosmo-labs",
       "supplier-12-coastal-wellness-manufacturing"
     ],
     "referenceOrder": [
       "supplier-01",
+      "supplier-23-nirvaan-skin-sciences",
       "supplier-06-vantage-cosmo-labs",
       "supplier-12-coastal-wellness-manufacturing"
     ],
@@ -285,34 +446,39 @@
     "margins": [
       {
         "above": "supplier-01",
+        "below": "supplier-23-nirvaan-skin-sciences",
+        "margin": 0.10246305418719215
+      },
+      {
+        "above": "supplier-23-nirvaan-skin-sciences",
         "below": "supplier-06-vantage-cosmo-labs",
-        "margin": 0.26538461538461544
+        "margin": 0.06767033818564228
       },
       {
         "above": "supplier-06-vantage-cosmo-labs",
         "below": "supplier-12-coastal-wellness-manufacturing",
-        "margin": 0.19402985074626883
+        "margin": 0.15311617866829047
       }
     ],
-    "smallestMargin": 0.19402985074626883,
+    "smallestMargin": 0.06767033818564228,
     "sampleSizeCaveat": "Three eligible suppliers give six possible orderings, so a chance match would occur about 17% of the time. Ordering agreement is reported with score margins rather than a rank-correlation coefficient, which carries almost no information at this sample size."
   },
   "confidence": {
     "distribution": {
-      "high": 83,
-      "medium": 8,
+      "high": 145,
+      "medium": 16,
       "low": 0
     },
     "accuracyByConfidence": {
       "high": {
-        "total": 83,
-        "correct": 83,
-        "accuracy": 1
+        "total": 145,
+        "correct": 143,
+        "accuracy": 0.9862068965517241
       },
       "medium": {
-        "total": 8,
-        "correct": 8,
-        "accuracy": 1
+        "total": 16,
+        "correct": 15,
+        "accuracy": 0.9375
       },
       "low": {
         "total": 0,
@@ -320,11 +486,11 @@
         "accuracy": null
       }
     },
-    "uncertainVerdicts": 8,
-    "uncertainButHighConfidence": 6,
-    "uncertainHighConfidenceRate": 0.75,
-    "calibrationUnmeasurable": true,
-    "interpretation": "The system made no errors on this corpus, so accuracy-calibration cannot be measured: with no incorrect verdicts there is nothing for confidence to correlate against, and the data cannot distinguish a well-calibrated system from a uniformly overconfident one. What is measurable is whether confidence tracks the system's own uncertainty, and it does not: of 8 verdicts where the system declined to decide, 6 (75%) still carry high confidence. The system reports \"I cannot determine this\" and \"high confidence\" simultaneously. This is why confidence is recorded but never surfaced as a reliability signal, and never used in the decision path.",
+    "uncertainVerdicts": 16,
+    "uncertainButHighConfidence": 11,
+    "uncertainHighConfidenceRate": 0.6875,
+    "calibrationUnmeasurable": false,
+    "interpretation": "Accuracy by confidence level is reported above. Of 16 verdicts where the system declined to decide, 11 carry high confidence.",
     "examples": [
       {
         "supplierId": "supplier-13-novaline-personal-care",
@@ -360,6 +526,36 @@
         "supplierId": "supplier-13-novaline-personal-care",
         "requirementId": "MR-7",
         "status": "insufficient-evidence",
+        "confidence": "high"
+      },
+      {
+        "supplierId": "supplier-15-rathore-cosmetic-works",
+        "requirementId": "MR-7",
+        "status": "insufficient-evidence",
+        "confidence": "high"
+      },
+      {
+        "supplierId": "supplier-16-bluepeak-skincare-solutions",
+        "requirementId": "MR-2",
+        "status": "insufficient-evidence",
+        "confidence": "high"
+      },
+      {
+        "supplierId": "supplier-16-bluepeak-skincare-solutions",
+        "requirementId": "MR-7",
+        "status": "insufficient-evidence",
+        "confidence": "high"
+      },
+      {
+        "supplierId": "supplier-17-sahyadri-beauty-group",
+        "requirementId": "MR-2",
+        "status": "conflicting",
+        "confidence": "high"
+      },
+      {
+        "supplierId": "supplier-21-vasanth-bio-cosmetics",
+        "requirementId": "MR-6",
+        "status": "conflicting",
         "confidence": "high"
       }
     ]
@@ -530,6 +726,116 @@
         "matchesPrediction": true
       },
       {
+        "requirementId": "MR-3",
+        "originalThreshold": 5000,
+        "newThreshold": 4000,
+        "supplierId": "supplier-14-anantara-formulations",
+        "extractedValue": 6000,
+        "originalStatus": "fail",
+        "newStatus": "fail",
+        "predictedStatus": "fail",
+        "matchesPrediction": true
+      },
+      {
+        "requirementId": "MR-3",
+        "originalThreshold": 5000,
+        "newThreshold": 4000,
+        "supplierId": "supplier-15-rathore-cosmetic-works",
+        "extractedValue": 3000,
+        "originalStatus": "pass",
+        "newStatus": "pass",
+        "predictedStatus": "pass",
+        "matchesPrediction": true
+      },
+      {
+        "requirementId": "MR-3",
+        "originalThreshold": 5000,
+        "newThreshold": 4000,
+        "supplierId": "supplier-16-bluepeak-skincare-solutions",
+        "extractedValue": 2500,
+        "originalStatus": "pass",
+        "newStatus": "pass",
+        "predictedStatus": "pass",
+        "matchesPrediction": true
+      },
+      {
+        "requirementId": "MR-3",
+        "originalThreshold": 5000,
+        "newThreshold": 4000,
+        "supplierId": "supplier-17-sahyadri-beauty-group",
+        "extractedValue": 8000,
+        "originalStatus": "fail",
+        "newStatus": "fail",
+        "predictedStatus": "fail",
+        "matchesPrediction": true
+      },
+      {
+        "requirementId": "MR-3",
+        "originalThreshold": 5000,
+        "newThreshold": 4000,
+        "supplierId": "supplier-18-trilok-personal-care",
+        "extractedValue": 3500,
+        "originalStatus": "pass",
+        "newStatus": "pass",
+        "predictedStatus": "pass",
+        "matchesPrediction": true
+      },
+      {
+        "requirementId": "MR-3",
+        "originalThreshold": 5000,
+        "newThreshold": 4000,
+        "supplierId": "supplier-19-kanan-naturals",
+        "extractedValue": null,
+        "originalStatus": "conflicting",
+        "newStatus": "insufficient-evidence",
+        "predictedStatus": "insufficient-evidence",
+        "matchesPrediction": true
+      },
+      {
+        "requirementId": "MR-3",
+        "originalThreshold": 5000,
+        "newThreshold": 4000,
+        "supplierId": "supplier-20-meghdoot-labs",
+        "extractedValue": 4200,
+        "originalStatus": "pass",
+        "newStatus": "fail",
+        "predictedStatus": "fail",
+        "matchesPrediction": true
+      },
+      {
+        "requirementId": "MR-3",
+        "originalThreshold": 5000,
+        "newThreshold": 4000,
+        "supplierId": "supplier-21-vasanth-bio-cosmetics",
+        "extractedValue": 3200,
+        "originalStatus": "pass",
+        "newStatus": "pass",
+        "predictedStatus": "pass",
+        "matchesPrediction": true
+      },
+      {
+        "requirementId": "MR-3",
+        "originalThreshold": 5000,
+        "newThreshold": 4000,
+        "supplierId": "supplier-22-ashvattha-wellness",
+        "extractedValue": 4800,
+        "originalStatus": "pass",
+        "newStatus": "fail",
+        "predictedStatus": "fail",
+        "matchesPrediction": true
+      },
+      {
+        "requirementId": "MR-3",
+        "originalThreshold": 5000,
+        "newThreshold": 4000,
+        "supplierId": "supplier-23-nirvaan-skin-sciences",
+        "extractedValue": 1500,
+        "originalStatus": "pass",
+        "newStatus": "pass",
+        "predictedStatus": "pass",
+        "matchesPrediction": true
+      },
+      {
         "requirementId": "MR-5",
         "originalThreshold": 20,
         "newThreshold": 15,
@@ -670,6 +976,116 @@
         "originalStatus": "insufficient-evidence",
         "newStatus": "insufficient-evidence",
         "predictedStatus": "insufficient-evidence",
+        "matchesPrediction": true
+      },
+      {
+        "requirementId": "MR-5",
+        "originalThreshold": 20,
+        "newThreshold": 15,
+        "supplierId": "supplier-14-anantara-formulations",
+        "extractedValue": 21,
+        "originalStatus": "fail",
+        "newStatus": "fail",
+        "predictedStatus": "fail",
+        "matchesPrediction": true
+      },
+      {
+        "requirementId": "MR-5",
+        "originalThreshold": 20,
+        "newThreshold": 15,
+        "supplierId": "supplier-15-rathore-cosmetic-works",
+        "extractedValue": 22,
+        "originalStatus": "fail",
+        "newStatus": "fail",
+        "predictedStatus": "fail",
+        "matchesPrediction": true
+      },
+      {
+        "requirementId": "MR-5",
+        "originalThreshold": 20,
+        "newThreshold": 15,
+        "supplierId": "supplier-16-bluepeak-skincare-solutions",
+        "extractedValue": 15,
+        "originalStatus": "pass",
+        "newStatus": "pass",
+        "predictedStatus": "pass",
+        "matchesPrediction": true
+      },
+      {
+        "requirementId": "MR-5",
+        "originalThreshold": 20,
+        "newThreshold": 15,
+        "supplierId": "supplier-17-sahyadri-beauty-group",
+        "extractedValue": 17,
+        "originalStatus": "pass",
+        "newStatus": "fail",
+        "predictedStatus": "fail",
+        "matchesPrediction": true
+      },
+      {
+        "requirementId": "MR-5",
+        "originalThreshold": 20,
+        "newThreshold": 15,
+        "supplierId": "supplier-18-trilok-personal-care",
+        "extractedValue": null,
+        "originalStatus": "conflicting",
+        "newStatus": "insufficient-evidence",
+        "predictedStatus": "insufficient-evidence",
+        "matchesPrediction": true
+      },
+      {
+        "requirementId": "MR-5",
+        "originalThreshold": 20,
+        "newThreshold": 15,
+        "supplierId": "supplier-19-kanan-naturals",
+        "extractedValue": 14,
+        "originalStatus": "pass",
+        "newStatus": "pass",
+        "predictedStatus": "pass",
+        "matchesPrediction": true
+      },
+      {
+        "requirementId": "MR-5",
+        "originalThreshold": 20,
+        "newThreshold": 15,
+        "supplierId": "supplier-20-meghdoot-labs",
+        "extractedValue": 18,
+        "originalStatus": "pass",
+        "newStatus": "fail",
+        "predictedStatus": "fail",
+        "matchesPrediction": true
+      },
+      {
+        "requirementId": "MR-5",
+        "originalThreshold": 20,
+        "newThreshold": 15,
+        "supplierId": "supplier-21-vasanth-bio-cosmetics",
+        "extractedValue": 16,
+        "originalStatus": "pass",
+        "newStatus": "fail",
+        "predictedStatus": "fail",
+        "matchesPrediction": true
+      },
+      {
+        "requirementId": "MR-5",
+        "originalThreshold": 20,
+        "newThreshold": 15,
+        "supplierId": "supplier-22-ashvattha-wellness",
+        "extractedValue": null,
+        "originalStatus": "insufficient-evidence",
+        "newStatus": "insufficient-evidence",
+        "predictedStatus": "insufficient-evidence",
+        "matchesPrediction": true
+      },
+      {
+        "requirementId": "MR-5",
+        "originalThreshold": 20,
+        "newThreshold": 15,
+        "supplierId": "supplier-23-nirvaan-skin-sciences",
+        "extractedValue": 12,
+        "originalStatus": "pass",
+        "newStatus": "pass",
+        "predictedStatus": "pass",
         "matchesPrediction": true
       }
     ],
@@ -1487,6 +1903,558 @@
         "verified": true
       },
       {
+        "supplierId": "supplier-14-anantara-formulations",
+        "requirementId": "MR-1",
+        "claim": "Liquid/serum skincare manufacturing experience",
+        "quote": "Two liquid-formulation lines with dropper-fill and pump-fill heads. Serum and essence formats produced for three regional skincare brands since 2023, including Vitamin C actives programs.",
+        "locator": "supplier-14 › Manufacturing capability › line 11",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-14-anantara-formulations",
+        "requirementId": "MR-2",
+        "claim": "expires valid until 2027-02-14 ≥ as-of 2026-08-09",
+        "quote": "ISO 22716:2007 (Cosmetics GMP) — Certificate No. IN-COS-22716-3310, issued 2024-02-15, valid until 2027-02-14.",
+        "locator": "supplier-14 › Certifications › line 8",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-14-anantara-formulations",
+        "requirementId": "MR-3",
+        "claim": "6000 units ≤ 5000 units",
+        "quote": "Minimum order quantity: 500 cases per SKU. Cases are packed 12 units per case.",
+        "locator": "supplier-14 › Order terms › line 14",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-14-anantara-formulations",
+        "requirementId": "MR-4",
+        "claim": "16 percent ≤ 30 percent",
+        "quote": "Fail: 4 batches (16%)",
+        "locator": "supplier-14 › Quality history (audited production batches, n=25) › line 20",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-14-anantara-formulations",
+        "requirementId": "MR-5",
+        "claim": "21 calendar days ≤ 20 calendar days",
+        "quote": "Standard manufacturing lead time: 3 weeks from purchase-order confirmation.",
+        "locator": "supplier-14 › Order terms › line 15",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-14-anantara-formulations",
+        "requirementId": "MR-6",
+        "claim": "\"Ahmedabad, Gujarat, India\" matches \"India\"",
+        "quote": "**Location:** Ahmedabad, Gujarat, India",
+        "locator": "supplier-14 › Supplier Profile: Anantara Formulations › line 3",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-14-anantara-formulations",
+        "requirementId": "MR-7",
+        "claim": "Documented cruelty-free manufacturing declaration",
+        "quote": "Cruelty-free manufacturing declaration on file (Declaration Ref: CF-2025-0881, dated 2025-07-14).",
+        "locator": "supplier-14 › Sustainability › line 24",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-15-rathore-cosmetic-works",
+        "requirementId": "MR-1",
+        "claim": "Liquid/serum skincare manufacturing experience",
+        "quote": "Liquid-fill and cream-fill lines. Long production history in toners, lotions and serums; lists 11 prior liquid skincare programs.",
+        "locator": "supplier-15 › Manufacturing capability › line 12",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-15-rathore-cosmetic-works",
+        "requirementId": "MR-2",
+        "claim": "expires valid until 2025-03-31 < as-of 2026-08-09",
+        "quote": "ISO 22716:2007 (Cosmetics GMP) — Certificate No. IN-COS-22716-0774, issued 2022-04-01, valid until 2025-03-31.",
+        "locator": "supplier-15 › Certifications › line 8",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-15-rathore-cosmetic-works",
+        "requirementId": "MR-3",
+        "claim": "3000 units ≤ 5000 units",
+        "quote": "Minimum order quantity: 3,000 units per SKU.",
+        "locator": "supplier-15 › Order terms › line 15",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-15-rathore-cosmetic-works",
+        "requirementId": "MR-4",
+        "claim": "35 percent ≤ 30 percent",
+        "quote": "Fail: 7 batches (35%)",
+        "locator": "supplier-15 › Quality history (audited production batches, n=20) › line 20",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-15-rathore-cosmetic-works",
+        "requirementId": "MR-5",
+        "claim": "22 calendar days ≤ 20 calendar days",
+        "quote": "Standard manufacturing lead time: 22 calendar days.",
+        "locator": "supplier-15 › Order terms › line 16",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-15-rathore-cosmetic-works",
+        "requirementId": "MR-6",
+        "claim": "\"Indore, Madhya Pradesh, India\" matches \"India\"",
+        "quote": "**Location:** Indore, Madhya Pradesh, India",
+        "locator": "supplier-15 › Supplier Profile: Rathore Cosmetic Works › line 3",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-15-rathore-cosmetic-works",
+        "requirementId": "MR-7",
+        "claim": "Documented cruelty-free manufacturing declaration",
+        "quote": "Not addressed in the submitted documentation.",
+        "locator": "supplier-15 › Sustainability › line 24",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-16-bluepeak-skincare-solutions",
+        "requirementId": "MR-1",
+        "claim": "Liquid/serum skincare manufacturing experience",
+        "quote": "Dedicated serum and essence lines with dropper-fill capability. Produced 5 Vitamin C serum programs for domestic brands in the last two years.",
+        "locator": "supplier-16 › Manufacturing capability › line 12",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-16-bluepeak-skincare-solutions",
+        "requirementId": "MR-2",
+        "claim": "ISO 22716 (Cosmetics GMP) certification",
+        "quote": "- ISO 9001:2015 (Quality Management Systems) — Certificate No. IN-QMS-9001-5521, issued 2024-07-01, valid until 2027-06-30.\n- ISO 14001:2015 (Environmental Management Systems) — Certificate No. IN-EMS-14001-2214, issued 2024-07-01, valid until 2027-06-30.",
+        "locator": "supplier-16 › Certifications › lines 8-9",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-16-bluepeak-skincare-solutions",
+        "requirementId": "MR-3",
+        "claim": "2500 units ≤ 5000 units",
+        "quote": "Minimum order quantity: 2,500 units per SKU.",
+        "locator": "supplier-16 › Order terms › line 15",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-16-bluepeak-skincare-solutions",
+        "requirementId": "MR-4",
+        "claim": "9.1 percent ≤ 30 percent",
+        "quote": "- Fail: 2 batches (9.1%)",
+        "locator": "supplier-16 › Quality history (audited production batches, n=22) › line 20",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-16-bluepeak-skincare-solutions",
+        "requirementId": "MR-5",
+        "claim": "15 calendar days ≤ 20 calendar days",
+        "quote": "Standard manufacturing lead time: 15 calendar days.",
+        "locator": "supplier-16 › Order terms › line 16",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-16-bluepeak-skincare-solutions",
+        "requirementId": "MR-6",
+        "claim": "\"Vadodara, Gujarat, India\" matches \"India\"",
+        "quote": "**Location:** Vadodara, Gujarat, India",
+        "locator": "supplier-16 › Supplier Profile: Bluepeak Skincare Solutions › line 3",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-17-sahyadri-beauty-group",
+        "requirementId": "MR-1",
+        "claim": "Liquid/serum skincare manufacturing experience",
+        "quote": "Serum and liquid skincare lines commissioned 2023, dropper-fill and airless-pump capable. Group has delivered 20+ liquid skincare programs across its sites; 4 of these ran at Coimbatore.",
+        "locator": "supplier-17 › Manufacturing capability › line 12",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-17-sahyadri-beauty-group",
+        "requirementId": "MR-2",
+        "claim": "ISO 22716 (Cosmetics GMP) certification",
+        "quote": "ISO 22716:2007 (Cosmetics GMP) — Certificate No. IN-COS-22716-1988, issued 2024-05-20, valid until 2027-05-19. Certificate holder: Sahyadri Beauty Group, Hosur Unit II.",
+        "locator": "supplier-17 › Certifications › line 8",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-17-sahyadri-beauty-group",
+        "requirementId": "MR-3",
+        "claim": "8000 units ≤ 5000 units",
+        "quote": "Minimum order quantity: 8,000 units per SKU.",
+        "locator": "supplier-17 › Order terms › line 15",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-17-sahyadri-beauty-group",
+        "requirementId": "MR-4",
+        "claim": "15 percent ≤ 30 percent",
+        "quote": "Fail: 3 batches (15%)",
+        "locator": "supplier-17 › Quality history (audited production batches at the Coimbatore unit, n=20) › line 20",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-17-sahyadri-beauty-group",
+        "requirementId": "MR-5",
+        "claim": "17 calendar days ≤ 20 calendar days",
+        "quote": "Standard manufacturing lead time: 17 calendar days.",
+        "locator": "supplier-17 › Order terms › line 16",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-17-sahyadri-beauty-group",
+        "requirementId": "MR-6",
+        "claim": "\"Coimbatore, Tamil Nadu, India\" matches \"India\"",
+        "quote": "**Location:** Coimbatore, Tamil Nadu, India",
+        "locator": "supplier-17 › Supplier Profile: Sahyadri Beauty Group — Coimbatore Unit › line 3",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-17-sahyadri-beauty-group",
+        "requirementId": "MR-7",
+        "claim": "Documented cruelty-free manufacturing declaration",
+        "quote": "Cruelty-free manufacturing declaration on file at group level, covering all four sites (Declaration Ref: CF-2025-0555, dated 2025-03-30).",
+        "locator": "supplier-17 › Sustainability › line 24",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-18-trilok-personal-care",
+        "requirementId": "MR-1",
+        "claim": "Liquid/serum skincare manufacturing experience",
+        "quote": "Serum, gel and essence lines with dropper-fill capability. Six liquid skincare programs delivered since 2024, two of them Vitamin C serums.",
+        "locator": "supplier-18 › Manufacturing capability › line 11",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-18-trilok-personal-care",
+        "requirementId": "MR-2",
+        "claim": "expires valid until 2028-03-31 ≥ as-of 2026-08-09",
+        "quote": "ISO 22716:2007 (Cosmetics GMP) — Certificate No. IN-COS-22716-6120, issued 2025-04-01, valid until 2028-03-31.",
+        "locator": "supplier-18 › Certifications › line 8",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-18-trilok-personal-care",
+        "requirementId": "MR-3",
+        "claim": "3500 units ≤ 5000 units",
+        "quote": "Minimum order quantity: 3,500 units per SKU.",
+        "locator": "supplier-18 › Order terms › line 14",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-18-trilok-personal-care",
+        "requirementId": "MR-4",
+        "claim": "16.7 percent ≤ 30 percent",
+        "quote": "Fail: 4 batches (16.7%)",
+        "locator": "supplier-18 › Quality history (audited production batches, n=24) › line 22",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-18-trilok-personal-care",
+        "requirementId": "MR-5",
+        "claim": "Maximum manufacturing lead time",
+        "quote": "Standard manufacturing lead time: 16 calendar days.",
+        "locator": "supplier-18 › Order terms › line 15",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-18-trilok-personal-care",
+        "requirementId": "MR-6",
+        "claim": "\"Surat, Gujarat, India\" matches \"India\"",
+        "quote": "**Location:** Surat, Gujarat, India",
+        "locator": "supplier-18 › Supplier Profile: Trilok Personal Care › line 3",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-18-trilok-personal-care",
+        "requirementId": "MR-7",
+        "claim": "Documented cruelty-free manufacturing declaration",
+        "quote": "Cruelty-free manufacturing declaration on file (Declaration Ref: CF-2025-0308, dated 2025-05-11).",
+        "locator": "supplier-18 › Sustainability › line 26",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-19-kanan-naturals",
+        "requirementId": "MR-1",
+        "claim": "Liquid/serum skincare manufacturing experience",
+        "quote": "Liquid division runs dropper-fill and pump-fill serum formats; 9 serum programs delivered since 2022.",
+        "locator": "supplier-19 › Manufacturing capability › line 11",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-19-kanan-naturals",
+        "requirementId": "MR-2",
+        "claim": "ISO 22716 (Cosmetics GMP): unverified marketing claim, no certificate record",
+        "quote": "Our facility is GMP-certified and follows international cosmetic manufacturing standards recognised across our export markets. Certification documentation is maintained internally and can be reviewed during a site visit.",
+        "locator": "supplier-19 › Certifications › line 8",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-19-kanan-naturals",
+        "requirementId": "MR-3",
+        "claim": "Maximum first-order MOQ",
+        "quote": "Serums and treatment liquids: 12,000 units per SKU.",
+        "locator": "supplier-19 › Order terms › line 16",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-19-kanan-naturals",
+        "requirementId": "MR-4",
+        "claim": "15.8 percent ≤ 30 percent",
+        "quote": "Fail: 3 batches (15.8%)",
+        "locator": "supplier-19 › Quality history (audited production batches, n=19) › line 23",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-19-kanan-naturals",
+        "requirementId": "MR-5",
+        "claim": "14 calendar days ≤ 20 calendar days",
+        "quote": "Standard manufacturing lead time: 14 calendar days across all formats.",
+        "locator": "supplier-19 › Order terms › line 19",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-19-kanan-naturals",
+        "requirementId": "MR-6",
+        "claim": "\"Jaipur, Rajasthan, India\" matches \"India\"",
+        "quote": "Jaipur, Rajasthan, India",
+        "locator": "supplier-19 › Supplier Profile: Kanan Naturals › line 3",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-19-kanan-naturals",
+        "requirementId": "MR-7",
+        "claim": "Documented cruelty-free manufacturing declaration",
+        "quote": "Cruelty-free manufacturing declaration on file (Declaration Ref: CF-2024-0967, dated 2024-12-01).",
+        "locator": "supplier-19 › Sustainability › line 27",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-20-meghdoot-labs",
+        "requirementId": "MR-1",
+        "claim": "Liquid/serum skincare manufacturing experience",
+        "quote": "Product history is entirely solid-format colour cosmetics: pressed powders, sticks and balms. The facility does not operate a liquid-fill or dropper-fill line.",
+        "locator": "supplier-20 › Manufacturing capability › line 11",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-20-meghdoot-labs",
+        "requirementId": "MR-2",
+        "claim": "expires valid until 2027-09-30 ≥ as-of 2026-08-09",
+        "quote": "ISO 22716:2007 (Cosmetics GMP) — Certificate No. IN-COS-22716-2867, issued 2024-10-01, valid until 2027-09-30.",
+        "locator": "supplier-20 › Certifications › line 8",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-20-meghdoot-labs",
+        "requirementId": "MR-3",
+        "claim": "4200 units ≤ 5000 units",
+        "quote": "Minimum order quantity: 4,200 units per SKU.",
+        "locator": "supplier-20 › Order terms › line 14",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-20-meghdoot-labs",
+        "requirementId": "MR-4",
+        "claim": "32 percent ≤ 30 percent",
+        "quote": "Batch acceptance rate across 25 audited production batches: 68%.",
+        "locator": "supplier-20 › Quality history › line 18",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-20-meghdoot-labs",
+        "requirementId": "MR-5",
+        "claim": "18 calendar days ≤ 20 calendar days",
+        "quote": "Standard manufacturing lead time: 18 calendar days.",
+        "locator": "supplier-20 › Order terms › line 15",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-20-meghdoot-labs",
+        "requirementId": "MR-6",
+        "claim": "\"Aurangabad, Maharashtra, India\" matches \"India\"",
+        "quote": "**Location:** Aurangabad, Maharashtra, India",
+        "locator": "supplier-20 › Supplier Profile: Meghdoot Labs › line 3",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-20-meghdoot-labs",
+        "requirementId": "MR-7",
+        "claim": "Documented cruelty-free manufacturing declaration",
+        "quote": "Cruelty-free manufacturing declaration on file (Declaration Ref: CF-2025-0721, dated 2025-08-19).",
+        "locator": "supplier-20 › Sustainability › line 21",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-21-vasanth-bio-cosmetics",
+        "requirementId": "MR-1",
+        "claim": "Liquid/serum skincare manufacturing experience",
+        "quote": "Three liquid-formulation lines at the Colombo site, dropper-fill and airless-pump capable. Twelve serum programs delivered since 2021, including actives-stabilised Vitamin C formats.",
+        "locator": "supplier-21 › Manufacturing capability › line 12",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-21-vasanth-bio-cosmetics",
+        "requirementId": "MR-2",
+        "claim": "expires valid until 2028-01-31 ≥ as-of 2026-08-09",
+        "quote": "ISO 22716:2007 (Cosmetics GMP) — Certificate No. LK-COS-22716-0455, issued 2025-02-01, valid until 2028-01-31. Certificate covers the Colombo production site.",
+        "locator": "supplier-21 › Certifications › line 9",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-21-vasanth-bio-cosmetics",
+        "requirementId": "MR-3",
+        "claim": "3200 units ≤ 5000 units",
+        "quote": "Minimum order quantity: 3,200 units per SKU.",
+        "locator": "supplier-21 › Order terms › line 15",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-21-vasanth-bio-cosmetics",
+        "requirementId": "MR-4",
+        "claim": "13 percent ≤ 30 percent",
+        "quote": "Fail: 3 batches (13%)",
+        "locator": "supplier-21 › Quality history (audited production batches, n=23) › line 20",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-21-vasanth-bio-cosmetics",
+        "requirementId": "MR-5",
+        "claim": "16 calendar days ≤ 20 calendar days",
+        "quote": "Standard manufacturing lead time: 16 calendar days at the production site. Cross-border shipping, customs clearance and inbound freight to the buyer's market are quoted separately and are not included in this figure.",
+        "locator": "supplier-21 › Order terms › line 16",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-21-vasanth-bio-cosmetics",
+        "requirementId": "MR-6",
+        "claim": "Facility location in India",
+        "quote": "Manufacturing facility: Colombo, Sri Lanka",
+        "locator": "supplier-21 › Supplier Profile: Vasanth Bio Cosmetics › line 4",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-21-vasanth-bio-cosmetics",
+        "requirementId": "MR-7",
+        "claim": "Documented cruelty-free manufacturing declaration",
+        "quote": "Cruelty-free manufacturing declaration on file (Declaration Ref: CF-2025-0190, dated 2025-01-22).",
+        "locator": "supplier-21 › Sustainability › line 24",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-22-ashvattha-wellness",
+        "requirementId": "MR-1",
+        "claim": "Liquid/serum skincare manufacturing experience",
+        "quote": "Liquid and oil-phase formulation lines with dropper-fill capability. Extensive history in botanical serums and facial oils; 14 liquid skincare programs delivered since 2020.",
+        "locator": "supplier-22 › Manufacturing capability › line 11",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-22-ashvattha-wellness",
+        "requirementId": "MR-2",
+        "claim": "expires 2027-12-31 ≥ as-of 2026-08-09",
+        "quote": "ISO 22716:2007 (Cosmetics GMP) — Certificate No. IN-COS-22716-4092, issued 2025-01-05, valid until 2027-12-31.",
+        "locator": "supplier-22 › Certifications › line 8",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-22-ashvattha-wellness",
+        "requirementId": "MR-3",
+        "claim": "4800 units ≤ 5000 units",
+        "quote": "Minimum order quantity: 4,800 units per SKU.",
+        "locator": "supplier-22 › Order terms › line 14",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-22-ashvattha-wellness",
+        "requirementId": "MR-4",
+        "claim": "19 percent ≤ 30 percent",
+        "quote": "Fail: 4 batches (19%)",
+        "locator": "supplier-22 › Quality history (audited production batches, n=21) › line 19",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-22-ashvattha-wellness",
+        "requirementId": "MR-5",
+        "claim": "Maximum manufacturing lead time",
+        "quote": "Standard manufacturing lead time: 18 to 24 calendar days, depending on botanical-extract component availability at the time of order.",
+        "locator": "supplier-22 › Order terms › line 15",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-22-ashvattha-wellness",
+        "requirementId": "MR-6",
+        "claim": "\"Hyderabad, Telangana, India\" matches \"India\"",
+        "quote": "**Location:** Hyderabad, Telangana, India",
+        "locator": "supplier-22 › Supplier Profile: Ashvattha Wellness › line 3",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-22-ashvattha-wellness",
+        "requirementId": "MR-7",
+        "claim": "Documented cruelty-free manufacturing declaration",
+        "quote": "We comply with all applicable animal-testing regulations in the markets we export to, and ingredient suppliers are selected in line with customer requirements.",
+        "locator": "supplier-22 › Sustainability › line 23",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-23-nirvaan-skin-sciences",
+        "requirementId": "MR-1",
+        "claim": "Liquid/serum skincare manufacturing experience",
+        "quote": "Two dedicated serum lines with dropper-fill and airless-pump heads, sized for launch-scale runs. Six serum production programs delivered since 2023, four of them Vitamin C actives formulations requiring nitrogen-blanketed filling.",
+        "locator": "supplier-23 › Manufacturing capability › line 11",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-23-nirvaan-skin-sciences",
+        "requirementId": "MR-2",
+        "claim": "expires 2028-01-09 ≥ as-of 2026-08-09",
+        "quote": "ISO 22716:2007 (Cosmetics GMP) — Certificate No. IN-COS-22716-4407, issued 2025-01-10, valid until 2028-01-09.",
+        "locator": "supplier-23 › Certifications › line 8",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-23-nirvaan-skin-sciences",
+        "requirementId": "MR-3",
+        "claim": "1500 units ≤ 5000 units",
+        "quote": "Minimum order quantity is 1,500 units per SKU and standard manufacturing lead time is 12 calendar days from purchase-order confirmation.",
+        "locator": "supplier-23 › Order terms › line 21",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-23-nirvaan-skin-sciences",
+        "requirementId": "MR-4",
+        "claim": "7.7 percent ≤ 30 percent",
+        "quote": "Fail: 2 batches (7.7%)",
+        "locator": "supplier-23 › Quality history (audited production batches, n=26) › line 25",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-23-nirvaan-skin-sciences",
+        "requirementId": "MR-5",
+        "claim": "12 calendar days ≤ 20 calendar days",
+        "quote": "Standard manufacturing lead time | 12 calendar days",
+        "locator": "supplier-23 › Order terms › line 18",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-23-nirvaan-skin-sciences",
+        "requirementId": "MR-6",
+        "claim": "\"Mysuru, Karnataka, India\" matches \"India\"",
+        "quote": "**Location:** Mysuru, Karnataka, India",
+        "locator": "supplier-23 › Supplier Profile: Nirvaan Skin Sciences › line 3",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-23-nirvaan-skin-sciences",
+        "requirementId": "MR-7",
+        "claim": "Documented cruelty-free manufacturing declaration",
+        "quote": "Cruelty-free manufacturing declaration on file (Declaration Ref: CF-2026-0042, dated 2026-02-18).",
+        "locator": "supplier-23 › Sustainability › line 29",
+        "verified": true
+      },
+      {
         "supplierId": "supplier-01",
         "requirementId": "ranking:cost",
         "claim": "cost = 45.3",
@@ -1532,6 +2500,22 @@
         "claim": "sustainability = 1",
         "quote": "Cruelty-free declaration on file (Declaration Ref: CF-2024-0620).",
         "locator": "supplier-12 › Sustainability › line 23",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-23-nirvaan-skin-sciences",
+        "requirementId": "ranking:cost",
+        "claim": "cost = 54.2",
+        "quote": "Average manufacturing cost across comparable SKUs: $54.20/unit.",
+        "locator": "supplier-23 › Cost reference › line 32",
+        "verified": true
+      },
+      {
+        "supplierId": "supplier-23-nirvaan-skin-sciences",
+        "requirementId": "ranking:sustainability",
+        "claim": "sustainability = 1",
+        "quote": "Cruelty-free manufacturing declaration on file (Declaration Ref: CF-2026-0042, dated 2026-02-18).",
+        "locator": "supplier-23 › Sustainability › line 29",
         "verified": true
       }
     ],
@@ -2125,12 +3109,432 @@
         "requirementId": "MR-7",
         "status": "insufficient-evidence",
         "reasoning": "The sustainability section, which would be the expected location for a cruelty-free manufacturing declaration, explicitly states the topic is not addressed in the submitted documentation, so no documented cruelty-free declaration is provided."
+      },
+      {
+        "supplierId": "supplier-14-anantara-formulations",
+        "requirementId": "MR-1",
+        "status": "pass",
+        "reasoning": "The document explicitly describes liquid-formulation lines and serum/essence format production for skincare brands, directly matching the requirement for liquid/serum skincare manufacturing experience (not solid or powder only)."
+      },
+      {
+        "supplierId": "supplier-14-anantara-formulations",
+        "requirementId": "MR-2",
+        "status": "pass",
+        "reasoning": "A specific certificate number, issuing details, issue date, and validity date are provided, constituting an actual certificate record rather than a marketing claim only."
+      },
+      {
+        "supplierId": "supplier-14-anantara-formulations",
+        "requirementId": "MR-3",
+        "status": "fail",
+        "reasoning": "The document states MOQ in cases (500 cases per SKU) and specifies 12 units per case, allowing conversion to units: 500 × 12 = 6,000 units. The document itself notes quantities are quoted in cases, not individual units, so this is a derived figure from the stated case/unit conversion factor rather than a directly stated unit count."
+      },
+      {
+        "supplierId": "supplier-14-anantara-formulations",
+        "requirementId": "MR-4",
+        "status": "pass",
+        "reasoning": "The document explicitly states a 16% fail rate across the 25 audited production batches referenced in the quality history section."
+      },
+      {
+        "supplierId": "supplier-14-anantara-formulations",
+        "requirementId": "MR-5",
+        "status": "fail",
+        "reasoning": "The document states lead time as '3 weeks', which converts to 21 calendar days (3 × 7). The requirement's expected unit is calendar days, so this conversion is reported; the underlying stated value was in weeks."
+      },
+      {
+        "supplierId": "supplier-14-anantara-formulations",
+        "requirementId": "MR-6",
+        "status": "pass",
+        "reasoning": "The title block explicitly states the facility's location as Ahmedabad, Gujarat, India."
+      },
+      {
+        "supplierId": "supplier-14-anantara-formulations",
+        "requirementId": "MR-7",
+        "status": "pass",
+        "reasoning": "The document references a specific, dated declaration with a reference number ('Declaration Ref: CF-2025-0881'), indicating a documented cruelty-free manufacturing declaration is on file, satisfying the requirement."
+      },
+      {
+        "supplierId": "supplier-15-rathore-cosmetic-works",
+        "requirementId": "MR-1",
+        "status": "pass",
+        "reasoning": "The document explicitly documents manufacturing experience with liquid/serum skincare formulations (toners, lotions, serums) with 11 prior liquid skincare programs, not solid or powder cosmetics only. This satisfies the requirement for documented liquid/serum experience."
+      },
+      {
+        "supplierId": "supplier-15-rathore-cosmetic-works",
+        "requirementId": "MR-2",
+        "status": "fail",
+        "reasoning": "A specific certificate record is present, including certificate number, issue date, and validity date. The document also notes a renewal audit is scheduled with no renewed certificate number available yet, but this does not alter the recorded certificate details themselves, only its current status which is not to be judged here."
+      },
+      {
+        "supplierId": "supplier-15-rathore-cosmetic-works",
+        "requirementId": "MR-3",
+        "status": "pass",
+        "reasoning": "The document states the MOQ as 3,000 units per SKU."
+      },
+      {
+        "supplierId": "supplier-15-rathore-cosmetic-works",
+        "requirementId": "MR-4",
+        "status": "fail",
+        "reasoning": "Out of 20 audited production batches, 7 failed, stated as 35%, which is reported as the historical quality inspection fail rate."
+      },
+      {
+        "supplierId": "supplier-15-rathore-cosmetic-works",
+        "requirementId": "MR-5",
+        "status": "fail",
+        "reasoning": "The document states the standard manufacturing lead time as 22 calendar days."
+      },
+      {
+        "supplierId": "supplier-15-rathore-cosmetic-works",
+        "requirementId": "MR-6",
+        "status": "pass",
+        "reasoning": "The document states the facility location as Indore, Madhya Pradesh, India."
+      },
+      {
+        "supplierId": "supplier-15-rathore-cosmetic-works",
+        "requirementId": "MR-7",
+        "status": "insufficient-evidence",
+        "reasoning": "The document explicitly states that sustainability-related matters, which would include a cruelty-free manufacturing declaration, are not addressed in the submitted documentation. No cruelty-free declaration or supporting evidence is provided anywhere else in the document, so the requirement for a documented cruelty-free manufacturing declaration is not satisfied."
+      },
+      {
+        "supplierId": "supplier-16-bluepeak-skincare-solutions",
+        "requirementId": "MR-1",
+        "status": "pass",
+        "reasoning": "The document explicitly describes dedicated serum/essence liquid production lines and documented output of five Vitamin C serum programs, which is direct evidence of experience manufacturing liquid/serum skincare formulations rather than solid or powder cosmetics."
+      },
+      {
+        "supplierId": "supplier-16-bluepeak-skincare-solutions",
+        "requirementId": "MR-2",
+        "status": "insufficient-evidence",
+        "reasoning": "The Certifications section lists only ISO 9001:2015 (Quality Management Systems) and ISO 14001:2015 (Environmental Management Systems). There is no mention of ISO 22716 (Cosmetics GMP) anywhere in the document, either as a certificate record or as a promotional claim, so the requirement is unaddressed."
+      },
+      {
+        "supplierId": "supplier-16-bluepeak-skincare-solutions",
+        "requirementId": "MR-3",
+        "status": "pass",
+        "reasoning": "The Order terms section states the minimum order quantity explicitly as 2,500 units per SKU."
+      },
+      {
+        "supplierId": "supplier-16-bluepeak-skincare-solutions",
+        "requirementId": "MR-4",
+        "status": "pass",
+        "reasoning": "The Quality history section (audited production batches, n=22) reports a fail rate of 9.1% (2 of 22 batches)."
+      },
+      {
+        "supplierId": "supplier-16-bluepeak-skincare-solutions",
+        "requirementId": "MR-5",
+        "status": "pass",
+        "reasoning": "The Order terms section explicitly states the standard manufacturing lead time as 15 calendar days."
+      },
+      {
+        "supplierId": "supplier-16-bluepeak-skincare-solutions",
+        "requirementId": "MR-6",
+        "status": "pass",
+        "reasoning": "The title block states the facility location as Vadodara, Gujarat, India."
+      },
+      {
+        "supplierId": "supplier-16-bluepeak-skincare-solutions",
+        "requirementId": "MR-7",
+        "status": "insufficient-evidence",
+        "reasoning": "No section of the document mentions cruelty-free status, animal testing policy, or any related declaration. The Sustainability section discusses only environmental policy (water recovery, packaging waste segregation) and does not reference cruelty-free manufacturing, so the requirement is unaddressed and cannot be judged from the available text."
+      },
+      {
+        "supplierId": "supplier-17-sahyadri-beauty-group",
+        "requirementId": "MR-1",
+        "status": "pass",
+        "reasoning": "The document explicitly documents experience manufacturing serum and liquid skincare formulations, including dropper-fill and airless-pump capability, and cites a track record of 20+ liquid skincare programs group-wide with 4 specifically at the Coimbatore unit being profiled. This is direct evidence of liquid/serum skincare manufacturing experience, not solid or powder cosmetics only, so the requirement is satisfied."
+      },
+      {
+        "supplierId": "supplier-17-sahyadri-beauty-group",
+        "requirementId": "MR-2",
+        "status": "conflicting",
+        "reasoning": "A concrete certificate record (identifier, issue date, validity date, holder) is present, so certificatePresent is true and marketingClaimOnly is false. However, the certificate holder is a different site (Hosur Unit II) than the Coimbatore unit profiled in this document, and the document explicitly states no site-specific certificate has been issued for Coimbatore. This discrepancy is flagged in conflictNote rather than resolved, per instructions not to judge currency or applicability."
+      },
+      {
+        "supplierId": "supplier-17-sahyadri-beauty-group",
+        "requirementId": "MR-3",
+        "status": "fail",
+        "reasoning": "The document states the MOQ explicitly as 8,000 units per SKU. Reporting the stated number only, without judging whether it meets the ≤5,000 unit threshold."
+      },
+      {
+        "supplierId": "supplier-17-sahyadri-beauty-group",
+        "requirementId": "MR-4",
+        "status": "pass",
+        "reasoning": "The quality history section states a fail rate of 3 out of 20 audited production batches, expressed as 15%. Reporting the stated number only, without judging whether it meets the ≤30% threshold."
+      },
+      {
+        "supplierId": "supplier-17-sahyadri-beauty-group",
+        "requirementId": "MR-5",
+        "status": "pass",
+        "reasoning": "The document explicitly states the standard manufacturing lead time as 17 calendar days. Reporting the stated number only, without judging whether it meets the ≤20 calendar day threshold."
+      },
+      {
+        "supplierId": "supplier-17-sahyadri-beauty-group",
+        "requirementId": "MR-6",
+        "status": "pass",
+        "reasoning": "The title block states the facility location as Coimbatore, Tamil Nadu, India. Reporting the stated value only, without judging whether it matches the India requirement."
+      },
+      {
+        "supplierId": "supplier-17-sahyadri-beauty-group",
+        "requirementId": "MR-7",
+        "status": "pass",
+        "reasoning": "The document provides a documented cruelty-free manufacturing declaration with a specific reference number and date, and states it covers all four group sites. Since the facility type block identifies the Coimbatore unit as 'one of four group sites', this declaration covers the Coimbatore unit, satisfying the requirement for a documented cruelty-free manufacturing declaration."
+      },
+      {
+        "supplierId": "supplier-18-trilok-personal-care",
+        "requirementId": "MR-1",
+        "status": "pass",
+        "reasoning": "The document documents specific manufacturing capability and delivered programs for serum and gel (liquid) skincare formulations, including named serum programs, which is documented evidence of liquid/serum experience, not solid or powder cosmetics only. This satisfies MR-1."
+      },
+      {
+        "supplierId": "supplier-18-trilok-personal-care",
+        "requirementId": "MR-2",
+        "status": "pass",
+        "reasoning": "A specific certificate record is provided, including certificate number, issuing date, and validity date, so this is not merely a marketing claim. The expiry is reported exactly as stated in the document."
+      },
+      {
+        "supplierId": "supplier-18-trilok-personal-care",
+        "requirementId": "MR-3",
+        "status": "pass",
+        "reasoning": "The order terms section states the MOQ figure directly as 3,500 units per SKU."
+      },
+      {
+        "supplierId": "supplier-18-trilok-personal-care",
+        "requirementId": "MR-4",
+        "status": "pass",
+        "reasoning": "The quality history section reports a fail rate of 16.7% across 24 audited production batches (4 of 24 failed)."
+      },
+      {
+        "supplierId": "supplier-18-trilok-personal-care",
+        "requirementId": "MR-5",
+        "status": "conflicting",
+        "reasoning": "Two different lead time figures are given in the document for what may be the same or overlapping product scope (general lead time vs. serum-specific lead time), so no single numeric value can be reported without choosing between conflicting statements, which the instructions prohibit."
+      },
+      {
+        "supplierId": "supplier-18-trilok-personal-care",
+        "requirementId": "MR-6",
+        "status": "pass",
+        "reasoning": "The title block explicitly states the facility location as Surat, Gujarat, India."
+      },
+      {
+        "supplierId": "supplier-18-trilok-personal-care",
+        "requirementId": "MR-7",
+        "status": "pass",
+        "reasoning": "The document provides a specific documented declaration with a reference number and date, indicating a formal cruelty-free manufacturing declaration is on file, satisfying MR-7."
+      },
+      {
+        "supplierId": "supplier-19-kanan-naturals",
+        "requirementId": "MR-1",
+        "status": "pass",
+        "reasoning": "The document explicitly documents a liquid division producing dropper-fill and pump-fill serum formats with 9 serum programs delivered since 2022, indicating documented experience in liquid/serum skincare manufacturing rather than solid/powder-only production (though powder/sachet lines also exist alongside the liquid line)."
+      },
+      {
+        "supplierId": "supplier-19-kanan-naturals",
+        "requirementId": "MR-2",
+        "status": "fail",
+        "reasoning": "The document only makes a general promotional claim of being 'GMP-certified' with no specific mention of ISO 22716, no certificate identifier, no named issuing body, and no stated validity/expiry date. It explicitly states certification documentation is kept internally and only viewable during a site visit, which is not a certificate record provided in the document itself."
+      },
+      {
+        "supplierId": "supplier-19-kanan-naturals",
+        "requirementId": "MR-3",
+        "status": "conflicting",
+        "reasoning": "The document states minimum order quantity varies by format. For serums and treatment liquids specifically, the stated MOQ is 12,000 units per SKU. Other formats (haircare liquids, powder sachets) have different MOQs stated in the same section."
+      },
+      {
+        "supplierId": "supplier-19-kanan-naturals",
+        "requirementId": "MR-4",
+        "status": "pass",
+        "reasoning": "The quality history section reports 3 of 19 audited production batches failed, stated as 15.8%."
+      },
+      {
+        "supplierId": "supplier-19-kanan-naturals",
+        "requirementId": "MR-5",
+        "status": "pass",
+        "reasoning": "The order terms section explicitly states the standard manufacturing lead time as 14 calendar days across all formats."
+      },
+      {
+        "supplierId": "supplier-19-kanan-naturals",
+        "requirementId": "MR-6",
+        "status": "pass",
+        "reasoning": "The title block states the facility's location as Jaipur, Rajasthan, India."
+      },
+      {
+        "supplierId": "supplier-19-kanan-naturals",
+        "requirementId": "MR-7",
+        "status": "pass",
+        "reasoning": "The sustainability section documents a cruelty-free manufacturing declaration on file, with a specific reference number (CF-2024-0967) and a dated record (2024-12-01), meeting the requirement for a documented cruelty-free manufacturing declaration."
+      },
+      {
+        "supplierId": "supplier-20-meghdoot-labs",
+        "requirementId": "MR-1",
+        "status": "fail",
+        "reasoning": "The document explicitly states the facility's product history is entirely solid-format cosmetics and that it does not operate a liquid-fill or dropper-fill line, which directly contradicts having liquid/serum skincare manufacturing experience. The title block also describes the facility as a 'Colour cosmetics manufacturer, solid formats'."
+      },
+      {
+        "supplierId": "supplier-20-meghdoot-labs",
+        "requirementId": "MR-2",
+        "status": "pass",
+        "reasoning": "A specific certificate record is provided, including certificate number, issuance date, and validity date, indicating this is not merely a marketing claim."
+      },
+      {
+        "supplierId": "supplier-20-meghdoot-labs",
+        "requirementId": "MR-3",
+        "status": "pass",
+        "reasoning": "The document explicitly states the MOQ as 4,200 units per SKU."
+      },
+      {
+        "supplierId": "supplier-20-meghdoot-labs",
+        "requirementId": "MR-4",
+        "status": "fail",
+        "reasoning": "The document does not state a 'fail rate' directly; it states a batch acceptance rate of 68% across 25 audited production batches. The implied fail rate, derived arithmetically as the complement of the acceptance rate (100% - 68%), is 32%. This is a direct calculation from the stated figure rather than an inference from outside information, but note that the document also separately reports an 'Average defect rate on accepted batches' of 2.10%, which is a different metric (defect rate within accepted batches, not overall batch fail rate)."
+      },
+      {
+        "supplierId": "supplier-20-meghdoot-labs",
+        "requirementId": "MR-5",
+        "status": "pass",
+        "reasoning": "The document explicitly states the standard manufacturing lead time as 18 calendar days."
+      },
+      {
+        "supplierId": "supplier-20-meghdoot-labs",
+        "requirementId": "MR-6",
+        "status": "pass",
+        "reasoning": "The document explicitly states the facility's location, from which the country India can be read directly."
+      },
+      {
+        "supplierId": "supplier-20-meghdoot-labs",
+        "requirementId": "MR-7",
+        "status": "pass",
+        "reasoning": "The document states a documented cruelty-free manufacturing declaration is on file, with a specific reference number and date, satisfying the requirement for a documented declaration."
+      },
+      {
+        "supplierId": "supplier-21-vasanth-bio-cosmetics",
+        "requirementId": "MR-1",
+        "status": "pass",
+        "reasoning": "The document explicitly describes documented experience with liquid-formulation lines and twelve delivered serum programs, satisfying the requirement for liquid/serum skincare manufacturing experience (not solid or powder cosmetics only)."
+      },
+      {
+        "supplierId": "supplier-21-vasanth-bio-cosmetics",
+        "requirementId": "MR-2",
+        "status": "pass",
+        "reasoning": "A specific certificate record is provided including certificate number, issuing/issue date, and validity date, so this is not merely a marketing claim."
+      },
+      {
+        "supplierId": "supplier-21-vasanth-bio-cosmetics",
+        "requirementId": "MR-3",
+        "status": "pass",
+        "reasoning": "The document states the MOQ as a specific numeric value in units per SKU."
+      },
+      {
+        "supplierId": "supplier-21-vasanth-bio-cosmetics",
+        "requirementId": "MR-4",
+        "status": "pass",
+        "reasoning": "The quality history section reports a fail rate of 13% across 23 audited production batches (3 of 23 failed)."
+      },
+      {
+        "supplierId": "supplier-21-vasanth-bio-cosmetics",
+        "requirementId": "MR-5",
+        "status": "pass",
+        "reasoning": "The document states a manufacturing lead time of 16 calendar days at the production site, explicitly excluding downstream shipping/customs time."
+      },
+      {
+        "supplierId": "supplier-21-vasanth-bio-cosmetics",
+        "requirementId": "MR-6",
+        "status": "conflicting",
+        "reasoning": "The title block explicitly states the manufacturing facility location as Colombo, Sri Lanka, distinct from the registered head office in Mumbai, India. The requirement concerns facility location specifically."
+      },
+      {
+        "supplierId": "supplier-21-vasanth-bio-cosmetics",
+        "requirementId": "MR-7",
+        "status": "pass",
+        "reasoning": "The document references a specific, dated declaration with a reference number ('Declaration Ref: CF-2025-0190'), constituting a documented cruelty-free manufacturing declaration rather than an unsupported marketing claim."
+      },
+      {
+        "supplierId": "supplier-22-ashvattha-wellness",
+        "requirementId": "MR-1",
+        "status": "pass",
+        "reasoning": "The document explicitly describes documented experience manufacturing liquid/serum skincare formulations (botanical serums, facial oils) with 14 liquid skincare programs delivered, satisfying the requirement for liquid/serum manufacturing experience beyond solid or powder cosmetics."
+      },
+      {
+        "supplierId": "supplier-22-ashvattha-wellness",
+        "requirementId": "MR-2",
+        "status": "pass",
+        "reasoning": "A specific certificate record is provided, including certificate number, issue date, and validity date, so this is not merely a marketing claim. The stated validity end date is 2027-12-31."
+      },
+      {
+        "supplierId": "supplier-22-ashvattha-wellness",
+        "requirementId": "MR-3",
+        "status": "pass",
+        "reasoning": "The document states the MOQ as 4,800 units per SKU."
+      },
+      {
+        "supplierId": "supplier-22-ashvattha-wellness",
+        "requirementId": "MR-4",
+        "status": "pass",
+        "reasoning": "Across 21 audited production batches, 4 failed, stated as 19% fail rate."
+      },
+      {
+        "supplierId": "supplier-22-ashvattha-wellness",
+        "requirementId": "MR-5",
+        "status": "insufficient-evidence",
+        "reasoning": "The document states a range of 18 to 24 calendar days rather than a single fixed value, so no single numeric value can be reported; the range is 18–24 calendar days depending on component availability."
+      },
+      {
+        "supplierId": "supplier-22-ashvattha-wellness",
+        "requirementId": "MR-6",
+        "status": "pass",
+        "reasoning": "The supplier profile states the facility location as Hyderabad, Telangana, India."
+      },
+      {
+        "supplierId": "supplier-22-ashvattha-wellness",
+        "requirementId": "MR-7",
+        "status": "fail",
+        "reasoning": "The document only states compliance with applicable animal-testing regulations in export markets, which is a regulatory-compliance statement, not an explicit documented cruelty-free manufacturing declaration (e.g., no animal testing performed, cruelty-free certification, or similar declaration). No cruelty-free statement or certificate is present."
+      },
+      {
+        "supplierId": "supplier-23-nirvaan-skin-sciences",
+        "requirementId": "MR-1",
+        "status": "pass",
+        "reasoning": "The document explicitly describes dedicated serum (liquid) production lines and six delivered serum production programs, demonstrating documented experience in liquid/serum skincare manufacturing rather than solid or powder cosmetics."
+      },
+      {
+        "supplierId": "supplier-23-nirvaan-skin-sciences",
+        "requirementId": "MR-2",
+        "status": "pass",
+        "reasoning": "A concrete certificate record is provided with a certificate number, issuing/issue date, and explicit validity date, satisfying the requirement for an actual certificate record (not merely a marketing claim)."
+      },
+      {
+        "supplierId": "supplier-23-nirvaan-skin-sciences",
+        "requirementId": "MR-3",
+        "status": "pass",
+        "reasoning": "The document states the MOQ as 1,500 units per SKU, consistent in both the table and narrative text."
+      },
+      {
+        "supplierId": "supplier-23-nirvaan-skin-sciences",
+        "requirementId": "MR-4",
+        "status": "pass",
+        "reasoning": "The quality history section reports a fail rate of 7.7% across 26 audited production batches, directly giving the historical inspection fail rate."
+      },
+      {
+        "supplierId": "supplier-23-nirvaan-skin-sciences",
+        "requirementId": "MR-5",
+        "status": "pass",
+        "reasoning": "The order terms table and accompanying text both state a standard manufacturing lead time of 12 calendar days."
+      },
+      {
+        "supplierId": "supplier-23-nirvaan-skin-sciences",
+        "requirementId": "MR-6",
+        "status": "pass",
+        "reasoning": "The supplier profile title block states the facility location as Mysuru, Karnataka, India."
+      },
+      {
+        "supplierId": "supplier-23-nirvaan-skin-sciences",
+        "requirementId": "MR-7",
+        "status": "pass",
+        "reasoning": "A documented cruelty-free manufacturing declaration is on file with a specific reference number and date, satisfying the requirement for a documented declaration rather than just a marketing claim."
       }
     ],
     "counts": {
-      "facts": 97,
+      "facts": 168,
       "assumptions": 7,
-      "modelOutputs": 91
+      "modelOutputs": 161
     }
   },
   "verdicts": [
@@ -3043,32 +4447,736 @@
       "citationQuote": "Not addressed in submitted documentation.",
       "citationStatus": "exact",
       "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-14-anantara-formulations",
+      "requirementId": "MR-1",
+      "status": "pass",
+      "comparison": null,
+      "citationChunkId": "supplier-14-anantara-formulations#s02-manufacturing-capability",
+      "citationQuote": "Two liquid-formulation lines with dropper-fill and pump-fill heads. Serum and essence formats produced for three regional skincare brands since 2023, including Vitamin C actives programs.",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-14-anantara-formulations",
+      "requirementId": "MR-2",
+      "status": "pass",
+      "comparison": "expires valid until 2027-02-14 ≥ as-of 2026-08-09",
+      "citationChunkId": "supplier-14-anantara-formulations#s01-certifications",
+      "citationQuote": "ISO 22716:2007 (Cosmetics GMP) — Certificate No. IN-COS-22716-3310, issued 2024-02-15, valid until 2027-02-14.",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-14-anantara-formulations",
+      "requirementId": "MR-3",
+      "status": "fail",
+      "comparison": "6000 units ≤ 5000 units",
+      "citationChunkId": "supplier-14-anantara-formulations#s03-order-terms",
+      "citationQuote": "Minimum order quantity: 500 cases per SKU. Cases are packed 12 units per case.",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-14-anantara-formulations",
+      "requirementId": "MR-4",
+      "status": "pass",
+      "comparison": "16 percent ≤ 30 percent",
+      "citationChunkId": "supplier-14-anantara-formulations#s04-quality-history",
+      "citationQuote": "Fail: 4 batches (16%)",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-14-anantara-formulations",
+      "requirementId": "MR-5",
+      "status": "fail",
+      "comparison": "21 calendar days ≤ 20 calendar days",
+      "citationChunkId": "supplier-14-anantara-formulations#s03-order-terms",
+      "citationQuote": "Standard manufacturing lead time: 3 weeks from purchase-order confirmation.",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-14-anantara-formulations",
+      "requirementId": "MR-6",
+      "status": "pass",
+      "comparison": "\"Ahmedabad, Gujarat, India\" matches \"India\"",
+      "citationChunkId": "supplier-14-anantara-formulations#s00-_titleblock",
+      "citationQuote": "**Location:** Ahmedabad, Gujarat, India",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-14-anantara-formulations",
+      "requirementId": "MR-7",
+      "status": "pass",
+      "comparison": null,
+      "citationChunkId": "supplier-14-anantara-formulations#s05-sustainability",
+      "citationQuote": "Cruelty-free manufacturing declaration on file (Declaration Ref: CF-2025-0881, dated 2025-07-14).",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-15-rathore-cosmetic-works",
+      "requirementId": "MR-1",
+      "status": "pass",
+      "comparison": null,
+      "citationChunkId": "supplier-15-rathore-cosmetic-works#s02-manufacturing-capability",
+      "citationQuote": "Liquid-fill and cream-fill lines. Long production history in toners, lotions and serums; lists 11 prior liquid skincare programs.",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-15-rathore-cosmetic-works",
+      "requirementId": "MR-2",
+      "status": "fail",
+      "comparison": "expires valid until 2025-03-31 < as-of 2026-08-09",
+      "citationChunkId": "supplier-15-rathore-cosmetic-works#s01-certifications",
+      "citationQuote": "ISO 22716:2007 (Cosmetics GMP) — Certificate No. IN-COS-22716-0774, issued 2022-04-01, valid until 2025-03-31.",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-15-rathore-cosmetic-works",
+      "requirementId": "MR-3",
+      "status": "pass",
+      "comparison": "3000 units ≤ 5000 units",
+      "citationChunkId": "supplier-15-rathore-cosmetic-works#s03-order-terms",
+      "citationQuote": "Minimum order quantity: 3,000 units per SKU.",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-15-rathore-cosmetic-works",
+      "requirementId": "MR-4",
+      "status": "fail",
+      "comparison": "35 percent ≤ 30 percent",
+      "citationChunkId": "supplier-15-rathore-cosmetic-works#s04-quality-history",
+      "citationQuote": "Fail: 7 batches (35%)",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-15-rathore-cosmetic-works",
+      "requirementId": "MR-5",
+      "status": "fail",
+      "comparison": "22 calendar days ≤ 20 calendar days",
+      "citationChunkId": "supplier-15-rathore-cosmetic-works#s03-order-terms",
+      "citationQuote": "Standard manufacturing lead time: 22 calendar days.",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-15-rathore-cosmetic-works",
+      "requirementId": "MR-6",
+      "status": "pass",
+      "comparison": "\"Indore, Madhya Pradesh, India\" matches \"India\"",
+      "citationChunkId": "supplier-15-rathore-cosmetic-works#s00-_titleblock",
+      "citationQuote": "**Location:** Indore, Madhya Pradesh, India",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-15-rathore-cosmetic-works",
+      "requirementId": "MR-7",
+      "status": "insufficient-evidence",
+      "comparison": null,
+      "citationChunkId": "supplier-15-rathore-cosmetic-works#s05-sustainability",
+      "citationQuote": "Not addressed in the submitted documentation.",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-16-bluepeak-skincare-solutions",
+      "requirementId": "MR-1",
+      "status": "pass",
+      "comparison": null,
+      "citationChunkId": "supplier-16-bluepeak-skincare-solutions#s02-manufacturing-capability",
+      "citationQuote": "Dedicated serum and essence lines with dropper-fill capability. Produced 5 Vitamin C serum programs for domestic brands in the last two years.",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-16-bluepeak-skincare-solutions",
+      "requirementId": "MR-2",
+      "status": "insufficient-evidence",
+      "comparison": null,
+      "citationChunkId": "supplier-16-bluepeak-skincare-solutions#s01-certifications",
+      "citationQuote": "- ISO 9001:2015 (Quality Management Systems) — Certificate No. IN-QMS-9001-5521, issued 2024-07-01, valid until 2027-06-30.\n- ISO 14001:2015 (Environmental Management Systems) — Certificate No. IN-EMS-14001-2214, issued 2024-07-01, valid until 2027-06-30.",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-16-bluepeak-skincare-solutions",
+      "requirementId": "MR-3",
+      "status": "pass",
+      "comparison": "2500 units ≤ 5000 units",
+      "citationChunkId": "supplier-16-bluepeak-skincare-solutions#s03-order-terms",
+      "citationQuote": "Minimum order quantity: 2,500 units per SKU.",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-16-bluepeak-skincare-solutions",
+      "requirementId": "MR-4",
+      "status": "pass",
+      "comparison": "9.1 percent ≤ 30 percent",
+      "citationChunkId": "supplier-16-bluepeak-skincare-solutions#s04-quality-history",
+      "citationQuote": "- Fail: 2 batches (9.1%)",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-16-bluepeak-skincare-solutions",
+      "requirementId": "MR-5",
+      "status": "pass",
+      "comparison": "15 calendar days ≤ 20 calendar days",
+      "citationChunkId": "supplier-16-bluepeak-skincare-solutions#s03-order-terms",
+      "citationQuote": "Standard manufacturing lead time: 15 calendar days.",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-16-bluepeak-skincare-solutions",
+      "requirementId": "MR-6",
+      "status": "pass",
+      "comparison": "\"Vadodara, Gujarat, India\" matches \"India\"",
+      "citationChunkId": "supplier-16-bluepeak-skincare-solutions#s00-_titleblock",
+      "citationQuote": "**Location:** Vadodara, Gujarat, India",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-16-bluepeak-skincare-solutions",
+      "requirementId": "MR-7",
+      "status": "insufficient-evidence",
+      "comparison": null,
+      "citationChunkId": null,
+      "citationQuote": null,
+      "citationStatus": null,
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-17-sahyadri-beauty-group",
+      "requirementId": "MR-1",
+      "status": "pass",
+      "comparison": null,
+      "citationChunkId": "supplier-17-sahyadri-beauty-group#s02-manufacturing-capability",
+      "citationQuote": "Serum and liquid skincare lines commissioned 2023, dropper-fill and airless-pump capable. Group has delivered 20+ liquid skincare programs across its sites; 4 of these ran at Coimbatore.",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-17-sahyadri-beauty-group",
+      "requirementId": "MR-2",
+      "status": "conflicting",
+      "comparison": null,
+      "citationChunkId": "supplier-17-sahyadri-beauty-group#s01-certifications",
+      "citationQuote": "ISO 22716:2007 (Cosmetics GMP) — Certificate No. IN-COS-22716-1988, issued 2024-05-20, valid until 2027-05-19. Certificate holder: Sahyadri Beauty Group, Hosur Unit II.",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-17-sahyadri-beauty-group",
+      "requirementId": "MR-3",
+      "status": "fail",
+      "comparison": "8000 units ≤ 5000 units",
+      "citationChunkId": "supplier-17-sahyadri-beauty-group#s03-order-terms",
+      "citationQuote": "Minimum order quantity: 8,000 units per SKU.",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-17-sahyadri-beauty-group",
+      "requirementId": "MR-4",
+      "status": "pass",
+      "comparison": "15 percent ≤ 30 percent",
+      "citationChunkId": "supplier-17-sahyadri-beauty-group#s04-quality-history",
+      "citationQuote": "Fail: 3 batches (15%)",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-17-sahyadri-beauty-group",
+      "requirementId": "MR-5",
+      "status": "pass",
+      "comparison": "17 calendar days ≤ 20 calendar days",
+      "citationChunkId": "supplier-17-sahyadri-beauty-group#s03-order-terms",
+      "citationQuote": "Standard manufacturing lead time: 17 calendar days.",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-17-sahyadri-beauty-group",
+      "requirementId": "MR-6",
+      "status": "pass",
+      "comparison": "\"Coimbatore, Tamil Nadu, India\" matches \"India\"",
+      "citationChunkId": "supplier-17-sahyadri-beauty-group#s00-_titleblock",
+      "citationQuote": "**Location:** Coimbatore, Tamil Nadu, India",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-17-sahyadri-beauty-group",
+      "requirementId": "MR-7",
+      "status": "pass",
+      "comparison": null,
+      "citationChunkId": "supplier-17-sahyadri-beauty-group#s05-sustainability",
+      "citationQuote": "Cruelty-free manufacturing declaration on file at group level, covering all four sites (Declaration Ref: CF-2025-0555, dated 2025-03-30).",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-18-trilok-personal-care",
+      "requirementId": "MR-1",
+      "status": "pass",
+      "comparison": null,
+      "citationChunkId": "supplier-18-trilok-personal-care#s02-manufacturing-capability",
+      "citationQuote": "Serum, gel and essence lines with dropper-fill capability. Six liquid skincare programs delivered since 2024, two of them Vitamin C serums.",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-18-trilok-personal-care",
+      "requirementId": "MR-2",
+      "status": "pass",
+      "comparison": "expires valid until 2028-03-31 ≥ as-of 2026-08-09",
+      "citationChunkId": "supplier-18-trilok-personal-care#s01-certifications",
+      "citationQuote": "ISO 22716:2007 (Cosmetics GMP) — Certificate No. IN-COS-22716-6120, issued 2025-04-01, valid until 2028-03-31.",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-18-trilok-personal-care",
+      "requirementId": "MR-3",
+      "status": "pass",
+      "comparison": "3500 units ≤ 5000 units",
+      "citationChunkId": "supplier-18-trilok-personal-care#s03-order-terms",
+      "citationQuote": "Minimum order quantity: 3,500 units per SKU.",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-18-trilok-personal-care",
+      "requirementId": "MR-4",
+      "status": "pass",
+      "comparison": "16.7 percent ≤ 30 percent",
+      "citationChunkId": "supplier-18-trilok-personal-care#s05-quality-history",
+      "citationQuote": "Fail: 4 batches (16.7%)",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-18-trilok-personal-care",
+      "requirementId": "MR-5",
+      "status": "conflicting",
+      "comparison": null,
+      "citationChunkId": "supplier-18-trilok-personal-care#s03-order-terms",
+      "citationQuote": "Standard manufacturing lead time: 16 calendar days.",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-18-trilok-personal-care",
+      "requirementId": "MR-6",
+      "status": "pass",
+      "comparison": "\"Surat, Gujarat, India\" matches \"India\"",
+      "citationChunkId": "supplier-18-trilok-personal-care#s00-_titleblock",
+      "citationQuote": "**Location:** Surat, Gujarat, India",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-18-trilok-personal-care",
+      "requirementId": "MR-7",
+      "status": "pass",
+      "comparison": null,
+      "citationChunkId": "supplier-18-trilok-personal-care#s06-sustainability",
+      "citationQuote": "Cruelty-free manufacturing declaration on file (Declaration Ref: CF-2025-0308, dated 2025-05-11).",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-19-kanan-naturals",
+      "requirementId": "MR-1",
+      "status": "pass",
+      "comparison": null,
+      "citationChunkId": "supplier-19-kanan-naturals#s02-manufacturing-capability",
+      "citationQuote": "Liquid division runs dropper-fill and pump-fill serum formats; 9 serum programs delivered since 2022.",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-19-kanan-naturals",
+      "requirementId": "MR-2",
+      "status": "fail",
+      "comparison": "ISO 22716 (Cosmetics GMP): unverified marketing claim, no certificate record",
+      "citationChunkId": "supplier-19-kanan-naturals#s01-certifications",
+      "citationQuote": "Our facility is GMP-certified and follows international cosmetic manufacturing standards recognised across our export markets. Certification documentation is maintained internally and can be reviewed during a site visit.",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-19-kanan-naturals",
+      "requirementId": "MR-3",
+      "status": "conflicting",
+      "comparison": null,
+      "citationChunkId": "supplier-19-kanan-naturals#s03-order-terms",
+      "citationQuote": "Serums and treatment liquids: 12,000 units per SKU.",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-19-kanan-naturals",
+      "requirementId": "MR-4",
+      "status": "pass",
+      "comparison": "15.8 percent ≤ 30 percent",
+      "citationChunkId": "supplier-19-kanan-naturals#s04-quality-history",
+      "citationQuote": "Fail: 3 batches (15.8%)",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-19-kanan-naturals",
+      "requirementId": "MR-5",
+      "status": "pass",
+      "comparison": "14 calendar days ≤ 20 calendar days",
+      "citationChunkId": "supplier-19-kanan-naturals#s03-order-terms",
+      "citationQuote": "Standard manufacturing lead time: 14 calendar days across all formats.",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-19-kanan-naturals",
+      "requirementId": "MR-6",
+      "status": "pass",
+      "comparison": "\"Jaipur, Rajasthan, India\" matches \"India\"",
+      "citationChunkId": "supplier-19-kanan-naturals#s00-_titleblock",
+      "citationQuote": "Jaipur, Rajasthan, India",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-19-kanan-naturals",
+      "requirementId": "MR-7",
+      "status": "pass",
+      "comparison": null,
+      "citationChunkId": "supplier-19-kanan-naturals#s05-sustainability",
+      "citationQuote": "Cruelty-free manufacturing declaration on file (Declaration Ref: CF-2024-0967, dated 2024-12-01).",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-20-meghdoot-labs",
+      "requirementId": "MR-1",
+      "status": "fail",
+      "comparison": null,
+      "citationChunkId": "supplier-20-meghdoot-labs#s02-manufacturing-capability",
+      "citationQuote": "Product history is entirely solid-format colour cosmetics: pressed powders, sticks and balms. The facility does not operate a liquid-fill or dropper-fill line.",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-20-meghdoot-labs",
+      "requirementId": "MR-2",
+      "status": "pass",
+      "comparison": "expires valid until 2027-09-30 ≥ as-of 2026-08-09",
+      "citationChunkId": "supplier-20-meghdoot-labs#s01-certifications",
+      "citationQuote": "ISO 22716:2007 (Cosmetics GMP) — Certificate No. IN-COS-22716-2867, issued 2024-10-01, valid until 2027-09-30.",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-20-meghdoot-labs",
+      "requirementId": "MR-3",
+      "status": "pass",
+      "comparison": "4200 units ≤ 5000 units",
+      "citationChunkId": "supplier-20-meghdoot-labs#s03-order-terms",
+      "citationQuote": "Minimum order quantity: 4,200 units per SKU.",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-20-meghdoot-labs",
+      "requirementId": "MR-4",
+      "status": "fail",
+      "comparison": "32 percent ≤ 30 percent",
+      "citationChunkId": "supplier-20-meghdoot-labs#s04-quality-history",
+      "citationQuote": "Batch acceptance rate across 25 audited production batches: 68%.",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-20-meghdoot-labs",
+      "requirementId": "MR-5",
+      "status": "pass",
+      "comparison": "18 calendar days ≤ 20 calendar days",
+      "citationChunkId": "supplier-20-meghdoot-labs#s03-order-terms",
+      "citationQuote": "Standard manufacturing lead time: 18 calendar days.",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-20-meghdoot-labs",
+      "requirementId": "MR-6",
+      "status": "pass",
+      "comparison": "\"Aurangabad, Maharashtra, India\" matches \"India\"",
+      "citationChunkId": "supplier-20-meghdoot-labs#s00-_titleblock",
+      "citationQuote": "**Location:** Aurangabad, Maharashtra, India",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-20-meghdoot-labs",
+      "requirementId": "MR-7",
+      "status": "pass",
+      "comparison": null,
+      "citationChunkId": "supplier-20-meghdoot-labs#s05-sustainability",
+      "citationQuote": "Cruelty-free manufacturing declaration on file (Declaration Ref: CF-2025-0721, dated 2025-08-19).",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-21-vasanth-bio-cosmetics",
+      "requirementId": "MR-1",
+      "status": "pass",
+      "comparison": null,
+      "citationChunkId": "supplier-21-vasanth-bio-cosmetics#s02-manufacturing-capability",
+      "citationQuote": "Three liquid-formulation lines at the Colombo site, dropper-fill and airless-pump capable. Twelve serum programs delivered since 2021, including actives-stabilised Vitamin C formats.",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-21-vasanth-bio-cosmetics",
+      "requirementId": "MR-2",
+      "status": "pass",
+      "comparison": "expires valid until 2028-01-31 ≥ as-of 2026-08-09",
+      "citationChunkId": "supplier-21-vasanth-bio-cosmetics#s01-certifications",
+      "citationQuote": "ISO 22716:2007 (Cosmetics GMP) — Certificate No. LK-COS-22716-0455, issued 2025-02-01, valid until 2028-01-31. Certificate covers the Colombo production site.",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-21-vasanth-bio-cosmetics",
+      "requirementId": "MR-3",
+      "status": "pass",
+      "comparison": "3200 units ≤ 5000 units",
+      "citationChunkId": "supplier-21-vasanth-bio-cosmetics#s03-order-terms",
+      "citationQuote": "Minimum order quantity: 3,200 units per SKU.",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-21-vasanth-bio-cosmetics",
+      "requirementId": "MR-4",
+      "status": "pass",
+      "comparison": "13 percent ≤ 30 percent",
+      "citationChunkId": "supplier-21-vasanth-bio-cosmetics#s04-quality-history",
+      "citationQuote": "Fail: 3 batches (13%)",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-21-vasanth-bio-cosmetics",
+      "requirementId": "MR-5",
+      "status": "pass",
+      "comparison": "16 calendar days ≤ 20 calendar days",
+      "citationChunkId": "supplier-21-vasanth-bio-cosmetics#s03-order-terms",
+      "citationQuote": "Standard manufacturing lead time: 16 calendar days at the production site. Cross-border shipping, customs clearance and inbound freight to the buyer's market are quoted separately and are not included in this figure.",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-21-vasanth-bio-cosmetics",
+      "requirementId": "MR-6",
+      "status": "conflicting",
+      "comparison": null,
+      "citationChunkId": "supplier-21-vasanth-bio-cosmetics#s00-_titleblock",
+      "citationQuote": "Manufacturing facility: Colombo, Sri Lanka",
+      "citationStatus": "normalized",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-21-vasanth-bio-cosmetics",
+      "requirementId": "MR-7",
+      "status": "pass",
+      "comparison": null,
+      "citationChunkId": "supplier-21-vasanth-bio-cosmetics#s05-sustainability",
+      "citationQuote": "Cruelty-free manufacturing declaration on file (Declaration Ref: CF-2025-0190, dated 2025-01-22).",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-22-ashvattha-wellness",
+      "requirementId": "MR-1",
+      "status": "pass",
+      "comparison": null,
+      "citationChunkId": "supplier-22-ashvattha-wellness#s02-manufacturing-capability",
+      "citationQuote": "Liquid and oil-phase formulation lines with dropper-fill capability. Extensive history in botanical serums and facial oils; 14 liquid skincare programs delivered since 2020.",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-22-ashvattha-wellness",
+      "requirementId": "MR-2",
+      "status": "pass",
+      "comparison": "expires 2027-12-31 ≥ as-of 2026-08-09",
+      "citationChunkId": "supplier-22-ashvattha-wellness#s01-certifications",
+      "citationQuote": "ISO 22716:2007 (Cosmetics GMP) — Certificate No. IN-COS-22716-4092, issued 2025-01-05, valid until 2027-12-31.",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-22-ashvattha-wellness",
+      "requirementId": "MR-3",
+      "status": "pass",
+      "comparison": "4800 units ≤ 5000 units",
+      "citationChunkId": "supplier-22-ashvattha-wellness#s03-order-terms",
+      "citationQuote": "Minimum order quantity: 4,800 units per SKU.",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-22-ashvattha-wellness",
+      "requirementId": "MR-4",
+      "status": "pass",
+      "comparison": "19 percent ≤ 30 percent",
+      "citationChunkId": "supplier-22-ashvattha-wellness#s04-quality-history",
+      "citationQuote": "Fail: 4 batches (19%)",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-22-ashvattha-wellness",
+      "requirementId": "MR-5",
+      "status": "insufficient-evidence",
+      "comparison": null,
+      "citationChunkId": "supplier-22-ashvattha-wellness#s03-order-terms",
+      "citationQuote": "Standard manufacturing lead time: 18 to 24 calendar days, depending on botanical-extract component availability at the time of order.",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-22-ashvattha-wellness",
+      "requirementId": "MR-6",
+      "status": "pass",
+      "comparison": "\"Hyderabad, Telangana, India\" matches \"India\"",
+      "citationChunkId": "supplier-22-ashvattha-wellness#s00-_titleblock",
+      "citationQuote": "**Location:** Hyderabad, Telangana, India",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-22-ashvattha-wellness",
+      "requirementId": "MR-7",
+      "status": "fail",
+      "comparison": null,
+      "citationChunkId": "supplier-22-ashvattha-wellness#s05-sustainability",
+      "citationQuote": "We comply with all applicable animal-testing regulations in the markets we export to, and ingredient suppliers are selected in line with customer requirements.",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-23-nirvaan-skin-sciences",
+      "requirementId": "MR-1",
+      "status": "pass",
+      "comparison": null,
+      "citationChunkId": "supplier-23-nirvaan-skin-sciences#s02-manufacturing-capability",
+      "citationQuote": "Two dedicated serum lines with dropper-fill and airless-pump heads, sized for launch-scale runs. Six serum production programs delivered since 2023, four of them Vitamin C actives formulations requiring nitrogen-blanketed filling.",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-23-nirvaan-skin-sciences",
+      "requirementId": "MR-2",
+      "status": "pass",
+      "comparison": "expires 2028-01-09 ≥ as-of 2026-08-09",
+      "citationChunkId": "supplier-23-nirvaan-skin-sciences#s01-certifications",
+      "citationQuote": "ISO 22716:2007 (Cosmetics GMP) — Certificate No. IN-COS-22716-4407, issued 2025-01-10, valid until 2028-01-09.",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-23-nirvaan-skin-sciences",
+      "requirementId": "MR-3",
+      "status": "pass",
+      "comparison": "1500 units ≤ 5000 units",
+      "citationChunkId": "supplier-23-nirvaan-skin-sciences#s03-order-terms",
+      "citationQuote": "Minimum order quantity is 1,500 units per SKU and standard manufacturing lead time is 12 calendar days from purchase-order confirmation.",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-23-nirvaan-skin-sciences",
+      "requirementId": "MR-4",
+      "status": "pass",
+      "comparison": "7.7 percent ≤ 30 percent",
+      "citationChunkId": "supplier-23-nirvaan-skin-sciences#s04-quality-history",
+      "citationQuote": "Fail: 2 batches (7.7%)",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-23-nirvaan-skin-sciences",
+      "requirementId": "MR-5",
+      "status": "pass",
+      "comparison": "12 calendar days ≤ 20 calendar days",
+      "citationChunkId": "supplier-23-nirvaan-skin-sciences#s03-order-terms",
+      "citationQuote": "Standard manufacturing lead time | 12 calendar days",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-23-nirvaan-skin-sciences",
+      "requirementId": "MR-6",
+      "status": "pass",
+      "comparison": "\"Mysuru, Karnataka, India\" matches \"India\"",
+      "citationChunkId": "supplier-23-nirvaan-skin-sciences#s00-_titleblock",
+      "citationQuote": "**Location:** Mysuru, Karnataka, India",
+      "citationStatus": "exact",
+      "citationVerified": true
+    },
+    {
+      "supplierId": "supplier-23-nirvaan-skin-sciences",
+      "requirementId": "MR-7",
+      "status": "pass",
+      "comparison": null,
+      "citationChunkId": "supplier-23-nirvaan-skin-sciences#s05-sustainability",
+      "citationQuote": "Cruelty-free manufacturing declaration on file (Declaration Ref: CF-2026-0042, dated 2026-02-18).",
+      "citationStatus": "exact",
+      "citationVerified": true
     }
   ],
   "ranking": {
     "order": [
       "supplier-01",
+      "supplier-23-nirvaan-skin-sciences",
       "supplier-06-vantage-cosmo-labs",
       "supplier-12-coastal-wellness-manufacturing"
     ],
     "scores": {
-      "supplier-01": 0.7153846153846154,
-      "supplier-06-vantage-cosmo-labs": 0.44999999999999996,
-      "supplier-12-coastal-wellness-manufacturing": 0.2559701492537311
+      "supplier-01": 0.6024630541871921,
+      "supplier-23-nirvaan-skin-sciences": 0.5,
+      "supplier-06-vantage-cosmo-labs": 0.4323296618143577,
+      "supplier-12-coastal-wellness-manufacturing": 0.27921348314606725
     },
     "winProbability": {
-      "supplier-01": 0.5613,
-      "supplier-06-vantage-cosmo-labs": 0.4387,
-      "supplier-12-coastal-wellness-manufacturing": 0
+      "supplier-01": 0.3056,
+      "supplier-06-vantage-cosmo-labs": 0.3279,
+      "supplier-12-coastal-wellness-manufacturing": 0,
+      "supplier-23-nirvaan-skin-sciences": 0.3665
     }
   },
   "limitations": [
     "One annotator authored the corpus, the gold labels and the system. A sound evaluation would use independent annotators and report inter-annotator agreement, which also establishes the ceiling on achievable performance.",
-    "24 of 91 gold labels are pre-registered (recorded before any AI system existed); the remaining 67 were authored afterwards and carry a disclosed risk of anchoring toward the system's output.",
+    "94 of 161 gold labels are pre-registered (recorded in DATA_MANIFEST.md before any AI system existed); the remaining 67 were authored afterwards and carry a disclosed risk of anchoring toward the system's output. Accuracy is reported separately for the two subsets.",
     "The corpus is uniformly formatted because it was generated. This flatters pattern-matching approaches, so the measured gap against the rule-based baseline understates the likely real-world gap. The paraphrase test exists to quantify that.",
     "Detector validation uses synthetically corrupted citations. These are an operational proxy and may not mirror the shape of organic model errors.",
-    "Accuracy-calibration of the model's confidence could not be measured, because the system made no errors on this corpus.",
-    "Three eligible suppliers is too small a sample for rank-correlation statistics; ordering agreement is reported with score margins instead.",
+    "Confidence calibration rests on three errors, which is too few to calibrate against. What is reported instead is that the system declines to decide while reporting high confidence, which is the property that matters for a reviewer deciding whom to trust.",
+    "Four eligible suppliers is too small a sample for rank-correlation statistics; ordering agreement is reported with score margins instead.",
+    "One verdict in 161 abstains without citing anything, so a reviewer is told the evidence is missing but not where it should have been. Making the citation rule unconditional closes this gap and was tried; it also moved an unrelated verdict, and re-tuning a prompt after seeing pre-registered results would forfeit what pre-registration is for. The gap is left standing and asserted against growth.",
     "Cost figures are stated averages across comparable products, not quotations for this product.",
     "Prompt-injection results cover five payloads against one supplier document. Absence of a successful attack here is not proof of general immunity."
   ]

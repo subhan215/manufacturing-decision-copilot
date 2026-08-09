@@ -48,7 +48,10 @@ function verdict(s: SupplierScreen, requirementId: string): RequirementVerdict {
   return v;
 }
 
-console.log("Screening 13 suppliers (cached calls are near-instant)…\n");
+/** Corpus size, stated once so a grown corpus cannot pass a stale assertion. */
+const SUPPLIER_COUNT = 23;
+
+console.log(`Screening ${SUPPLIER_COUNT} suppliers (cached calls are near-instant)…\n`);
 
 const screen = await screenAll({
   onProgress: (done, total, id) =>
@@ -86,7 +89,7 @@ console.log(`  total ${(screen.stats.totalDurationMs / 1000).toFixed(1)}s`);
 // -------------------------------------------------------------- structural
 section("A. STRUCTURAL");
 
-check("13 suppliers screened", screen.suppliers.length === 13);
+check(`${SUPPLIER_COUNT} suppliers screened`, screen.suppliers.length === SUPPLIER_COUNT);
 check(
   "no supplier left in an error state",
   screen.stats.suppliersErrored === 0,

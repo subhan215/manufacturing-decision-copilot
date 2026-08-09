@@ -21,7 +21,7 @@ export { supplierUnavailable, leadTimeSlip } from "./disrupt.ts";
  */
 const RELAXATION_CAVEATS: Record<string, string[]> = {
   "MR-6": [
-    "The cheaper overseas option states that export shipping, customs clearance and inbound freight are additional and are not included in its quoted lead time. The unit-price saving shown is therefore not the landed saving, and the supplied documents do not contain enough to compute one.",
+    "Each overseas option states that export shipping, customs clearance and inbound freight are additional and are not included in its quoted lead time. Any unit-price saving shown is therefore not a landed saving, and the supplied documents do not contain enough to compute one.",
   ],
   "MR-2": [
     "This is a regulatory exposure rather than a cost trade-off. The supplier waiting on this requirement offers a promotional compliance claim with no certificate record, so relaxing it means accepting an unverified claim, not accepting a known risk.",

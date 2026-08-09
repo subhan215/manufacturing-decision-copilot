@@ -1,0 +1,26 @@
+{
+  "data": {
+    "costValue": 54.2,
+    "costCurrency": "USD",
+    "costUnit": "unit",
+    "costCitationChunkId": "supplier-23-nirvaan-skin-sciences#s06-cost-reference",
+    "costCitationQuote": "Average manufacturing cost across comparable SKUs: $54.20/unit.",
+    "crueltyFreeDeclaration": true,
+    "thirdPartyCertifications": [
+      "ISO 22716:2007 (Cosmetics GMP)"
+    ],
+    "sustainabilityCitationChunkId": "supplier-23-nirvaan-skin-sciences#s05-sustainability",
+    "sustainabilityCitationQuote": "Cruelty-free manufacturing declaration on file (Declaration Ref: CF-2026-0042, dated 2026-02-18)."
+  },
+  "telemetry": {
+    "model": "claude-sonnet-5",
+    "cacheHit": false,
+    "durationMs": 10419,
+    "apiDurationMs": 9623,
+    "costUsd": 0.0215734,
+    "inputTokens": 2,
+    "outputTokens": 739,
+    "numTurns": 2
+  },
+  "storedAt": "2026-08-09T16:36:42.459Z"
+}

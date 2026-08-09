@@ -115,10 +115,18 @@ export function leadTimeSlip(params: {
     for (const verdict of supplier.verdicts) {
       let status: VerdictStatus = verdict.status;
 
-      if (verdict.requirementId === requirement.id) {
+      // A verdict with no parseable figure — an abstention, or a document that
+      // contradicts itself about its own lead time — has nothing to slip. Left
+      // alone rather than re-evaluated: turning "conflicting" into
+      // "insufficient-evidence" would report a change the scenario did not
+      // cause, and inflate the count of constraints the slip actually moved.
+      const base = (() => {
         const m = /^(-?[\d.]+)/.exec(verdict.comparison ?? "");
-        const base = m ? Number(m[1]) : null;
-        const slipped = base === null ? null : base * slipFactor;
+        return m ? Number(m[1]) : null;
+      })();
+
+      if (verdict.requirementId === requirement.id && base !== null) {
+        const slipped = base * slipFactor;
 
         const finding: ExtractedFinding = {
           requirementId: requirement.id,
