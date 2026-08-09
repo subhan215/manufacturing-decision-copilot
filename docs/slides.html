@@ -297,10 +297,11 @@
 <div class="deck">
 
 <div class="screen-only">
-  <strong>To export as PDF:</strong> open this file in Chrome or Edge → <code>Ctrl</code>+<code>P</code> →
-  Destination <strong>Save as PDF</strong> → Layout <strong>Landscape</strong> → Margins <strong>None</strong> →
-  tick <strong>Background graphics</strong>. Each slide becomes one 16:9 page. Speaker notes are in
-  <code>docs/SLIDES.md</code>; they are deliberately not on the slides.
+  <strong>This is the source for <code>slides.pdf</code></strong>, which sits beside it — ten pages at
+  13.333in × 7.5in. After editing, regenerate with
+  <code>chrome --headless --no-pdf-header-footer --print-to-pdf=docs/slides.pdf file:///…/docs/slides.html</code>,
+  or print from this page: <code>Ctrl</code>+<code>P</code> → Save as PDF, Landscape, Margins None,
+  Background graphics on.
 </div>
 
 <!-- 1 ------------------------------------------------------------------ -->

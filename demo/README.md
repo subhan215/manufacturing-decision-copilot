@@ -24,7 +24,7 @@ If you do want the file in the repository anyway — as a backup, or because a l
 
 What this repository already provides for that field:
 
-- `../docs/SLIDES.md` — ten slides with speaker notes
+- `../docs/slides.pdf` — ten-slide deck
 - `../README.md` — what was built, the problem, how it works, what to improve
 - `../eval-results/scorecard.md` — the full quantitative evaluation
 - `./CASE_WALKTHROUGH.md` — the three required cases, documented against real output

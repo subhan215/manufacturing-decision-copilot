@@ -188,7 +188,7 @@ const required = [
   "eval-results/scorecard.md",
   "docs/INTENDED_USE.md",
   "docs/DEMO_SCRIPT.md",
-  "docs/SLIDES.md",
+  "docs/slides.pdf",
   "README.md",
   ".cache/README.md",
 ];
