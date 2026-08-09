@@ -10,7 +10,7 @@ import {
   SCREENING_ROLE,
   type Findings,
 } from "./prompt.ts";
-import { evaluateFinding } from "./evaluate.ts";
+import { evaluateFinding, NO_EVIDENCE } from "./evaluate.ts";
 import { verifyVerdictCitation } from "./verify.ts";
 import type {
   EligibilityScreen,
@@ -19,6 +19,7 @@ import type {
   RequirementVerdict,
   ScreenStats,
   SupplierScreen,
+  VerdictEvidence,
 } from "./types.ts";
 
 export const DEFAULT_AS_OF_DATE = "2026-08-09";
@@ -76,6 +77,21 @@ function findingFor(
   );
 }
 
+
+/** The decision-relevant slice of a finding, carried onto the verdict. */
+function evidenceOf(finding: ExtractedFinding): VerdictEvidence {
+  return {
+    judgement: finding.judgement,
+    numericValue: finding.numericValue,
+    numericUnit: finding.numericUnit,
+    certificatePresent: finding.certificatePresent,
+    certificateExpiry: finding.certificateExpiry,
+    marketingClaimOnly: finding.marketingClaimOnly,
+    categoricalValue: finding.categoricalValue,
+    evidenceAbsent: finding.evidenceAbsent,
+  };
+}
+
 export async function screenSupplier(params: {
   supplier: IngestedDocument;
   requirements: Requirement[];
@@ -119,6 +135,7 @@ export async function screenSupplier(params: {
         requirementTitle: requirement.title,
         kind: requirement.kind,
         status: "insufficient-evidence",
+        evidence: NO_EVIDENCE,
         modelClaimedStatus: "insufficient-evidence",
         comparison: null,
         reasoning: "The model returned no finding for this requirement.",
@@ -139,6 +156,7 @@ export async function screenSupplier(params: {
       requirementTitle: requirement.title,
       kind: requirement.kind,
       status: outcome.status,
+      evidence: evidenceOf(finding),
       modelClaimedStatus: outcome.status,
       comparison: outcome.comparison,
       reasoning: finding.reasoning,

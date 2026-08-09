@@ -16,14 +16,6 @@ import type { ScenarioOutcome } from "./types.ts";
  * set for a reason the documents do not contain.
  */
 
-/** Recover the extracted value from the deterministic evaluator's own output. */
-function valueFromComparison(comparison: string | null): number | null {
-  const m = /^(-?[\d.]+)/.exec(comparison ?? "");
-  if (!m) return null;
-  const value = Number(m[1]);
-  return Number.isFinite(value) ? value : null;
-}
-
 function eligibleIds(screen: EligibilityScreen): string[] {
   return screen.suppliers.filter((s) => s.eligible).map((s) => s.supplierId);
 }
@@ -122,17 +114,20 @@ export function relaxByThreshold(params: {
       let status = verdict.status;
 
       if (verdict.requirementId === requirement.id) {
-        const value = valueFromComparison(verdict.comparison);
+        // Read from the verdict's own evidence rather than re-parsing its
+        // display string: a change to how a comparison is formatted must not
+        // be able to change a computed result.
+        const value = verdict.evidence.numericValue;
         const finding: ExtractedFinding = {
           requirementId: requirement.id,
-          judgement: null,
+          judgement: verdict.evidence.judgement,
           numericValue: value,
-          numericUnit: requirement.unit,
-          certificatePresent: null,
-          certificateExpiry: null,
-          marketingClaimOnly: null,
-          categoricalValue: null,
-          evidenceAbsent: value === null,
+          numericUnit: verdict.evidence.numericUnit ?? requirement.unit,
+          certificatePresent: verdict.evidence.certificatePresent,
+          certificateExpiry: verdict.evidence.certificateExpiry,
+          marketingClaimOnly: verdict.evidence.marketingClaimOnly,
+          categoricalValue: verdict.evidence.categoricalValue,
+          evidenceAbsent: verdict.evidence.evidenceAbsent,
           conflictNote: null,
           modelConfidence: verdict.modelConfidence,
           citationChunkId: verdict.citationChunkId,

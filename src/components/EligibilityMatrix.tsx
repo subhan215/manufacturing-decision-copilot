@@ -3,7 +3,13 @@
 import { useMemo, useState } from "react";
 
 import type { UiSnapshot } from "@/lib/snapshot";
+import {
+  adjustableRequirements,
+  rescreen,
+  type ThresholdOverrides,
+} from "@/lib/eligibility/rescreen";
 import { EvidenceDrawer } from "./EvidenceDrawer";
+import { ThresholdControls } from "./ThresholdControls";
 import { STATUS_STYLES } from "./statusStyle";
 
 /**
@@ -14,16 +20,49 @@ import { STATUS_STYLES } from "./statusStyle";
  * take the status palette with a mark and label per cell, never a magnitude
  * ramp. A supplier is eligible only when all seven are satisfied, so the grid
  * is the whole argument for who was excluded and why.
+ *
+ * The thresholds are live. Moving one re-decides every affected verdict in the
+ * browser through the same `evaluateFinding` the evaluation was measured
+ * against — no model call, nothing re-read. That is only possible because the
+ * model was never asked to do the comparison in the first place.
  */
 export function EligibilityMatrix({ snapshot }: { snapshot: UiSnapshot }) {
   const [selected, setSelected] = useState<{
     supplierId: string;
     requirementId: string;
   } | null>(null);
+  const [overrides, setOverrides] = useState<ThresholdOverrides>({});
 
-  const requirementIds = snapshot.screen.suppliers[0]?.verdicts.map(
-    (v) => v.requirementId,
-  ) ?? [];
+  const adjustable = useMemo(
+    () => adjustableRequirements(snapshot.requirements),
+    [snapshot.requirements],
+  );
+
+  const screen = useMemo(
+    () => rescreen(snapshot.screen, snapshot.requirements, overrides),
+    [snapshot.screen, snapshot.requirements, overrides],
+  );
+
+  const baselineEligible = snapshot.screen.suppliers.filter(
+    (s) => s.eligible,
+  ).length;
+  const nowEligible = screen.suppliers.filter((s) => s.eligible).length;
+
+  const requirementIds =
+    screen.suppliers[0]?.verdicts.map((v) => v.requirementId) ?? [];
+
+  // What each verdict was under the brief's own limits, so a cell that moved
+  // can be marked as moved. Without this the grid under relaxed limits looks
+  // exactly like the grid the brief asked for.
+  const baselineStatus = useMemo(() => {
+    const map = new Map<string, string>();
+    for (const s of snapshot.screen.suppliers) {
+      for (const v of s.verdicts) {
+        map.set(`${s.supplierId}::${v.requirementId}`, v.status);
+      }
+    }
+    return map;
+  }, [snapshot.screen.suppliers]);
 
   const chunkById = useMemo(
     () => new Map(snapshot.citedChunks.map((c) => [c.chunkId, c])),
@@ -31,7 +70,7 @@ export function EligibilityMatrix({ snapshot }: { snapshot: UiSnapshot }) {
   );
 
   const supplier = selected
-    ? snapshot.screen.suppliers.find((s) => s.supplierId === selected.supplierId)
+    ? screen.suppliers.find((s) => s.supplierId === selected.supplierId)
     : undefined;
   const verdict = selected
     ? (supplier?.verdicts.find((v) => v.requirementId === selected.requirementId) ??
@@ -70,6 +109,14 @@ export function EligibilityMatrix({ snapshot }: { snapshot: UiSnapshot }) {
         </ul>
       </div>
 
+      <ThresholdControls
+        requirements={adjustable}
+        overrides={overrides}
+        onChange={setOverrides}
+        eligibleBefore={baselineEligible}
+        eligibleAfter={nowEligible}
+      />
+
       <div className="mt-5 overflow-x-auto">
         <table className="w-full border-collapse text-sm">
           <caption className="sr-only">
@@ -101,7 +148,7 @@ export function EligibilityMatrix({ snapshot }: { snapshot: UiSnapshot }) {
             </tr>
           </thead>
           <tbody>
-            {snapshot.screen.suppliers.map((s) => (
+            {screen.suppliers.map((s) => (
               <tr
                 key={s.supplierId}
                 className="border-t border-[var(--gridline)]"
@@ -116,8 +163,15 @@ export function EligibilityMatrix({ snapshot }: { snapshot: UiSnapshot }) {
 
                 {s.verdicts.map((v) => {
                   const style = STATUS_STYLES[v.status];
+                  const was = baselineStatus.get(
+                    `${s.supplierId}::${v.requirementId}`,
+                  );
+                  const moved = was !== undefined && was !== v.status;
                   return (
-                    <td key={v.requirementId} className="px-0.5 py-1 text-center">
+                    <td
+                      key={v.requirementId}
+                      className="relative px-0.5 py-1 text-center"
+                    >
                       <button
                         onClick={() =>
                           setSelected({
@@ -125,7 +179,7 @@ export function EligibilityMatrix({ snapshot }: { snapshot: UiSnapshot }) {
                             requirementId: v.requirementId,
                           })
                         }
-                        title={`${v.requirementId} — ${style.label}${v.comparison ? `: ${v.comparison}` : ""}`}
+                        title={`${v.requirementId} — ${style.label}${v.comparison ? `: ${v.comparison}` : ""}${moved ? ` (was ${was} under the brief's limit)` : ""}`}
                         className="tnum inline-flex h-8 w-full min-w-[3.25rem] items-center justify-center gap-1 rounded text-xs font-medium transition-opacity hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1"
                         style={{ color: style.color, background: style.tint }}
                       >
@@ -133,8 +187,16 @@ export function EligibilityMatrix({ snapshot }: { snapshot: UiSnapshot }) {
                         <span>{style.short}</span>
                         <span className="sr-only">
                           {s.supplierName}, {v.requirementId}: {style.label}
+                          {moved ? `, changed from ${was}` : ""}
                         </span>
                       </button>
+                      {moved && (
+                        <span
+                          aria-hidden
+                          title={`Changed from ${was} by a moved limit`}
+                          className="pointer-events-none absolute right-1 top-0.5 h-1.5 w-1.5 rounded-full bg-[var(--status-serious)]"
+                        />
+                      )}
                     </td>
                   );
                 })}

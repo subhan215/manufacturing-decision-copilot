@@ -10,6 +10,7 @@ import type {
   ScreenStats,
   SupplierScreen,
 } from "../eligibility/types.ts";
+import { NO_EVIDENCE } from "../eligibility/evaluate.ts";
 import {
   ruleCertification,
   ruleCrueltyFree,
@@ -140,6 +141,10 @@ function screenOne(
       requirementTitle: requirement.title,
       kind: requirement.kind,
       status: outcome.status,
+      // The baseline reports a status and a quote, never a structured reading,
+      // so threshold exploration is not available for it. Stated rather than
+      // faked.
+      evidence: NO_EVIDENCE,
       modelClaimedStatus: outcome.status,
       comparison: null,
       reasoning: outcome.explanation,

@@ -120,10 +120,7 @@ export function leadTimeSlip(params: {
       // alone rather than re-evaluated: turning "conflicting" into
       // "insufficient-evidence" would report a change the scenario did not
       // cause, and inflate the count of constraints the slip actually moved.
-      const base = (() => {
-        const m = /^(-?[\d.]+)/.exec(verdict.comparison ?? "");
-        return m ? Number(m[1]) : null;
-      })();
+      const base = verdict.evidence.numericValue;
 
       if (verdict.requirementId === requirement.id && base !== null) {
         const slipped = base * slipFactor;
@@ -132,11 +129,11 @@ export function leadTimeSlip(params: {
           requirementId: requirement.id,
           judgement: null,
           numericValue: slipped,
-          numericUnit: requirement.unit,
-          certificatePresent: null,
-          certificateExpiry: null,
-          marketingClaimOnly: null,
-          categoricalValue: null,
+          numericUnit: verdict.evidence.numericUnit ?? requirement.unit,
+          certificatePresent: verdict.evidence.certificatePresent,
+          certificateExpiry: verdict.evidence.certificateExpiry,
+          marketingClaimOnly: verdict.evidence.marketingClaimOnly,
+          categoricalValue: verdict.evidence.categoricalValue,
           evidenceAbsent: slipped === null,
           conflictNote: null,
           modelConfidence: verdict.modelConfidence,

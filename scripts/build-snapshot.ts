@@ -108,6 +108,7 @@ const snapshot: UiSnapshot = {
   model: screen.model,
   asOfDate: screen.asOfDate,
   requirementsVersion: requirementsVersion(requirementsFile),
+  requirements: requirementsFile.requirements,
   screen,
   signals: ranking.signals,
   nearMissSignals,

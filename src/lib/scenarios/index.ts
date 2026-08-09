@@ -40,10 +40,10 @@ const RELAXATION_CAVEATS: Record<string, string[]> = {
 /** Extract each supplier's MOQ from the deterministic evaluator's own output. */
 export function moqsFromScreen(screen: EligibilityScreen): MoqLookup[] {
   return screen.suppliers.flatMap((s) => {
-    const verdict = s.verdicts.find((v) => v.requirementId === "MR-3");
-    const m = /^(-?[\d.]+)/.exec(verdict?.comparison ?? "");
-    if (!m) return [];
-    return [{ supplierId: s.supplierId, moq: Number(m[1]) }];
+    const moq = s.verdicts.find((v) => v.requirementId === "MR-3")?.evidence
+      .numericValue;
+    if (moq === null || moq === undefined) return [];
+    return [{ supplierId: s.supplierId, moq }];
   });
 }
 
@@ -106,8 +106,7 @@ export function runAllScenarios(params: {
       const verdict = blocked?.verdicts.find(
         (v) => v.requirementId === requirement.id,
       );
-      const m = /^(-?[\d.]+)/.exec(verdict?.comparison ?? "");
-      const needed = m ? Number(m[1]) : requirement.threshold;
+      const needed = verdict?.evidence.numericValue ?? requirement.threshold;
 
       scenarios.push(
         relaxByThreshold({

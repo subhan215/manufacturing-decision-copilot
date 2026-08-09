@@ -2,7 +2,7 @@ import { readFile } from "node:fs/promises";
 import path from "node:path";
 
 import { resolveProjectRoot } from "./paths.ts";
-import type { EligibilityScreen } from "./eligibility/types.ts";
+import type { EligibilityScreen, Requirement } from "./eligibility/types.ts";
 import type {
   ConditionallyEligibleSupplier,
   RankingResult,
@@ -70,6 +70,14 @@ export interface UiSnapshot {
   model: string;
   asOfDate: string;
   requirementsVersion: string;
+  /**
+   * The frozen requirements themselves, not just their version hash.
+   *
+   * Carried so the interface can re-decide eligibility in the browser against a
+   * threshold the user moves — same `evaluateFinding` the evaluation ran, no
+   * model call, no server round trip.
+   */
+  requirements: Requirement[];
   screen: EligibilityScreen;
   signals: SupplierSignals[];
   /**

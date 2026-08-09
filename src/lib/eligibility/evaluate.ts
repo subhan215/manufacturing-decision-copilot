@@ -2,8 +2,28 @@ import type {
   ComparisonOperator,
   ExtractedFinding,
   Requirement,
+  VerdictEvidence,
   VerdictStatus,
 } from "./types.ts";
+
+/**
+ * Evidence placeholder for a verdict that carries no structured reading.
+ *
+ * Used where a verdict genuinely has nothing behind it — an errored supplier —
+ * and by the rule-based baseline, which produces a status and a quote but never
+ * a structured finding. Filling these fields with plausible-looking values to
+ * make the shapes match would misrepresent what the baseline actually did.
+ */
+export const NO_EVIDENCE: VerdictEvidence = {
+  judgement: null,
+  numericValue: null,
+  numericUnit: null,
+  certificatePresent: null,
+  certificateExpiry: null,
+  marketingClaimOnly: null,
+  categoricalValue: null,
+  evidenceAbsent: true,
+};
 
 /**
  * Deterministic verdict derivation.

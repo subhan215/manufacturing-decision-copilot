@@ -77,11 +77,36 @@ export type VerdictStatus =
   | "insufficient-evidence"
   | "conflicting";
 
+/**
+ * The extracted evidence a verdict was derived from, carried alongside it.
+ *
+ * This is what makes a threshold genuinely explorable. Given the evidence and a
+ * requirement, `evaluateFinding` reproduces the verdict for any threshold —
+ * in the browser, with no model call — so a buyer can ask "what if the MOQ
+ * ceiling were 8,000?" and get the real answer rather than an estimate.
+ *
+ * It also retires a fragility: the scenario engine used to recover these values
+ * by regex-parsing the human-readable `comparison` string, which meant a change
+ * to a display format could silently change a computed result.
+ */
+export interface VerdictEvidence {
+  judgement: "satisfied" | "not-satisfied" | "unclear" | null;
+  numericValue: number | null;
+  numericUnit: string | null;
+  certificatePresent: boolean | null;
+  certificateExpiry: string | null;
+  marketingClaimOnly: boolean | null;
+  categoricalValue: string | null;
+  evidenceAbsent: boolean;
+}
+
 export interface RequirementVerdict {
   requirementId: string;
   requirementTitle: string;
   kind: RequirementKind;
   status: VerdictStatus;
+  /** What the model read, before any comparison was made. */
+  evidence: VerdictEvidence;
   /** What the verdict would have been before citation verification downgraded it. */
   modelClaimedStatus: VerdictStatus;
   /** Human-readable arithmetic, e.g. "5000 units ≤ 5000 units". Null for qualitative. */
