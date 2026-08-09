@@ -203,6 +203,22 @@ Two things the build caught:
 
 **Not visually inspected.** The Chrome extension was not connected, so I verified structure and the zero-width case programmatically but could not eyeball layout, label collisions or overflow. `npm run dev` → http://localhost:3000 needs a human look before recording the demo.
 
+## Submission remediation — DONE
+
+Audit against the Sofstica criteria and the challenge brief found five gaps outside piece 9's writing work. All closed. Run `npm run check:submission` (29 assertions).
+
+- **The project was not a git repository at all.** Now initialised, 2 commits, 151 tracked files, ~893 KB. Pushing to GitHub is the user's step.
+- **`.gitattributes` was missing** — the one not on the original list, and a prerequisite for the cache decision. Git's Windows default rewrites LF→CRLF on clone, which shifts **every character offset after line 1** and silently breaks citation verification on a reviewer's machine while passing on ours. Piece 2 flagged this risk and it had never been actioned. Now `* text=auto eol=lf` repo-wide, verified by clone test.
+- **`docs/INTENDED_USE.md`** closes the required "intended-user statement, assumptions, limitations, and human-approval points" deliverable, which existed nowhere — "sourcing analyst" appeared only in prompt strings and code comments. `SafetyBanner` now names the user too.
+- **The response cache is committed** (`.cache/llm`, 30 entries, 229 KB, with a README). This is what makes every script reproducible without a Claude Code CLI.
+- **The confidence deviation is now argued, not silent.** The brief asks to display "source, retrieval date, **confidence**, assumptions, conflicts"; we show four and deliberately omit confidence. `docs/INTENDED_USE.md` §Deliberate deviations makes the case: we substituted a *checkable* signal (evidence verification status) for an *unreliable self-reported* one, backed by the measurement that 6 of 8 undetermined verdicts self-reported high confidence. It also states plainly that the corpus and gold labels are self-constructed, since no organiser pack existed.
+
+**The clone test is the check that mattered** and no assertion could substitute for it: cloned to a fresh directory, `npm install`, then ran every suite with `CLAUDE_CODE_EXECUTABLE_PATH` pointed at a nonexistent binary. All passed from cache — 42/14→n/a, 21, 20, 20, 21. That is exactly what a reviewer will do, and it now works.
+
+One flaw this exposed in my own check: "working tree is clean" failed after running `npm run eval`, because the harness legitimately rewrites its own bundle with a fresh timestamp. The assertion was testing the wrong thing — it now fails only on uncommitted *source, data or docs*, and reports regenerated outputs as a note.
+
+**Commit style for this repo: short messages, no `Co-Authored-By` trailer** (user preference, recorded in memory).
+
 ## Not yet built
 - [ ] Citation tracking / evidence display
 - [ ] UI for eligibility screen → ranked list → weight sliders → conflict/insufficient-evidence states
