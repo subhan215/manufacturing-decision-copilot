@@ -39,7 +39,7 @@ export function IntegrityPanel({ snapshot }: { snapshot: UiSnapshot }) {
   return (
     <section
       id="integrity"
-      className="rounded-lg border border-[var(--hairline)] bg-[var(--surface-1)] p-6"
+      className="scroll-mt-6 rounded-lg border border-[var(--hairline)] bg-[var(--surface-1)] p-6"
     >
       <h2 className="text-lg font-semibold tracking-tight text-[var(--text-primary)]">
         How far these results can be trusted

@@ -8,7 +8,7 @@
 export function SafetyBanner() {
   return (
     <div className="border-b border-[var(--hairline)] bg-[var(--surface-raised)]">
-      <div className="mx-auto flex max-w-6xl items-start gap-3 px-6 py-3">
+      <div className="mx-auto flex max-w-[88rem] items-start gap-3 px-6 py-3">
         <span
           aria-hidden
           className="mt-0.5 inline-block h-2 w-2 shrink-0 rounded-full bg-[var(--status-warning)]"

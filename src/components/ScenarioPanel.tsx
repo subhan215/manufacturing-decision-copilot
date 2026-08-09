@@ -228,7 +228,7 @@ export function ScenarioPanel({ snapshot }: { snapshot: UiSnapshot }) {
   return (
     <section
       id="scenarios"
-      className="rounded-lg border border-[var(--hairline)] bg-[var(--surface-1)] p-6"
+      className="scroll-mt-6 rounded-lg border border-[var(--hairline)] bg-[var(--surface-1)] p-6"
     >
       <div className="flex flex-wrap items-start justify-between gap-4">
         <div>

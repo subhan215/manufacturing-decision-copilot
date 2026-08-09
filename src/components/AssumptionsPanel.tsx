@@ -12,7 +12,7 @@ export function AssumptionsPanel({ snapshot }: { snapshot: UiSnapshot }) {
   return (
     <section
       id="assumptions"
-      className="rounded-lg border border-[var(--hairline)] bg-[var(--surface-1)] p-6"
+      className="scroll-mt-6 rounded-lg border border-[var(--hairline)] bg-[var(--surface-1)] p-6"
     >
       <h2 className="text-lg font-semibold tracking-tight text-[var(--text-primary)]">
         Assumptions and limits

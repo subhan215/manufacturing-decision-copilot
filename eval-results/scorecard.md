@@ -1,6 +1,6 @@
 # Evaluation Scorecard
 
-Generated 2026-08-09T17:56:43.685Z · model `claude-sonnet-5` · as-of date 2026-08-09 · requirements `2f6f7d26f631941b`
+Generated 2026-08-09T18:02:13.547Z · model `claude-sonnet-5` · as-of date 2026-08-09 · requirements `2f6f7d26f631941b`
 
 All figures below are produced by `npm run eval`, which exits non-zero if any assertion fails.
 

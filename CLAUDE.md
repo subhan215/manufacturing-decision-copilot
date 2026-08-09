@@ -298,6 +298,22 @@ Went back to `AI_Manufacturing_Decision_Copilot.pdf` rather than trusting my own
 
 **Suite totals: 42 · 14 · 21 · 20 · 20 · 22 · 52 · 22 · 36 · 2 = 251 assertions.**
 
+## Interactive UI rebuild — DONE
+
+The interface was a report viewer: six of nine panels static, including the entire scenario panel. Wasteful, because the scenario engine was already deliberately Node-free so it *could* run client-side, and `evaluateFinding` is a pure function — dragging a threshold and watching the matrix re-decide costs zero model calls and is the clearest possible demonstration of "the model reads, the code decides".
+
+**Structural fix first.** Verdicts now carry a `VerdictEvidence` block — the extracted values, not just the display string. The scenario engine had been recovering numbers by regex-parsing `"5000 units ≤ 5000 units"` in three places, so a change to a display format could silently change a computed result. Those regexes are gone. All suites confirmed identical results, so it was behaviour-neutral.
+
+**Live eligibility** (`src/lib/eligibility/rescreen.ts`, `ThresholdControls.tsx`). MOQ, fail rate and lead time are draggable; every affected verdict re-decides in the browser through the same `evaluateFinding` the evaluation was measured against. Cells that moved carry a marker and a "was X under the brief's limit" tooltip, and the brief's own value is pinned on each slider track. A relaxed screen must never be mistakable for the one the brief asked for. Slider ranges are anchored on the brief's value rather than the data, so the control does not quietly reveal where suppliers sit. An unverified citation stays downgraded — a threshold change cannot restore evidence that failed verification.
+
+**Live scenarios.** Order quantity, requirement relaxed, supplier unavailable, slip percentage — all recomputed live, and they *combine*, which is the honest case since things rarely go wrong one at a time. Same functions the verification suite exercises, so interface and suite cannot diverge.
+
+**Live run mode** (`src/app/api/run/route.ts`, `LiveRunPanel.tsx`). A **Route Handler returning a ReadableStream**, not a Server Action — research was decisive here: Next.js waits for an action to return before sending anything, so progress would arrive in one lump at the end, and there is an open vercel/next.js issue about Server Actions + `useTransition` hanging on long work. The handler returns the Response immediately and writes events from a background task. Verified streaming incrementally. Each verdict arrives with its quote and whether it was decided in code or by the model. A `HEAD` probe tells the panel whether a CLI exists; with none, the button disables and explains why. **The offline guarantee is intact and now asserted** — build confirms page `○ static`, route `ƒ dynamic`.
+
+**Layout** follows the pattern the research supports (sidebar rail 240–280px, calm 4–6 card metric strip, content grid; cognitive load, not aesthetics, predicts abandonment). `SideNav.tsx` uses an IntersectionObserver biased to the upper third — the "current" section is the one at the top of the viewport, not whatever is centred. `MetricStrip.tsx` carries four numbers that *bound how much weight the recommendation can bear*: eligible count, citation correctness, accuracy vs ground truth, and how much still needs a person. Deliberately excluded: documents processed, time saved, cost saved — volume metrics flatter the tool without telling a buyer whether to believe it.
+
+**Suite totals: 42 · 14 · 21 · 20 · 20 · 22 · 52 · 24 · 36 · 2 = 253 assertions.**
+
 ## Not yet built
 - [ ] Demo video — script is ready, needs recording and an unlisted upload
 - [ ] Push to a public GitHub remote (user's step)
