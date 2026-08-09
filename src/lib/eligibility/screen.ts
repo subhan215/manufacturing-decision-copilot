@@ -97,6 +97,15 @@ export async function screenSupplier(params: {
   requirements: Requirement[];
   corpus: Corpus;
   asOfDate: string;
+  /**
+   * Bypass the response cache and call the model for real.
+   *
+   * Every committed cache entry matches the current prompt, so an ordinary run
+   * is a replay — fast and reproducible, which is the point of committing it.
+   * A demonstration that the pipeline genuinely works needs the opposite, and
+   * conflating the two would let replay speed be presented as model speed.
+   */
+  cache?: boolean;
 }): Promise<SupplierScreen> {
   const { supplier, requirements, corpus, asOfDate } = params;
   const supplierName = supplier.doc.supplierName ?? supplier.doc.docId;
@@ -111,6 +120,7 @@ export async function screenSupplier(params: {
           systemPrompt: buildSystemPrompt(SCREENING_ROLE),
           prompt: buildScreeningPrompt({ supplier, requirements, asOfDate }),
           timeoutMs: 180_000,
+          cache: params.cache,
         }),
       supplier.doc.shortId,
     );

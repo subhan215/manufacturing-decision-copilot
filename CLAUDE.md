@@ -314,6 +314,22 @@ The interface was a report viewer: six of nine panels static, including the enti
 
 **Suite totals: 42 · 14 · 21 · 20 · 20 · 22 · 52 · 24 · 36 · 2 = 253 assertions.**
 
+## Live-run honesty fix — DONE
+
+The user asked "do you think we are still running it live?" and they were right to. It was not. A full 161-verdict run finished in **0.63 seconds** — pure cache replay — while the panel said "This runs the real thing", and `route.ts` inferred cache status from `elapsed < 20_000` instead of reading `telemetry.cacheHit`, which was sitting right there. The guess happened to be correct, which is worse than being wrong: it would have started lying the moment the cache went partially cold, reporting replay speed as model speed.
+
+- **Truth from telemetry.** `cacheHits` and `liveCalls` are counted from `telemetry.cacheHit` per call, never inferred from elapsed time.
+- **Two explicit controls.** `Replay from cache` (~1s, reproducible, no login needed) and `Fresh run` (`?fresh=1`, bypasses the cache via a new `cache` passthrough on `screenSupplier`, ~25s per supplier). Both label what they are *before* you press them, asserted by `check:ui`.
+- **Two real bugs surfaced by testing it properly:**
+  - *Silent failure.* `screenSupplier` catches errors and returns an error screen; the route never checked `result.error`, so 23 failed suppliers rendered as a finished run reporting "23 live calls" with an empty result. Now each failure is sent as a `supplier-failed` event and shown in red, and `liveCalls` counts only calls that actually completed.
+  - *`Controller is already closed`.* An unhandled rejection took down the dev server whenever a client disconnected mid-run. `send` and `finish` are now guarded.
+
+The failure that exposed all this was transient — it coincided with a `claude` re-login, so every call failed fast. Under the old code that looked like a successful run. That is precisely the failure mode the fix exists for.
+
+Verified after: fresh run reports `cacheHit:false` at 19–26s per supplier; replay reports `cacheHits:23, liveCalls:0`.
+
+`docs/DEMO_SCRIPT.md` rewritten for the interactive UI — the strongest thirty seconds is now dragging the MOQ slider and watching verdicts re-decide with no model call, and the ending shows replay and a real run as two different things rather than pretending either does the other's job.
+
 ## Not yet built
 - [ ] Demo video — script is ready, needs recording and an unlisted upload
 - [ ] Push to a public GitHub remote (user's step)

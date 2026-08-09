@@ -202,7 +202,17 @@ if (!res || !res.ok) {
   // from the decision path and explicit about needing one.
   check(
     "the live-run control is present but opt-in",
-    /Run analysis/.test(html) && /Run the pipeline/.test(html),
+    /Replay from cache/.test(html) &&
+      /Fresh run/.test(html) &&
+      /Run the pipeline/.test(html),
+  );
+  // Replaying a committed cache in a second and calling the model for two
+  // minutes are different claims. The control labels have to distinguish them
+  // before anyone presses either, or replay speed reads as model speed.
+  check(
+    "replay and a real model run are distinguished before either is started",
+    /committed cache/i.test(html) && /takes a couple of minutes/i.test(html),
+    "a run control that hides which one it is invites reporting cache replay as pipeline performance",
   );
   check(
     "the page states it reads a frozen analysis and needs no API key",

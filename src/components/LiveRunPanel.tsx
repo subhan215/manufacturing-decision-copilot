@@ -6,21 +6,26 @@ import { STATUS_STYLES } from "./statusStyle";
 import type { VerdictStatus } from "@/lib/eligibility/types";
 
 /**
- * Watch the pipeline run for real.
+ * Watch the pipeline work.
  *
- * Everything else on this page reads a frozen snapshot, which is what lets the
- * application run with no API key and no login. This panel is the one place
- * that calls the model, and it is strictly opt-in: nothing starts until the
- * button is pressed, and when no Claude Code CLI is present it says so rather
- * than failing quietly.
+ * Two modes, and the difference is stated rather than left to be inferred from
+ * how long it takes. A **replay** serves every call from the committed response
+ * cache: fast, free, byte-identical, and the reason a reviewer can reproduce
+ * every reported number without a Claude Code login. A **fresh run** bypasses
+ * the cache and calls the model for real, taking minutes.
  *
- * What it is for is showing the architecture in motion — each verdict arriving
- * with its quote, and the label saying whether that verdict was decided in code
- * or by the model.
+ * Whether a call was cached is read from the SDK's own telemetry, never guessed
+ * from elapsed time. An earlier version inferred it from a duration threshold,
+ * which would have reported a replay as a live run the moment the cache went
+ * partially cold — presenting replay speed as model speed.
+ *
+ * Strictly opt-in: nothing starts until the button is pressed, and when no
+ * Claude Code CLI is present it says so rather than failing quietly.
  */
 
 type Line =
   | { kind: "note"; text: string }
+  | { kind: "failed"; supplier: string; message: string }
   | {
       kind: "verdict";
       supplier: string;
@@ -43,6 +48,7 @@ export function LiveRunPanel() {
   const [error, setError] = useState<{ message: string; hint?: string } | null>(
     null,
   );
+  const [freshRun, setFreshRun] = useState(false);
   const logRef = useRef<HTMLDivElement>(null);
   const abortRef = useRef<AbortController | null>(null);
 
@@ -70,7 +76,8 @@ export function LiveRunPanel() {
     logRef.current?.scrollTo({ top: logRef.current.scrollHeight });
   }, [lines]);
 
-  async function run() {
+  async function run(fresh: boolean) {
+    setFreshRun(fresh);
     setPhase("running");
     setLines([]);
     setSummary(null);
@@ -81,7 +88,9 @@ export function LiveRunPanel() {
     abortRef.current = controller;
 
     try {
-      const res = await fetch("/api/run", { signal: controller.signal });
+      const res = await fetch(fresh ? "/api/run?fresh=1" : "/api/run", {
+        signal: controller.signal,
+      });
       if (!res.body) throw new Error("The server returned no stream.");
 
       const reader = res.body.getReader();
@@ -114,6 +123,15 @@ export function LiveRunPanel() {
             ]);
           } else if (event.type === "supplier") {
             setProgress({ done: event.done, total: event.total });
+          } else if (event.type === "supplier-failed") {
+            setLines((prev) => [
+              ...prev,
+              {
+                kind: "failed",
+                supplier: event.name,
+                message: event.message,
+              },
+            ]);
           } else if (event.type === "verdict") {
             setLines((prev) => [
               ...prev,
@@ -130,11 +148,20 @@ export function LiveRunPanel() {
             ]);
           } else if (event.type === "done") {
             setPhase("done");
+            const secs = (event.durationMs / 1000).toFixed(1);
+            const failedNote =
+              event.failed > 0
+                ? ` ${event.failed} supplier${event.failed === 1 ? "" : "s"} failed and produced no verdicts — see the log above.`
+                : "";
             setSummary(
-              `${event.eligible.length} eligible · ${(event.durationMs / 1000).toFixed(1)}s` +
-                (event.cached
-                  ? " — served from the committed response cache, so this is replay speed rather than a cold run"
-                  : " — live model calls"),
+              (event.liveCalls === 0 && event.cacheHits === 0
+                ? `No call completed in ${secs}s.`
+                : event.liveCalls === 0
+                  ? `${event.eligible.length} eligible · ${secs}s — every call served from the committed cache. This is replay speed, not model speed; a fresh run takes minutes.`
+                  : event.cacheHits === 0
+                    ? `${event.eligible.length} eligible · ${secs}s — ${event.liveCalls} live model calls, nothing cached.`
+                    : `${event.eligible.length} eligible · ${secs}s — ${event.liveCalls} live model calls, ${event.cacheHits} served from cache.`) +
+                failedNote,
             );
           } else if (event.type === "error") {
             setPhase("error");
@@ -167,18 +194,35 @@ export function LiveRunPanel() {
           </h2>
           <p className="mt-1 max-w-3xl text-sm text-[var(--text-secondary)]">
             Everything above reads a frozen analysis, which is why this
-            application needs no API key. This runs the real thing — each verdict
-            appears as it is decided, with the quote it rests on.
+            application needs no API key. Here the pipeline runs, verdict by
+            verdict, each with the quote it rests on.{" "}
+            <strong className="font-medium text-[var(--text-primary)]">
+              Replay serves every call from the committed cache in about a
+              second
+            </strong>{" "}
+            — reproducible, and what makes the numbers on this page checkable. A
+            fresh run bypasses the cache and calls the model for real, which
+            takes a couple of minutes.
           </p>
         </div>
 
-        <button
-          onClick={run}
-          disabled={phase === "running" || phase === "checking" || !available}
-          className="rounded border border-[var(--hairline)] px-4 py-2 text-sm font-medium text-[var(--text-primary)] transition-opacity hover:bg-[var(--page-plane)] disabled:cursor-not-allowed disabled:opacity-40"
-        >
-          {phase === "running" ? "Running…" : "Run analysis"}
-        </button>
+        <div className="flex shrink-0 flex-wrap gap-2">
+          <button
+            onClick={() => run(false)}
+            disabled={phase === "running" || phase === "checking" || !available}
+            className="rounded border border-[var(--hairline)] px-4 py-2 text-sm font-medium text-[var(--text-primary)] transition-opacity hover:bg-[var(--page-plane)] disabled:cursor-not-allowed disabled:opacity-40"
+          >
+            {phase === "running" && !freshRun ? "Replaying…" : "Replay from cache"}
+          </button>
+          <button
+            onClick={() => run(true)}
+            disabled={phase === "running" || phase === "checking" || !available}
+            title="Bypasses the response cache and calls the model for every supplier"
+            className="rounded border border-[var(--hairline)] px-4 py-2 text-sm text-[var(--text-secondary)] transition-opacity hover:bg-[var(--page-plane)] disabled:cursor-not-allowed disabled:opacity-40"
+          >
+            {phase === "running" && freshRun ? "Running live…" : "Fresh run"}
+          </button>
+        </div>
       </div>
 
       {phase === "idle" && !available && (
@@ -195,8 +239,9 @@ export function LiveRunPanel() {
         <div className="mt-4">
           <div className="flex items-baseline justify-between text-xs text-[var(--text-secondary)]">
             <span>
-              Screening supplier {Math.min(progress.done + 1, progress.total)} of{" "}
-              {progress.total}
+              {freshRun ? "Calling the model for" : "Replaying"} supplier{" "}
+              {Math.min(progress.done + 1, progress.total)} of {progress.total}
+              {freshRun && " — this takes a couple of minutes"}
             </span>
             <span className="tnum">{verdictCount} verdicts</span>
           </div>
@@ -225,6 +270,14 @@ export function LiveRunPanel() {
               l.kind === "note" ? (
                 <li key={i} className="text-xs text-[var(--text-muted)]">
                   {l.text}
+                </li>
+              ) : l.kind === "failed" ? (
+                <li
+                  key={i}
+                  className="text-xs leading-relaxed text-[var(--status-critical)]"
+                >
+                  <strong className="font-medium">{l.supplier}</strong> failed —{" "}
+                  {l.message}
                 </li>
               ) : (
                 <li key={i} className="text-xs leading-relaxed">
