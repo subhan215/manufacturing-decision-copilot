@@ -277,10 +277,21 @@ Corpus-size literals (13, 91) are gone — replaced by a single `SUPPLIER_COUNT`
 
 **Suite totals: 42 · 14 · 21 · 20 · 20 · 22 · 52 · 19 · 29.**
 
+## Piece 9 — submission writing — DONE (except the recording)
+
+- `README.md` — rewritten from the scaffold stub. What/why/how, setup, architecture with a data-flow diagram, results, the three required cases, safety posture, and an honest "what it gets wrong" section naming the conflict over-reporting bug. Written in first person and deliberately not padded.
+- `docs/PROJECT_DESCRIPTION.md` — 926 characters against the portal's 1,000 limit. Covers all four required points.
+- `docs/DEMO_SCRIPT.md` — shot-by-shot script for a 4-minute video with timings, hitting all three required cases. Verified against the actual UI: hovering a matrix cell shows the comparison string, clicking opens the drawer with "computed in code, not by the model".
+- `docs/SLIDES.md` — ten slides with speaker notes, ending on the limitations slide rather than a thank-you.
+- `../Themes for Hackathon 2026/SUBMISSION_CHECKLIST.md` — 43 items ticked. The confidence-display row is marked `[~]` with the deviation argued inline rather than left silently unticked.
+
+Fixed while writing: the ranking-agreement caveat still said "three eligible suppliers give six possible orderings" after a fourth became eligible. Now derived from the signal count — a wrong number inside a caveat about statistical rigour is worse than no caveat. Also corrected two figures I had written from memory: near-misses are seven, not five, and a 25% lead-time slip leaves two of four eligible suppliers, not one.
+
 ## Not yet built
-- [ ] README (setup instructions, Claude Code CLI dependency disclosed, architecture explanation)
-- [ ] Demo video covering the 3 required cases
+- [ ] Demo video — script is ready, needs recording and an unlisted upload
+- [ ] Push to a public GitHub remote (user's step)
 - [ ] Team size / CV upload logistics still unconfirmed
+- [ ] Nobody has visually inspected the running UI
 
 ## Where else to look
 

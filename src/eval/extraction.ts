@@ -207,7 +207,20 @@ export function measureRankingAgreement(
       (min, m) => Math.min(min, m.margin),
       Number.POSITIVE_INFINITY,
     ),
-    sampleSizeCaveat:
-      "Three eligible suppliers give six possible orderings, so a chance match would occur about 17% of the time. Ordering agreement is reported with score margins rather than a rank-correlation coefficient, which carries almost no information at this sample size.",
+    // Derived, because the sentence states a probability. A hardcoded figure
+    // here went stale the moment a fourth supplier became eligible, and a
+    // wrong number in a caveat about rigour is worse than no caveat.
+    sampleSizeCaveat: (() => {
+      const n = aiSignals.length;
+      const orderings = Array.from({ length: n }, (_, i) => i + 1).reduce(
+        (a, b) => a * b,
+        1,
+      );
+      return (
+        `${n} eligible suppliers give ${orderings} possible orderings, so a chance match would occur about ` +
+        `${((1 / orderings) * 100).toFixed(0)}% of the time. Ordering agreement is reported with score margins ` +
+        `rather than a rank-correlation coefficient, which carries almost no information at this sample size.`
+      );
+    })(),
   };
 }

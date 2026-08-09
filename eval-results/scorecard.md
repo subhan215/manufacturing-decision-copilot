@@ -1,6 +1,6 @@
 # Evaluation Scorecard
 
-Generated 2026-08-09T16:55:45.730Z · model `claude-sonnet-5` · as-of date 2026-08-09 · requirements `2f6f7d26f631941b`
+Generated 2026-08-09T17:08:29.196Z · model `claude-sonnet-5` · as-of date 2026-08-09 · requirements `2f6f7d26f631941b`
 
 All figures below are produced by `npm run eval`, which exits non-zero if any assertion fails.
 
@@ -66,7 +66,7 @@ Re-ranking with hand-read reference values instead of AI-extracted ones produces
 - supplier-23-nirvaan-skin-sciences leads supplier-06-vantage-cosmo-labs by 0.068
 - supplier-06-vantage-cosmo-labs leads supplier-12-coastal-wellness-manufacturing by 0.153
 
-*Three eligible suppliers give six possible orderings, so a chance match would occur about 17% of the time. Ordering agreement is reported with score margins rather than a rank-correlation coefficient, which carries almost no information at this sample size.*
+*4 eligible suppliers give 24 possible orderings, so a chance match would occur about 4% of the time. Ordering agreement is reported with score margins rather than a rank-correlation coefficient, which carries almost no information at this sample size.*
 
 ## Confidence
 
