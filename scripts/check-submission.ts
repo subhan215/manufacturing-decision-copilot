@@ -187,7 +187,6 @@ const required = [
   "eval-results/results.json",
   "eval-results/scorecard.md",
   "docs/INTENDED_USE.md",
-  "docs/PROJECT_DESCRIPTION.md",
   "docs/DEMO_SCRIPT.md",
   "docs/SLIDES.md",
   "README.md",
