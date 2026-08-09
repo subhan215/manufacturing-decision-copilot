@@ -1,6 +1,6 @@
 # The three required cases
 
-The challenge brief asks for *"a demonstration of one successful case, one ambiguous or conflicting case, and one failure or fallback case."*
+The challenge brief asks for *"a demonstration of one successful case, one ambiguous or conflicting case, and one failure or fallback case."* This is that demonstration.
 
 Everything below is real output from the committed analysis (`data/derived/ui-snapshot.json`), reproduced verbatim — quotes, comparisons and conflict notes are copied from the run, not written for this document. Reproduce any of it with `npm run screen`, or see it in the interface at `npm run dev`.
 
