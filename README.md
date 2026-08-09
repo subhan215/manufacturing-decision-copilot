@@ -44,7 +44,7 @@ That is not a UI trick. It is only possible *because* the model was never asked 
 |---|---|---|
 | **Success** | Supplier 1 | Clears all seven, ranked first, every verdict cited |
 | **Conflicting** | Supplier 3 | Its own compliance summary says the ISO 22716 certificate is current; its audit appendix says it expired in November 2025. The system surfaces both statements and refuses to pick one |
-| **Failure / fallback** | Novaline (13) | Four requirements have no data at all. It abstains and says where it looked, rather than guessing |
+| **Failure / fallback** | Novaline (13) | Six of seven requirements have no data at all. It abstains on every one and cites the text showing the gap, rather than guessing |
 
 ---
 
