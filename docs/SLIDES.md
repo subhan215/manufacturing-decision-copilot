@@ -1,6 +1,10 @@
 # Slides
 
-Ten slides. Speaker notes in italics — those are for you, not the slide.
+**The deck itself is `slides.html`** — open it in Chrome or Edge and it presents as ten 16:9 pages.
+
+**To export a PDF:** `Ctrl`+`P` → Destination **Save as PDF** → Layout **Landscape** → Margins **None** → tick **Background graphics**. Each slide becomes one page at 13.333in × 7.5in, the standard 16:9 slide size.
+
+This file is the *script*: the same ten slides in plain text, with the speaker notes in italics. Those notes are deliberately not on the slides — a slide a presenter reads aloud is a slide the audience is reading instead of listening.
 
 ---
 
@@ -44,7 +48,7 @@ Code does the arithmetic — and shows it.
 
 - A supplier **exactly on a limit** is decided by an operator, not a borderline judgement call
 - **Every verdict shows its arithmetic** — checkable in a second
-- **Moving a threshold is free** — 46 verdicts recomputed under new limits, zero model calls
+- **Exploring a constraint is free** — drag a limit and all 161 verdicts re-decide in the browser, zero model calls
 
 Plus: every citation is verified byte-for-byte against the source.
 A model can't talk its way past a string comparison.
@@ -120,14 +124,12 @@ Those aren't contradictions. It should pick the one that applies.
 - **Test on real supplier PDFs** — mine are uniformly formatted, which flatters pattern matching
 - **Landed cost** — freight and duties appear twice in the whole corpus
 
-Repo · demo video · `eval-results/scorecard.md`
+Repo · `demo/CASE_WALKTHROUGH.md` · `eval-results/scorecard.md`
 
 *End on the limitation slide, not on a thank-you slide.*
 
 ---
 
-### Making these into an actual deck
+### Note on slide 3
 
-Any markdown-to-slides tool splits on `---`. Reveal.js, Marp and Slidev all work, or paste into Google Slides if that's faster — the content is the point, not the transitions.
-
-Keep slide 3 nearly empty. It's the one that has to stick.
+Keep it nearly empty. It is the one that has to stick, and the deck sets it as a single statement with one line of arithmetic beneath it — nothing else competes.
