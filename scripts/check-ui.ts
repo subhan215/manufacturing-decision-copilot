@@ -197,6 +197,19 @@ if (!res || !res.ok) {
     /not re-fetched/i.test(html),
   );
 
+  // The live-run panel is additive. Everything a reviewer needs must render
+  // from the committed snapshot with no CLI, so the panel has to be absent
+  // from the decision path and explicit about needing one.
+  check(
+    "the live-run control is present but opt-in",
+    /Run analysis/.test(html) && /Run the pipeline/.test(html),
+  );
+  check(
+    "the page states it reads a frozen analysis and needs no API key",
+    /needs no API key/i.test(html),
+    "the offline guarantee is a selling point and must be visible, not just true",
+  );
+
   check(
     "no control implies contacting, approving or ordering",
     !/<button[^>]*>\s*(approve|contact|request quote|place order)/i.test(html),
