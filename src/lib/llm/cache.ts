@@ -47,7 +47,23 @@ function entryPath(key: string): string {
   return path.join(cacheDir(), `${key}.json`);
 }
 
+/**
+ * Keys requested during this process, hit or miss.
+ *
+ * The cache is committed so a reviewer can reproduce every number without a
+ * Claude Code login. That only holds if the committed entries are the ones the
+ * pipeline actually asks for, and a prompt edit silently orphans an entry while
+ * leaving the file in place. `npm run cache:audit` replays the pipeline and
+ * compares this set against what is on disk.
+ */
+const requested = new Set<string>();
+
+export function requestedKeys(): ReadonlySet<string> {
+  return requested;
+}
+
 export async function readCache(key: string): Promise<CacheEntry | null> {
+  requested.add(key);
   try {
     const raw = await readFile(entryPath(key), "utf8");
     return JSON.parse(raw) as CacheEntry;

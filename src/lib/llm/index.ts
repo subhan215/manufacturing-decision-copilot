@@ -27,7 +27,13 @@ export {
 
 export { buildSystemPrompt, fenceUntrusted } from "./prompt.ts";
 
-export { cacheKey, readCache, writeCache, type CacheEntry } from "./cache.ts";
+export {
+  cacheKey,
+  readCache,
+  requestedKeys,
+  writeCache,
+  type CacheEntry,
+} from "./cache.ts";
 
 export {
   assertClaudeCodeAvailable,

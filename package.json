@@ -17,6 +17,7 @@
     "eval": "node scripts/run-eval.ts",
     "scenarios": "node scripts/run-scenarios.ts",
     "build:snapshot": "node scripts/build-snapshot.ts",
+    "cache:audit": "node scripts/audit-cache.ts",
     "check:ui": "node scripts/check-ui.ts",
     "check:submission": "node scripts/check-submission.ts"
   },
